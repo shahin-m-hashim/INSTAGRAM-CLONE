@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind utilities;
+@tailwind components;
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  z-index: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+html,
+body,
+.app,
+#root {
+  height: 100vh;
+  overflow: hidden;
+  min-width: 320px;
+  scrollbar-width: none;
+}
