@@ -1,7 +1,7 @@
-import Footer from "./Footer";
-import PhoneFrame from "./PhoneFrame";
-import LoginForm from "./forms/LoginForm";
-import SplashScreen from "../SplashScreen";
+import Footer from "../Footer";
+import PhoneFrame from "../PhoneFrame";
+import LoginForm from "../forms/LoginForm";
+import SplashScreen from "../../SplashScreen";
 import { useEffect, useState } from "react";
 
 export default function Home() {
