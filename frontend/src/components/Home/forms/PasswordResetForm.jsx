@@ -1,14 +1,23 @@
-import { useState } from "react";
-import { cn } from "../../../utils/cn";
-import AnimatedInputField from "../../AnimatedInputField";
+import InputField from "../../InputField";
+import useForm from "../../../hooks/useForm";
+
+const initialField = {
+  identifier: {
+    value: "",
+    label: "Email, Phone, or Username",
+  },
+};
 
 export default function PasswordResetForm() {
-  const [identifier, setIdentifier] = useState("");
+  const { reset, fields, handleBlur, getFormData, handleChange, submitBtnRef } =
+    useForm(initialField, false);
 
   const handleSubmit = (e) => {
-    setIdentifier("");
     e.preventDefault();
-    console.log(identifier);
+
+    const formData = getFormData();
+    console.log(formData);
+    reset();
   };
 
   return (
@@ -28,18 +37,18 @@ export default function PasswordResetForm() {
             Enter your email, phone, or username and we&apos;ll send you a link
             to get back into your account.
           </p>
-          <AnimatedInputField
-            value={identifier}
-            setValue={setIdentifier}
-            name="forgotPwdIdentifier"
-            placeholder="Email, Phone, or Username"
+          <InputField
+            key={"identifier"}
+            name={"identifier"}
+            handleBlur={handleBlur}
+            handleChange={handleChange}
+            field={fields["identifier"]}
           />
           <button
             type="submit"
-            className={cn(
-              "rounded-lg w-full h-8 bg-[rgb(0,149,246)] my-4",
-              identifier ? "opacity-100" : "opacity-30"
-            )}
+            disabled={true}
+            ref={submitBtnRef}
+            className="rounded-lg w-full h-8 bg-[rgb(0,149,246)] my-4 opacity-70"
           >
             Send login link
           </button>

@@ -24,3 +24,10 @@ a {
   cursor: pointer;
   text-decoration: none;
 }
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus {
+  -webkit-text-fill-color: rgb(245, 245, 245);
+  -webkit-box-shadow: 0 0 0px 1000px rgb(18, 18, 18) inset;
+}

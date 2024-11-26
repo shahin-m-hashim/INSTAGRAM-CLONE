@@ -9,8 +9,6 @@ const images = [
 ];
 
 export default function PhoneFrame() {
-  // console.log("Rendering phone frame");
-
   const [currentIdx, setCurrentIdx] = useState(0);
 
   useEffect(() => {
@@ -37,7 +35,7 @@ export default function PhoneFrame() {
           key={idx}
           alt={`screenshot-${idx}`}
           className={cn(
-            "absolute top-7 left-[156px] transition-opacity duration-1000 ease-in",
+            "absolute top-7 left-[156px] transition-opacity duration-[2s] ease-in",
             idx === currentIdx ? "opacity-100" : "opacity-0"
           )}
         />
