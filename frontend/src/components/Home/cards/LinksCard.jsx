@@ -1,4 +1,4 @@
-export default function Links() {
+export default function LinksCard() {
   return (
     <div className="flex flex-col items-center justify-center w-full">
       <p className="mb-4">Get the app.</p>

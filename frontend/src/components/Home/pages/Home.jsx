@@ -1,8 +1,9 @@
-import Links from "../Links";
 import Footer from "../Footer";
 import PhoneFrame from "../PhoneFrame";
 import LoginForm from "../forms/LoginForm";
+import LinksCard from "../cards/LinksCard";
 import SplashScreen from "../../SplashScreen";
+import SignupCard from "../cards/SignupCard";
 
 export default function Home() {
   return (
@@ -24,13 +25,8 @@ export default function Home() {
 
               <LoginForm />
             </div>
-
-            <div className="w-full md:p-5 md:border justify-center flex gap-1 md:border-[rgb(54,54,54)]">
-              <p>Don&apos;t have an account?</p>
-              <a className="text-[rgb(0,149,246)] font-semibold">Sign up</a>
-            </div>
-
-            <Links />
+            <SignupCard />
+            <LinksCard />
           </div>
         </main>
         <Footer />

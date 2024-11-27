@@ -1,14 +1,14 @@
-import Links from "../Links";
 import Footer from "../Footer";
 import Separator from "../Separator";
+import LinksCard from "../cards/LinksCard";
 import SignUpForm from "../forms/SignUpForm";
 import SplashScreen from "../../SplashScreen";
 
 export default function SignUp() {
   return (
     <SplashScreen>
-      <section className="min-h-screen text-white bg-black lg:gap-2">
-        <main className="flex flex-col items-center justify-center py-4">
+      <section className="text-white bg-black lg:gap-2">
+        <main className="flex flex-col items-center justify-center min-h-screen py-4">
           <div className="w-[300px] md:w-[350px] px-8 py-4 md:p-0">
             <div className="text-center md:px-10 md:py-8 md:border flex flex-col justify-center md:border-[rgb(54,54,54)]">
               <div className="flex flex-col items-center justify-center gap-4 py-4 mb-3 md:py-0">
@@ -37,7 +37,7 @@ export default function SignUp() {
               <a className="text-[rgb(0,149,246)] font-semibold">Log in</a>
             </div>
 
-            <Links />
+            <LinksCard />
           </div>
         </main>
         <div className="px-6 py-10">
