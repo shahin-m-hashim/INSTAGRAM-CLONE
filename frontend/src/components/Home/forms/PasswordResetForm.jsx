@@ -1,5 +1,6 @@
 import InputField from "../../InputField";
 import useForm from "../../../hooks/useForm";
+import Button from "../Button";
 
 const initialField = {
   identifier: {
@@ -23,9 +24,9 @@ export default function PasswordResetForm() {
   return (
     <form
       onSubmit={handleSubmit}
-      className="rounded-sm md:w-[400px] md:border flex flex-col justify-between items-center md:border-[rgb(54,54,54)]"
+      className="rounded-sm  md:border flex flex-col justify-between items-center md:border-[rgb(54,54,54)]"
     >
-      <div className="flex flex-col justify-between flex-1 px-10 md:py-6">
+      <div className="flex max-w-[380px] flex-col justify-between flex-1 px-8 md:py-6">
         <div className="flex flex-col items-center">
           <img
             alt="lock-icon"
@@ -44,14 +45,15 @@ export default function PasswordResetForm() {
             handleChange={handleChange}
             field={fields["identifier"]}
           />
-          <button
+
+          <Button
             type="submit"
             disabled={true}
-            ref={submitBtnRef}
-            className="rounded-lg w-full h-8 bg-[rgb(0,149,246)] my-4 opacity-70"
+            className="my-4"
+            reference={submitBtnRef}
           >
             Send login link
-          </button>
+          </Button>
           <div className="mb-6">
             <a className="text-xs">Can&apos;t reset your password?</a>
           </div>

@@ -1,6 +1,7 @@
 import Separator from "../Separator";
 import InputField from "../../InputField";
 import useForm from "../../../hooks/useForm";
+import Button from "../Button";
 
 const initialFields = {
   identifier: {
@@ -17,23 +18,14 @@ const initialFields = {
 export default function LoginForm() {
   // console.log("Rendering form");
 
-  const {
-    reset,
-    fields,
-    isValid,
-    handleBlur,
-    getFormData,
-    handleChange,
-    submitBtnRef,
-  } = useForm(initialFields);
+  const { reset, fields, handleBlur, getFormData, handleChange, submitBtnRef } =
+    useForm(initialFields);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (isValid.current) {
-      const formData = getFormData();
-      console.log(formData);
-      reset();
-    }
+    const formData = getFormData();
+    console.log(formData);
+    reset();
   };
 
   return (
@@ -50,13 +42,14 @@ export default function LoginForm() {
         ))}
       </div>
 
-      <button
+      <Button
         type="submit"
-        ref={submitBtnRef}
-        className="mb-4 rounded-lg h-8 bg-[rgb(0,149,246)]"
+        disabled={true}
+        className="mb-4"
+        reference={submitBtnRef}
       >
         Log In
-      </button>
+      </Button>
 
       <Separator />
 

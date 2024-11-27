@@ -4,6 +4,7 @@ import {
   validateIdentifier,
 } from "../../../utils/validator";
 
+import Button from "../Button";
 import InputField from "../../InputField";
 import useForm from "../../../hooks/useForm";
 
@@ -64,14 +65,9 @@ export default function SignUpForm() {
           <a className="text-white">Cookies Policy</a>
           <span>.</span>
         </p>
-        <button
-          type="submit"
-          disabled={true}
-          ref={submitBtnRef}
-          className="mb-4 text-sm opacity-70 font-semibold rounded-lg flex items-center justify-center gap-2 p-2 h-8 bg-[rgb(0,149,246)]"
-        >
+        <Button type="submit" disabled={true} reference={submitBtnRef}>
           Sign up
-        </button>
+        </Button>
       </div>
     </form>
   );

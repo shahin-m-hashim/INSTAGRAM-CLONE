@@ -37,7 +37,7 @@ export default function useForm(initialFields, requiresValidation = true) {
   const getFormData = () => {
     const formData = {};
     Object.keys(fields).forEach((field) => {
-      formData[field] = fields[field].value;
+      formData[field] = fields[field].value || "";
     });
     return JSON.stringify(formData);
   };
@@ -50,10 +50,13 @@ export default function useForm(initialFields, requiresValidation = true) {
 
     if (isValid) {
       submitBtnRef.current.disabled = false;
-      submitBtnRef.current.classList.remove("opacity-70");
+      submitBtnRef.current.classList.remove(
+        "opacity-70",
+        "pointer-events-none"
+      );
     } else {
       submitBtnRef.current.disabled = true;
-      submitBtnRef.current.classList.add("opacity-70");
+      submitBtnRef.current.classList.add("opacity-70", "pointer-events-none");
     }
   }, [fields]);
 

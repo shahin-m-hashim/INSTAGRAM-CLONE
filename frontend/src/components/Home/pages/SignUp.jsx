@@ -3,6 +3,7 @@ import Separator from "../Separator";
 import LinksCard from "../cards/LinksCard";
 import SignUpForm from "../forms/SignUpForm";
 import SplashScreen from "../../SplashScreen";
+import Button from "../Button";
 
 export default function SignUp() {
   return (
@@ -16,17 +17,14 @@ export default function SignUp() {
                 <p className="text-[rgb(168,168,168)] font-semibold text-base">
                   Sign up to see photos and videos from your friends.
                 </p>
-                <button
-                  type="submit"
-                  className="mb-2 rounded-lg text-sm flex items-center w-full justify-center gap-2 p-2 h-8 bg-[rgb(0,149,246)]"
-                >
+                <Button type="button">
                   <img
                     width={20}
                     alt="facebook-logo"
                     src="icons/fb_square_white.svg"
                   />
-                  <span className="font-semibold">Log in with Facebook</span>
-                </button>
+                  <span>Log in with Facebook</span>
+                </Button>
               </div>
               <Separator />
               <SignUpForm />

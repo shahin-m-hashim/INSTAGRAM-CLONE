@@ -1,5 +1,6 @@
 import { useState } from "react";
 import DateField from "../../DateField";
+import Button from "../Button";
 
 const initialDate = { day: "", month: "", year: "" };
 
@@ -29,7 +30,7 @@ export default function BDayForm() {
   return (
     <form
       onSubmit={handleSubmit}
-      className="flex flex-col text-xs text-[rgb(168,168,168)]"
+      className="flex flex-col w-full text-[rgb(168,168,168)]"
     >
       <DateField
         date={date}
@@ -43,14 +44,15 @@ export default function BDayForm() {
         something else
       </p>
 
-      <button
-        type="submit"
-        disabled={!isValid}
-        style={{ opacity: isValid ? 1 : 0.7 }}
-        className="mb-4 text-[rgb(255,255,255)] text-sm font-semibold rounded-lg flex items-center justify-center gap-2 p-2 h-8 bg-[rgb(0,149,246)]"
-      >
-        Next
-      </button>
+      <div className="md:px-5">
+        <Button
+          type="submit"
+          disabled={!isValid}
+          className="text-[rgb(255,255,255)] my-3"
+        >
+          Next
+        </Button>
+      </div>
     </form>
   );
 }
