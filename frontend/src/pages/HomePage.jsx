@@ -1,14 +1,14 @@
-import Footer from "../Footer";
-import HomeIcon from "../../Icons/HomeIcon";
-import ReelsIcon from "../../Icons/ReelsIcon";
-import SearchIcon from "../../Icons/SearchIcon";
-import CreateIcon from "../../Icons/CreateIcon";
-import ExploreIcon from "../../Icons/ExploreIcon";
-import SettingsIcon from "../../Icons/SettingsIcon";
-import MessengerIcon from "../../Icons/MessengerIcon";
-import InstagramLogoIcon from "../../Icons/InstagramLogoIcon";
-import NotificationsIcon from "../../Icons/NotificationsIcon";
-import InstagramTextIcon from "../../Icons/InstagramTextIcon";
+import HomeIcon from "icons/HomeIcon";
+import Footer from "components/Footer";
+import ReelsIcon from "icons/ReelsIcon";
+import SearchIcon from "icons/SearchIcon";
+import CreateIcon from "icons/CreateIcon";
+import ExploreIcon from "icons/ExploreIcon";
+import SettingsIcon from "icons/SettingsIcon";
+import MessengerIcon from "icons/MessengerIcon";
+import InstagramTextIcon from "icons/InstagramTextIcon";
+import InstagramLogoIcon from "icons/InstagramLogoIcon";
+import NotificationsIcon from "icons/NotificationsIcon";
 
 export default function HomePage() {
   return (

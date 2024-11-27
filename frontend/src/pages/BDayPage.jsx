@@ -1,8 +1,8 @@
-import Footer from "../Footer";
-import BDayForm from "../forms/BDayForm";
-import LinksCard from "../cards/LinksCard";
-import LoginCard from "../cards/LoginCard";
-import SplashScreen from "../../SplashScreen";
+import Footer from "components/Footer";
+import BDayForm from "components/forms/BDayForm";
+import LinksCard from "components/cards/LinksCard";
+import LoginCard from "components/cards/LoginCard";
+import SplashScreen from "components/wrappers/SplashScreen";
 
 export default function BDayPage() {
   return (

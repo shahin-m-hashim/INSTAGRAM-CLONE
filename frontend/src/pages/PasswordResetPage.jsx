@@ -1,7 +1,7 @@
-import Footer from "../Footer";
-import SplashScreen from "../../SplashScreen";
-import PasswordResetForm from "../forms/PasswordResetForm";
-import InstagramTextIcon from "../../Icons/InstagramTextIcon";
+import Footer from "components/Footer";
+import InstagramTextIcon from "icons/InstagramTextIcon";
+import SplashScreen from "components/wrappers/SplashScreen";
+import PasswordResetForm from "components/forms/PasswordResetForm";
 
 export default function PasswordResetPage() {
   return (

@@ -1,6 +1,6 @@
 import { useState } from "react";
-import DateField from "../../DateField";
-import Button from "../Button";
+import Button from "../wrappers/Button";
+import DateField from "./../fields/DateField";
 
 const initialDate = { day: "", month: "", year: "" };
 

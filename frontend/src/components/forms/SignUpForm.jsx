@@ -1,12 +1,12 @@
+import useForm from "hooks/useForm";
+import Button from "components/wrappers/Button";
+import InputField from "components/fields/InputField";
+
 import {
+  validateIdentifier,
   validatePassword,
   validateUsername,
-  validateIdentifier,
-} from "../../../utils/validator";
-
-import Button from "../Button";
-import InputField from "../../InputField";
-import useForm from "../../../hooks/useForm";
+} from "utils/validator";
 
 export default function SignUpForm() {
   const { reset, fields, handleBlur, getFormData, handleChange, submitBtnRef } =

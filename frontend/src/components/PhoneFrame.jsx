@@ -1,4 +1,4 @@
-import { cn } from "../../utils/cn";
+import { cn } from "utils/cn";
 import { useEffect, useState } from "react";
 
 const images = [

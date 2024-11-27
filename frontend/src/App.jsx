@@ -1,9 +1,9 @@
-// import BDayPage from "./components/Home/pages/BDayPage";
-import HomePage from "./components/Home/pages/HomePage";
-// import LoginPage from "./components/Home/pages/LoginPage";
-// import SignUpPage from "./components/Home/pages/SignUpPage";
-// import PasswordResetPage from "./components/Home/pages/PasswordResetPage";
-// import EmailConfirmationPage from "./components/Home/pages/EmailConfirmationPage";
+import BDayPage from "pages/BDayPage";
+import HomePage from "pages/HomePage";
+import LoginPage from "pages/LoginPage";
+import SignUpPage from "pages/SignUpPage";
+import PasswordResetPage from "pages/PasswordResetPage";
+import EmailConfirmationPage from "pages/EmailConfirmationPage";
 
 export default function App() {
   return (
@@ -13,7 +13,7 @@ export default function App() {
       {/* <SignUpPage /> */}
       {/* <BDayPage /> */}
       {/* <EmailConfirmationPage /> */}
-      <HomePage />
+      {/* <HomePage /> */}
     </>
   );
 }

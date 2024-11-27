@@ -1,10 +1,10 @@
-import Footer from "../Footer";
-import PhoneFrame from "../PhoneFrame";
-import LoginForm from "../forms/LoginForm";
-import LinksCard from "../cards/LinksCard";
-import SplashScreen from "../../SplashScreen";
-import SignupCard from "../cards/SignupCard";
-import InstagramTextIcon from "../../Icons/InstagramTextIcon";
+import Footer from "components/Footer";
+import PhoneFrame from "components/PhoneFrame";
+import LoginForm from "components/forms/LoginForm";
+import LinksCard from "components/cards/LinksCard";
+import SignupCard from "components/cards/SignupCard";
+import InstagramTextIcon from "icons/InstagramTextIcon";
+import SplashScreen from "components/wrappers/SplashScreen";
 
 export default function LoginPage() {
   return (

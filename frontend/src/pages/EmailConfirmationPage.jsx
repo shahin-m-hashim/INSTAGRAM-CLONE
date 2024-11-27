@@ -1,8 +1,8 @@
-import Footer from "../Footer";
-import LinksCard from "../cards/LinksCard";
-import LoginCard from "../cards/LoginCard";
-import SplashScreen from "../../SplashScreen";
-import EmailConfirmationForm from "../forms/EmailConfirmationForm";
+import Footer from "components/Footer";
+import LinksCard from "components/cards/LinksCard";
+import LoginCard from "components/cards/LoginCard";
+import SplashScreen from "components/wrappers/SplashScreen";
+import EmailConfirmationForm from "components/forms/EmailConfirmationForm";
 
 export default function EmailConfirmationPage() {
   return (

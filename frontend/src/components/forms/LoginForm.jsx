@@ -1,7 +1,7 @@
-import Separator from "../Separator";
-import InputField from "../../InputField";
-import useForm from "../../../hooks/useForm";
-import Button from "../Button";
+import useForm from "hooks/useForm";
+import Separator from "components/Separator";
+import Button from "components/wrappers/Button";
+import InputField from "components/fields/InputField";
 
 const initialFields = {
   identifier: {

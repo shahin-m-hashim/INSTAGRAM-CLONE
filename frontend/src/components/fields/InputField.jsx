@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import { cn } from "../utils/cn";
+import { cn } from "../../utils/cn";
 import { memo, useState } from "react";
 
 const InputField = memo(function InputField({

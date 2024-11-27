@@ -1,6 +1,4 @@
 export default function Footer() {
-  // console.log("Rendering footer");
-
   return (
     <footer className="flex flex-col gap-4 text-xs text-gray-400">
       <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2">

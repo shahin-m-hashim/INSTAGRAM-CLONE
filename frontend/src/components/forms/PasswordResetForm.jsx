@@ -1,7 +1,7 @@
-import InputField from "../../InputField";
-import useForm from "../../../hooks/useForm";
-import Button from "../Button";
-import LockIcon from "../../Icons/LockIcon";
+import useForm from "hooks/useForm";
+import LockIcon from "icons/LockIcon";
+import Button from "components/wrappers/Button";
+import InputField from "components/fields/InputField";
 
 const initialField = {
   identifier: {

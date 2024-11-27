@@ -1,16 +1,16 @@
-import Footer from "../Footer";
-import Separator from "../Separator";
-import LinksCard from "../cards/LinksCard";
-import SignUpForm from "../forms/SignUpForm";
-import SplashScreen from "../../SplashScreen";
-import Button from "../Button";
-import InstagramTextIcon from "../../Icons/InstagramTextIcon";
+import Footer from "components/Footer";
+import Separator from "components/Separator";
+import Button from "components/wrappers/Button";
+import LinksCard from "components/cards/LinksCard";
+import SignUpForm from "components/forms/SignUpForm";
+import InstagramTextIcon from "icons/InstagramTextIcon";
+import SplashScreen from "components/wrappers/SplashScreen";
 
 export default function SignUpPage() {
   return (
     <SplashScreen>
       <section className="text-white bg-black lg:gap-2">
-        <main className="flex flex-col items-center justify-center min-h-screen py-4">
+        <main className="flex flex-col items-center justify-center min-h-screen py-6">
           <div className="w-[300px] md:w-[350px] px-8 py-4 md:p-0">
             <div className="text-center md:px-10 md:py-8 md:border flex flex-col justify-center md:border-[rgb(54,54,54)]">
               <div className="flex flex-col items-center justify-center gap-4 py-4 mb-3 md:py-0">
