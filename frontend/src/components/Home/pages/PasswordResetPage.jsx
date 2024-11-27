@@ -1,15 +1,16 @@
 import Footer from "../Footer";
 import SplashScreen from "../../SplashScreen";
 import PasswordResetForm from "../forms/PasswordResetForm";
+import InstagramTextIcon from "../../Icons/InstagramTextIcon";
 
-export default function PasswordReset() {
+export default function PasswordResetPage() {
   return (
     <SplashScreen>
       <section className="relative flex flex-col text-sm text-white bg-black lg:gap-2 min-h-svh">
         <nav className="fixed bg-black z-10 top-0 left-0 right-0 border-b border-[rgb(54,54,54)] h-14">
           <div className="flex items-center h-full px-6">
             <div className="flex items-center justify-start flex-1 h-full pt-2 xl:justify-center xl:pr-40">
-              <img className="h-7" src="icons/instagram.svg" />
+              <InstagramTextIcon />
             </div>
             <div className="flex-1 h-full"></div>
           </div>

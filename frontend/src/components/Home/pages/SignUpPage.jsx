@@ -4,8 +4,9 @@ import LinksCard from "../cards/LinksCard";
 import SignUpForm from "../forms/SignUpForm";
 import SplashScreen from "../../SplashScreen";
 import Button from "../Button";
+import InstagramTextIcon from "../../Icons/InstagramTextIcon";
 
-export default function SignUp() {
+export default function SignUpPage() {
   return (
     <SplashScreen>
       <section className="text-white bg-black lg:gap-2">
@@ -13,7 +14,7 @@ export default function SignUp() {
           <div className="w-[300px] md:w-[350px] px-8 py-4 md:p-0">
             <div className="text-center md:px-10 md:py-8 md:border flex flex-col justify-center md:border-[rgb(54,54,54)]">
               <div className="flex flex-col items-center justify-center gap-4 py-4 mb-3 md:py-0">
-                <img src="images/logo.svg" alt="logo" width={170} />
+                <InstagramTextIcon className="text-white scale-[1.5]" />
                 <p className="text-[rgb(168,168,168)] font-semibold text-base">
                   Sign up to see photos and videos from your friends.
                 </p>

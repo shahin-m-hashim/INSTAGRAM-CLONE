@@ -1,10 +1,10 @@
-import SplashScreen from "../../SplashScreen";
-import LinksCard from "../cards/LinksCard";
-import LoginCard from "../cards/LoginCard";
 import Footer from "../Footer";
 import BDayForm from "../forms/BDayForm";
+import LinksCard from "../cards/LinksCard";
+import LoginCard from "../cards/LoginCard";
+import SplashScreen from "../../SplashScreen";
 
-export default function BDay() {
+export default function BDayPage() {
   return (
     <SplashScreen>
       <section className="flex flex-col text-white bg-black lg:gap-2">
@@ -17,7 +17,7 @@ export default function BDay() {
                     width: "145px",
                     height: "98x",
                   }}
-                  src="images/cake_white.webp"
+                  src="images/cake_light.webp"
                 />
                 <h1>Add Your Birthday</h1>
                 <div className="text-sm">

@@ -1,6 +1,7 @@
 import InputField from "../../InputField";
 import useForm from "../../../hooks/useForm";
 import Button from "../Button";
+import LockIcon from "../../Icons/LockIcon";
 
 const initialField = {
   identifier: {
@@ -28,12 +29,8 @@ export default function PasswordResetForm() {
     >
       <div className="flex max-w-[380px] flex-col justify-between flex-1 px-8 md:py-6">
         <div className="flex flex-col items-center">
-          <img
-            alt="lock-icon"
-            src="icons/lock.svg"
-            className="h-[95px] mb-2"
-          ></img>
-          <h1 className="mb-2 text-base font-semibold">Trouble logging in?</h1>
+          <LockIcon />
+          <h1 className="my-2 text-base font-semibold">Trouble logging in?</h1>
           <p className="text-center text-[rgb(168,168,168)] mb-3">
             Enter your email, phone, or username and we&apos;ll send you a link
             to get back into your account.

@@ -1,17 +1,19 @@
-import BDay from "./components/Home/pages/BDay";
-import Home from "./components/Home/pages/Home";
-import SignUp from "./components/Home/pages/SignUp";
-import PasswordReset from "./components/Home/pages/PasswordReset";
-import EmailConfirmation from "./components/Home/pages/EmailConfirmation";
+// import BDayPage from "./components/Home/pages/BDayPage";
+import HomePage from "./components/Home/pages/HomePage";
+// import LoginPage from "./components/Home/pages/LoginPage";
+// import SignUpPage from "./components/Home/pages/SignUpPage";
+// import PasswordResetPage from "./components/Home/pages/PasswordResetPage";
+// import EmailConfirmationPage from "./components/Home/pages/EmailConfirmationPage";
 
 export default function App() {
   return (
     <>
-      {/* <Home /> */}
-      {/* <PasswordReset /> */}
-      {/* <SignUp /> */}
-      {/* <BDay /> */}
-      {/* <EmailConfirmation /> */}
+      {/* <LoginPage /> */}
+      {/* <PasswordResetPage /> */}
+      {/* <SignUpPage /> */}
+      {/* <BDayPage /> */}
+      {/* <EmailConfirmationPage /> */}
+      <HomePage />
     </>
   );
 }

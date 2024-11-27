@@ -4,7 +4,7 @@ import LoginCard from "../cards/LoginCard";
 import SplashScreen from "../../SplashScreen";
 import EmailConfirmationForm from "../forms/EmailConfirmationForm";
 
-export default function EmailConfirmation() {
+export default function EmailConfirmationPage() {
   return (
     <SplashScreen>
       <section className="flex flex-col justify-center min-h-screen text-white bg-black lg:gap-2">
