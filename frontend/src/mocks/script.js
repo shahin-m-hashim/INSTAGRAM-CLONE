@@ -1,0 +1,266 @@
+import fs from "fs";
+
+const suggestions = [
+  {
+    id: 1,
+    tag: "Virat Kohli",
+    isVerified: true,
+    username: "virat.kohli",
+    fullName: "Virat Kohli",
+    profilePic: "images/suggestions/virat.kohli.webp",
+  },
+  {
+    id: 21,
+    tag: "Yo Yo Honey Singh",
+    isVerified: true,
+    username: "yoyohoneysingh",
+    fullName: "Yo Yo Honey Singh",
+    profilePic: "images/suggestions/yoyohoneysingh.webp",
+  },
+  {
+    id: 41,
+    tag: "Aman Sharma",
+    isVerified: true,
+    username: "amansharma_0000",
+    fullName: "Aman Sharma",
+    profilePic: "images/suggestions/amansharma_0000.webp",
+  },
+  {
+    id: 61,
+    tag: "Instagram",
+    isVerified: true,
+    username: "instagram",
+    fullName: "Instagram",
+    profilePic: "images/suggestions/instagram.webp",
+  },
+  {
+    id: 81,
+    tag: "Elvish Raosahab",
+    isVerified: true,
+    username: "elvish_yadav",
+    fullName: "Elvish Raosahab",
+    profilePic: "images/suggestions/elvish_yadav.webp",
+  },
+  {
+    id: 101,
+    tag: "Trolls Official",
+    isVerified: true,
+    username: "trolls_official",
+    fullName: "Trolls Official",
+    profilePic: "images/suggestions/trolls_official.webp",
+  },
+  {
+    id: 121,
+    tag: "Joji yoohanon thampi",
+    isVerified: true,
+    username: "joji_thampi",
+    fullName: "Joji yoohanon thampi",
+    profilePic: "images/suggestions/joji_thampi.webp",
+  },
+  {
+    id: 141,
+    tag: "Saket Gokhale",
+    isVerified: true,
+    username: "saketgokhale",
+    fullName: "Saket Gokhale",
+    profilePic: "images/suggestions/saketgokhale.webp",
+  },
+  {
+    id: 161,
+    tag: "Shahid Shaikh",
+    isVerified: true,
+    username: "itsmezidaanmerijaan",
+    fullName: "Shahid Shaikh",
+    profilePic: "images/suggestions/itsmezidaanmerijaan.webp",
+  },
+  {
+    id: 181,
+    tag: "𝕸𝖔𝖍𝖆𝖒𝖒𝖆𝖉 𝖘𝖍𝖆𝖒𝖎",
+    isVerified: true,
+    username: "mdshami.11",
+    fullName: "𝕸𝖔𝖍𝖆𝖒𝖒𝖆𝖉 𝖘𝖍𝖆𝖒𝖎",
+    profilePic: "images/suggestions/mdshami.11.webp",
+  },
+  {
+    id: 201,
+    tag: "Vikas gupta",
+    isVerified: false,
+    username: "vikas__gupta___07",
+    fullName: "Vikas gupta",
+    profilePic: "images/suggestions/vikas__gupta___07.webp",
+  },
+  {
+    id: 220,
+    tag: "RVCJ Media",
+    isVerified: true,
+    username: "rvcjinsta",
+    fullName: "RVCJ Media",
+    profilePic: "images/suggestions/rvcjinsta.webp",
+  },
+  {
+    id: 240,
+    tag: "MrBeast",
+    isVerified: true,
+    username: "mrbeast",
+    fullName: "MrBeast",
+    profilePic: "images/suggestions/mrbeast.webp",
+  },
+  {
+    id: 260,
+    tag: "Zayn Saifi",
+    isVerified: true,
+    username: "zayn.saifi2",
+    fullName: "Zayn Saifi",
+    profilePic: "images/suggestions/zayn.saifi2.webp",
+  },
+  {
+    id: 280,
+    tag: "Amitabh Bachchan",
+    isVerified: true,
+    username: "amitabhbachchan",
+    fullName: "Amitabh Bachchan",
+    profilePic: "images/suggestions/amitabhbachchan.webp",
+  },
+  {
+    id: 300,
+    tag: "Shahid Kapoor",
+    isVerified: true,
+    username: "shahidkapoor",
+    fullName: "Shahid Kapoor",
+    profilePic: "images/suggestions/shahidkapoor.webp",
+  },
+  {
+    id: 320,
+    tag: "AishwaryaRaiBachchan",
+    isVerified: true,
+    username: "aishwaryaraibachchan_arb",
+    fullName: "AishwaryaRaiBachchan",
+    profilePic: "images/suggestions/aishwaryaraibachchan_arb.webp",
+  },
+  {
+    id: 340,
+    tag: "Viral Bhayani",
+    isVerified: true,
+    username: "viralbhayani",
+    fullName: "Viral Bhayani",
+    profilePic: "images/suggestions/viralbhayani.webp",
+  },
+  {
+    id: 360,
+    tag: "Ranveer Singh",
+    isVerified: true,
+    username: "ranveersingh",
+    fullName: "Ranveer Singh",
+    profilePic: "images/suggestions/ranveersingh.webp",
+  },
+  {
+    id: 380,
+    tag: "Shri Yogi Adityanath",
+    isVerified: true,
+    username: "myogi_adityanath",
+    fullName: "Shri Yogi Adityanath",
+    profilePic: "images/suggestions/myogi_adityanath.webp",
+  },
+  {
+    id: 400,
+    tag: "Srushti Deshmukh Gowda",
+    isVerified: true,
+    username: "srushtideshmukhias",
+    fullName: "Srushti Deshmukh Gowda",
+    profilePic: "images/suggestions/srushtideshmukhias.webp",
+  },
+  {
+    id: 420,
+    tag: "Nora Fatehi",
+    isVerified: true,
+    username: "norafatehi",
+    fullName: "Nora Fatehi",
+    profilePic: "images/suggestions/norafatehi.webp",
+  },
+  {
+    id: 440,
+    tag: "FAISAL SHAIKH",
+    isVerified: true,
+    username: "mr_faisu_07",
+    fullName: "FAISAL SHAIKH",
+    profilePic: "images/suggestions/mr_faisu_07.webp",
+  },
+  {
+    id: 460,
+    tag: "𝐑𝐨𝐡𝐢𝐭 𝐙𝐢𝐧𝐣𝐮𝐫𝐤𝐞 🇮🇳",
+    isVerified: true,
+    username: "rohittt_09_",
+    fullName: "𝐑𝐨𝐡𝐢𝐭 𝐙𝐢𝐧𝐣𝐮𝐫𝐤𝐞 🇮🇳",
+    profilePic: "images/suggestions/rohittt_09_.webp",
+  },
+  {
+    id: 480,
+    tag: "Dharmendra Bilotia",
+    isVerified: true,
+    username: "dharmendra_bilotia_",
+    fullName: "Dharmendra Bilotia",
+    profilePic: "images/suggestions/dharmendra_bilotia_.webp",
+  },
+  {
+    id: 500,
+    tag: "AnushkaSharma1588",
+    isVerified: true,
+    username: "anushkasharma",
+    fullName: "AnushkaSharma1588",
+    profilePic: "images/suggestions/anushkasharma.webp",
+  },
+  {
+    id: 520,
+    tag: "Shubhankar Mishra",
+    isVerified: true,
+    username: "theshubhankarmishra",
+    fullName: "Shubhankar Mishra",
+    profilePic: "images/suggestions/theshubhankarmishra.webp",
+  },
+  {
+    id: 540,
+    tag: "Mohammed Siraj",
+    isVerified: true,
+    username: "mohammedsirajofficial",
+    fullName: "Mohammed Siraj",
+    profilePic: "images/suggestions/mohammedsirajofficial.webp",
+  },
+  {
+    id: 560,
+    tag: "Bhajan Marg Official",
+    isVerified: true,
+    username: "bhajanmarg_official",
+    fullName: "Bhajan Marg Official",
+    profilePic: "images/suggestions/bhajanmarg_official.webp",
+  },
+  {
+    id: 580,
+    tag: "Voompla",
+    isVerified: true,
+    username: "voompla",
+    fullName: "Voompla",
+    profilePic: "images/suggestions/voompla.webp",
+  },
+];
+
+function modifyTags() {
+  const tags = ["Popular", "Suggested for you"];
+
+  return suggestions.map((user) => {
+    const randomTag = tags[Math.floor(Math.random() * tags.length)];
+    return {
+      ...user,
+      tag: randomTag,
+    };
+  });
+}
+
+const updatedUsers = modifyTags();
+
+fs.writeFile("completed.json", JSON.stringify(updatedUsers, null, 2), (err) => {
+  if (err) {
+    console.error("Error writing to file", err);
+  } else {
+    console.log("File successfully created: completed.json");
+  }
+});
