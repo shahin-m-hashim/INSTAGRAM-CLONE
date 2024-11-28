@@ -13,7 +13,7 @@ export default function App() {
       {/* <SignUpPage /> */}
       {/* <BDayPage /> */}
       {/* <EmailConfirmationPage /> */}
-      {/* <HomePage /> */}
+      <HomePage />
     </>
   );
 }

@@ -1,77 +1,49 @@
-import HomeIcon from "icons/HomeIcon";
 import Footer from "components/Footer";
-import ReelsIcon from "icons/ReelsIcon";
-import SearchIcon from "icons/SearchIcon";
-import CreateIcon from "icons/CreateIcon";
-import ExploreIcon from "icons/ExploreIcon";
-import SettingsIcon from "icons/SettingsIcon";
-import MessengerIcon from "icons/MessengerIcon";
-import InstagramTextIcon from "icons/InstagramTextIcon";
-import InstagramLogoIcon from "icons/InstagramLogoIcon";
-import NotificationsIcon from "icons/NotificationsIcon";
+import Navbar from "components/Navbar";
+import Separator from "components/Separator";
+import Button from "components/wrappers/Button";
+import SearchField from "components/fields/SearchField";
+import SuggestedAccountsList from "components/lists/SuggestedAccountsList";
 
 export default function HomePage() {
   return (
-    <section className="relative h-screen overflow-hidden text-white bg-black">
-      <nav className="absolute z-10 left-0 bottom-0 h-[50px] w-full md:h-full md:w-[73px] xl:w-[250px]">
-        <div className="size-full overflow-auto bg-black flex md:flex-col justify-center sm:px-6 md:py-10 md:border-r md:border-r-[rgb(38,38,38)] border-t border-t-[rgb(38,38,38)] text-[rgb(245,245,245)]">
-          <div className="hidden md:flex">
-            <div className="hidden xl:block size-full">
-              <InstagramTextIcon />
+    <section className="min-h-screen flex flex-col text-white bg-black pt-[60px] md:pt-0 pb-[50px] md:pb-0 md:pl-[73px] xl:pl-[250px]">
+      <Navbar />
+      <main className="size-full">
+        <div className="flex justify-center">
+          <div className="xs:p-5 lg:w-1/2">
+            <div className="flex items-center w-full pt-4 xs:pt-0">
+              <div className="hidden xs:block">
+                <img src="images/friend_suggestions.webp" />
+              </div>
+              <div className="flex-1 px-5">
+                <p className="text-sm font-semibold xs:text-base">
+                  Find friends and accounts you like
+                </p>
+                <p className="text-xs xs:text-sm">
+                  Try following 5 or more accounts for a personalized
+                  experience.
+                </p>
+              </div>
+              <div className="pr-4 w-14 xs:p-0">
+                <Button>Next</Button>
+              </div>
             </div>
-            <div className="xl:hidden size-full">
-              <InstagramLogoIcon />
-            </div>
-          </div>
 
-          <div className="flex flex-1 md:justify-start md:flex-col md:my-12">
-            <div className="flex items-center justify-between w-full md:gap-8 md:flex-col">
-              <div className="flex items-center justify-center gap-4 xl:justify-start size-full">
-                <HomeIcon />
-                <span className="hidden font-bold xl:block">Home</span>
-              </div>
-              <div className="items-center hidden gap-4 md:flex size-full">
-                <SearchIcon />
-                <span className="hidden xl:block">Search</span>
-              </div>
-              <div className="flex items-center justify-center gap-4 xl:justify-start size-full">
-                <ExploreIcon />
-                <span className="hidden xl:block">Explore</span>
-              </div>
-              <div className="flex items-center justify-center gap-4 xl:justify-start size-full">
-                <ReelsIcon />
-                <span className="hidden xl:block">Reels</span>
-              </div>
-              <div className="flex items-center justify-center gap-4 xl:justify-start size-full">
-                <MessengerIcon />
-                <span className="hidden xl:block">Messages</span>
-              </div>
-              <div className="items-center hidden gap-4 md:flex size-full">
-                <NotificationsIcon />
-                <span className="hidden xl:block">Notifications</span>
-              </div>
-              <div className="flex items-center justify-center gap-4 xl:justify-start size-full">
-                <CreateIcon />
-                <span className="hidden xl:block">Create</span>
-              </div>
-              <div className="flex items-center justify-center gap-4 xl:justify-start size-full">
-                <img
-                  className="size-[24px] rounded-full"
-                  src="images/default_dp.webp"
-                />
-                <span className="hidden xl:block">Profile</span>
-              </div>
+            <div className="my-4">
+              <Separator straight={true} />
             </div>
-          </div>
 
-          <div className="items-center hidden gap-4 md:flex">
-            <SettingsIcon />
-            <span className="hidden xl:block">More</span>
+            <div className="flex flex-col w-full gap-5 px-5">
+              <div className="h-10">
+                <SearchField />
+              </div>
+
+              <SuggestedAccountsList />
+            </div>
           </div>
         </div>
-      </nav>
-      <main className="overflow-auto flex mb-[50px] md:mb-0 flex-col flex-1 md:ml-[73px] xl:ml-[250px]">
-        <div className="my-10 ">
+        <div className="hidden py-10 md:block">
           <Footer />
         </div>
       </main>

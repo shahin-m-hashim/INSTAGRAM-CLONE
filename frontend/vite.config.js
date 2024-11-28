@@ -10,6 +10,7 @@ export default defineConfig({
       utils: "/src/utils",
       icons: "/src/Icons",
       pages: "/src/pages",
+      mocks: "/src/mocks",
       routes: "/src/routes",
       components: "/src/components",
     },
