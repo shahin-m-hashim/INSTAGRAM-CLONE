@@ -17,6 +17,7 @@ body,
 .app,
 #root {
   min-width: 320px;
+  overflow-x: hidden;
   min-height: 100vh;
 }
 
@@ -30,4 +31,13 @@ input:-webkit-autofill:hover,
 input:-webkit-autofill:focus {
   -webkit-text-fill-color: rgb(245, 245, 245);
   -webkit-box-shadow: 0 0 0px 1000px rgb(18, 18, 18) inset;
+}
+
+.scrollbar-hidden {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.scrollbar-hidden::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, and Opera */
 }

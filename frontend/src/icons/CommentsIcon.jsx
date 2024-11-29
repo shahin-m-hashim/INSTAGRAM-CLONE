@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 export default function CommentsIcon({ className = "text-white" }) {
   return (
     <svg
