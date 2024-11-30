@@ -11,18 +11,22 @@ export default function SuggestionCards() {
             className="flex min-w-[170px] flex-col border border-[rgb(54,54,54)]"
           >
             <div className="flex flex-col items-center justify-center flex-1 gap-2 my-4">
-              <img
-                alt={`${user.username}`}
-                src={user.profilePic || "images/default_dp.webp"}
-                className="w-3/5 border-2 border-black rounded-full"
-              />
-              <div className="flex gap-2">
+              <div className="flex justify-center w-full">
+                <img
+                  alt={`${user.username}`}
+                  src={user.profilePic || "images/default_dp.webp"}
+                  className="w-3/5 border-2 border-black rounded-full"
+                />
+              </div>
+              <div className="flex justify-center w-full gap-2">
                 <span className="text-sm font-semibold">{user.fullName}</span>
                 {user.isVerified && (
                   <img src="icons/verified.svg" alt="verified" />
                 )}
               </div>
-              <span className="text-sm">{user.tag}</span>
+              <div className="flex justify-center w-full">
+                <span className="text-sm">{user.tag}</span>
+              </div>
             </div>
 
             <div className="text-center border-t border-t-[rgb(54,54,54)] py-2">

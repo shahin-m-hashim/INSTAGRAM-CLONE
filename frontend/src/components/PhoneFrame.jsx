@@ -20,14 +20,7 @@ export default function PhoneFrame() {
 
   return (
     <div className="relative hidden lg:flex">
-      <img
-        style={{
-          width: "465px",
-          height: "635px",
-        }}
-        alt="home-phones"
-        src="images/home/home-phones.webp"
-      />
+      <img alt="home-phones" src="images/home/home-phones.webp" />
 
       {images.map((src, idx) => (
         <img

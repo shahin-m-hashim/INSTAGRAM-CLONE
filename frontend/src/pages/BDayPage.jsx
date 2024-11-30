@@ -12,13 +12,7 @@ export default function BDayPage() {
           <div className="w-[300px] md:w-[350px] text-center">
             <div className="w-full flex flex-col items-center md:border md:border-[rgb(54,54,54)] p-5">
               <div className="flex flex-col items-center justify-center gap-3 mb-5">
-                <img
-                  style={{
-                    width: "145px",
-                    height: "98x",
-                  }}
-                  src="images/cake_light.webp"
-                />
+                <img src="images/cake_light.webp" />
                 <h1>Add Your Birthday</h1>
                 <div className="text-sm">
                   <p>This won&apos;t be a part of your public profile.</p>

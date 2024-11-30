@@ -12,13 +12,7 @@ export default function EmailConfirmationPage() {
           <div className="w-[300px] md:w-[350px] text-center">
             <div className="w-full flex flex-col items-center md:border md:border-[rgb(54,54,54)] gap-5 p-5">
               <div className="flex flex-col items-center justify-center gap-3">
-                <img
-                  style={{
-                    width: "96px",
-                    height: "79x",
-                  }}
-                  src="images/email_confirm_dark.webp"
-                />
+                <img src="images/email_confirm_dark.webp" />
                 <h1 className="text-sm font-semibold">
                   Enter Confirmation Code
                 </h1>
