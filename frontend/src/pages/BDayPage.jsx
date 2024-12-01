@@ -3,6 +3,7 @@ import BDayForm from "components/forms/BDayForm";
 import LinksCard from "components/cards/LinksCard";
 import LoginCard from "components/cards/LoginCard";
 import SplashScreen from "components/wrappers/SplashScreen";
+import Image from "components/Image";
 
 export default function BDayPage() {
   return (
@@ -12,7 +13,8 @@ export default function BDayPage() {
           <div className="w-[300px] md:w-[350px] text-center">
             <div className="w-full flex flex-col items-center md:border md:border-[rgb(54,54,54)] p-5">
               <div className="flex flex-col items-center justify-center gap-3 mb-5">
-                <img src="images/cake_light.webp" />
+                <Image src="images/cake_dark.webp" className="h-24 w-36" />
+
                 <h1>Add Your Birthday</h1>
                 <div className="text-sm">
                   <p>This won&apos;t be a part of your public profile.</p>

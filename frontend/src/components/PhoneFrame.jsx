@@ -1,5 +1,6 @@
 import { cn } from "utils/cn";
 import { useEffect, useState } from "react";
+import Image from "components/Image";
 
 const images = [
   "images/home/screenshot1.webp",
@@ -20,7 +21,12 @@ export default function PhoneFrame() {
 
   return (
     <div className="relative hidden lg:flex">
-      <img alt="home-phones" src="images/home/home-phones.webp" />
+      <Image
+        alt="phone-frame"
+        showSkeleton={false}
+        className="w-[465px] h-[635px]"
+        src="images/home/phone_frame.webp"
+      />
 
       {images.map((src, idx) => (
         <img

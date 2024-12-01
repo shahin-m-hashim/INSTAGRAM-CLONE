@@ -1,4 +1,5 @@
 import posts from "mocks/posts.json";
+import Image from "components/Image";
 import LikeIcon from "icons/LikeIcon";
 import MoreIcon from "icons/MoreIcon";
 import SaveIcon from "icons/SaveIcon";
@@ -8,14 +9,14 @@ import CommentsIcon from "icons/CommentsIcon";
 
 export default function PostsList() {
   return (
-    <div className="flex flex-col">
-      {posts.map((post) => (
-        <div key={post.id}>
+    <>
+      {posts.map((post, idx) => (
+        <div className="flex flex-col flex-grow-0 xs:w-[468px]" key={idx}>
           <div className="hidden xs:block">
-            <Separator straight={true} />
+            <Separator straight={true} height="1px" />
           </div>
 
-          <div className="px-4 xs:my-4">
+          <div className="px-4 xs:p-0 xs:my-4">
             <div className="flex flex-col">
               <div className="flex items-center justify-between pb-4">
                 <div className="flex items-center gap-2">
@@ -64,10 +65,11 @@ export default function PostsList() {
               </div>
 
               <div className="size-full">
-                <img
+                <Image
                   alt="post"
                   src={post.url}
-                  className="w-[1080px] sm:rounded-md landscape:h-[566px]"
+                  lazyLoad={true}
+                  className="w-full h-auto min-h-[480px] sm:rounded-md"
                 />
               </div>
 
@@ -110,10 +112,10 @@ export default function PostsList() {
           </div>
 
           <div className="hidden xs:block">
-            <Separator straight={true} />
+            <Separator straight={true} height="1px" />
           </div>
         </div>
       ))}
-    </div>
+    </>
   );
 }

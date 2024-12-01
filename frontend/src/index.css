@@ -41,3 +41,14 @@ input:-webkit-autofill:focus {
 .scrollbar-hidden::-webkit-scrollbar {
   display: none; /* Chrome, Safari, and Opera */
 }
+
+.active-story-gradient {
+  background-image: conic-gradient(
+    #ffd600,
+    #ff7a00,
+    #ff0069,
+    #d300c5,
+    #7638fa,
+    #ffd600
+  );
+}

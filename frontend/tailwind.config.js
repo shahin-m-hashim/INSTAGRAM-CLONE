@@ -4,7 +4,7 @@ export default {
   theme: {
     extend: {
       screens: {
-        xs: "500px",
+        xs: "486px",
         touch: { raw: "(hover: none) and (pointer: coarse)" },
       },
     },

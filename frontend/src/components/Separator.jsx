@@ -1,7 +1,7 @@
 import { cn } from "utils/cn";
 
 /* eslint-disable react/prop-types */
-export default function Separator({ straight = false }) {
+export default function Separator({ straight = false, height = "2px" }) {
   return (
     <div
       className={cn(
@@ -9,7 +9,10 @@ export default function Separator({ straight = false }) {
         "flex items-center justify-center w-full"
       )}
     >
-      <div className="flex-1 flex-grow h-[2px] bg-[rgb(38,38,38)]"></div>
+      <div
+        style={{ height }}
+        className="flex-1 flex-grow bg-[rgb(38,38,38)]"
+      ></div>
       <span
         className={cn(
           straight ? "hidden" : "block",
@@ -18,7 +21,10 @@ export default function Separator({ straight = false }) {
       >
         OR
       </span>
-      <div className="flex-1 flex-grow h-[2px] bg-[rgb(38,38,38)]"></div>
+      <div
+        style={{ height }}
+        className="flex-1 flex-grow bg-[rgb(38,38,38)]"
+      ></div>
     </div>
   );
 }

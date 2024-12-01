@@ -30,7 +30,7 @@ export default function HomePage() {
 
             <div className="py-4">
               <div className="flex items-center sm:justify-center">
-                <div className="w-full sm:w-3/4">
+                <div className="w-full">
                   <div className="flex flex-col items-center">
                     <PostsList />
                   </div>

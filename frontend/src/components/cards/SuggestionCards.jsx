@@ -1,5 +1,6 @@
 import users from "mocks/users.json";
 import HorizontalScroller from "components/wrappers/HorizontalScroller";
+import Image from "components/Image";
 
 export default function SuggestionCards() {
   return (
@@ -12,10 +13,11 @@ export default function SuggestionCards() {
           >
             <div className="flex flex-col items-center justify-center flex-1 gap-2 my-4">
               <div className="flex justify-center w-full">
-                <img
+                <Image
+                  lazyLoad="true"
                   alt={`${user.username}`}
+                  className="rounded-full size-24"
                   src={user.profilePic || "images/default_dp.webp"}
-                  className="w-3/5 border-2 border-black rounded-full"
                 />
               </div>
               <div className="flex justify-center w-full gap-2">

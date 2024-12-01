@@ -3,6 +3,7 @@
 import { cn } from "utils/cn";
 import users from "mocks/users.json";
 import NotSelectedIcon from "icons/NotSelectedIcon";
+import Image from "components/Image";
 
 export default function SuggestedAccountsList({
   type = "normal",
@@ -13,13 +14,14 @@ export default function SuggestedAccountsList({
       {users.slice(0, limit).map((user) => (
         <li key={user.id} className="flex items-center gap-3">
           <div className="h-full">
-            <img
-              src={user.profilePic || "images/default_dp.webp"}
+            <Image
               className={cn(
                 "rounded-full",
                 type === "signup" ? "size-14" : "size-12"
               )}
+              iconClassName="w-5"
               alt={`${user.username}`}
+              src={user.profilePic || "images/default_dp.webp"}
             />
           </div>
 

@@ -8,10 +8,10 @@ import HomePage from "pages/HomePage";
 export default function App() {
   return (
     <>
-      {/* <LoginPage /> */}
-      {/* <PasswordResetPage /> */}
-      {/* <SignUpPage /> */}
       {/* <BDayPage /> */}
+      {/* <LoginPage /> */}
+      {/* <SignUpPage /> */}
+      {/* <PasswordResetPage /> */}
       {/* <EmailConfirmationPage /> */}
       <HomePage />
     </>
