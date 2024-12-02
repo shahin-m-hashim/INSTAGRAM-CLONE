@@ -38,70 +38,76 @@ const items = [
 export default function ProfilePage() {
   return (
     <HomeLayout>
-      <div className="flex items-center min-h-screen px-4 xl:px-36">
-        <div className="flex flex-col py-16 size-full">
-          <div className="flex flex-col w-full md:px-6 gap-14">
-            <div className="flex justify-start flex-1 lg:px-8">
-              <div className="flex flex-1 gap-10 lg:gap-20">
-                <div className="relative flex items-center justify-center">
+      <div className="flex items-center min-h-screen lg:px-6 xl:px-36">
+        <div className="flex flex-col py-10 md:py-16 size-full">
+          <div className="flex flex-col w-full gap-8 px-6 md:gap-14">
+            <div className="flex items-center flex-1 md:gap-10 md:items-start md:flex-initial lg:gap-20">
+              <div className="flex items-center justify-center flex-1 md:flex-initial">
+                <div className="relative size-20 md:size-36">
                   <img
                     alt="profile pic"
                     src="images/default_dp.webp"
-                    className="rounded-full size-36"
+                    className="rounded-full size-full"
                   />
 
                   <div className="absolute inset-0 z-10">
-                    <div className="bg-[rgb(85,85,85)] rounded-full opacity-70 size-full"></div>
+                    <div className="flex items-center justify-center size-full">
+                      <div className="bg-[rgb(85,85,85)] rounded-full size-full opacity-70"></div>
+                    </div>
                   </div>
 
                   <div className="absolute inset-0 z-20">
                     <div className="flex items-center justify-center size-full">
-                      <img src="icons/camera.svg" alt="camera" />
+                      <img
+                        alt="camera"
+                        src="icons/camera.svg"
+                        className="size-6 md:size-auto"
+                      />
                     </div>
                   </div>
 
-                  <div className="absolute z-20 -top-8 left-8">
+                  <div className="absolute left-0 z-20 -top-5 md:-top-8 md:left-8">
                     <div className="bg-[rgb(54,54,54)] text-[rgb(168,168,168)] text-xs px-2 py-3 rounded-lg flex items-center justify-center">
                       Note ...
                       <div className="absolute -bottom-1 left-4 w-0 h-0 border-l-[5px] border-l-transparent border-r-[5px] border-r-transparent border-t-[5px] border-t-[rgb(68,68,68)]"></div>
                     </div>
                   </div>
                 </div>
+              </div>
 
-                <div className="flex flex-col gap-4">
-                  <div className="flex items-center w-full gap-2">
-                    <div className="flex items-center justify-center h-full gap-2 mr-2 text-xl">
-                      <span>Username</span>
-                    </div>
-
-                    <div className="flex items-center justify-center h-full">
-                      <button className="px-3 font-semibold py-1 text-sm text-white bg-[rgb(54,54,54)] rounded-md">
-                        Edit Profile
-                      </button>
-                    </div>
-                    <div className="flex items-center justify-center h-full">
-                      <button className="px-3 font-semibold py-1 text-sm text-white bg-[rgb(54,54,54)] rounded-md">
-                        View Archive
-                      </button>
-                    </div>
-
-                    <div className="items-center justify-center hidden h-full md:flex">
+              <div className="flex flex-col flex-1 gap-4">
+                <div className="flex flex-col items-center w-full gap-4 sm:flex-row">
+                  <div className="flex justify-between w-32 md:w-auto md:block md:text-xl">
+                    <span>Username</span>
+                    <div className="flex md:hidden">
                       <SettingsIcon />
                     </div>
                   </div>
 
-                  <div className="items-center hidden w-full gap-10 md:flex">
-                    <div>
-                      <span>0</span>&nbsp;<span>posts</span>
-                    </div>
+                  <button className="px-3 font-semibold w-32 md:w-auto py-1 text-sm text-white bg-[rgb(54,54,54)] rounded-md">
+                    Edit Profile
+                  </button>
 
-                    <div>
-                      <span>0</span>&nbsp;<span>followers</span>
-                    </div>
+                  <button className="px-3 font-semibold w-32 md:w-auto py-1 text-sm text-white bg-[rgb(54,54,54)] rounded-md">
+                    View Archive
+                  </button>
 
-                    <div>
-                      <span>0</span>&nbsp;<span>following</span>
-                    </div>
+                  <div className="items-center justify-center hidden h-full md:flex">
+                    <SettingsIcon />
+                  </div>
+                </div>
+
+                <div className="items-center hidden w-full gap-10 md:flex">
+                  <div>
+                    <span>0</span>&nbsp;<span>posts</span>
+                  </div>
+
+                  <div>
+                    <span>0</span>&nbsp;<span>followers</span>
+                  </div>
+
+                  <div>
+                    <span>0</span>&nbsp;<span>following</span>
                   </div>
                 </div>
               </div>
@@ -125,33 +131,58 @@ export default function ProfilePage() {
             </div>
           </div>
 
-          <div className="relative flex flex-col w-full my-14">
+          <div className="mt-10 md:hidden">
             <Separator straight={true} />
-            <div className="absolute inset-x-0 top-5">
-              <div className="flex px-4 text-sm font-semibold justify-evenly md:justify-center gap-14 size-full">
-                <div className="relative flex items-center gap-2">
-                  <div className="absolute inset-0 -top-5 h-[1px] bg-white"></div>
-                  <PostsIcon className="size-6 md:size-auto" />
-                  <span className="text-[rgb(245,245,245)] hidden md:block">
-                    POSTS
-                  </span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <SavedIcon className="size-6 md:size-auto text-[rgb(168,168,168)]" />
-                  <span className="text-[rgb(168,168,168)] hidden md:block">
-                    SAVED
-                  </span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <TaggedIcon className="size-6 md:size-auto text-[rgb(168,168,168)]" />
-                  <span className="text-[rgb(168,168,168)] hidden md:block">
-                    TAGGED
-                  </span>
-                </div>
+            <div className="flex items-center w-full my-2.5 justify-evenly">
+              <div className="flex flex-col items-center justify-center">
+                <span>0</span>
+                <span className="text-sm text-[rgb(168,168,168)]">posts</span>
               </div>
-              <div className="block mt-4 size-full md:hidden">
-                <Separator straight={true} />
+
+              <div className="flex flex-col items-center justify-center">
+                <span>0</span>
+                <span className="text-sm text-[rgb(168,168,168)]">
+                  followers
+                </span>
               </div>
+
+              <div className="flex flex-col items-center justify-center">
+                <span>0</span>
+                <span className="text-sm text-[rgb(168,168,168)]">
+                  following
+                </span>
+              </div>
+            </div>
+            <div className="md:hidden">
+              <Separator straight={true} />
+            </div>
+          </div>
+
+          <div className="mb-10 md:mt-10">
+            <Separator straight={true} />
+            <div className="flex my-5 text-sm font-semibold md:px-6 justify-evenly md:justify-center md:gap-14 size-full">
+              <div className="relative flex items-center justify-center flex-1 gap-2 md:flex-initial">
+                <div className="absolute inset-x-0 md:-inset-x-2 -top-[1.45rem] h-[2px] bg-white"></div>
+                <PostsIcon className="size-6 md:size-auto text-[rgb(0,149,246)] md:text-[rgb(245,245,245)]" />
+                <span className="text-[rgb(245,245,245)] hidden md:block">
+                  POSTS
+                </span>
+              </div>
+              <div className="flex items-center justify-center flex-1 gap-2 md:flex-initial">
+                <SavedIcon className="size-6 md:size-auto text-[rgb(168,168,168)]" />
+                <span className="text-[rgb(168,168,168)] hidden md:block">
+                  SAVED
+                </span>
+              </div>
+              <div className="flex items-center justify-center flex-1 gap-2 md:flex-initial">
+                <TaggedIcon className="size-6 md:size-auto text-[rgb(168,168,168)]" />
+                <span className="text-[rgb(168,168,168)] hidden md:block">
+                  TAGGED
+                </span>
+              </div>
+            </div>
+            <div className="md:hidden">
+              <Separator straight={true} />
             </div>
           </div>
 
