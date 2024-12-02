@@ -1,5 +1,6 @@
 // import BDayPage from "pages/BDayPage";
-import HomePage from "pages/HomePage";
+// import HomePage from "pages/HomePage";
+import ProfilePage from "pages/ProfilePage";
 // import LoginPage from "pages/LoginPage";
 // import SignUpPage from "pages/SignUpPage";
 // import PasswordResetPage from "pages/PasswordResetPage";
@@ -13,7 +14,8 @@ export default function App() {
       {/* <SignUpPage /> */}
       {/* <PasswordResetPage /> */}
       {/* <EmailConfirmationPage /> */}
-      <HomePage />
+      {/* <HomePage /> */}
+      <ProfilePage />
     </>
   );
 }

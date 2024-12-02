@@ -1,15 +1,16 @@
 import users from "mocks/users.json";
 import HorizontalScroller from "components/wrappers/HorizontalScroller";
 import Image from "components/Image";
+import CloseIcon from "icons/CloseIcon";
 
 export default function SuggestionCards() {
   return (
     <HorizontalScroller>
-      <div className="flex items-center gap-4">
+      <div className="flex items-center gap-4 h-[15.5rem]">
         {users.map((user) => (
           <div
             key={user.id}
-            className="flex min-w-[170px] flex-col border border-[rgb(54,54,54)]"
+            className="flex min-w-[170px] relative h-full flex-col border border-[rgb(54,54,54)]"
           >
             <div className="flex flex-col items-center justify-center flex-1 gap-2 my-4">
               <div className="flex justify-center w-full">
@@ -33,6 +34,12 @@ export default function SuggestionCards() {
 
             <div className="text-center border-t border-t-[rgb(54,54,54)] py-2">
               <a className="text-[rgb(0,149,246)] font-semibold">Follow</a>
+            </div>
+
+            <div className="absolute top-2 right-2">
+              <div className="flex items-center justify-center">
+                <CloseIcon className="text-[rgb(154,154,154)]" />
+              </div>
             </div>
           </div>
         ))}

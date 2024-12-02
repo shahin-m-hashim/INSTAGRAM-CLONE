@@ -3,8 +3,8 @@ import ReelsIcon from "icons/ReelsIcon";
 import SearchIcon from "icons/SearchIcon";
 import CreateIcon from "icons/CreateIcon";
 import ExploreIcon from "icons/ExploreIcon";
-import SettingsIcon from "icons/SettingsIcon";
 import MessengerIcon from "icons/MessengerIcon";
+import HamburgerIcon from "icons/HamburgerIcon";
 import InstagramTextIcon from "icons/InstagramTextIcon";
 import InstagramLogoIcon from "icons/InstagramLogoIcon";
 import NotificationsIcon from "icons/NotificationsIcon";
@@ -58,7 +58,7 @@ export default function Navbar() {
                 <span className="hidden xl:block">Search</span>
               </div>
               <div className="flex items-center justify-center gap-4 xl:justify-start size-full">
-                <ExploreIcon />
+                <ExploreIcon className="fill-red-500" />
                 <span className="hidden xl:block">Explore</span>
               </div>
               <div className="flex items-center justify-center gap-4 xl:justify-start size-full">
@@ -88,7 +88,7 @@ export default function Navbar() {
           </div>
 
           <div className="items-center hidden gap-4 md:flex">
-            <SettingsIcon />
+            <HamburgerIcon />
             <span className="hidden xl:block">More</span>
           </div>
         </div>

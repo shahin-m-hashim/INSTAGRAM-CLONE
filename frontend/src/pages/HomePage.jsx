@@ -20,8 +20,8 @@ export default function HomePage() {
 
             <div className="px-4 py-4">
               <div className="flex flex-col gap-4">
-                <div className="flex items-center justify-between text-sm">
-                  <h1 className="font-semibold">Suggestions for you</h1>
+                <div className="flex items-center justify-between text-sm font-semibold">
+                  <h1>Suggestions for you</h1>
                   <a className="text-[rgb(0,149,246)]">See all</a>
                 </div>
                 <SuggestionCards />
