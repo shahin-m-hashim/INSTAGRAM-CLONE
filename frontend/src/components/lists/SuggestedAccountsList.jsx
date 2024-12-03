@@ -21,7 +21,7 @@ export default function SuggestedAccountsList({
               )}
               iconClassName="w-5"
               alt={`${user.username}`}
-              src={user.profilePic || "images/default_dp.webp"}
+              src={user.profilePic || "images/default_dp_dark.webp"}
             />
           </div>
 

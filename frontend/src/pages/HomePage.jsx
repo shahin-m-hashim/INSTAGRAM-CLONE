@@ -46,7 +46,7 @@ export default function HomePage() {
               <div className="flex items-center flex-1 gap-4">
                 <img
                   className="rounded-full size-12"
-                  src="images/default_dp.webp"
+                  src="images/default_dp_dark.webp"
                 />
                 <span>username</span>
               </div>

@@ -3,32 +3,36 @@ import SavedIcon from "icons/SavedIcon";
 import TaggedIcon from "icons/TaggedIcon";
 import Separator from "components/Separator";
 import SettingsIcon from "icons/SettingsIcon";
-import HomeLayout from "components/wrappers/HomeLayout";
-import HorizontalScroller from "components/wrappers/HorizontalScroller";
+import Button from "components/wrappers/Button";
+import AddPhoneNoIcon from "icons/AddPhoneNoIcon";
 import SharePhotosIcon from "icons/SharePhotosIcon";
+import HomeLayout from "components/wrappers/HomeLayout";
+import CompleteProfileIcon from "icons/CompleteProfileIcon";
+import AddProfilePhotoIcon from "icons/AddProfilePhotoIcon";
+import HorizontalScroller from "components/wrappers/HorizontalScroller";
 
 const items = [
   {
-    image: "SharePhotosIcon",
+    icon: SharePhotosIcon,
     heading: "Share Photos",
     caption: "When you share photos, they will appear on your profile.",
     button: "Share your first photo",
   },
   {
-    image: "AddPhoneNoIcon",
+    icon: AddPhoneNoIcon,
     heading: "Add Phone Number",
     caption:
       "Add your phone number so you can reset your password, find friends and more.",
     button: "Add Phone Number",
   },
   {
-    image: "CompleteProfileIcon",
+    icon: CompleteProfileIcon,
     heading: "Complete Profile",
     caption: "Add your name and bio so friends can find you.",
     button: "Edit Profile",
   },
   {
-    image: "AddProfilePhotoIcon",
+    icon: AddProfilePhotoIcon,
     heading: "Add Profile Photo",
     caption: "Add a profile photo so friends can recognize you.",
     button: "Add Profile Photo",
@@ -188,23 +192,26 @@ export default function ProfilePage() {
 
           <div className="flex flex-col w-full gap-4 px-5">
             <h1>Getting Started</h1>
-            <HorizontalScroller duration={200}>
+            <HorizontalScroller duration={300}>
               <ul className="flex items-center gap-2">
-                {items.map((item, idx) => (
-                  <li
-                    key={idx}
-                    className="flex flex-col flex-shrink-0 items-center gap-4 border-[1px] border-[rgb(54,54,54)] p-3 w-64 h-60 rounded-md"
-                  >
-                    <SharePhotosIcon />
-                    <p className="text-sm font-semibold">{item.heading}</p>
-                    <p className="text-xs text-[rgb(168,168,168)]">
-                      {item.caption}
-                    </p>
-                    <button className="px-4 mt-auto font-semibold py-2 text-sm text-white bg-[rgb(0,149,246)] rounded-md">
-                      {item.button}
-                    </button>
-                  </li>
-                ))}
+                {items.map((item, idx) => {
+                  const Icon = item.icon;
+                  return (
+                    <li
+                      key={idx}
+                      className="flex flex-col flex-shrink-0 items-center gap-4 border-[1px] border-[rgb(54,54,54)] p-3 w-64 h-60 rounded-md"
+                    >
+                      <Icon />
+                      <p className="text-sm font-semibold">{item.heading}</p>
+                      <p className="text-xs text-[rgb(168,168,168)]">
+                        {item.caption}
+                      </p>
+                      <div className="w-full px-8 mt-auto">
+                        <Button>{item.button}</Button>
+                      </div>
+                    </li>
+                  );
+                })}
               </ul>
             </HorizontalScroller>
           </div>
