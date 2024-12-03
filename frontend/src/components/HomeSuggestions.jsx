@@ -1,9 +1,9 @@
 import Separator from "components/Separator";
 import Button from "components/wrappers/Button";
 import SearchField from "components/fields/SearchField";
-import SuggestedAccountsList from "components/lists/SuggestedAccountsList";
+import AccountsList from "components/lists/AccountsList";
 
-export default function SignupSuggestions() {
+export default function HomeSuggestions() {
   return (
     <div className="flex justify-center">
       <div className="xs:p-5 lg:w-1/2">
@@ -33,7 +33,7 @@ export default function SignupSuggestions() {
             <SearchField />
           </div>
 
-          <SuggestedAccountsList type="signup" />
+          <AccountsList type="home" />
         </div>
       </div>
     </div>

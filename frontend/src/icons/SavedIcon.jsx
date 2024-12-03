@@ -4,10 +4,10 @@ export default function SavedIcon({ className = "text-white" }) {
       aria-label
       className={className}
       fill="currentColor"
-      height={12}
+      height={18}
       role="img"
       viewBox="0 0 24 24"
-      width={12}
+      width={18}
     >
       <title />
       <polygon

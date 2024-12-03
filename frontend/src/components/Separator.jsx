@@ -1,7 +1,11 @@
 import { cn } from "utils/cn";
 
 /* eslint-disable react/prop-types */
-export default function Separator({ straight = false, height = "2px" }) {
+export default function Separator({
+  color = "bg-rgb(38,38,38)",
+  straight = false,
+  height = "2px",
+}) {
   return (
     <div
       className={cn(
@@ -11,7 +15,7 @@ export default function Separator({ straight = false, height = "2px" }) {
     >
       <div
         style={{ height }}
-        className="flex-1 flex-grow bg-[rgb(38,38,38)]"
+        className={cn("flex-1 flex-grow bg-red-500", color)}
       ></div>
       <span
         className={cn(
@@ -21,10 +25,7 @@ export default function Separator({ straight = false, height = "2px" }) {
       >
         OR
       </span>
-      <div
-        style={{ height }}
-        className="flex-1 flex-grow bg-[rgb(38,38,38)]"
-      ></div>
+      <div style={{ height }} className={cn("flex-1 flex-grow", color)}></div>
     </div>
   );
 }

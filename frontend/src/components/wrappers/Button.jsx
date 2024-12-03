@@ -4,9 +4,9 @@ import { cn } from "../../utils/cn";
 export default function Button({
   children,
   reference,
-  className,
   type = "button",
   disabled = false,
+  className,
 }) {
   return (
     <button
@@ -14,9 +14,9 @@ export default function Button({
       ref={reference}
       disabled={disabled}
       className={cn(
-        className,
         disabled ? "opacity-70 pointer-events-none" : "pointer-events-auto",
-        "rounded-lg text-sm flex items-center font-semibold w-full justify-center gap-2 p-2 h-8 bg-[rgb(0,149,246)] hover:bg-[#1877f2]"
+        "rounded-lg text-sm flex items-center h-8 p-2 font-semibold justify-center text-white gap-2 bg-[rgb(0,149,246)] hover:bg-[#1877f2]",
+        className
       )}
     >
       {children}

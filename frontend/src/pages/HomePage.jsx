@@ -2,16 +2,16 @@ import Links from "components/Links";
 import PostsList from "components/lists/PostsList";
 import StoriesList from "components/lists/StoriesList";
 import HomeLayout from "components/wrappers/HomeLayout";
-import SignupSuggestions from "components/SignupSuggestions";
+import HomeSuggestions from "components/HomeSuggestions";
+import AccountsList from "components/lists/AccountsList";
 import SuggestionCards from "components/cards/SuggestionCards";
-import SuggestedAccountsList from "components/lists/SuggestedAccountsList";
 
 export default function HomePage() {
   return (
     <HomeLayout>
-      {/* <SignupSuggestions /> */}
+      {/* <HomeSuggestions /> */}
 
-      <div className="flex sm:px-10 lg:px-24">
+      <div className="flex gap-14 sm:px-10 lg:px-24">
         <div className="flex justify-center w-full xl:w-[65%]">
           <div className="flex flex-col size-full">
             <div className="px-4 py-4">
@@ -40,7 +40,7 @@ export default function HomePage() {
           </div>
         </div>
 
-        <div className="xl:flex justify-center hidden w-[35%]">
+        <div className="xl:flex  justify-center hidden w-[35%]">
           <div className="flex flex-col justify-start flex-1 py-6">
             <div className="flex items-center justify-between m-5">
               <div className="flex items-center flex-1 gap-4">
@@ -60,7 +60,7 @@ export default function HomePage() {
                 <h1 className="text-[rgb(168,168,168)]">Suggested for you</h1>
                 <a>See all</a>
               </div>
-              <SuggestedAccountsList limit={5} />
+              <AccountsList limit={5} />
             </div>
 
             <div className="m-5">

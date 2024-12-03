@@ -1,6 +1,6 @@
 import SearchField from "components/fields/SearchField";
+import AccountsList from "components/lists/AccountsList";
 import CircledNotificationsIcon from "icons/CircledNotificationsIcon";
-import SuggestedAccountsList from "components/lists/SuggestedAccountsList";
 
 export default function NotificationsSidebar() {
   return (
@@ -16,7 +16,7 @@ export default function NotificationsSidebar() {
           </div>
 
           <div className="flex items-center justify-center w-full">
-            <h2>Activity On Your Posts</h2>
+            <h2 className="text-sm">Activity On Your Posts</h2>
           </div>
 
           <div className="flex items-center justify-center w-full text-center">
@@ -32,7 +32,7 @@ export default function NotificationsSidebar() {
             <h1>Suggested For you</h1>
           </div>
           <div>
-            <SuggestedAccountsList />
+            <AccountsList type="notifications" />
           </div>
         </div>
       </div>
