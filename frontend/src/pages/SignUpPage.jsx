@@ -18,7 +18,7 @@ export default function SignUpPage() {
                 <p className="text-[rgb(168,168,168)] font-semibold text-base">
                   Sign up to see photos and videos from your friends.
                 </p>
-                <Button type="button">
+                <Button type="button" className="w-full">
                   <img
                     width={20}
                     alt="facebook-logo"

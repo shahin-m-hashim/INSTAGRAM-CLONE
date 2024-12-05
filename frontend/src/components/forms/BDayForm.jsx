@@ -39,7 +39,7 @@ export default function BDayForm() {
         border="1px solid rgb(38,38,38)"
       />
 
-      <p className="mt-5 mb-4">
+      <p className="mt-5 mb-4 text-xs">
         Use your own birthday, even if this account is for a business, a pet, or
         something else
       </p>
@@ -48,7 +48,7 @@ export default function BDayForm() {
         <Button
           type="submit"
           disabled={!isValid}
-          className="text-[rgb(255,255,255)] my-3"
+          className="text-[rgb(255,255,255)] mb-3 w-full"
         >
           Next
         </Button>

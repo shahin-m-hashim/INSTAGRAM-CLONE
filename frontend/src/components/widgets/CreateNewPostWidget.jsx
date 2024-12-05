@@ -1,10 +1,11 @@
+/* eslint-disable react/prop-types */
 import Button from "components/wrappers/Button";
 import CloseIcon from "icons/CloseIcon";
 import NewPostIcon from "icons/NewPostIcon";
 
-export default function CreateNewPost() {
+export default function CreateNewPostWidget({ setActiveWidget }) {
   return (
-    <div className="absolute inset-0 z-10 backdrop-brightness-[0.4]">
+    <div className="absolute inset-0 z-10 backdrop-brightness-[0.4] pointer-events-auto">
       <div className="flex items-center justify-center size-full">
         <div className="flex flex-col w-[500px]">
           <div className="flex items-center justify-center p-3 bg-black">
@@ -21,7 +22,10 @@ export default function CreateNewPost() {
           </div>
         </div>
         <div className="absolute top-0 right-0">
-          <button className="flex items-center justify-end p-5">
+          <button
+            onClick={() => setActiveWidget(null)}
+            className="flex items-center justify-end p-5"
+          >
             <CloseIcon className="text-white size-6" />
           </button>
         </div>

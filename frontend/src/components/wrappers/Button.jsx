@@ -4,9 +4,9 @@ import { cn } from "../../utils/cn";
 export default function Button({
   children,
   reference,
+  className,
   type = "button",
   disabled = false,
-  className,
 }) {
   return (
     <button

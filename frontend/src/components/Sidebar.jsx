@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import { cn } from "utils/cn";
 import { useState } from "react";
 import HomeIcon from "icons/HomeIcon";
@@ -13,8 +14,9 @@ import NotificationsIcon from "icons/NotificationsIcon";
 import SearchSidebar from "components/sidebars/SearchSidebar";
 import MessengerSidebar from "components/sidebars/MessengerSidebar";
 import NotificationsSidebar from "components/sidebars/NotificationsSidebar";
+import ProfilePicture from "components/ProfilePicture";
 
-export default function Sidebar() {
+export default function Sidebar({ setActiveWidget }) {
   const [activeSidebar, setActiveSidebar] = useState(null);
 
   const handleSidebar = (sidebar) =>
@@ -27,7 +29,7 @@ export default function Sidebar() {
       <div
         className={cn(
           activeSidebar ? "w-[80px]" : "w-[80px] xl:w-[250px]",
-          "hidden md:block absolute inset-y-0 z-10 left-0 pointer-events-auto"
+          "hidden md:block absolute inset-y-0 left-0 pointer-events-auto"
         )}
       >
         <div className="size-full bg-black flex-col py-4 px-2 xl:px-4 flex border-r border-r-[rgb(38,38,38,0.7)] text-[rgb(245,245,245)]">
@@ -113,7 +115,10 @@ export default function Sidebar() {
                 )}
               </button>
 
-              <button className="flex items-center justify-center flex-col xl:flex-row px-2.5 py-3 transition-all duration-100 ease-in rounded-md hover:bg-[rgb(38,38,38,0.7)] gap-4 xl:justify-start size-full">
+              <button
+                onClick={() => setActiveWidget("createNewPost")}
+                className="flex items-center justify-center flex-col xl:flex-row px-2.5 py-3 transition-all duration-100 ease-in rounded-md hover:bg-[rgb(38,38,38,0.7)] gap-4 xl:justify-start size-full"
+              >
                 <CreateIcon />
                 {!activeSidebar && (
                   <span className="hidden xl:block">Create</span>
@@ -121,10 +126,7 @@ export default function Sidebar() {
               </button>
 
               <a className="flex items-center justify-center flex-col xl:flex-row px-2.5 py-3 transition-all duration-100 ease-in rounded-md hover:bg-[rgb(38,38,38,0.7)] gap-4 xl:justify-start size-full">
-                <img
-                  className="size-[24px] rounded-full"
-                  src="images/default_dp_dark.webp"
-                />
+                <ProfilePicture className="size-7" />
                 {!activeSidebar && (
                   <span className="hidden xl:block">Profile</span>
                 )}
@@ -132,8 +134,14 @@ export default function Sidebar() {
             </div>
           </div>
 
-          <div className="relative">
-            <button className="flex items-center flex-col xl:flex-row px-2.5 py-3 transition-all duration-100 ease-in rounded-md hover:bg-[rgb(38,38,38,0.7)] justify-center xl:justify-start w-full gap-4">
+          <div>
+            <button
+              onBlur={() => setActiveWidget(null)}
+              onClick={() =>
+                setActiveWidget((prev) => (prev === "more" ? null : "more"))
+              }
+              className="flex items-center flex-col xl:flex-row px-2.5 py-3 transition-all duration-100 ease-in rounded-md hover:bg-[rgb(38,38,38,0.7)] justify-center xl:justify-start w-full gap-4"
+            >
               <HamburgerIcon />
               {!activeSidebar && <span className="hidden xl:block">More</span>}
             </button>

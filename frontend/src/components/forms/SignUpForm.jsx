@@ -65,7 +65,12 @@ export default function SignUpForm() {
           <a className="text-white">Cookies Policy</a>
           <span>.</span>
         </p>
-        <Button type="submit" disabled={true} reference={submitBtnRef}>
+        <Button
+          type="submit"
+          disabled={true}
+          className="w-full"
+          reference={submitBtnRef}
+        >
           Sign up
         </Button>
       </div>

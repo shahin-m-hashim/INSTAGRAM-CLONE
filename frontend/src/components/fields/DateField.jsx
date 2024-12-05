@@ -92,7 +92,7 @@ export default function DateField({
           ))}
         </select>
       </div>
-      <p className="text-sm text-rbg(168,168,168)">
+      <p className="text-xs text-rbg(168,168,168)">
         You need to enter the date you were born
       </p>
     </div>

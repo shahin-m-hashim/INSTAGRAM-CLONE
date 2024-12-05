@@ -5,6 +5,7 @@ import HomeLayout from "components/wrappers/HomeLayout";
 import HomeSuggestions from "components/HomeSuggestions";
 import AccountsList from "components/lists/AccountsList";
 import SuggestionCards from "components/cards/SuggestionCards";
+import ProfilePicture from "components/ProfilePicture";
 
 export default function HomePage() {
   return (
@@ -44,10 +45,7 @@ export default function HomePage() {
           <div className="flex flex-col justify-start flex-1 py-6">
             <div className="flex items-center justify-between m-5">
               <div className="flex items-center flex-1 gap-4">
-                <img
-                  className="rounded-full size-12"
-                  src="images/default_dp_dark.webp"
-                />
+                <ProfilePicture className="size-12" />
                 <span>username</span>
               </div>
               <div className="text-sm">

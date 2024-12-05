@@ -8,7 +8,7 @@ export default function StoriesList() {
       <ul className="flex items-center gap-4">
         {users.map((user) => (
           <li key={user.id}>
-            <div className="rounded-full p-[2px]  border-2 border-[rgb(54,54,54)]">
+            <div className="rounded-full p-[2px] active-story-gradient border-2 border-[rgb(54,54,54)]">
               <Image
                 lazyLoad={true}
                 alt={user.username}

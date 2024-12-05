@@ -17,8 +17,8 @@ body,
 .app,
 #root {
   min-width: 320px;
-  overflow-x: hidden;
   min-height: 100vh;
+  overflow-x: hidden;
 }
 
 a {
@@ -51,17 +51,4 @@ input:-webkit-autofill:focus {
     #7638fa,
     #ffd600
   );
-}
-
-.overlay-filter {
-  position: relative;
-}
-
-.overlay-filter::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(128, 128, 128, 0.5);
-  border-radius: 50%;
-  z-index: 1;
 }
