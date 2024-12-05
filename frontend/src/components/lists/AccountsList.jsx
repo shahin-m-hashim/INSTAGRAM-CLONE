@@ -1,10 +1,8 @@
-/* eslint-disable react/prop-types */
-
 import { cn } from "utils/cn";
 import users from "mocks/users.json";
 import Image from "components/Image";
 import Button from "components/wrappers/Button";
-import NotSelectedIcon from "icons/NotSelectedIcon";
+import CheckboxInput from "components/CheckboxInput";
 
 export default function AccountsList({
   type = "normal",
@@ -49,7 +47,7 @@ export default function AccountsList({
 
           <div className="flex justify-center h-full">
             {type === "home" ? (
-              <NotSelectedIcon className="size-6" />
+              <CheckboxInput theme="light" />
             ) : type === "notifications" ? (
               <Button className="h-8 px-6">Follow</Button>
             ) : (

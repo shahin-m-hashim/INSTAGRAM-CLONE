@@ -1,4 +1,4 @@
-import SavedIcon from "icons/SavedIcon";
+import SaveIcon from "icons/SaveIcon";
 import ReportIcon from "icons/ReportIcon";
 import Separator from "components/Separator";
 import SettingsIcon from "icons/SettingsIcon";
@@ -19,7 +19,7 @@ export default function MoreWidget() {
             <span>Your Activity</span>
           </a>
           <a className="flex items-center gap-4 px-1 py-2  transition-all duration-100 ease-in rounded-md hover:bg-[rgb(58,58,58)]">
-            <SavedIcon className="w-10" />
+            <SaveIcon className="w-10" />
             <span>Saved</span>
           </a>
           <button className="flex items-center gap-4 px-1 py-2  transition-all duration-100 ease-in rounded-md hover:bg-[rgb(58,58,58)]">

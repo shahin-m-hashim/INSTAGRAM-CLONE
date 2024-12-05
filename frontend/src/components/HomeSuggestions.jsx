@@ -20,7 +20,7 @@ export default function HomeSuggestions() {
             </p>
           </div>
           <div className="pr-4 w-14 xs:p-0">
-            <Button>Next</Button>
+            <Button className="px-4">Next</Button>
           </div>
         </div>
 

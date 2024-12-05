@@ -1,5 +1,3 @@
-/* eslint-disable react/prop-types */
-
 import { useEffect, useRef, useState } from "react";
 import ArrowCircleLeft from "icons/ArrowCircleLeft";
 import ArrowCircleRight from "icons/ArrowCircleRight";

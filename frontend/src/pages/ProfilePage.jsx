@@ -1,5 +1,5 @@
+import SaveIcon from "icons/SaveIcon";
 import PostsIcon from "icons/PostsIcon";
-import SavedIcon from "icons/SavedIcon";
 import TaggedIcon from "icons/TaggedIcon";
 import Separator from "components/Separator";
 import SettingsIcon from "icons/SettingsIcon";
@@ -153,7 +153,7 @@ export default function ProfilePage() {
                 </span>
               </div>
               <div className="flex items-center justify-center flex-1 gap-2 md:flex-initial">
-                <SavedIcon className="size-6 md:size-auto text-[rgb(168,168,168)]" />
+                <SaveIcon className="size-6 md:size-auto text-[rgb(168,168,168)]" />
                 <span className="text-[rgb(168,168,168)] hidden md:block">
                   SAVED
                 </span>

@@ -1,7 +1,6 @@
-/* eslint-disable react/prop-types */
-import Button from "components/wrappers/Button";
 import CloseIcon from "icons/CloseIcon";
 import NewPostIcon from "icons/NewPostIcon";
+import Button from "components/wrappers/Button";
 
 export default function CreateNewPostWidget({ setActiveWidget }) {
   return (

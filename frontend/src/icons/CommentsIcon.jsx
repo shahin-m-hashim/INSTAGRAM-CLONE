@@ -1,11 +1,12 @@
-/* eslint-disable react/prop-types */
-export default function CommentsIcon({ className = "text-white" }) {
+import { cn } from "utils/cn";
+
+export default function CommentsIcon({ className }) {
   return (
     <svg
       aria-label="Comment"
       fill="currentColor"
       height={24}
-      className={className}
+      className={cn("text-white", className)}
       role="img"
       viewBox="0 0 24 24"
       width={24}

@@ -1,14 +1,16 @@
-export default function AddPhoneNoIcon({ className = "text-white" }) {
+import { cn } from "utils/cn";
+
+export default function AddPhoneNoIcon({ className }) {
   return (
     <svg
-      aria-label="Add your phone number so you can reset your password, find friends and more."
-      className={className}
-      fill="currentColor"
-      height={56}
       role="img"
-      viewBox="0 0 96 96"
       width={56}
+      height={56}
+      fill="currentColor"
+      viewBox="0 0 96 96"
       xmlns="http://www.w3.org/2000/svg"
+      className={cn("text-white", className)}
+      aria-label="Add your phone number so you can reset your password, find friends and more."
     >
       <title>
         Add your phone number so you can reset your password, find friends and

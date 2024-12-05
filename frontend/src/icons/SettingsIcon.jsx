@@ -1,8 +1,9 @@
-export default function SettingsIcon({ className = "text-white" }) {
+import { cn } from "utils/cn";
+export default function SettingsIcon({ className }) {
   return (
     <svg
       aria-label="Options"
-      className={className}
+      className={cn("text-white", className)}
       fill="currentColor"
       height={24}
       role="img"

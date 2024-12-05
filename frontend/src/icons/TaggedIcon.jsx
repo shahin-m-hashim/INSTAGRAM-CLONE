@@ -1,8 +1,9 @@
-export default function TaggedIcon({ className = "text-white" }) {
+import { cn } from "utils/cn";
+export default function TaggedIcon({ className }) {
   return (
     <svg
       aria-label
-      className={className}
+      className={cn("text-white", className)}
       fill="currentColor"
       height={12}
       role="img"

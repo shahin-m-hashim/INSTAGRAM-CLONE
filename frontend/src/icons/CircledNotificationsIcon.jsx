@@ -1,8 +1,10 @@
-export default function CircledNotificationsIcon({ className = "text-white" }) {
+import { cn } from "utils/cn";
+
+export default function CircledNotificationsIcon({ className }) {
   return (
     <svg
       aria-label="Activity On Your Posts"
-      className={className}
+      className={cn("text-white", className)}
       fill="currentColor"
       height={62}
       role="img"

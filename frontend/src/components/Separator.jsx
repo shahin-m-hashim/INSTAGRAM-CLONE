@@ -1,6 +1,5 @@
 import { cn } from "utils/cn";
 
-/* eslint-disable react/prop-types */
 export default function Separator({ straight = false, className }) {
   return (
     <div

@@ -1,5 +1,5 @@
-/* eslint-disable react/prop-types */
-export default function ReelsIcon({ className = "text-white" }) {
+import { cn } from "utils/cn";
+export default function ReelsIcon({ className }) {
   return (
     <svg
       role="img"
@@ -7,7 +7,7 @@ export default function ReelsIcon({ className = "text-white" }) {
       height={24}
       aria-label="Reels"
       viewBox="0 0 24 24"
-      className={className}
+      className={cn("text-white", className)}
       xmlns="http://www.w3.org/2000/svg"
     >
       <title>Reels</title>

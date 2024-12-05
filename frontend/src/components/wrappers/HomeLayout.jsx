@@ -1,13 +1,13 @@
-/* eslint-disable react/prop-types */
-
+import { useState } from "react";
 import Footer from "components/Footer";
 import Sidebar from "components/Sidebar";
 import TopNavbar from "components/navbars/TopNavbar";
 import MoreWidget from "components/widgets/MoreWidget";
 import BottomNavbar from "components/navbars/BottomNavbar";
 import SplashScreen from "components/wrappers/SplashScreen";
+import SettingsWidget from "components/widgets/SettingsWidget";
 import CreateNewPostWidget from "components/widgets/CreateNewPostWidget";
-import { useState } from "react";
+import CreateNewNoteWidget from "components/widgets/CreateNewNoteWidget";
 
 export default function HomeLayout({ children }) {
   const [activeWidget, setActiveWidget] = useState(null);
@@ -23,6 +23,11 @@ export default function HomeLayout({ children }) {
           {activeWidget === "more" && <MoreWidget />}
           {activeWidget === "createNewPost" && (
             <CreateNewPostWidget setActiveWidget={setActiveWidget} />
+          )}
+          {activeWidget === "settings" && <SettingsWidget />}
+
+          {activeWidget === "createNewNote" && (
+            <CreateNewNoteWidget setActiveWidget={setActiveWidget} />
           )}
         </div>
 

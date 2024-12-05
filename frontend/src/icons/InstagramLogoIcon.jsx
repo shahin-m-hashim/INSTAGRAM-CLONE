@@ -1,12 +1,12 @@
-/* eslint-disable react/prop-types */
-export default function InstagramLogoIcon({ className = "text-white" }) {
+import { cn } from "utils/cn";
+export default function InstagramLogoIcon({ className }) {
   return (
     <svg
       role="img"
       width={24}
       height={24}
       viewBox="0 0 24 24"
-      className={className}
+      className={cn("text-white", className)}
       aria-label="Instagram"
       xmlns="http://www.w3.org/2000/svg"
     >

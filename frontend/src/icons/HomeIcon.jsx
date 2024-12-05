@@ -1,6 +1,5 @@
-/* eslint-disable react/prop-types */
-
-export default function HomeIcon({ active = false, className = "text-white" }) {
+import { cn } from "utils/cn";
+export default function HomeIcon({ active = false, className }) {
   return (
     <>
       {active ? (
@@ -10,7 +9,7 @@ export default function HomeIcon({ active = false, className = "text-white" }) {
           height={24}
           aria-label="Home"
           viewBox="0 0 24 24"
-          className={className}
+          className={cn("text-white", className)}
           xmlns="http://www.w3.org/2000/svg"
         >
           <title>Home</title>
@@ -27,7 +26,7 @@ export default function HomeIcon({ active = false, className = "text-white" }) {
           role="img"
           viewBox="0 0 24 24"
           width={24}
-          className={className}
+          className={cn("text-white", className)}
           xmlns="http://www.w3.org/2000/svg"
         >
           <title>Home</title>

@@ -1,12 +1,12 @@
-/* eslint-disable react/prop-types */
-export default function DropDownArrowIcon({ className = "text-white" }) {
+import { cn } from "utils/cn";
+export default function DropDownArrowIcon({ className }) {
   return (
     <svg
       role="img"
       width={12}
       height={12}
       viewBox="0 0 24 24"
-      className={className}
+      className={cn("text-white", className)}
       aria-label="Down chevron icon"
     >
       <title>Down chevron icon</title>

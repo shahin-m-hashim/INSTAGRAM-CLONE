@@ -1,8 +1,9 @@
-export default function SwitchAppearanceIcon({ className = "text-white" }) {
+import { cn } from "utils/cn";
+export default function SwitchAppearanceIcon({ className }) {
   return (
     <svg
       aria-label="Theme icon"
-      className={className}
+      className={cn("text-white", className)}
       fill="currentColor"
       height="18"
       role="img"

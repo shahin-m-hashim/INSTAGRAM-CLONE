@@ -1,5 +1,3 @@
-/* eslint-disable react/prop-types */
-
 import { cn } from "utils/cn";
 import { useEffect, useRef, useState } from "react";
 

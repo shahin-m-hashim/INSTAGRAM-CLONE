@@ -1,8 +1,10 @@
-export default function AddProfilePhotoIcon({ className = "text-white" }) {
+import { cn } from "utils/cn";
+
+export default function AddProfilePhotoIcon({ className }) {
   return (
     <svg
       aria-label="When you share photos, they will appear on your profile."
-      className={className}
+      className={cn("text-white", className)}
       fill="currentColor"
       height={56}
       role="img"

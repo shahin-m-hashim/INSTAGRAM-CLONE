@@ -1,9 +1,9 @@
-/* eslint-disable react/prop-types */
-export default function LikeIcon({ className = "text-white" }) {
+import { cn } from "utils/cn";
+export default function LikeIcon({ className }) {
   return (
     <svg
       aria-label="Like"
-      className={className}
+      className={cn("text-white", className)}
       fill="currentColor"
       height="24"
       role="img"

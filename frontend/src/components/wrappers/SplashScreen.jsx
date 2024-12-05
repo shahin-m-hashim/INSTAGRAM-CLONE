@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 import { useEffect, useState } from "react";
 
 export default function SplashScreen({ delay = 500, children }) {

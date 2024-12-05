@@ -1,18 +1,18 @@
 import Links from "components/Links";
 import PostsList from "components/lists/PostsList";
 import StoriesList from "components/lists/StoriesList";
+import ProfilePicture from "components/ProfilePicture";
 import HomeLayout from "components/wrappers/HomeLayout";
 import HomeSuggestions from "components/HomeSuggestions";
 import AccountsList from "components/lists/AccountsList";
 import SuggestionCards from "components/cards/SuggestionCards";
-import ProfilePicture from "components/ProfilePicture";
 
 export default function HomePage() {
   return (
     <HomeLayout>
-      {/* <HomeSuggestions /> */}
+      <HomeSuggestions />
 
-      <div className="flex gap-14 sm:px-10 lg:px-24">
+      {/* <div className="flex gap-14 sm:px-10 lg:px-24">
         <div className="flex justify-center w-full xl:w-[65%]">
           <div className="flex flex-col size-full">
             <div className="px-4 py-4">
@@ -66,7 +66,7 @@ export default function HomePage() {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
     </HomeLayout>
   );
 }

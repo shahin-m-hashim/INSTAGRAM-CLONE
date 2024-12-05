@@ -1,8 +1,9 @@
-export default function SaveIcon({ className = "text-white" }) {
+import { cn } from "utils/cn";
+export default function SaveIcon({ className }) {
   return (
     <svg
       aria-label="Save"
-      className={className}
+      className={cn("text-white", className)}
       xmlns="http://www.w3.org/2000/svg"
       fill="currentColor"
       height={24}

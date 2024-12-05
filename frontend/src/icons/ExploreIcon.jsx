@@ -1,14 +1,11 @@
-/* eslint-disable react/prop-types */
-export default function ExploreIcon({
-  active = false,
-  className = "text-white",
-}) {
+import { cn } from "utils/cn";
+export default function ExploreIcon({ active = false, className }) {
   return (
     <>
       {active ? (
         <svg
           aria-label="Explore"
-          className={className}
+          className={cn("text-white", className)}
           fill="currentColor"
           height="24"
           role="img"
@@ -25,7 +22,7 @@ export default function ExploreIcon({
           height={24}
           viewBox="0 0 24 24"
           aria-label="Explore"
-          className={className}
+          className={cn("text-white", className)}
           xmlns="http://www.w3.org/2000/svg"
         >
           <title>Explore</title>

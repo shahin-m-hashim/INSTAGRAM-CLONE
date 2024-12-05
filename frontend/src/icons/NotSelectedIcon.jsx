@@ -1,9 +1,9 @@
-/* eslint-disable react/prop-types */
-export default function NotSelectedIcon({ className = "text-white" }) {
+import { cn } from "utils/cn";
+export default function NotSelectedIcon({ className }) {
   return (
     <svg
       fill="none"
-      className={className}
+      className={cn("text-white", className)}
       viewBox="0 0 512 512"
       xmlns="http://www.w3.org/2000/svg"
     >

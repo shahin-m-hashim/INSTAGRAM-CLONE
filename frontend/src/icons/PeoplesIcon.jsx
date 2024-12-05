@@ -1,42 +1,38 @@
 import { cn } from "utils/cn";
-export default function NewMessageIcon({ className }) {
+export default function PeoplesIcon({ className }) {
   return (
     <svg
-      aria-label="New message"
+      aria-label="Users pano icon"
       className={cn("text-white", className)}
       fill="currentColor"
-      height={24}
+      height={14}
       role="img"
       viewBox="0 0 24 24"
-      width={24}
+      width={14}
     >
-      <title>New message</title>
+      <title>Users pano icon</title>
       <path
-        d="M12.202 3.203H5.25a3 3 0 0 0-3 3V18.75a3 3 0 0 0 3 3h12.547a3 3 0 0 0 3-3v-6.952"
+        d="M12.931 4.132a3.5 3.5 0 1 1 2.575 5.871h-.06M22 17.546v-.688A3.858 3.858 0 0 0 18.143 13h-3.64"
         fill="none"
         stroke="currentColor"
         strokeLinecap="round"
-        strokeLinejoin="round"
+        strokeMiterlimit={10}
         strokeWidth={2}
       />
       <path
-        d="M10.002 17.226H6.774v-3.228L18.607 2.165a1.417 1.417 0 0 1 2.004 0l1.224 1.225a1.417 1.417 0 0 1 0 2.004Z"
+        d="M12.004 9.502a3.5 3.5 0 1 1-3.501-3.5 3.501 3.501 0 0 1 3.5 3.5Z"
         fill="none"
         stroke="currentColor"
-        strokeLinecap="round"
-        strokeLinejoin="round"
+        strokeMiterlimit={10}
         strokeWidth={2}
       />
-      <line
+      <path
+        d="M14.997 20.546v-.687A3.858 3.858 0 0 0 11.139 16H5.858A3.858 3.858 0 0 0 2 19.859v.687"
         fill="none"
         stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
         strokeWidth={2}
-        x1="16.848"
-        x2="20.076"
-        y1="3.924"
-        y2="7.153"
       />
     </svg>
   );
