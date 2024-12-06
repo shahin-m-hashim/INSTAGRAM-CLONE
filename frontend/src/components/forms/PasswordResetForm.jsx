@@ -25,9 +25,9 @@ export default function PasswordResetForm() {
   return (
     <form
       onSubmit={handleSubmit}
-      className="rounded-sm  md:border flex flex-col justify-between items-center md:border-[rgb(54,54,54)]"
+      className="rounded-sm xs:border flex flex-col justify-between items-center border-[rgb(54,54,54)]"
     >
-      <div className="flex max-w-[380px] flex-col justify-between flex-1 px-8 md:py-6">
+      <div className="flex max-w-[380px] flex-col justify-between flex-1 px-8 py-6">
         <div className="flex flex-col items-center">
           <LockIcon />
           <h1 className="my-2 text-base font-semibold">Trouble logging in?</h1>
@@ -55,7 +55,8 @@ export default function PasswordResetForm() {
             <a className="text-xs">Can&apos;t reset your password?</a>
           </div>
         </div>
-        <div className="flex flex-col gap-4 mb-14">
+
+        <div className="flex flex-col gap-4 mb-10">
           <div className="flex items-center justify-center space-x-4">
             <div className="flex-1 border-t border-t-[#262626]"></div>
             <span className="text-[rgb(168,168,168)] font-semibold">OR</span>

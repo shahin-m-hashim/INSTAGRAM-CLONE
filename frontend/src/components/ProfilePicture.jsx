@@ -1,5 +1,5 @@
-import { useRef, useState } from "react";
 import { cn } from "utils/cn";
+import { useRef, useState } from "react";
 
 export default function ProfilePicture({
   className,
@@ -19,7 +19,7 @@ export default function ProfilePicture({
   };
 
   return (
-    <div className={cn("relative rounded-full", className)}>
+    <div className={cn("relative size-14 rounded-full", className)}>
       <div className="absolute inset-0 z-10">
         <img
           alt="profile pic"

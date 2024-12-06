@@ -1,5 +1,4 @@
 import { useState } from "react";
-import Footer from "components/Footer";
 import Sidebar from "components/Sidebar";
 import TopNavbar from "components/navbars/TopNavbar";
 import MoreWidget from "components/widgets/MoreWidget";
@@ -9,13 +8,13 @@ import SettingsWidget from "components/widgets/SettingsWidget";
 import CreateNewPostWidget from "components/widgets/CreateNewPostWidget";
 import CreateNewNoteWidget from "components/widgets/CreateNewNoteWidget";
 
-export default function HomeLayout({ children }) {
+export default function AppLayout({ children }) {
   const [activeWidget, setActiveWidget] = useState(null);
 
   return (
     <SplashScreen>
-      <section>
-        <div className="fixed inset-0 z-10 h-screen min-w-[320px] pointer-events-none">
+      <section className="min-h-screen min-w-[320px]">
+        <div className="fixed inset-0 z-10 h-screen min-w-[320px] overflow-hidden pointer-events-none">
           <Sidebar setActiveWidget={setActiveWidget} />
           <TopNavbar />
           <BottomNavbar />
@@ -31,14 +30,7 @@ export default function HomeLayout({ children }) {
           )}
         </div>
 
-        <main className="absolute inset-x-0 top-0 z-0">
-          <div className="flex flex-col min-h-screen min-w-[320px] text-white bg-black md:pt-0 pb-[50px] md:pb-0 md:pl-[80px] xl:pl-[250px] pt-[60px]">
-            {children}
-            {/* <div className="hidden my-10 md:block">
-              <Footer />
-            </div> */}
-          </div>
-        </main>
+        <div className="absolute inset-0 z-0">{children}</div>
       </section>
     </SplashScreen>
   );

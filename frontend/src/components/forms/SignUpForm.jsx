@@ -38,7 +38,7 @@ export default function SignUpForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="flex flex-col gap-4 mt-3">
+    <form onSubmit={handleSubmit} className="flex flex-col gap-4">
       <div className="flex flex-col gap-1.5">
         {Object.keys(fields).map((field) => (
           <InputField

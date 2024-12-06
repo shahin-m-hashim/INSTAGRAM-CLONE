@@ -25,7 +25,7 @@ import ArchivingAndDownloadingIcon from "icons/ArchivingAndDownloadingIcon";
 
 export default function SettingsSidebar() {
   return (
-    <div className="w-[330px] h-screen overflow-auto flex-col p-5">
+    <div className="w-full xl:w-[330px] md:w-[310px] h-screen overflow-auto md:pt-0 pb-[50px] md:pb-0 pt-[60px] p-5 flex-shrink-0 md:border-r border-r-[rgb(54,54,54,0.7)]">
       <div className="flex p-5">
         <h1 className="text-xl font-bold">Settings</h1>
       </div>

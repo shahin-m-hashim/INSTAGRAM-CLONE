@@ -6,19 +6,21 @@
 *::before,
 *::after {
   margin: 0;
-  z-index: 0;
   padding: 0;
   box-sizing: border-box;
   scroll-behavior: smooth;
 }
 
-html,
-body,
-.app,
-#root {
-  min-width: 320px;
-  min-height: 100vh;
-  overflow-x: hidden;
+html {
+  overflow: hidden;
+}
+
+.scrollbar-light {
+  scrollbar-color: rgb(150, 150, 150) rgb(245, 245, 245); /* Thumb and track colors */
+}
+
+.scrollbar-dark {
+  scrollbar-color: rgb(100, 100, 100) rgb(45, 45, 45); /* Thumb and track colors */
 }
 
 a {

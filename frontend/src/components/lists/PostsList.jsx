@@ -64,14 +64,12 @@ export default function PostsList() {
                 <MoreIcon />
               </div>
 
-              <div className="size-full">
-                <Image
-                  alt="post"
-                  src={post.url}
-                  lazyLoad={true}
-                  className="w-full h-auto min-h-[480px] sm:rounded-md"
-                />
-              </div>
+              <Image
+                alt="post"
+                src={post.url}
+                lazyLoad={true}
+                className="rounded-md"
+              />
 
               <div className="flex flex-col gap-2 py-4">
                 <div className="flex items-center justify-between">

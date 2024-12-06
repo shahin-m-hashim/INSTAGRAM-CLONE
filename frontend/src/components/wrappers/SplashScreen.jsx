@@ -4,9 +4,18 @@ export default function SplashScreen({ delay = 500, children }) {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
+    let timer;
+    const preventScroll = (e) => e.preventDefault();
+
     const handlePageLoad = () => {
-      const timer = setTimeout(() => setIsLoading(false), delay);
-      return () => clearTimeout(timer);
+      timer = setTimeout(() => {
+        setIsLoading(false);
+        window.removeEventListener("wheel", preventScroll);
+        window.removeEventListener("touchmove", preventScroll);
+      }, delay);
+
+      window.addEventListener("wheel", preventScroll, { passive: false });
+      window.addEventListener("touchmove", preventScroll, { passive: false });
     };
 
     if (document.readyState === "complete") {
@@ -15,7 +24,12 @@ export default function SplashScreen({ delay = 500, children }) {
       window.addEventListener("load", handlePageLoad);
     }
 
-    return () => window.removeEventListener("load", handlePageLoad);
+    return () => {
+      clearTimeout(timer);
+      window.removeEventListener("load", handlePageLoad);
+      window.removeEventListener("wheel", preventScroll);
+      window.removeEventListener("touchmove", preventScroll);
+    };
   }, [delay]);
 
   return (
@@ -42,11 +56,7 @@ export default function SplashScreen({ delay = 500, children }) {
         </div>
       )}
 
-      <div
-        className={isLoading ? "absolute inset-0 h-screen overflow-hidden" : ""}
-      >
-        {children}
-      </div>
+      {children}
     </>
   );
 }
