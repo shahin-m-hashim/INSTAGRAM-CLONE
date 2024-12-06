@@ -7,6 +7,7 @@
 // import EmailConfirmationPage from "pages/EmailConfirmationPage";
 
 import NotFoundPage from "pages/NotFoundPage";
+import SettingsPage from "pages/SettingsPage";
 
 export default function App() {
   return (
@@ -18,7 +19,8 @@ export default function App() {
       {/* <EmailConfirmationPage /> */}
       {/* <HomePage /> */}
       {/* <ProfilePage /> */}
-      <NotFoundPage />
+      <SettingsPage />
+      {/* <NotFoundPage /> */}
     </>
   );
 }
