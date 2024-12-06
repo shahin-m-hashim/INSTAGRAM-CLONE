@@ -31,8 +31,8 @@ export default function HomeLayout({ children }) {
           )}
         </div>
 
-        <main className="absolute inset-x-0 top-0 z-0 min-h-screen min-w-[320px]">
-          <div className="flex flex-col size-full text-white bg-black md:pt-0 pb-[50px] md:pb-0 md:pl-[80px] xl:pl-[250px] pt-[60px]">
+        <main className="absolute inset-x-0 top-0 z-0">
+          <div className="flex flex-col min-h-screen min-w-[320px] text-white bg-black md:pt-0 pb-[50px] md:pb-0 md:pl-[80px] xl:pl-[250px] pt-[60px]">
             {children}
             <div className="hidden my-10 md:block">
               <Footer />
