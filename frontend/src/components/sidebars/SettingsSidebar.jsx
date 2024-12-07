@@ -1,3 +1,4 @@
+import { cn } from "utils/cn";
 import MetaIcon from "icons/MetaIcon";
 import HelpIcon from "icons/HelpIcon";
 import PrivacyIcon from "icons/PrivacyIcon";
@@ -23,9 +24,9 @@ import WebsitePermissionsIcon from "icons/WebsitePermissionsIcon";
 import AccountTypeAndToolsIcon from "icons/AccountTypeAndToolsIcon";
 import ArchivingAndDownloadingIcon from "icons/ArchivingAndDownloadingIcon";
 
-export default function SettingsSidebar() {
+export default function SettingsSidebar({ activeTab, setActiveTab }) {
   return (
-    <div className="w-full xl:w-[330px] md:w-[310px] h-screen overflow-auto md:pt-0 pb-[50px] md:pb-0 pt-[60px] p-5 flex-shrink-0 md:border-r border-r-[rgb(54,54,54,0.7)]">
+    <div className="w-full xs:w-[486px] md:w-[310px] xl:w-[330px] md:h-screen md:overflow-auto p-5 flex-shrink-0 md:border-r border-r-[rgb(54,54,54,0.7)]">
       <div className="flex p-5">
         <h1 className="text-xl font-bold">Settings</h1>
       </div>
@@ -78,15 +79,27 @@ export default function SettingsSidebar() {
           </h3>
 
           <div className="flex flex-col gap-1">
-            <button className="flex items-center gap-3 p-3 bg-[rgb(38,38,38)] hover:bg-[rgb(255,255,255,.1)] rounded-md">
+            <a
+              onClick={() => setActiveTab("editProfile")}
+              className={cn(
+                activeTab === "editProfile" && "bg-[rgb(38,38,38)]",
+                "flex items-center gap-3 p-3 hover:bg-[rgb(255,255,255,.1)] rounded-md"
+              )}
+            >
               <EditProfileIcon />
               <span className="text-sm">Edit profile</span>
-            </button>
+            </a>
 
-            <button className="flex items-center gap-3 p-3 hover:bg-[rgb(255,255,255,.1)] rounded-md">
+            <a
+              onClick={() => setActiveTab("notificationSettings")}
+              className={cn(
+                activeTab === "notificationSettings" && "bg-[rgb(38,38,38)]",
+                "flex items-center gap-3 p-3 hover:bg-[rgb(255,255,255,.1)] rounded-md"
+              )}
+            >
               <BellNotificationIcon />
               <span className="text-sm">Notifications</span>
-            </button>
+            </a>
           </div>
         </div>
 
@@ -96,22 +109,42 @@ export default function SettingsSidebar() {
           </h3>
 
           <div className="flex flex-col gap-1">
-            <button className="flex items-center gap-3 p-3 hover:bg-[rgb(255,255,255,.1)] rounded-md">
+            <button
+              className={cn(
+                activeTab === "privacySettings" && "bg-[rgb(38,38,38)]",
+                "flex items-center gap-3 p-3 hover:bg-[rgb(255,255,255,.1)] rounded-md"
+              )}
+            >
               <PrivacyIcon />
               <span className="text-sm">Account privacy</span>
             </button>
 
-            <button className="flex items-center gap-3 p-3 hover:bg-[rgb(255,255,255,.1)] rounded-md">
+            <button
+              className={cn(
+                activeTab === "closeFriendsSettings" && "bg-[rgb(38,38,38)]",
+                "flex items-center gap-3 p-3 hover:bg-[rgb(255,255,255,.1)] rounded-md"
+              )}
+            >
               <CloseFriendsIcon />
               <span className="text-sm">Close Friends</span>
             </button>
 
-            <button className="flex items-center gap-3 p-3 hover:bg-[rgb(255,255,255,.1)] rounded-md">
+            <button
+              className={cn(
+                activeTab === "blockedAccountsSettings" && "bg-[rgb(38,38,38)]",
+                "flex items-center gap-3 p-3 hover:bg-[rgb(255,255,255,.1)] rounded-md"
+              )}
+            >
               <BlockedIcon />
               <span className="text-sm">Blocked</span>
             </button>
 
-            <button className="flex items-center gap-3 p-3 hover:bg-[rgb(255,255,255,.1)] rounded-md">
+            <button
+              className={cn(
+                activeTab === "storyAndLiveSettings" && "bg-[rgb(38,38,38)]",
+                "flex items-center gap-3 p-3 hover:bg-[rgb(255,255,255,.1)] rounded-md"
+              )}
+            >
               <HideStoryAndLiveIcon />
               <span className="text-sm">Hide story and live</span>
             </button>
@@ -124,32 +157,63 @@ export default function SettingsSidebar() {
           </h3>
 
           <div className="flex flex-col gap-1">
-            <button className="flex items-center gap-3 p-3 hover:bg-[rgb(255,255,255,.1)] rounded-md">
+            <button
+              className={cn(
+                activeTab === "messengerSettings" && "bg-[rgb(38,38,38)]",
+                "flex items-center gap-3 p-3 hover:bg-[rgb(255,255,255,.1)] rounded-md"
+              )}
+            >
               <MessengerIcon />
               <span className="text-sm">Messages and story replies</span>
             </button>
 
-            <button className="flex items-center gap-3 p-3 hover:bg-[rgb(255,255,255,.1)] rounded-md">
+            <button
+              className={cn(
+                activeTab === "tagsAndMentionSettings" && "bg-[rgb(38,38,38)]",
+                "flex items-center gap-3 p-3 hover:bg-[rgb(255,255,255,.1)] rounded-md"
+              )}
+            >
               <TagsAndMentionsIcon />
               <span className="text-sm">Tags and mentions</span>
             </button>
 
-            <button className="flex items-center gap-3 p-3 hover:bg-[rgb(255,255,255,.1)] rounded-md">
+            <button
+              className={cn(
+                activeTab === "commentsSettings" && "bg-[rgb(38,38,38)]",
+                "flex items-center gap-3 p-3 hover:bg-[rgb(255,255,255,.1)] rounded-md"
+              )}
+            >
               <CommentsIcon />
               <span className="text-sm">Comments</span>
             </button>
 
-            <button className="flex items-center gap-3 p-3 hover:bg-[rgb(255,255,255,.1)] rounded-md">
+            <button
+              className={cn(
+                activeTab === "sharingAndReuseSettings" && "bg-[rgb(38,38,38)]",
+                "flex items-center gap-3 p-3 hover:bg-[rgb(255,255,255,.1)] rounded-md"
+              )}
+            >
               <SharingAndReuseIcon />
               <span className="text-sm">Sharing and reuse</span>
             </button>
 
-            <button className="flex items-center gap-3 p-3 hover:bg-[rgb(255,255,255,.1)] rounded-md">
+            <button
+              className={cn(
+                activeTab === "restrictedAccountsSettings" &&
+                  "bg-[rgb(38,38,38)]",
+                "flex items-center gap-3 p-3 hover:bg-[rgb(255,255,255,.1)] rounded-md"
+              )}
+            >
               <RestrictedAccountsIcon />
               <span className="text-sm">Restricted accounts</span>
             </button>
 
-            <button className="flex items-center gap-3 p-3 hover:bg-[rgb(255,255,255,.1)] rounded-md">
+            <button
+              className={cn(
+                activeTab === "hiddenWordsSettings" && "bg-[rgb(38,38,38)]",
+                "flex items-center gap-3 p-3 hover:bg-[rgb(255,255,255,.1)] rounded-md"
+              )}
+            >
               <HiddenWordsIcon />
               <span className="text-sm">Hidden Words</span>
             </button>
@@ -162,17 +226,34 @@ export default function SettingsSidebar() {
           </h3>
 
           <div className="flex flex-col gap-1">
-            <button className="flex items-center gap-3 p-3 hover:bg-[rgb(255,255,255,.1)] rounded-md">
+            <button
+              className={cn(
+                activeTab === "mutedAccountsSettings" && "bg-[rgb(38,38,38)]",
+                "flex items-center gap-3 p-3 hover:bg-[rgb(255,255,255,.1)] rounded-md"
+              )}
+            >
               <MutedAccountsIcon />
               <span className="text-sm">Muted accounts</span>
             </button>
 
-            <button className="flex items-center gap-3 p-3 hover:bg-[rgb(255,255,255,.1)] rounded-md">
+            <button
+              className={cn(
+                activeTab === "contentPreferencesSettings" &&
+                  "bg-[rgb(38,38,38)]",
+                "flex items-center gap-3 p-3 hover:bg-[rgb(255,255,255,.1)] rounded-md"
+              )}
+            >
               <ContentPreferencesIcon />
               <span className="text-sm">Content preferences</span>
             </button>
 
-            <button className="flex items-center gap-3 p-3 hover:bg-[rgb(255,255,255,.1)] rounded-md">
+            <button
+              className={cn(
+                activeTab === "likeAndShareCountsSettings" &&
+                  "bg-[rgb(38,38,38)]",
+                "flex items-center gap-3 p-3 hover:bg-[rgb(255,255,255,.1)] rounded-md"
+              )}
+            >
               <LikeAndShareCountsIcon />
               <span className="text-sm">Like and share counts</span>
             </button>
@@ -185,17 +266,34 @@ export default function SettingsSidebar() {
           </h3>
 
           <div className="flex flex-col gap-1">
-            <button className="flex items-center gap-3 p-3 hover:bg-[rgb(255,255,255,.1)] rounded-md">
+            <button
+              className={cn(
+                activeTab === "archivingAndDownloadingSettings" &&
+                  "bg-[rgb(38,38,38)]",
+                "flex items-center gap-3 p-3 hover:bg-[rgb(255,255,255,.1)] rounded-md"
+              )}
+            >
               <ArchivingAndDownloadingIcon />
               <span className="text-sm">Archiving and downloading</span>
             </button>
 
-            <button className="flex items-center gap-3 p-3 hover:bg-[rgb(255,255,255,.1)] rounded-md">
+            <button
+              className={cn(
+                activeTab === "languageSettings" && "bg-[rgb(38,38,38)]",
+                "flex items-center gap-3 p-3 hover:bg-[rgb(255,255,255,.1)] rounded-md"
+              )}
+            >
               <LanguageIcon />
               <span className="text-sm">Language</span>
             </button>
 
-            <button className="flex items-center gap-3 p-3 hover:bg-[rgb(255,255,255,.1)] rounded-md">
+            <button
+              className={cn(
+                activeTab === "websitePermissionsSettings" &&
+                  "bg-[rgb(38,38,38)]",
+                "flex items-center gap-3 p-3 hover:bg-[rgb(255,255,255,.1)] rounded-md"
+              )}
+            >
               <WebsitePermissionsIcon />
               <span className="text-sm">Website permissions</span>
             </button>
@@ -207,7 +305,12 @@ export default function SettingsSidebar() {
             For families
           </h3>
 
-          <button className="flex items-center gap-3 p-3 hover:bg-[rgb(255,255,255,.1)] rounded-md">
+          <button
+            className={cn(
+              activeTab === "familyCenterSettings" && "bg-[rgb(38,38,38)]",
+              "flex items-center gap-3 p-3 hover:bg-[rgb(255,255,255,.1)] rounded-md"
+            )}
+          >
             <FamilyCenterIcon />
             <span className="text-sm">Family Center</span>
           </button>
@@ -218,7 +321,13 @@ export default function SettingsSidebar() {
             For professionals
           </h3>
 
-          <button className="flex items-center gap-3 p-3 hover:bg-[rgb(255,255,255,.1)] rounded-md">
+          <button
+            className={cn(
+              activeTab === "accountTypeAndToolsSettings" &&
+                "bg-[rgb(38,38,38)]",
+              "flex items-center gap-3 p-3 hover:bg-[rgb(255,255,255,.1)] rounded-md"
+            )}
+          >
             <AccountTypeAndToolsIcon />
             <span className="text-sm">Account type and tools</span>
           </button>
@@ -230,17 +339,32 @@ export default function SettingsSidebar() {
           </h3>
 
           <div className="flex flex-col gap-1">
-            <button className="flex items-center gap-3 p-3 hover:bg-[rgb(255,255,255,.1)] rounded-md">
+            <button
+              className={cn(
+                activeTab === "helpSettings" && "bg-[rgb(38,38,38)]",
+                "flex items-center gap-3 p-3 hover:bg-[rgb(255,255,255,.1)] rounded-md"
+              )}
+            >
               <HelpIcon />
               <span className="text-sm">Help</span>
             </button>
 
-            <button className="flex items-center gap-3 p-3 hover:bg-[rgb(255,255,255,.1)] rounded-md">
+            <button
+              className={cn(
+                activeTab === "privacyCenterSettings" && "bg-[rgb(38,38,38)]",
+                "flex items-center gap-3 p-3 hover:bg-[rgb(255,255,255,.1)] rounded-md"
+              )}
+            >
               <PrivacyCenterIcon />
               <span className="text-sm">Privacy Center</span>
             </button>
 
-            <button className="flex items-center gap-3 p-3 hover:bg-[rgb(255,255,255,.1)] rounded-md">
+            <button
+              className={cn(
+                activeTab === "accountStatusSettings" && "bg-[rgb(38,38,38)]",
+                "flex items-center gap-3 p-3 hover:bg-[rgb(255,255,255,.1)] rounded-md"
+              )}
+            >
               <AccountStatusIcon />
               <span className="text-sm">Account Status</span>
             </button>

@@ -5,7 +5,6 @@ export default {
     extend: {
       screens: {
         xs: "486px",
-        touch: { raw: "(hover: none) and (pointer: coarse)" },
       },
     },
   },

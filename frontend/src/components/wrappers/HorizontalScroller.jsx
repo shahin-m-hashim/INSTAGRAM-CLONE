@@ -71,7 +71,7 @@ export default function HorizontalScroller({
 
   return (
     <div className="relative overflow-hidden">
-      <div className="absolute inset-y-0 left-0 z-10 touch:hidden">
+      <div className="absolute inset-y-0 left-0 z-10 hide-onts">
         <div className="flex items-center h-full">
           <button
             onClick={() => scrollTo("left")}
@@ -88,12 +88,12 @@ export default function HorizontalScroller({
           transition: `transform ${duration}ms`,
           transform: `translateX(-${state.scrollLeft}px)`,
         }}
-        className="touch:overflow-x-auto scrollbar-hidden"
+        className="overflow-x-auto-onts scrollbar-hidden"
       >
         {children}
       </div>
 
-      <div className="absolute inset-y-0 right-0 z-10 touch:hidden">
+      <div className="absolute inset-y-0 right-0 z-10 hide-onts">
         <div className="flex items-center h-full">
           <button
             onClick={() => scrollTo("right")}

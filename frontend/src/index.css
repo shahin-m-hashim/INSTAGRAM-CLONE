@@ -36,8 +36,8 @@ input:-webkit-autofill:focus {
 }
 
 .scrollbar-hidden {
-  -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
 }
 
 .scrollbar-hidden::-webkit-scrollbar {
@@ -76,4 +76,15 @@ input:-webkit-autofill:focus {
 
 textarea {
   resize: none;
+}
+
+/* Touch screen media query */
+@media (hover: none) and (pointer: coarse) {
+  .hide-onts {
+    display: none;
+  }
+
+  .overflow-x-auto-onts {
+    overflow-x: auto;
+  }
 }
