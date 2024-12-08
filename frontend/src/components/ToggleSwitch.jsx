@@ -1,22 +1,23 @@
 import { cn } from "utils/cn";
+import { useState } from "react";
 
-export default function ToggleSwitch({ id, theme = "dark" }) {
-  const themes = {
-    light: {
-      pillOn: "rgb(15,20,25)",
-      ball: "rgb(245,245,245)",
-      pillOff: "rgb(219,223,228)",
-    },
-    dark: {
-      ball: "rgb(15,20,25)",
-      pillOff: "rgb(50,53,57)",
-      pillOn: "rgb(245,245,245)",
-    },
-  };
+const themes = {
+  light: {
+    pillOn: "rgb(15,20,25)",
+    ball: "rgb(245,245,245)",
+    pillOff: "rgb(219,223,228)",
+  },
+  dark: {
+    ball: "rgb(15,20,25)",
+    pillOff: "rgb(50,53,57)",
+    pillOn: "rgb(245,245,245)",
+  },
+};
+
+export default function ToggleSwitch({ id, theme = "dark", checked = false }) {
+  const [isChecked, setIsChecked] = useState(checked);
 
   const currentTheme = themes[theme];
-
-  const handleChange = (e) => e.target.checked && console.log(e.target.value);
 
   return (
     <label
@@ -27,18 +28,26 @@ export default function ToggleSwitch({ id, theme = "dark" }) {
         id={id}
         name={id}
         type="checkbox"
-        value="sura"
-        onChange={handleChange}
-        className="sr-only peer"
+        checked={isChecked}
+        className="sr-only"
+        onChange={(e) => setIsChecked(e.target.checked)}
       />
       <div
-        className={cn(
-          `after:bg-[${currentTheme.ball}]`, // Default ball color
-          `dark:bg-[${currentTheme.pillOff}]`, // Pill color when unchecked
-          `peer-checked:bg-[${currentTheme.pillOn}]`, // Pill color when checked
-          "relative w-11 h-6 rounded-full duration-300 peer peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:rounded-full after:h-5 after:w-5 after:transition-all"
-        )}
-      ></div>
+        style={{
+          background: isChecked ? currentTheme.pillOn : currentTheme.pillOff,
+        }}
+        className="relative h-6 transition-colors duration-200 rounded-full w-11"
+      >
+        <div
+          style={{
+            background: currentTheme.ball,
+          }}
+          className={cn(
+            isChecked ? "translate-x-[22px]" : "translate-x-[2px]",
+            "absolute top-1/2 size-5 rounded-full -translate-y-1/2 transform transition-all duration-200"
+          )}
+        />
+      </div>
     </label>
   );
 }

@@ -5,7 +5,7 @@ import DropDownArrowIcon from "icons/DropDownArrowIcon";
 
 export default function EditProfileForm() {
   return (
-    <form className="flex flex-col gap-10 p-4 max-w-[600px] my-4 md:my-14 size-full">
+    <form className="flex flex-col gap-10 p-4 max-w-[600px] my-4 md:my-14">
       <h1 className="text-xl font-bold">Edit Profile</h1>
 
       <div className="flex gap-2 items-center justify-between rounded-xl p-4 bg-[rgb(38,38,38)]">

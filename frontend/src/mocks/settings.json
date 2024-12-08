@@ -1,0 +1,59 @@
+{
+  "id": 1,
+  "userId": "xht12a12641vaw2",
+  "editProfile": {
+    "profilePic": "images/users/viratkohli.webp",
+    "username": "viratkohli",
+    "website": "https://viratkohli.com",
+    "bio": "",
+    "gender": "Prefer not to say",
+    "showAccountSuggestionsOnProfile": true
+  },
+  "notifications": {
+    "push": {
+      "pauseAll": false,
+      "likes": "From everyone",
+      "likesAndCommentsOnPhotosOfYou": "Off",
+      "comments": "From everyone",
+      "commentLikes": "On",
+      "commentDailyDigest": "From everyone",
+      "firstPostsAndStories": "From everyone",
+      "notes": "On",
+      "addToPostSubmissions": "On",
+      "addedToPost": "On",
+      "mentionRequests": "From everyone",
+      "newFollowers": "On",
+      "acceptedFollowRequests": "On",
+      "accountSuggestions": "On",
+      "mentionsInBio": "From everyone",
+      "messageRequests": "On",
+      "messagesFromIndividualAndGroupChats": "On",
+      "messageReminders": "On",
+      "groupRequests": "On",
+      "broadcastChannelInvites": "On",
+      "broadcastChannelMessages": "On",
+      "socialChannelMessages": "On",
+      "originalAudio": "On",
+      "remixes": "On",
+      "liveVideos": "On",
+      "recentlyUploadedReels": "On",
+      "mostWatchedReels": "On",
+      "addYours": "On",
+      "reelsMadeForYou": "On",
+      "yourFundraisers": "On",
+      "fundraisersByOthers": "On",
+      "reminders": "On",
+      "productAnnouncementsAndFeedback": "On",
+      "supportRequests": "On",
+      "trendingPlaces": "On",
+      "birthdays": "On"
+    },
+    "email": {
+      "feedbackEmails": "On",
+      "reminderEmails": "On",
+      "productEmails": "On",
+      "newsEmails": "On",
+      "supportEmails": "On"
+    }
+  }
+}
