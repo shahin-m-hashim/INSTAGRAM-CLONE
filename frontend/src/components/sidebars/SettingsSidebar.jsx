@@ -131,15 +131,16 @@ export default function SettingsSidebar({ activeTab, setActiveTab }) {
               <span className="text-sm">Close Friends</span>
             </a>
 
-            <button
+            <a
+              onClick={() => setActiveTab("blockedAccountsTab")}
               className={cn(
-                activeTab === "blockedAccountsSettings" && "bg-[rgb(38,38,38)]",
+                activeTab === "blockedAccountsTab" && "bg-[rgb(38,38,38)]",
                 "flex items-center gap-3 p-3 hover:bg-[rgb(255,255,255,.1)] rounded-md"
               )}
             >
               <BlockedIcon />
               <span className="text-sm">Blocked</span>
-            </button>
+            </a>
 
             <button
               className={cn(

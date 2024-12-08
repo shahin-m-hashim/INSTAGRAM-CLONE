@@ -6,6 +6,7 @@ import SettingsSidebar from "components/sidebars/SettingsSidebar";
 import NotificationSettingsTab from "components/tabs/NotificationSettingsTab";
 import AccountPrivacyTab from "components/tabs/AccountPrivacyTab";
 import CloseFriendsTab from "components/tabs/CloseFriendsTab";
+import BlockedAccountsTab from "components/tabs/BlockedAccountsTab";
 
 export default function SettingsPage() {
   const [activeTab, setActiveTab] = useState("editProfile");
@@ -27,6 +28,8 @@ export default function SettingsPage() {
               <AccountPrivacyTab />
             ) : activeTab == "closeFriendsTab" ? (
               <CloseFriendsTab />
+            ) : activeTab === "blockedAccountsTab" ? (
+              <BlockedAccountsTab />
             ) : null}
           </div>
 
