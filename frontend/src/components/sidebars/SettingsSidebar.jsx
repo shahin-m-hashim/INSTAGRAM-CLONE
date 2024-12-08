@@ -109,7 +109,8 @@ export default function SettingsSidebar({ activeTab, setActiveTab }) {
           </h3>
 
           <div className="flex flex-col gap-1">
-            <button
+            <a
+              onClick={() => setActiveTab("accountPrivacySettings")}
               className={cn(
                 activeTab === "privacySettings" && "bg-[rgb(38,38,38)]",
                 "flex items-center gap-3 p-3 hover:bg-[rgb(255,255,255,.1)] rounded-md"
@@ -117,7 +118,7 @@ export default function SettingsSidebar({ activeTab, setActiveTab }) {
             >
               <PrivacyIcon />
               <span className="text-sm">Account privacy</span>
-            </button>
+            </a>
 
             <button
               className={cn(

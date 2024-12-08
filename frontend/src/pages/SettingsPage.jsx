@@ -4,6 +4,7 @@ import AppLayout from "components/wrappers/AppLayout";
 import EditProfileForm from "components/forms/EditProfileForm";
 import SettingsSidebar from "components/sidebars/SettingsSidebar";
 import NotificationSettingsTab from "components/tabs/NotificationSettingsTab";
+import AccountPrivacyTab from "components/tabs/AccountPrivacyTab";
 
 export default function SettingsPage() {
   const [activeTab, setActiveTab] = useState("editProfile");
@@ -21,6 +22,8 @@ export default function SettingsPage() {
               <EditProfileForm />
             ) : activeTab === "notificationSettings" ? (
               <NotificationSettingsTab />
+            ) : activeTab === "accountPrivacySettings" ? (
+              <AccountPrivacyTab />
             ) : null}
           </div>
 
