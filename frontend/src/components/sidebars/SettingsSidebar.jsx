@@ -204,16 +204,17 @@ export default function SettingsSidebar({ activeTab, setActiveTab }) {
               <span className="text-sm">Sharing and reuse</span>
             </button>
 
-            <button
+            <a
+              onClick={() => setActiveTab("restrictedAccountsSettingsTab")}
               className={cn(
-                activeTab === "restrictedAccountsSettings" &&
+                activeTab === "restrictedAccountsSettingsTab" &&
                   "bg-[rgb(38,38,38)]",
                 "flex items-center gap-3 p-3 hover:bg-[rgb(255,255,255,.1)] rounded-md"
               )}
             >
               <RestrictedAccountsIcon />
               <span className="text-sm">Restricted accounts</span>
-            </button>
+            </a>
 
             <button
               className={cn(
@@ -233,15 +234,17 @@ export default function SettingsSidebar({ activeTab, setActiveTab }) {
           </h3>
 
           <div className="flex flex-col gap-1">
-            <button
+            <a
+              onClick={() => setActiveTab("mutedAccountsSettingsTab")}
               className={cn(
-                activeTab === "mutedAccountsSettings" && "bg-[rgb(38,38,38)]",
+                activeTab === "mutedAccountsSettingsTab" &&
+                  "bg-[rgb(38,38,38)]",
                 "flex items-center gap-3 p-3 hover:bg-[rgb(255,255,255,.1)] rounded-md"
               )}
             >
               <MutedAccountsIcon />
               <span className="text-sm">Muted accounts</span>
-            </button>
+            </a>
 
             <button
               className={cn(
@@ -255,8 +258,9 @@ export default function SettingsSidebar({ activeTab, setActiveTab }) {
             </button>
 
             <button
+              onClick={() => setActiveTab("likeAndShareCountSettingsTab")}
               className={cn(
-                activeTab === "likeAndShareCountsSettings" &&
+                activeTab === "likeAndShareCountSettingsTab" &&
                   "bg-[rgb(38,38,38)]",
                 "flex items-center gap-3 p-3 hover:bg-[rgb(255,255,255,.1)] rounded-md"
               )}

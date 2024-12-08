@@ -8,6 +8,9 @@ import CloseFriendsSettingsTab from "components/tabs/CloseFriendsSettingsTab";
 import AccountPrivacySettingsTab from "components/tabs/AccountPrivacySettingsTab";
 import BlockedAccountsSettingsTab from "components/tabs/BlockedAccountsSettingsTab";
 import HideStoryAndLiveSettingsTab from "components/tabs/HideStoryAndLiveSettingsTab";
+import RestrictedAccountsSettingsTab from "components/tabs/RestrictedAccountsSettingsTab";
+import MutedAccountsTab from "components/tabs/MutedAccountsTab";
+import LikeAndShareCountsTab from "components/tabs/LikeAndShareCountsTab";
 
 export default function SettingsPage() {
   const [activeTab, setActiveTab] = useState("profileSettingsTab");
@@ -33,6 +36,12 @@ export default function SettingsPage() {
               <BlockedAccountsSettingsTab />
             ) : activeTab === "hideStoryAndLiveSettingsTab" ? (
               <HideStoryAndLiveSettingsTab />
+            ) : activeTab === "restrictedAccountsSettingsTab" ? (
+              <RestrictedAccountsSettingsTab />
+            ) : activeTab === "mutedAccountsSettingsTab" ? (
+              <MutedAccountsTab />
+            ) : activeTab === "likeAndShareCountSettingsTab" ? (
+              <LikeAndShareCountsTab />
             ) : null}
           </div>
 
