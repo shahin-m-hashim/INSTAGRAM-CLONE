@@ -6,11 +6,12 @@ import CheckboxInput from "components/CheckboxInput";
 
 export default function AccountsList({
   type = "normal",
+  minCheckedInputs = 0,
   limit = users.length,
 }) {
   return (
     <ul className="flex flex-col w-full gap-3">
-      {users.slice(0, limit).map((user) => (
+      {users.slice(0, limit).map((user, idx) => (
         <li key={user.id} className="flex items-center gap-3">
           <div className="h-full">
             <Image
@@ -46,8 +47,12 @@ export default function AccountsList({
           </div>
 
           <div className="flex justify-center h-full">
-            {type === "home" ? (
-              <CheckboxInput theme="light" />
+            {type === "input" ? (
+              <CheckboxInput
+                value={user.id}
+                id={`checkbox-${user.id}`}
+                checked={idx < minCheckedInputs}
+              />
             ) : type === "notifications" ? (
               <Button className="h-8 px-6">Follow</Button>
             ) : (

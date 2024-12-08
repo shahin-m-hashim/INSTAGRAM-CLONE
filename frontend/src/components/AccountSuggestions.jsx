@@ -3,7 +3,7 @@ import Button from "components/wrappers/Button";
 import SearchField from "components/fields/SearchField";
 import AccountsList from "components/lists/AccountsList";
 
-export default function HomeSuggestions() {
+export default function AccountSuggestions() {
   return (
     <div className="flex justify-center">
       <div className="xs:p-5 lg:w-1/2">
@@ -33,7 +33,7 @@ export default function HomeSuggestions() {
             <SearchField />
           </div>
 
-          <AccountsList type="home" />
+          <AccountsList type="input" minCheckedInputs={5} />
         </div>
       </div>
     </div>

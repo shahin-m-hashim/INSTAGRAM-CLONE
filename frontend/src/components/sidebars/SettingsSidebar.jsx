@@ -80,9 +80,9 @@ export default function SettingsSidebar({ activeTab, setActiveTab }) {
 
           <div className="flex flex-col gap-1">
             <a
-              onClick={() => setActiveTab("editProfile")}
+              onClick={() => setActiveTab("profileSettingsTab")}
               className={cn(
-                activeTab === "editProfile" && "bg-[rgb(38,38,38)]",
+                activeTab === "profileSettingsTab" && "bg-[rgb(38,38,38)]",
                 "flex items-center gap-3 p-3 hover:bg-[rgb(255,255,255,.1)] rounded-md"
               )}
             >
@@ -91,9 +91,9 @@ export default function SettingsSidebar({ activeTab, setActiveTab }) {
             </a>
 
             <a
-              onClick={() => setActiveTab("notificationSettings")}
+              onClick={() => setActiveTab("notificationSettingsTab")}
               className={cn(
-                activeTab === "notificationSettings" && "bg-[rgb(38,38,38)]",
+                activeTab === "notificationSettingsTab" && "bg-[rgb(38,38,38)]",
                 "flex items-center gap-3 p-3 hover:bg-[rgb(255,255,255,.1)] rounded-md"
               )}
             >
@@ -110,9 +110,10 @@ export default function SettingsSidebar({ activeTab, setActiveTab }) {
 
           <div className="flex flex-col gap-1">
             <a
-              onClick={() => setActiveTab("accountPrivacySettings")}
+              onClick={() => setActiveTab("accountPrivacySettingsTab")}
               className={cn(
-                activeTab === "privacySettings" && "bg-[rgb(38,38,38)]",
+                activeTab === "accountPrivacySettingsTab" &&
+                  "bg-[rgb(38,38,38)]",
                 "flex items-center gap-3 p-3 hover:bg-[rgb(255,255,255,.1)] rounded-md"
               )}
             >
@@ -121,9 +122,9 @@ export default function SettingsSidebar({ activeTab, setActiveTab }) {
             </a>
 
             <a
-              onClick={() => setActiveTab("closeFriendsTab")}
+              onClick={() => setActiveTab("closeFriendsSettingsTab")}
               className={cn(
-                activeTab === "closeFriendsTab" && "bg-[rgb(38,38,38)]",
+                activeTab === "closeFriendsSettingsTab" && "bg-[rgb(38,38,38)]",
                 "flex items-center gap-3 p-3 hover:bg-[rgb(255,255,255,.1)] rounded-md"
               )}
             >
@@ -132,9 +133,10 @@ export default function SettingsSidebar({ activeTab, setActiveTab }) {
             </a>
 
             <a
-              onClick={() => setActiveTab("blockedAccountsTab")}
+              onClick={() => setActiveTab("blockedAccountsSettingsTab")}
               className={cn(
-                activeTab === "blockedAccountsTab" && "bg-[rgb(38,38,38)]",
+                activeTab === "blockedAccountsSettingsTab" &&
+                  "bg-[rgb(38,38,38)]",
                 "flex items-center gap-3 p-3 hover:bg-[rgb(255,255,255,.1)] rounded-md"
               )}
             >
@@ -142,15 +144,17 @@ export default function SettingsSidebar({ activeTab, setActiveTab }) {
               <span className="text-sm">Blocked</span>
             </a>
 
-            <button
+            <a
+              onClick={() => setActiveTab("hideStoryAndLiveSettingsTab")}
               className={cn(
-                activeTab === "storyAndLiveSettings" && "bg-[rgb(38,38,38)]",
+                activeTab === "hideStoryAndLiveSettingsTab" &&
+                  "bg-[rgb(38,38,38)]",
                 "flex items-center gap-3 p-3 hover:bg-[rgb(255,255,255,.1)] rounded-md"
               )}
             >
               <HideStoryAndLiveIcon />
               <span className="text-sm">Hide story and live</span>
-            </button>
+            </a>
           </div>
         </div>
 

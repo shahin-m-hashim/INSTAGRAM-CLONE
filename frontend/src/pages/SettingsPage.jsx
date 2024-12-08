@@ -4,12 +4,13 @@ import AppLayout from "components/wrappers/AppLayout";
 import EditProfileForm from "components/forms/EditProfileForm";
 import SettingsSidebar from "components/sidebars/SettingsSidebar";
 import NotificationSettingsTab from "components/tabs/NotificationSettingsTab";
-import AccountPrivacyTab from "components/tabs/AccountPrivacyTab";
-import CloseFriendsTab from "components/tabs/CloseFriendsTab";
-import BlockedAccountsTab from "components/tabs/BlockedAccountsTab";
+import CloseFriendsSettingsTab from "components/tabs/CloseFriendsSettingsTab";
+import AccountPrivacySettingsTab from "components/tabs/AccountPrivacySettingsTab";
+import BlockedAccountsSettingsTab from "components/tabs/BlockedAccountsSettingsTab";
+import HideStoryAndLiveSettingsTab from "components/tabs/HideStoryAndLiveSettingsTab";
 
 export default function SettingsPage() {
-  const [activeTab, setActiveTab] = useState("editProfile");
+  const [activeTab, setActiveTab] = useState("profileSettingsTab");
 
   return (
     <AppLayout hideFooter={true}>
@@ -20,16 +21,18 @@ export default function SettingsPage() {
 
         <div className="flex-col justify-between hidden w-full md:flex md:h-screen md:overflow-auto">
           <div className="flex justify-center w-full">
-            {activeTab === "editProfile" ? (
+            {activeTab === "profileSettingsTab" ? (
               <EditProfileForm />
-            ) : activeTab === "notificationSettings" ? (
+            ) : activeTab === "notificationSettingsTab" ? (
               <NotificationSettingsTab />
-            ) : activeTab === "accountPrivacySettings" ? (
-              <AccountPrivacyTab />
-            ) : activeTab == "closeFriendsTab" ? (
-              <CloseFriendsTab />
-            ) : activeTab === "blockedAccountsTab" ? (
-              <BlockedAccountsTab />
+            ) : activeTab === "accountPrivacySettingsTab" ? (
+              <AccountPrivacySettingsTab />
+            ) : activeTab == "closeFriendsSettingsTab" ? (
+              <CloseFriendsSettingsTab />
+            ) : activeTab === "blockedAccountsSettingsTab" ? (
+              <BlockedAccountsSettingsTab />
+            ) : activeTab === "hideStoryAndLiveSettingsTab" ? (
+              <HideStoryAndLiveSettingsTab />
             ) : null}
           </div>
 

@@ -3,36 +3,46 @@ import { useEffect, useState } from "react";
 import SelectedIcon from "icons/SelectedIcon";
 
 export default function CheckboxInput({
+  id,
   className,
   value = "",
   theme = "dark",
+  checked = false,
 }) {
-  const [checked, setChecked] = useState(false);
+  const [isChecked, setIsChecked] = useState(checked);
 
-  const handleChange = () => setChecked(!checked);
+  const handleChange = () => setIsChecked(!isChecked);
 
   useEffect(() => {
-    if (checked) console.log(value);
-  }, [checked]);
+    if (isChecked) console.log(value);
+  }, [isChecked]);
 
   return (
-    <div className={cn("relative inline-block rounded-full size-6", className)}>
+    <label
+      htmlFor={id}
+      className={cn(
+        "relative inline-block border border-white rounded-full size-6 cursor-pointer",
+        className
+      )}
+    >
       <input
+        id={id}
+        name={id}
         value={value}
         type="checkbox"
+        checked={isChecked}
+        className="sr-only"
         onChange={handleChange}
-        className={cn(
-          theme === "dark" ? "border-white" : "border-black",
-          "relative inline-block bg-transparent border rounded-full cursor-pointer custom-checkbox size-full"
-        )}
       />
-      {checked && (
-        <div className="absolute inset-0 pointer-events-none">
-          <SelectedIcon
-            className={theme === "dark" ? "text-white" : "text-black"}
-          />
-        </div>
+
+      {isChecked && (
+        <SelectedIcon
+          className={cn(
+            theme === "dark" ? "text-white" : "text-black",
+            "absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+          )}
+        />
       )}
-    </div>
+    </label>
   );
 }

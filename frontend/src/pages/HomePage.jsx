@@ -1,19 +1,19 @@
 import Links from "components/Links";
+import Footer from "components/Footer";
 import PostsList from "components/lists/PostsList";
 import AppLayout from "components/wrappers/AppLayout";
 import StoriesList from "components/lists/StoriesList";
 import ProfilePicture from "components/ProfilePicture";
-import HomeSuggestions from "components/HomeSuggestions";
 import AccountsList from "components/lists/AccountsList";
+import AccountSuggestions from "components/AccountSuggestions";
 import SuggestionCards from "components/cards/SuggestionCards";
-import Footer from "components/Footer";
 
 export default function HomePage() {
   return (
     <AppLayout>
-      {/* <HomeSuggestions /> */}
-
       <main className="scrollbar-dark h-screen overflow-auto min-w-[320px] bg-black text-white md:pt-0 pb-[50px] md:pb-0 md:pl-[80px] xl:pl-[250px] pt-[60px]">
+        {/* <AccountSuggestions /> */}
+
         <div className="flex gap-14 sm:px-10 lg:px-24">
           <div className="flex justify-center w-full xl:w-[65%]">
             <div className="flex flex-col size-full">
