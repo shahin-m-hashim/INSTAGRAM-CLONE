@@ -5,6 +5,7 @@ import EditProfileForm from "components/forms/EditProfileForm";
 import SettingsSidebar from "components/sidebars/SettingsSidebar";
 import NotificationSettingsTab from "components/tabs/NotificationSettingsTab";
 import AccountPrivacyTab from "components/tabs/AccountPrivacyTab";
+import CloseFriendsTab from "components/tabs/CloseFriendsTab";
 
 export default function SettingsPage() {
   const [activeTab, setActiveTab] = useState("editProfile");
@@ -24,6 +25,8 @@ export default function SettingsPage() {
               <NotificationSettingsTab />
             ) : activeTab === "accountPrivacySettings" ? (
               <AccountPrivacyTab />
+            ) : activeTab == "closeFriendsTab" ? (
+              <CloseFriendsTab />
             ) : null}
           </div>
 
