@@ -164,35 +164,40 @@ export default function SettingsSidebar({ activeTab, setActiveTab }) {
           </h3>
 
           <div className="flex flex-col gap-1">
-            <button
+            <a
+              onClick={() => setActiveTab("messagesAndStoryRepliesSettingsTab")}
               className={cn(
-                activeTab === "messengerSettings" && "bg-[rgb(38,38,38)]",
+                activeTab === "messagesAndStoryRepliesSettingsTab" &&
+                  "bg-[rgb(38,38,38)]",
                 "flex items-center gap-3 p-3 hover:bg-[rgb(255,255,255,.1)] rounded-md"
               )}
             >
               <MessengerIcon />
               <span className="text-sm">Messages and story replies</span>
-            </button>
+            </a>
 
-            <button
+            <a
+              onClick={() => setActiveTab("tagsAndMentionsSettingsTab")}
               className={cn(
-                activeTab === "tagsAndMentionSettings" && "bg-[rgb(38,38,38)]",
+                activeTab === "tagsAndMentionsSettingsTab" &&
+                  "bg-[rgb(38,38,38)]",
                 "flex items-center gap-3 p-3 hover:bg-[rgb(255,255,255,.1)] rounded-md"
               )}
             >
               <TagsAndMentionsIcon />
               <span className="text-sm">Tags and mentions</span>
-            </button>
+            </a>
 
-            <button
+            <a
+              onClick={() => setActiveTab("commentsSettingsTab")}
               className={cn(
-                activeTab === "commentsSettings" && "bg-[rgb(38,38,38)]",
+                activeTab === "commentsSettingsTab" && "bg-[rgb(38,38,38)]",
                 "flex items-center gap-3 p-3 hover:bg-[rgb(255,255,255,.1)] rounded-md"
               )}
             >
               <CommentsIcon />
               <span className="text-sm">Comments</span>
-            </button>
+            </a>
 
             <button
               className={cn(

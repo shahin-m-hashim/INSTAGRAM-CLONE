@@ -1,28 +1,44 @@
+import { useState } from "react";
 import { cn } from "utils/cn";
 
 export default function RadioInput({
+  id,
   value,
   className,
-  handleChecked,
   theme = "dark",
-  isChecked = false,
+  checked = false,
 }) {
+  const [isChecked, setIsChecked] = useState(checked);
+
+  const handleChecked = () => setIsChecked(!isChecked);
+
   return (
-    <input
-      type="radio"
-      value={value}
-      checked={isChecked}
-      onChange={handleChecked}
+    <label
+      htmlFor={id}
       className={cn(
         theme === "dark" ? "border-white" : "border-black",
-        isChecked
-          ? theme === "dark"
-            ? "before:bg-white"
-            : "before:bg-black"
-          : "before:bg-transparent",
-        "relative inline-block bg-transparent border rounded-full cursor-pointer custom-radio size-4 md:size-6",
+        "relative inline-block border rounded-full size-6 cursor-pointer",
         className
       )}
-    />
+    >
+      <input
+        id={id}
+        name={id}
+        type="radio"
+        value={value}
+        checked={isChecked}
+        className="sr-only"
+        onChange={handleChecked}
+      />
+
+      <div className="absolute inset-0 p-1">
+        <div
+          className={cn(
+            theme === "dark" && isChecked ? "bg-white" : "bg-black",
+            "size-full rounded-full"
+          )}
+        />
+      </div>
+    </label>
   );
 }

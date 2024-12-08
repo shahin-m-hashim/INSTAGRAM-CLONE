@@ -11,6 +11,9 @@ import HideStoryAndLiveSettingsTab from "components/tabs/HideStoryAndLiveSetting
 import RestrictedAccountsSettingsTab from "components/tabs/RestrictedAccountsSettingsTab";
 import MutedAccountsTab from "components/tabs/MutedAccountsTab";
 import LikeAndShareCountsTab from "components/tabs/LikeAndShareCountsTab";
+import MessagesAndStoryRepliesSettingsTab from "components/tabs/MessagesAndStoryRepliesSettingsTab";
+import TagsAndMentionsSettingsTab from "components/tabs/TagsAndMentionsSettingsTab";
+import CommentsSettingsTab from "components/tabs/CommentsSettingsTab";
 
 export default function SettingsPage() {
   const [activeTab, setActiveTab] = useState("profileSettingsTab");
@@ -42,6 +45,12 @@ export default function SettingsPage() {
               <MutedAccountsTab />
             ) : activeTab === "likeAndShareCountSettingsTab" ? (
               <LikeAndShareCountsTab />
+            ) : activeTab === "messagesAndStoryRepliesSettingsTab" ? (
+              <MessagesAndStoryRepliesSettingsTab />
+            ) : activeTab === "tagsAndMentionsSettingsTab" ? (
+              <TagsAndMentionsSettingsTab />
+            ) : activeTab === "commentsSettingsTab" ? (
+              <CommentsSettingsTab />
             ) : null}
           </div>
 

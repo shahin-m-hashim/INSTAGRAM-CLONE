@@ -21,7 +21,8 @@ export default function CheckboxInput({
     <label
       htmlFor={id}
       className={cn(
-        "relative inline-block border border-white rounded-full size-6 cursor-pointer",
+        theme === "dark" ? "border-white" : "border-black",
+        "relative inline-block border rounded-full size-6 cursor-pointer",
         className
       )}
     >
