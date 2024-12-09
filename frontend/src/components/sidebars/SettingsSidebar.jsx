@@ -199,15 +199,17 @@ export default function SettingsSidebar({ activeTab, setActiveTab }) {
               <span className="text-sm">Comments</span>
             </a>
 
-            <button
+            <a
+              onClick={() => setActiveTab("sharingAndReuseSettingsTab")}
               className={cn(
-                activeTab === "sharingAndReuseSettings" && "bg-[rgb(38,38,38)]",
+                activeTab === "sharingAndReuseSettingsTab" &&
+                  "bg-[rgb(38,38,38)]",
                 "flex items-center gap-3 p-3 hover:bg-[rgb(255,255,255,.1)] rounded-md"
               )}
             >
               <SharingAndReuseIcon />
               <span className="text-sm">Sharing and reuse</span>
-            </button>
+            </a>
 
             <a
               onClick={() => setActiveTab("restrictedAccountsSettingsTab")}

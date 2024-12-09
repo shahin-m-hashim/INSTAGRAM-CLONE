@@ -11,13 +11,13 @@ export default function CommentsSettingsTab() {
         <div className="flex flex-col gap-4">
           <div className="flex items-center gap-4">
             <RadioInput checked={true} />
-            <span>Everyone</span>
+            <span className="text-sm">Everyone</span>
           </div>
 
           <div className="flex items-center gap-4">
             <RadioInput />
             <div className="flex flex-col gap-1">
-              <span>People You Follow</span>
+              <span className="text-sm">People You Follow</span>
               <p className="text-xs text-[rgb(168,168,168)]">0 People</p>
             </div>
           </div>
@@ -25,7 +25,7 @@ export default function CommentsSettingsTab() {
           <div className="flex items-center gap-4">
             <RadioInput />
             <div className="flex flex-col gap-1">
-              <span>Your Followers</span>
+              <span className="text-sm">Your Followers</span>
               <p className="text-xs text-[rgb(168,168,168)]">1 Person</p>
             </div>
           </div>
@@ -33,7 +33,9 @@ export default function CommentsSettingsTab() {
           <div className="flex items-center gap-4">
             <RadioInput />
             <div className="flex flex-col gap-1">
-              <span>People You Follow and Your Followers</span>
+              <span className="text-sm">
+                People You Follow and Your Followers
+              </span>
               <p className="text-xs text-[rgb(168,168,168)]">1 Person</p>
             </div>
           </div>

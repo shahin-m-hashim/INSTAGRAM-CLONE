@@ -14,6 +14,7 @@ import LikeAndShareCountsTab from "components/tabs/LikeAndShareCountsTab";
 import MessagesAndStoryRepliesSettingsTab from "components/tabs/MessagesAndStoryRepliesSettingsTab";
 import TagsAndMentionsSettingsTab from "components/tabs/TagsAndMentionsSettingsTab";
 import CommentsSettingsTab from "components/tabs/CommentsSettingsTab";
+import SharingAndReuseSettingsTab from "components/tabs/SharingAndReuseSettingsTab";
 
 export default function SettingsPage() {
   const [activeTab, setActiveTab] = useState("profileSettingsTab");
@@ -51,6 +52,8 @@ export default function SettingsPage() {
               <TagsAndMentionsSettingsTab />
             ) : activeTab === "commentsSettingsTab" ? (
               <CommentsSettingsTab />
+            ) : activeTab === "sharingAndReuseSettingsTab" ? (
+              <SharingAndReuseSettingsTab />
             ) : null}
           </div>
 
