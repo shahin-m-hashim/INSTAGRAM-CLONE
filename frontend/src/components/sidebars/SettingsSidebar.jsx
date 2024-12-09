@@ -342,16 +342,17 @@ export default function SettingsSidebar({ activeTab, setActiveTab }) {
             For professionals
           </h3>
 
-          <button
+          <a
+            onClick={() => setActiveTab("accountTypeAndToolsSettingsTab")}
             className={cn(
-              activeTab === "accountTypeAndToolsSettings" &&
+              activeTab === "accountTypeAndToolsSettingsTab" &&
                 "bg-[rgb(38,38,38)]",
               "flex items-center gap-3 p-3 hover:bg-[rgb(255,255,255,.1)] rounded-md"
             )}
           >
             <AccountTypeAndToolsIcon />
             <span className="text-sm">Account type and tools</span>
-          </button>
+          </a>
         </div>
 
         <div className="flex flex-col gap-3">
@@ -380,15 +381,17 @@ export default function SettingsSidebar({ activeTab, setActiveTab }) {
               <span className="text-sm">Privacy Center</span>
             </button>
 
-            <button
+            <a
+              onClick={() => setActiveTab("accountStatusSettingsTab")}
               className={cn(
-                activeTab === "accountStatusSettings" && "bg-[rgb(38,38,38)]",
+                activeTab === "accountStatusSettingsTab" &&
+                  "bg-[rgb(38,38,38)]",
                 "flex items-center gap-3 p-3 hover:bg-[rgb(255,255,255,.1)] rounded-md"
               )}
             >
               <AccountStatusIcon />
               <span className="text-sm">Account Status</span>
-            </button>
+            </a>
           </div>
         </div>
       </div>

@@ -18,6 +18,8 @@ import SharingAndReuseSettingsTab from "components/tabs/SharingAndReuseSettingsT
 import HiddenWordsSettingsTab from "components/tabs/HiddenWordsSettingsTab";
 import ContentPreferencesSettingsTab from "components/tabs/ContentPreferencesSettingsTab";
 import ArchivingAndDownloadingSettingsTab from "components/tabs/ArchivingAndDownloadingSettingsTab";
+import AccountTypeAndToolsSettingsTab from "components/tabs/AccountTypeAndToolsSettingsTab";
+import AccountStatusSettingsTab from "components/tabs/AccountStatusSettingsTab";
 
 export default function SettingsPage() {
   const [activeTab, setActiveTab] = useState("profileSettingsTab");
@@ -63,6 +65,10 @@ export default function SettingsPage() {
               <ContentPreferencesSettingsTab />
             ) : activeTab === "archivingAndDownloadingSettingsTab" ? (
               <ArchivingAndDownloadingSettingsTab />
+            ) : activeTab === "accountTypeAndToolsSettingsTab" ? (
+              <AccountTypeAndToolsSettingsTab />
+            ) : activeTab === "accountStatusSettingsTab" ? (
+              <AccountStatusSettingsTab />
             ) : null}
           </div>
 
