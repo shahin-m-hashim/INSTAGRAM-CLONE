@@ -223,15 +223,16 @@ export default function SettingsSidebar({ activeTab, setActiveTab }) {
               <span className="text-sm">Restricted accounts</span>
             </a>
 
-            <button
+            <a
+              onClick={() => setActiveTab("hiddenWordsSettingsTab")}
               className={cn(
-                activeTab === "hiddenWordsSettings" && "bg-[rgb(38,38,38)]",
+                activeTab === "hiddenWordsSettingsTab" && "bg-[rgb(38,38,38)]",
                 "flex items-center gap-3 p-3 hover:bg-[rgb(255,255,255,.1)] rounded-md"
               )}
             >
               <HiddenWordsIcon />
               <span className="text-sm">Hidden Words</span>
-            </button>
+            </a>
           </div>
         </div>
 
@@ -253,16 +254,17 @@ export default function SettingsSidebar({ activeTab, setActiveTab }) {
               <span className="text-sm">Muted accounts</span>
             </a>
 
-            <button
+            <a
+              onClick={() => setActiveTab("contentPreferencesSettingsTab")}
               className={cn(
-                activeTab === "contentPreferencesSettings" &&
+                activeTab === "ContentPreferencesSettingsTab" &&
                   "bg-[rgb(38,38,38)]",
                 "flex items-center gap-3 p-3 hover:bg-[rgb(255,255,255,.1)] rounded-md"
               )}
             >
               <ContentPreferencesIcon />
               <span className="text-sm">Content preferences</span>
-            </button>
+            </a>
 
             <button
               onClick={() => setActiveTab("likeAndShareCountSettingsTab")}
@@ -284,16 +286,17 @@ export default function SettingsSidebar({ activeTab, setActiveTab }) {
           </h3>
 
           <div className="flex flex-col gap-1">
-            <button
+            <a
+              onClick={() => setActiveTab("archivingAndDownloadingSettingsTab")}
               className={cn(
-                activeTab === "archivingAndDownloadingSettings" &&
+                activeTab === "archivingAndDownloadingSettingsTab" &&
                   "bg-[rgb(38,38,38)]",
                 "flex items-center gap-3 p-3 hover:bg-[rgb(255,255,255,.1)] rounded-md"
               )}
             >
               <ArchivingAndDownloadingIcon />
               <span className="text-sm">Archiving and downloading</span>
-            </button>
+            </a>
 
             <button
               className={cn(

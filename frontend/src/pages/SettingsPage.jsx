@@ -15,6 +15,9 @@ import MessagesAndStoryRepliesSettingsTab from "components/tabs/MessagesAndStory
 import TagsAndMentionsSettingsTab from "components/tabs/TagsAndMentionsSettingsTab";
 import CommentsSettingsTab from "components/tabs/CommentsSettingsTab";
 import SharingAndReuseSettingsTab from "components/tabs/SharingAndReuseSettingsTab";
+import HiddenWordsSettingsTab from "components/tabs/HiddenWordsSettingsTab";
+import ContentPreferencesSettingsTab from "components/tabs/ContentPreferencesSettingsTab";
+import ArchivingAndDownloadingSettingsTab from "components/tabs/ArchivingAndDownloadingSettingsTab";
 
 export default function SettingsPage() {
   const [activeTab, setActiveTab] = useState("profileSettingsTab");
@@ -54,6 +57,12 @@ export default function SettingsPage() {
               <CommentsSettingsTab />
             ) : activeTab === "sharingAndReuseSettingsTab" ? (
               <SharingAndReuseSettingsTab />
+            ) : activeTab === "hiddenWordsSettingsTab" ? (
+              <HiddenWordsSettingsTab />
+            ) : activeTab === "contentPreferencesSettingsTab" ? (
+              <ContentPreferencesSettingsTab />
+            ) : activeTab === "archivingAndDownloadingSettingsTab" ? (
+              <ArchivingAndDownloadingSettingsTab />
             ) : null}
           </div>
 

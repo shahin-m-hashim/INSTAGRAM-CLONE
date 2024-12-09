@@ -55,27 +55,8 @@ input:-webkit-autofill:focus {
   );
 }
 
-.custom-radio,
-.custom-checkbox {
-  appearance: none;
-  -ms-appearance: none;
-  -moz-appearance: none;
-  -webkit-appearance: none;
-}
-
-.custom-radio:checked::before {
-  top: 50%;
-  left: 50%;
-  width: 70%;
-  content: "";
-  height: 70%;
-  position: absolute;
-  border-radius: 50%;
-  transform: translate(-50%, -50%);
-}
-
 textarea {
-  resize: none;
+  resize: none !important;
 }
 
 /* Touch screen media query */

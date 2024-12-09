@@ -51,7 +51,6 @@ export default function CommentsSettingsTab() {
           <ToggleSwitch checked={true} />
         </div>
       </div>
-      <div></div>
     </div>
   );
 }
