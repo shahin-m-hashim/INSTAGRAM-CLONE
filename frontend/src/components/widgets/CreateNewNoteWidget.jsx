@@ -38,7 +38,9 @@ export default function CreateNewNoteWidget({ setActiveWidget }) {
             </button>
 
             <h1 className="text-lg font-bold">New note</h1>
-            <Button type="submit">Share</Button>
+            <Button className="w-16" type="submit">
+              Share
+            </Button>
           </div>
 
           <Separator straight={true} className="bg-[rgb(54,54,54)]" />
@@ -76,8 +78,7 @@ export default function CreateNewNoteWidget({ setActiveWidget }) {
                   <div className="flex items-center gap-2">
                     <RadioInput
                       value="followers"
-                      handleChecked={handleChecked}
-                      isChecked={state.sharedWith === "followers"}
+                      checked={state.sharedWith === "followers"}
                     />
                     <p>Followers you follow back</p>
                   </div>
@@ -85,8 +86,7 @@ export default function CreateNewNoteWidget({ setActiveWidget }) {
                   <div className="flex items-center gap-2">
                     <RadioInput
                       value="close-friends"
-                      handleChecked={handleChecked}
-                      isChecked={state.sharedWith === "close-friends"}
+                      checked={state.sharedWith === "close-friends"}
                     />
                     <p>Close Friends</p>
                   </div>

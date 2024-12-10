@@ -8,6 +8,8 @@ export default function RadioInput({
   theme = "dark",
   checked = false,
 }) {
+  const checkedBg = theme === "dark" ? "bg-white" : "bg-black";
+
   const [isChecked, setIsChecked] = useState(checked);
 
   const handleChecked = () => setIsChecked(!isChecked);
@@ -34,8 +36,8 @@ export default function RadioInput({
       <div className="absolute inset-0 p-1">
         <div
           className={cn(
-            theme === "dark" && isChecked ? "bg-white" : "bg-black",
-            "size-full rounded-full"
+            "size-full rounded-full",
+            isChecked ? checkedBg : "bg-transparent"
           )}
         />
       </div>
