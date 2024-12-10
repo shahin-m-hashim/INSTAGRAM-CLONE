@@ -8,7 +8,7 @@ import Button from "components/wrappers/Button";
 import AddPhoneNoIcon from "icons/AddPhoneNoIcon";
 import SharePhotosIcon from "icons/SharePhotosIcon";
 import ProfilePicture from "components/ProfilePicture";
-import HomeLayout from "components/wrappers/AppLayout";
+import AppLayout from "components/wrappers/AppLayout";
 import CompleteProfileIcon from "icons/CompleteProfileIcon";
 import AddProfilePhotoIcon from "icons/AddProfilePhotoIcon";
 import HorizontalScroller from "components/wrappers/HorizontalScroller";
@@ -43,7 +43,7 @@ const items = [
 
 export default function ProfilePage() {
   return (
-    <HomeLayout>
+    <AppLayout>
       <main className="scrollbar-dark h-screen overflow-auto min-w-[320px] bg-black text-white md:pt-0 pb-[50px] md:pb-0 md:pl-[80px] xl:pl-[250px] pt-[60px]">
         <div className="flex min-h-screen lg:px-6 xl:px-36">
           <div className="flex flex-col py-10 md:py-16 size-full">
@@ -206,6 +206,6 @@ export default function ProfilePage() {
           <Footer />
         </div>
       </main>
-    </HomeLayout>
+    </AppLayout>
   );
 }

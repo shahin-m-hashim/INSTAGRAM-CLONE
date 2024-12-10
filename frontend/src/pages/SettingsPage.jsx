@@ -25,7 +25,7 @@ export default function SettingsPage() {
   const [activeTab, setActiveTab] = useState("profileSettingsTab");
 
   return (
-    <AppLayout hideFooter={true}>
+    <AppLayout>
       <main className="scrollbar-dark md:flex min-w-[320px] h-screen overflow-auto md:h-auto md:overflow-hidden md:pt-0 pb-[50px] md:pb-0 pt-[60px] bg-black text-white md:pl-[80px] xl:pl-[250px]">
         <div className="flex justify-center md:block w-full md:w-[310px] xl:w-[330px]">
           <SettingsSidebar activeTab={activeTab} setActiveTab={setActiveTab} />
