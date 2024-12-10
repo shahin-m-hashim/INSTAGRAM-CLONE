@@ -10,7 +10,8 @@ import CreateNewNoteWidget from "components/widgets/CreateNewNoteWidget";
 import ReportAProblemWidget from "components/widgets/ReportAProblemWidget";
 
 export default function AppLayout({ children }) {
-  const [activeWidget, setActiveWidget] = useState("reportAProblem");
+  const [activeWidget, setActiveWidget] = useState(null);
+  const [showReportWidget, setShowReportWidget] = useState(false);
 
   return (
     <SplashScreen>
@@ -20,18 +21,22 @@ export default function AppLayout({ children }) {
           <TopNavbar />
           <BottomNavbar />
 
-          {activeWidget === "more" && <MoreWidget />}
+          {activeWidget === "more" && (
+            <MoreWidget setShowReportWidget={setShowReportWidget} />
+          )}
+
           {activeWidget === "createNewPost" && (
             <CreateNewPostWidget setActiveWidget={setActiveWidget} />
           )}
+
           {activeWidget === "settings" && <SettingsWidget />}
 
           {activeWidget === "createNewNote" && (
             <CreateNewNoteWidget setActiveWidget={setActiveWidget} />
           )}
 
-          {activeWidget === "reportAProblem" && (
-            <ReportAProblemWidget setActiveWidget={setActiveWidget} />
+          {showReportWidget && (
+            <ReportAProblemWidget setShowReportWidget={setShowReportWidget} />
           )}
         </div>
 

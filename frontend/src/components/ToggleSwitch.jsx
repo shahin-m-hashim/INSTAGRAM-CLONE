@@ -14,7 +14,13 @@ const themes = {
   },
 };
 
-export default function ToggleSwitch({ id, theme = "dark", checked = false }) {
+export default function ToggleSwitch({
+  id,
+  pillClassName,
+  ballClassName,
+  theme = "dark",
+  checked = false,
+}) {
   const [isChecked, setIsChecked] = useState(checked);
 
   const currentTheme = themes[theme];
@@ -36,7 +42,10 @@ export default function ToggleSwitch({ id, theme = "dark", checked = false }) {
         style={{
           background: isChecked ? currentTheme.pillOn : currentTheme.pillOff,
         }}
-        className="relative h-6 transition-colors duration-200 rounded-full w-11"
+        className={cn(
+          "relative h-6 transition-colors duration-200 rounded-full w-11",
+          pillClassName
+        )}
       >
         <div
           style={{
@@ -44,7 +53,8 @@ export default function ToggleSwitch({ id, theme = "dark", checked = false }) {
           }}
           className={cn(
             isChecked ? "translate-x-[22px]" : "translate-x-[2px]",
-            "absolute top-1/2 size-5 rounded-full -translate-y-1/2 transform transition-all duration-200"
+            "absolute top-1/2 size-5 rounded-full -translate-y-1/2 transform transition-all duration-200",
+            ballClassName
           )}
         />
       </div>

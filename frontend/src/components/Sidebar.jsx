@@ -135,7 +135,6 @@ export default function Sidebar({ setActiveWidget }) {
 
           <div>
             <button
-              onBlur={() => setActiveWidget(null)}
               onClick={() =>
                 setActiveWidget((prev) => (prev === "more" ? null : "more"))
               }
