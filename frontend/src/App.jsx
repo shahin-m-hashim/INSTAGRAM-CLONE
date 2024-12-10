@@ -1,4 +1,4 @@
-import YourActivityPage from "pages/YourActivityPage";
+import ProfilePage from "pages/ProfilePage";
 
 export default function App() {
   return (
@@ -10,9 +10,9 @@ export default function App() {
       {/* <EmailConfirmationPage /> */}
 
       {/* <HomePage /> */}
-      {/* <ProfilePage /> */}
+      <ProfilePage />
       {/* <SettingsPage /> */}
-      {<YourActivityPage />}
+      {/* {<YourActivityPage />} */}
 
       {/* <NotFoundPage isAuthenticated={true} /> */}
     </>

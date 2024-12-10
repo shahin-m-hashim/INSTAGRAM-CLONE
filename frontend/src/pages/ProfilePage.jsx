@@ -1,3 +1,5 @@
+import { cn } from "utils/cn";
+import { useState } from "react";
 import SaveIcon from "icons/SaveIcon";
 import Footer from "components/Footer";
 import PostsIcon from "icons/PostsIcon";
@@ -7,8 +9,10 @@ import SettingsIcon from "icons/SettingsIcon";
 import Button from "components/wrappers/Button";
 import AddPhoneNoIcon from "icons/AddPhoneNoIcon";
 import SharePhotosIcon from "icons/SharePhotosIcon";
-import ProfilePicture from "components/ProfilePicture";
+import PhotosOfYouIcon from "icons/PhotosOfYouIcon";
 import AppLayout from "components/wrappers/AppLayout";
+import RoundedSavedIcon from "icons/RoundedSavedIcon";
+import ProfilePicture from "components/ProfilePicture";
 import CompleteProfileIcon from "icons/CompleteProfileIcon";
 import AddProfilePhotoIcon from "icons/AddProfilePhotoIcon";
 import HorizontalScroller from "components/wrappers/HorizontalScroller";
@@ -41,7 +45,71 @@ const items = [
   },
 ];
 
+const PostsTab = () => (
+  <div className="flex flex-col w-full gap-4 px-5">
+    <h1>Getting Started</h1>
+    <HorizontalScroller duration={300}>
+      <ul className="flex items-center gap-2">
+        {items.map((item, idx) => {
+          const Icon = item.icon;
+          return (
+            <li
+              key={idx}
+              className="flex flex-col flex-shrink-0 items-center gap-4 border-[1px] border-[rgb(54,54,54)] p-4 w-64 h-60 rounded-md"
+            >
+              <Icon />
+              <p className="text-sm font-semibold">{item.heading}</p>
+              <p className="text-xs text-[rgb(168,168,168)]">{item.caption}</p>
+              <div className="flex justify-center w-full mt-auto">
+                <Button className="min-w-[152px]">{item.button}</Button>
+              </div>
+            </li>
+          );
+        })}
+      </ul>
+    </HorizontalScroller>
+  </div>
+);
+
+const SavedTab = () => (
+  <div className="flex flex-col w-full gap-10 px-5">
+    <div className="flex items-center justify-between w-full">
+      <p className="text-xs  text-[rgb(168,168,168)]">
+        Only you can see what you&apos;ve saved
+      </p>
+      <a className="text-xs font-semibold text-[rgb(0,149,246)] hover:text-white">
+        + New Collection
+      </a>
+    </div>
+
+    <div className="flex justify-center">
+      <div className="flex flex-col items-center justify-center gap-4 text-center">
+        <RoundedSavedIcon />
+        <h1 className="text-4xl font-bold">Save</h1>
+        <p className="w-3/5 text-sm">
+          Save photos and videos that you want to see again. No one is notified,
+          and only you can see what you&apos;ve saved.
+        </p>
+      </div>
+    </div>
+  </div>
+);
+
+const TaggedTab = () => (
+  <div className="flex justify-center w-full px-5">
+    <div className="flex flex-col items-center justify-center gap-4 text-center">
+      <PhotosOfYouIcon />
+      <h1 className="text-4xl font-bold">Photos of you</h1>
+      <p className="text-sm">
+        When people tag you in photos, they&apos;ll appear here.
+      </p>
+    </div>
+  </div>
+);
+
 export default function ProfilePage() {
+  const [activeTab, setActiveTab] = useState("postsTab");
+
   return (
     <AppLayout>
       <main className="scrollbar-dark h-screen overflow-auto min-w-[320px] bg-black text-white md:pt-0 pb-[50px] md:pb-0 md:pl-[80px] xl:pl-[250px] pt-[60px]">
@@ -117,7 +185,7 @@ export default function ProfilePage() {
 
             <div className="mt-10 md:hidden">
               <Separator straight={true} />
-              <div className="flex items-center w-full my-2.5 justify-evenly">
+              <div className="flex my-2.5 text-sm justify-evenly size-full">
                 <div className="flex flex-col items-center justify-center">
                   <span>0</span>
                   <span className="text-sm text-[rgb(168,168,168)]">posts</span>
@@ -147,58 +215,100 @@ export default function ProfilePage() {
                 <Separator straight={true} />
               </div>
               <div className="flex my-5 text-sm font-semibold md:px-6 justify-evenly md:justify-center md:gap-14 size-full">
-                <div className="relative flex items-center justify-center flex-1 gap-2 md:flex-initial">
-                  <div className="absolute inset-x-0 md:-inset-x-2 bottom-[2.8rem] md:bottom-10 h-[2px] bg-white"></div>
-                  <PostsIcon className="size-6 md:size-auto text-[rgb(0,149,246)] md:text-[rgb(245,245,245)]" />
-                  <span className="text-[rgb(245,245,245)] hidden md:block">
+                <a
+                  onClick={() => setActiveTab("postsTab")}
+                  className="relative flex items-center justify-center flex-1 gap-2 md:flex-initial"
+                >
+                  {activeTab === "postsTab" && (
+                    <div className="absolute inset-x-0 md:-inset-x-2 bottom-[2.8rem] md:bottom-10 h-[2px] bg-white" />
+                  )}
+                  <PostsIcon
+                    className={cn(
+                      activeTab === "postsTab"
+                        ? "text-[rgb(0,149,246)] md:text-[rgb(245,245,245)]"
+                        : "text-[rgb(245,245,245)]",
+                      "size-6 md:size-3"
+                    )}
+                  />
+                  <span
+                    className={cn(
+                      activeTab === "postsTab"
+                        ? "text-[rgb(245,245,245)]"
+                        : "text-[rgb(168,168,168)]",
+                      "hidden md:block"
+                    )}
+                  >
                     POSTS
                   </span>
-                </div>
-                <div className="flex items-center justify-center flex-1 gap-2 md:flex-initial">
-                  <SaveIcon className="size-6 md:size-auto text-[rgb(168,168,168)]" />
-                  <span className="text-[rgb(168,168,168)] hidden md:block">
+                </a>
+
+                <a
+                  onClick={() => setActiveTab("savedTab")}
+                  className="relative flex items-center justify-center flex-1 gap-2 md:flex-initial"
+                >
+                  {activeTab === "savedTab" && (
+                    <div className="absolute inset-x-0 md:-inset-x-2 bottom-[2.8rem] md:bottom-10 h-[2px] bg-white" />
+                  )}
+                  <SaveIcon
+                    className={cn(
+                      activeTab === "savedTab"
+                        ? "text-[rgb(0,149,246)] md:text-[rgb(245,245,245)]"
+                        : "text-[rgb(245,245,245)]",
+                      "size-6 md:size-3"
+                    )}
+                  />
+                  <span
+                    className={cn(
+                      activeTab === "savedTab"
+                        ? "text-[rgb(245,245,245)]"
+                        : "text-[rgb(168,168,168)]",
+                      "hidden md:block"
+                    )}
+                  >
                     SAVED
                   </span>
-                </div>
-                <div className="flex items-center justify-center flex-1 gap-2 md:flex-initial">
-                  <TaggedIcon className="size-6 md:size-auto text-[rgb(168,168,168)]" />
-                  <span className="text-[rgb(168,168,168)] hidden md:block">
+                </a>
+
+                <a
+                  onClick={() => setActiveTab("taggedTab")}
+                  className="relative flex items-center justify-center flex-1 gap-2 md:flex-initial"
+                >
+                  {activeTab === "taggedTab" && (
+                    <div className="absolute inset-x-0 md:-inset-x-2 bottom-[2.8rem] md:bottom-10 h-[2px] bg-white" />
+                  )}
+
+                  <TaggedIcon
+                    className={cn(
+                      activeTab === "taggedTab"
+                        ? "text-[rgb(0,149,246)] md:text-[rgb(245,245,245)]"
+                        : "text-[rgb(245,245,245)]",
+                      "size-6 md:size-3"
+                    )}
+                  />
+                  <span
+                    className={cn(
+                      activeTab === "taggedTab"
+                        ? "text-[rgb(245,245,245)]"
+                        : "text-[rgb(168,168,168)]",
+                      "hidden md:block"
+                    )}
+                  >
                     TAGGED
                   </span>
-                </div>
+                </a>
               </div>
               <div className="md:hidden">
                 <Separator straight={true} />
               </div>
             </div>
 
-            <div className="flex flex-col w-full gap-4 px-5">
-              <h1>Getting Started</h1>
-              <HorizontalScroller duration={300}>
-                <ul className="flex items-center gap-2">
-                  {items.map((item, idx) => {
-                    const Icon = item.icon;
-                    return (
-                      <li
-                        key={idx}
-                        className="flex flex-col flex-shrink-0 items-center gap-4 border-[1px] border-[rgb(54,54,54)] p-4 w-64 h-60 rounded-md"
-                      >
-                        <Icon />
-                        <p className="text-sm font-semibold">{item.heading}</p>
-                        <p className="text-xs text-[rgb(168,168,168)]">
-                          {item.caption}
-                        </p>
-                        <div className="flex justify-center w-full mt-auto">
-                          <Button className="min-w-[152px]">
-                            {item.button}
-                          </Button>
-                        </div>
-                      </li>
-                    );
-                  })}
-                </ul>
-              </HorizontalScroller>
-            </div>
+            {activeTab === "postsTab" ? (
+              <PostsTab />
+            ) : activeTab === "savedTab" ? (
+              <SavedTab />
+            ) : (
+              <TaggedTab />
+            )}
           </div>
         </div>
 
