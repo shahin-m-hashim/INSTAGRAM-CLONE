@@ -9,7 +9,7 @@ import CreateNewPostWidget from "components/widgets/CreateNewPostWidget";
 import CreateNewNoteWidget from "components/widgets/CreateNewNoteWidget";
 import ReportAProblemWidget from "components/widgets/ReportAProblemWidget";
 
-export default function AppLayout({ children }) {
+export default function AppLayout({ children, hideTopNavbar = false }) {
   const [activeWidget, setActiveWidget] = useState(null);
   const [showReportWidget, setShowReportWidget] = useState(false);
 
@@ -18,7 +18,7 @@ export default function AppLayout({ children }) {
       <section className="min-h-screen min-w-[320px]">
         <div className="fixed inset-0 z-10 h-screen min-w-[320px] overflow-hidden pointer-events-none">
           <Sidebar setActiveWidget={setActiveWidget} />
-          <TopNavbar />
+          {!hideTopNavbar && <TopNavbar />}
           <BottomNavbar />
 
           {activeWidget === "more" && (

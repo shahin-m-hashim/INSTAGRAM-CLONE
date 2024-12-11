@@ -1,15 +1,19 @@
 import { cn } from "utils/cn";
-import { useRef, useState } from "react";
+import { useRef } from "react";
 
 export default function ProfilePicture({
-  className,
-  type = "plain",
-  hasStory = false,
+  className = "",
+  fileType = "story",
+  storyPadding = "3px",
+  noteInputClassName = "",
+  requireNoteInput = false,
+  requireFileInput = false,
+  cameraIconClassName = "",
 }) {
-  const imgInputRef = useRef();
-  const [note, setNote] = useState("");
+  const hasStory = true;
+  const fileInputRef = useRef();
 
-  const handleNewProfilePic = (e) => {
+  const handleFileChange = (e) => {
     const file = e.target.files[0];
 
     if (file) {
@@ -24,57 +28,57 @@ export default function ProfilePicture({
         <img
           alt="profile pic"
           src="images/default_dp_dark.webp"
-          className={cn("rounded-full size-full", hasStory && "p-1")}
+          style={{ padding: hasStory ? storyPadding : 0 }}
+          className="rounded-full size-full active-story-gradient"
         />
       </div>
 
-      {hasStory && (
-        <div className="absolute inset-0 z-0 rounded-full size-full active-story-gradient" />
-      )}
-
-      {type === "input" && (
+      {requireFileInput && (
         <>
           <div className="absolute inset-0 z-20">
             <div
-              className={cn(
-                hasStory && "p-1",
-                "flex items-center justify-center size-full"
-              )}
+              style={{ padding: hasStory ? storyPadding : 0 }}
+              className="flex items-center justify-center size-full"
             >
               <div className="bg-[rgb(85,85,85)] rounded-full size-full opacity-70"></div>
             </div>
           </div>
 
           <div className="absolute inset-0 z-30">
-            <div
-              className={cn(
-                hasStory && "p-1",
-                "flex items-center justify-center size-full"
-              )}
-            >
-              <img
-                alt="camera"
-                src="icons/camera.svg"
-                className=" size-8 md:size-10"
-              />
+            <div className="flex items-center justify-center size-full">
+              <button
+                type="button"
+                onClick={() => fileInputRef.current.click()}
+              >
+                <img
+                  alt="camera"
+                  src="icons/camera.svg"
+                  className={cn("size-6 md:size-10", cameraIconClassName)}
+                />
+              </button>
             </div>
           </div>
 
           <input
             type="file"
-            accept="image/*"
-            ref={imgInputRef}
-            onChange={handleNewProfilePic}
-            className="absolute inset-0 z-30 opacity-0 cursor-pointer"
+            ref={fileInputRef}
+            className="hidden"
+            onChange={handleFileChange}
+            accept={fileType === "story" ? "image/*,video/*" : "image/*"}
           />
-
-          <div className="absolute left-0 z-40 -top-5 md:-top-8 md:left-8">
-            <button className="bg-[rgb(54,54,54)] text-[rgb(168,168,168)] text-xs px-2 py-3 rounded-lg flex items-center justify-center">
-              Note...
-            </button>
-            <div className="absolute left-3 border-l-[5px] border-l-transparent border-r-[5px] border-r-transparent border-t-[5px] border-t-[rgb(54,54,54)]"></div>
-          </div>
         </>
+      )}
+
+      {requireNoteInput && (
+        <div className={cn("absolute z-30 -top-6 left-11", noteInputClassName)}>
+          <button
+            type="button"
+            className="bg-[rgb(54,54,54)] text-[rgb(168,168,168)] text-xs p-2 rounded-lg"
+          >
+            Note...
+          </button>
+          <div className="absolute left-5 border-l-[5px] border-l-transparent border-r-[5px] border-r-transparent border-t-[5px] border-t-[rgb(54,54,54)]"></div>
+        </div>
       )}
     </div>
   );

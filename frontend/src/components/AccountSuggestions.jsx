@@ -7,11 +7,11 @@ export default function AccountSuggestions() {
   return (
     <div className="flex justify-center">
       <div className="xs:p-5 lg:w-1/2">
-        <div className="flex items-center w-full pt-4 xs:pt-0">
+        <div className="flex items-center w-full gap-2 px-5">
           <div className="hidden xs:block">
             <img src="images/friend_suggestions.webp" />
           </div>
-          <div className="flex-1 px-5">
+          <div className="flex-1">
             <p className="text-sm font-semibold xs:text-base">
               Find friends and accounts you like
             </p>
@@ -19,9 +19,8 @@ export default function AccountSuggestions() {
               Try following 5 or more accounts for a personalized experience.
             </p>
           </div>
-          <div className="pr-4 w-14 xs:p-0">
-            <Button className="px-4">Next</Button>
-          </div>
+
+          <Button className="w-12 h-7">Next</Button>
         </div>
 
         <div className="my-4">

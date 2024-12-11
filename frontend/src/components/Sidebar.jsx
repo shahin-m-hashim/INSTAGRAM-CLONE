@@ -7,15 +7,15 @@ import CreateIcon from "icons/CreateIcon";
 import ExploreIcon from "icons/ExploreIcon";
 import HamburgerIcon from "icons/HamburgerIcon";
 import MessengerIcon from "icons/MessengerIcon";
+import ProfilePicture from "components/ProfilePicture";
 import InstagramTextIcon from "icons/InstagramTextIcon";
 import InstagramLogoIcon from "icons/InstagramLogoIcon";
 import NotificationsIcon from "icons/NotificationsIcon";
 import SearchSidebar from "components/sidebars/SearchSidebar";
-import MessengerSidebar from "components/sidebars/MessengerSidebar";
 import NotificationsSidebar from "components/sidebars/NotificationsSidebar";
-import ProfilePicture from "components/ProfilePicture";
 
 export default function Sidebar({ setActiveWidget }) {
+  const isCollapsed = true;
   const [activeSidebar, setActiveSidebar] = useState(null);
 
   const handleSidebar = (sidebar) =>
@@ -25,9 +25,15 @@ export default function Sidebar({ setActiveWidget }) {
 
   return (
     <>
+      {activeSidebar === "notifications" ? (
+        <NotificationsSidebar />
+      ) : activeSidebar === "search" ? (
+        <SearchSidebar />
+      ) : null}
+
       <div
         className={cn(
-          activeSidebar ? "w-[80px]" : "w-[80px] xl:w-[250px]",
+          isCollapsed || activeSidebar ? "w-[80px]" : "w-[80px] xl:w-[250px]",
           "hidden md:block absolute inset-y-0 left-0 pointer-events-auto"
         )}
       >
@@ -35,7 +41,7 @@ export default function Sidebar({ setActiveWidget }) {
           <div className="xl:my-4">
             <a
               className={cn(
-                activeSidebar ? "flex" : "flex xl:hidden",
+                isCollapsed || activeSidebar ? "flex" : "flex xl:hidden",
                 "items-center justify-center px-2.5 py-3 transition-all duration-100 ease-in rounded-md hover:bg-[rgb(38,38,38,0.7)] gap-4 size-full"
               )}
             >
@@ -44,7 +50,7 @@ export default function Sidebar({ setActiveWidget }) {
 
             <a
               className={cn(
-                activeSidebar ? "hidden" : "hidden xl:block",
+                isCollapsed || activeSidebar ? "hidden" : "hidden xl:block",
                 "px-2.5 py-3"
               )}
             >
@@ -56,9 +62,10 @@ export default function Sidebar({ setActiveWidget }) {
             <div className="flex flex-col items-center justify-between w-full gap-2">
               <a className="flex items-center flex-col xl:flex-row px-2.5 py-3 transition-all duration-100 ease-in rounded-md hover:bg-[rgb(38,38,38,0.7)] justify-center xl:justify-start gap-4 size-full">
                 <HomeIcon active={true} />
-                {!activeSidebar && (
-                  <span className="hidden xl:block">Home</span>
-                )}
+                {isCollapsed ||
+                  (!activeSidebar && (
+                    <span className="hidden xl:block">Home</span>
+                  ))}
               </a>
 
               <button
@@ -69,36 +76,39 @@ export default function Sidebar({ setActiveWidget }) {
                 )}
               >
                 <SearchIcon />
-                {!activeSidebar && (
-                  <span className="hidden xl:block">Search</span>
-                )}
+                {isCollapsed ||
+                  (!activeSidebar && (
+                    <span className="hidden xl:block">Search</span>
+                  ))}
               </button>
 
               <a className="flex items-center justify-center flex-col xl:flex-row px-2.5 py-3 transition-all duration-100 ease-in rounded-md hover:bg-[rgb(38,38,38,0.7)] gap-4 xl:justify-start size-full">
                 <ExploreIcon />
-                {!activeSidebar && (
-                  <span className="hidden xl:block">Explore</span>
-                )}
+                {isCollapsed ||
+                  (!activeSidebar && (
+                    <span className="hidden xl:block">Explore</span>
+                  ))}
               </a>
 
               <button className="flex items-center justify-center flex-col xl:flex-row px-2.5 py-3 transition-all duration-100 ease-in rounded-md hover:bg-[rgb(38,38,38,0.7)] gap-4 xl:justify-start size-full">
                 <ReelsIcon />
-                {!activeSidebar && (
-                  <span className="hidden xl:block">Reels</span>
-                )}
+                {isCollapsed ||
+                  (!activeSidebar && (
+                    <span className="hidden xl:block">Reels</span>
+                  ))}
               </button>
 
               <a
-                onClick={() => handleSidebar("messenger")}
                 className={cn(
                   activeSidebar === "messenger" && "outline-1 outline",
                   "items-center flex-col xl:flex-row px-2.5 py-3 transition-all duration-300 ease-in rounded-md hover:bg-[rgb(38,38,38,0.7)] justify-center xl:justify-start gap-4 flex size-full"
                 )}
               >
                 <MessengerIcon />
-                {!activeSidebar && (
-                  <span className="hidden xl:block">Messages</span>
-                )}
+                {isCollapsed ||
+                  (!activeSidebar && (
+                    <span className="hidden xl:block">Messages</span>
+                  ))}
               </a>
 
               <button
@@ -109,9 +119,10 @@ export default function Sidebar({ setActiveWidget }) {
                 )}
               >
                 <NotificationsIcon />
-                {!activeSidebar && (
-                  <span className="hidden xl:block">Notifications</span>
-                )}
+                {isCollapsed ||
+                  (!activeSidebar && (
+                    <span className="hidden xl:block">Notifications</span>
+                  ))}
               </button>
 
               <button
@@ -119,16 +130,18 @@ export default function Sidebar({ setActiveWidget }) {
                 className="flex items-center justify-center flex-col xl:flex-row px-2.5 py-3 transition-all duration-100 ease-in rounded-md hover:bg-[rgb(38,38,38,0.7)] gap-4 xl:justify-start size-full"
               >
                 <CreateIcon />
-                {!activeSidebar && (
-                  <span className="hidden xl:block">Create</span>
-                )}
+                {isCollapsed ||
+                  (!activeSidebar && (
+                    <span className="hidden xl:block">Create</span>
+                  ))}
               </button>
 
               <a className="flex items-center justify-center flex-col xl:flex-row px-2.5 py-3 transition-all duration-100 ease-in rounded-md hover:bg-[rgb(38,38,38,0.7)] gap-4 xl:justify-start size-full">
                 <ProfilePicture className="size-7" />
-                {!activeSidebar && (
-                  <span className="hidden xl:block">Profile</span>
-                )}
+                {isCollapsed ||
+                  (!activeSidebar && (
+                    <span className="hidden xl:block">Profile</span>
+                  ))}
               </a>
             </div>
           </div>
@@ -141,21 +154,14 @@ export default function Sidebar({ setActiveWidget }) {
               className="flex items-center flex-col xl:flex-row px-2.5 py-3 transition-all duration-100 ease-in rounded-md hover:bg-[rgb(38,38,38,0.7)] justify-center xl:justify-start w-full gap-4"
             >
               <HamburgerIcon />
-              {!activeSidebar && <span className="hidden xl:block">More</span>}
+              {isCollapsed ||
+                (!activeSidebar && (
+                  <span className="hidden xl:block">More</span>
+                ))}
             </button>
           </div>
         </div>
       </div>
-
-      <>
-        {activeSidebar === "notifications" ? (
-          <NotificationsSidebar />
-        ) : activeSidebar === "search" ? (
-          <SearchSidebar />
-        ) : (
-          activeSidebar === "messenger" && <MessengerSidebar />
-        )}
-      </>
     </>
   );
 }

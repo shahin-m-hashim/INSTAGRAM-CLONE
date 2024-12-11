@@ -1,4 +1,4 @@
-import ProfilePage from "pages/ProfilePage";
+import MessengerPage from "pages/MessengerPage";
 
 export default function App() {
   return (
@@ -10,7 +10,8 @@ export default function App() {
       {/* <EmailConfirmationPage /> */}
 
       {/* <HomePage /> */}
-      <ProfilePage />
+      <MessengerPage />
+      {/* <ProfilePage /> */}
       {/* <SettingsPage /> */}
       {/* {<YourActivityPage />} */}
 

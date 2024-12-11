@@ -119,8 +119,9 @@ export default function ProfilePage() {
               <div className="flex items-center justify-center flex-1 mx-8 md:mx-16 md:gap-10 md:items-start lg:gap-20">
                 <div className="flex flex-1 md:flex-initial">
                   <ProfilePicture
-                    type="input"
-                    hasStory={true}
+                    fileType="newProfilePic"
+                    requireNoteInput={true}
+                    requireFileInput={true}
                     className="size-24 md:size-36"
                   />
                 </div>
