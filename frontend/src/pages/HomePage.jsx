@@ -13,7 +13,7 @@ export default function HomePage() {
 
   return (
     <AppLayout>
-      <main className="scrollbar-dark h-screen overflow-auto min-w-[320px] bg-black text-white md:pt-0 pb-[50px] md:pb-0 md:pl-[80px] xl:pl-[250px] pt-[60px]">
+      <main className="h-screen overflow-auto min-w-[320px] md:pt-0 pb-[50px] md:pb-0 md:pl-[80px] xl:pl-[250px] pt-[60px]">
         {following <= 5 ? (
           <AccountSuggestions />
         ) : (

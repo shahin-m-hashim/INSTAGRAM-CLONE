@@ -112,7 +112,7 @@ export default function ProfilePage() {
 
   return (
     <AppLayout>
-      <main className="scrollbar-dark h-screen overflow-auto min-w-[320px] bg-black text-white md:pt-0 pb-[50px] md:pb-0 md:pl-[80px] xl:pl-[250px] pt-[60px]">
+      <main className="h-screen overflow-auto min-w-[320px] md:pt-0 pb-[50px] md:pb-0 md:pl-[80px] xl:pl-[250px] pt-[60px]">
         <div className="flex min-h-screen lg:px-6 xl:px-36">
           <div className="flex flex-col py-10 md:py-16 size-full">
             <div className="flex flex-col w-full gap-8 md:gap-14">

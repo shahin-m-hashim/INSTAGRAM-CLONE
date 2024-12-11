@@ -318,7 +318,7 @@ export default function YourActivityPage() {
 
   return (
     <AppLayout>
-      <main className="scrollbar-dark h-screen overflow-auto min-w-[320px] bg-black text-white md:pt-0 pb-[50px] md:pb-0 md:pl-[80px] xl:pl-[250px] pt-[60px]">
+      <main className="h-screen overflow-auto min-w-[320px] md:pt-0 pb-[50px] md:pb-0 md:pl-[80px] xl:pl-[250px] pt-[60px]">
         <div className="flex justify-center w-full md:px-6 xl:px-36">
           <div className="flex w-full mt-10 rounded-md border border-[rgb(54,54,54)]">
             <div className="w-[240px] flex flex-col border-r border-r-[rgb(54,54,54)]">

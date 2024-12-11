@@ -15,7 +15,7 @@ import SearchSidebar from "components/sidebars/SearchSidebar";
 import NotificationsSidebar from "components/sidebars/NotificationsSidebar";
 
 export default function Sidebar({ setActiveWidget }) {
-  const isCollapsed = true;
+  const isCollapsed = false;
   const [activeSidebar, setActiveSidebar] = useState(null);
 
   const handleSidebar = (sidebar) =>

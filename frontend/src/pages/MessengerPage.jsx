@@ -6,7 +6,7 @@ import AppLayout from "components/wrappers/AppLayout";
 export default function MessengerPage() {
   return (
     <AppLayout hideTopNavbar={true}>
-      <main className="min-w-[320px] md:flex h-screen overflow-hidden bg-black text-white pb-[50px] md:pb-0 md:pl-[80px]">
+      <main className="min-w-[320px] md:flex h-screen overflow-hidden pb-[50px] md:pb-0 md:pl-[80px]">
         <Messenger />
         <div className="items-center justify-center hidden w-full p-4 md:flex">
           <div className="flex flex-col items-center gap-4 text-center w-[200px]">

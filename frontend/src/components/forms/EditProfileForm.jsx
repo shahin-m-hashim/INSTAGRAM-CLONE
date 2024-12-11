@@ -10,7 +10,7 @@ export default function EditProfileForm() {
 
       <div className="flex gap-2 items-center justify-between rounded-xl p-4 bg-[rgb(38,38,38)]">
         <div className="flex items-center flex-1 gap-2 md:gap-5">
-          <ProfilePicture />
+          <ProfilePicture storyPadding="0px" />
           <span className="font-semibold">username</span>
         </div>
         <Button className="text-xs xs:text-sm md:px-3 w-[120px]">

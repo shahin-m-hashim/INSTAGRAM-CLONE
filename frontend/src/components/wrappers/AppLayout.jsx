@@ -15,7 +15,7 @@ export default function AppLayout({ children, hideTopNavbar = false }) {
 
   return (
     <SplashScreen>
-      <section className="min-h-screen min-w-[320px]">
+      <section className="min-h-screen min-w-[320px] bg-black text-white scrollbar-dark">
         <div className="fixed inset-0 z-10 h-screen min-w-[320px] overflow-hidden pointer-events-none">
           <Sidebar setActiveWidget={setActiveWidget} />
           {!hideTopNavbar && <TopNavbar />}

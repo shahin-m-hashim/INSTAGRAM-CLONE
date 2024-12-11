@@ -1,4 +1,4 @@
-import MessengerPage from "pages/MessengerPage";
+import SettingsPage from "pages/SettingsPage";
 
 export default function App() {
   return (
@@ -10,9 +10,9 @@ export default function App() {
       {/* <EmailConfirmationPage /> */}
 
       {/* <HomePage /> */}
-      <MessengerPage />
+      {/* <MessengerPage /> */}
       {/* <ProfilePage /> */}
-      {/* <SettingsPage /> */}
+      <SettingsPage />
       {/* {<YourActivityPage />} */}
 
       {/* <NotFoundPage isAuthenticated={true} /> */}
