@@ -1,7 +1,7 @@
 import users from "mocks/users.json";
-import HorizontalScroller from "components/wrappers/HorizontalScroller";
 import Image from "components/Image";
 import CloseIcon from "icons/CloseIcon";
+import HorizontalScroller from "components/wrappers/HorizontalScroller";
 
 export default function SuggestionCards() {
   return (

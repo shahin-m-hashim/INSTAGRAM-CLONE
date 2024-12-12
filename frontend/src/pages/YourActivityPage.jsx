@@ -10,16 +10,16 @@ import ReviewsIcon from "icons/ReviewsIcon";
 import Separator from "components/Separator";
 import CommentsIcon from "icons/CommentsIcon";
 import DownloadIcon from "icons/DownloadIcon";
+import ActivityIcon from "icons/ActivityIcon";
+import MobileAppIcon from "icons/MobileAppIcon";
+import Button from "components/wrappers/Button";
 import AdActivityIcon from "icons/AdActivityIcon";
 import HighlightsIcon from "icons/HighlightsIcon";
-import AppLayout from "components/wrappers/AppLayout";
 import InteractionsIcon from "icons/InteractionsIcon";
 import StoryRepliesIcon from "icons/StoryRepliesIcon";
 import AccountHistoryIcon from "icons/AccountHistoryIcon";
 import PhotosAndVideosIcon from "icons/PhotosAndVideosIcon";
-import MobileAppIcon from "icons/MobileAppIcon";
-import ActivityIcon from "icons/ActivityIcon";
-import Button from "components/wrappers/Button";
+import SplashScreen from "components/wrappers/SplashScreen";
 
 const InteractionsTab = () => {
   const [activeTab, setActiveTab] = useState("likesTab");
@@ -317,7 +317,7 @@ export default function YourActivityPage() {
   const [activeTab, setActiveTab] = useState("interactionsTab");
 
   return (
-    <AppLayout>
+    <SplashScreen>
       <main className="h-screen overflow-auto min-w-[320px] md:pt-0 pb-[50px] md:pb-0 md:pl-[80px] xl:pl-[250px] pt-[60px]">
         <div className="flex justify-center w-full md:px-6 xl:px-36">
           <div className="flex w-full mt-10 rounded-md border border-[rgb(54,54,54)]">
@@ -461,6 +461,6 @@ export default function YourActivityPage() {
           <Footer />
         </div>
       </main>
-    </AppLayout>
+    </SplashScreen>
   );
 }

@@ -1,8 +1,8 @@
 import { cn } from "utils/cn";
-export default function ExploreIcon({ active = false, className }) {
+export default function ExploreIcon({ isActive = false, className }) {
   return (
     <>
-      {active ? (
+      {isActive ? (
         <svg
           aria-label="Explore"
           className={cn("text-white", className)}

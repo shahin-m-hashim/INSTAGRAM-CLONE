@@ -1,8 +1,8 @@
 import { cn } from "utils/cn";
-export default function HomeIcon({ active = false, className }) {
+export default function HomeIcon({ isActive = false, className }) {
   return (
     <>
-      {active ? (
+      {isActive ? (
         <svg
           role="img"
           width={24}

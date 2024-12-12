@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-export default function SplashScreen({ delay = 500, children }) {
+export default function SplashScreen({ children, delay = 500 }) {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
@@ -56,7 +56,7 @@ export default function SplashScreen({ delay = 500, children }) {
         </div>
       )}
 
-      {children}
+      <div className="absolute inset-0 z-0">{children}</div>
     </>
   );
 }

@@ -1,5 +1,4 @@
 import { cn } from "utils/cn";
-import { useState } from "react";
 import MetaIcon from "icons/MetaIcon";
 import HelpIcon from "icons/HelpIcon";
 import PrivacyIcon from "icons/PrivacyIcon";
@@ -9,6 +8,7 @@ import LanguageIcon from "icons/LanguageIcon";
 import MessengerIcon from "icons/MessengerIcon";
 import EditProfileIcon from "icons/EditProfileIcon";
 import HiddenWordsIcon from "icons/HiddenWordsIcon";
+import { Link, useLocation } from "react-router-dom";
 import CloseFriendsIcon from "icons/CloseFriendsIcon";
 import FamilyCenterIcon from "icons/FamilyCenterIcon";
 import MutedAccountsIcon from "icons/MutedAccountsIcon";
@@ -26,7 +26,7 @@ import AccountTypeAndToolsIcon from "icons/AccountTypeAndToolsIcon";
 import ArchivingAndDownloadingIcon from "icons/ArchivingAndDownloadingIcon";
 
 export default function SettingsContent() {
-  const [activeTab, setActiveTab] = useState("profileSettingsTab");
+  const activeTab = useLocation().pathname.split("/")[1];
 
   return (
     <>
@@ -82,27 +82,27 @@ export default function SettingsContent() {
           </h3>
 
           <div className="flex flex-col gap-1">
-            <a
-              onClick={() => setActiveTab("profileSettingsTab")}
+            <Link
+              to="edit_profile"
               className={cn(
-                activeTab === "profileSettingsTab" && "bg-[rgb(38,38,38)]",
+                activeTab === "edit_profile" && "bg-[rgb(38,38,38)]",
                 "flex items-center gap-3 p-3 hover:bg-[rgb(255,255,255,.1)] rounded-md"
               )}
             >
               <EditProfileIcon />
               <span className="text-sm">Edit profile</span>
-            </a>
+            </Link>
 
-            <a
-              onClick={() => setActiveTab("notificationSettingsTab")}
+            <Link
+              to="notifications"
               className={cn(
-                activeTab === "notificationSettingsTab" && "bg-[rgb(38,38,38)]",
+                activeTab === "notifications" && "bg-[rgb(38,38,38)]",
                 "flex items-center gap-3 p-3 hover:bg-[rgb(255,255,255,.1)] rounded-md"
               )}
             >
               <BellNotificationIcon />
               <span className="text-sm">Notifications</span>
-            </a>
+            </Link>
           </div>
         </div>
 
@@ -112,52 +112,49 @@ export default function SettingsContent() {
           </h3>
 
           <div className="flex flex-col gap-1">
-            <a
-              onClick={() => setActiveTab("accountPrivacySettingsTab")}
+            <Link
+              to="account_privacy"
               className={cn(
-                activeTab === "accountPrivacySettingsTab" &&
-                  "bg-[rgb(38,38,38)]",
+                activeTab === "account_privacy" && "bg-[rgb(38,38,38)]",
                 "flex items-center gap-3 p-3 hover:bg-[rgb(255,255,255,.1)] rounded-md"
               )}
             >
               <PrivacyIcon />
               <span className="text-sm">Account privacy</span>
-            </a>
+            </Link>
 
-            <a
-              onClick={() => setActiveTab("closeFriendsSettingsTab")}
+            <Link
+              to="close_friends"
               className={cn(
-                activeTab === "closeFriendsSettingsTab" && "bg-[rgb(38,38,38)]",
+                activeTab === "close_friends" && "bg-[rgb(38,38,38)]",
                 "flex items-center gap-3 p-3 hover:bg-[rgb(255,255,255,.1)] rounded-md"
               )}
             >
               <CloseFriendsIcon />
               <span className="text-sm">Close Friends</span>
-            </a>
+            </Link>
 
-            <a
-              onClick={() => setActiveTab("blockedAccountsSettingsTab")}
+            <Link
+              to="blocked_accounts"
               className={cn(
-                activeTab === "blockedAccountsSettingsTab" &&
-                  "bg-[rgb(38,38,38)]",
+                activeTab === "blocked_accounts" && "bg-[rgb(38,38,38)]",
                 "flex items-center gap-3 p-3 hover:bg-[rgb(255,255,255,.1)] rounded-md"
               )}
             >
               <BlockedIcon />
               <span className="text-sm">Blocked</span>
-            </a>
+            </Link>
 
-            <a
-              onClick={() => setActiveTab("hideStoryAndLiveSettingsTab")}
+            <Link
+              to="story_and_live"
               className={cn(
-                activeTab === "hideStoryAndLiveSettingsTab" &&
-                  "bg-[rgb(38,38,38)]",
+                activeTab === "story_and_live" && "bg-[rgb(38,38,38)]",
                 "flex items-center gap-3 p-3 hover:bg-[rgb(255,255,255,.1)] rounded-md"
               )}
             >
               <HideStoryAndLiveIcon />
               <span className="text-sm">Hide story and live</span>
-            </a>
+            </Link>
           </div>
         </div>
 
@@ -167,75 +164,72 @@ export default function SettingsContent() {
           </h3>
 
           <div className="flex flex-col gap-1">
-            <a
-              onClick={() => setActiveTab("messagesAndStoryRepliesSettingsTab")}
+            <Link
+              to="settings/message_and_story_replies"
               className={cn(
-                activeTab === "messagesAndStoryRepliesSettingsTab" &&
+                activeTab === "message_and_story_replies" &&
                   "bg-[rgb(38,38,38)]",
                 "flex items-center gap-3 p-3 hover:bg-[rgb(255,255,255,.1)] rounded-md"
               )}
             >
               <MessengerIcon />
               <span className="text-sm">Messages and story replies</span>
-            </a>
+            </Link>
 
-            <a
-              onClick={() => setActiveTab("tagsAndMentionsSettingsTab")}
+            <Link
+              to="tags_and_mentions"
               className={cn(
-                activeTab === "tagsAndMentionsSettingsTab" &&
-                  "bg-[rgb(38,38,38)]",
+                activeTab === "tags_and_mentions" && "bg-[rgb(38,38,38)]",
                 "flex items-center gap-3 p-3 hover:bg-[rgb(255,255,255,.1)] rounded-md"
               )}
             >
               <TagsAndMentionsIcon />
               <span className="text-sm">Tags and mentions</span>
-            </a>
+            </Link>
 
-            <a
-              onClick={() => setActiveTab("commentsSettingsTab")}
+            <Link
+              to="comments"
               className={cn(
-                activeTab === "commentsSettingsTab" && "bg-[rgb(38,38,38)]",
+                activeTab === "comments" && "bg-[rgb(38,38,38)]",
                 "flex items-center gap-3 p-3 hover:bg-[rgb(255,255,255,.1)] rounded-md"
               )}
             >
               <CommentsIcon />
               <span className="text-sm">Comments</span>
-            </a>
+            </Link>
 
-            <a
-              onClick={() => setActiveTab("sharingAndReuseSettingsTab")}
+            <Link
+              to="sharing_and_reuse"
               className={cn(
-                activeTab === "sharingAndReuseSettingsTab" &&
-                  "bg-[rgb(38,38,38)]",
+                activeTab === "sharing_and_reuse" && "bg-[rgb(38,38,38)]",
                 "flex items-center gap-3 p-3 hover:bg-[rgb(255,255,255,.1)] rounded-md"
               )}
             >
               <SharingAndReuseIcon />
               <span className="text-sm">Sharing and reuse</span>
-            </a>
+            </Link>
 
-            <a
-              onClick={() => setActiveTab("restrictedAccountsSettingsTab")}
+            <Link
+              to="restricted_accounts"
               className={cn(
-                activeTab === "restrictedAccountsSettingsTab" &&
-                  "bg-[rgb(38,38,38)]",
+                activeTab === "restricted_accounts" && "bg-[rgb(38,38,38)]",
                 "flex items-center gap-3 p-3 hover:bg-[rgb(255,255,255,.1)] rounded-md"
               )}
             >
               <RestrictedAccountsIcon />
               <span className="text-sm">Restricted accounts</span>
-            </a>
+            </Link>
 
-            <a
-              onClick={() => setActiveTab("hiddenWordsSettingsTab")}
+            <Link
+              to="hidden_words"
               className={cn(
-                activeTab === "hiddenWordsSettingsTab" && "bg-[rgb(38,38,38)]",
+                activeTab === "hidden_words" && "bg-[rgb(38,38,38)]",
                 "flex items-center gap-3 p-3 hover:bg-[rgb(255,255,255,.1)] rounded-md"
               )}
             >
               <HiddenWordsIcon />
               <span className="text-sm">Hidden Words</span>
-            </a>
+            </Link>
           </div>
         </div>
 
@@ -245,41 +239,38 @@ export default function SettingsContent() {
           </h3>
 
           <div className="flex flex-col gap-1">
-            <a
-              onClick={() => setActiveTab("mutedAccountsSettingsTab")}
+            <Link
+              to="muted_accounts"
               className={cn(
-                activeTab === "mutedAccountsSettingsTab" &&
-                  "bg-[rgb(38,38,38)]",
+                activeTab === "muted_accounts" && "bg-[rgb(38,38,38)]",
                 "flex items-center gap-3 p-3 hover:bg-[rgb(255,255,255,.1)] rounded-md"
               )}
             >
               <MutedAccountsIcon />
               <span className="text-sm">Muted accounts</span>
-            </a>
+            </Link>
 
-            <a
-              onClick={() => setActiveTab("contentPreferencesSettingsTab")}
+            <Link
+              to="content_preferences"
               className={cn(
-                activeTab === "ContentPreferencesSettingsTab" &&
-                  "bg-[rgb(38,38,38)]",
+                activeTab === "content_preferences" && "bg-[rgb(38,38,38)]",
                 "flex items-center gap-3 p-3 hover:bg-[rgb(255,255,255,.1)] rounded-md"
               )}
             >
               <ContentPreferencesIcon />
               <span className="text-sm">Content preferences</span>
-            </a>
+            </Link>
 
-            <button
-              onClick={() => setActiveTab("likeAndShareCountSettingsTab")}
+            <Link
+              to="like_and_share_counts"
               className={cn(
-                activeTab === "likeAndShareCountSettingsTab" &&
-                  "bg-[rgb(38,38,38)]",
+                activeTab === "like_and_share_counts" && "bg-[rgb(38,38,38)]",
                 "flex items-center gap-3 p-3 hover:bg-[rgb(255,255,255,.1)] rounded-md"
               )}
             >
               <LikeAndShareCountsIcon />
               <span className="text-sm">Like and share counts</span>
-            </button>
+            </Link>
           </div>
         </div>
 
@@ -289,38 +280,39 @@ export default function SettingsContent() {
           </h3>
 
           <div className="flex flex-col gap-1">
-            <a
-              onClick={() => setActiveTab("archivingAndDownloadingSettingsTab")}
+            <Link
+              to="archiving_and_downloading"
               className={cn(
-                activeTab === "archivingAndDownloadingSettingsTab" &&
+                activeTab === "archiving_and_downloading" &&
                   "bg-[rgb(38,38,38)]",
                 "flex items-center gap-3 p-3 hover:bg-[rgb(255,255,255,.1)] rounded-md"
               )}
             >
               <ArchivingAndDownloadingIcon />
               <span className="text-sm">Archiving and downloading</span>
-            </a>
+            </Link>
 
-            <button
+            <Link
+              to="language"
               className={cn(
-                activeTab === "languageSettings" && "bg-[rgb(38,38,38)]",
+                activeTab === "language" && "bg-[rgb(38,38,38)]",
                 "flex items-center gap-3 p-3 hover:bg-[rgb(255,255,255,.1)] rounded-md"
               )}
             >
               <LanguageIcon />
               <span className="text-sm">Language</span>
-            </button>
+            </Link>
 
-            <button
+            <Link
+              to="website_permissions"
               className={cn(
-                activeTab === "websitePermissionsSettings" &&
-                  "bg-[rgb(38,38,38)]",
+                activeTab === "website_permissions" && "bg-[rgb(38,38,38)]",
                 "flex items-center gap-3 p-3 hover:bg-[rgb(255,255,255,.1)] rounded-md"
               )}
             >
               <WebsitePermissionsIcon />
               <span className="text-sm">Website permissions</span>
-            </button>
+            </Link>
           </div>
         </div>
 
@@ -329,15 +321,16 @@ export default function SettingsContent() {
             For families
           </h3>
 
-          <button
+          <Link
+            to="family_center"
             className={cn(
-              activeTab === "familyCenterSettings" && "bg-[rgb(38,38,38)]",
+              activeTab === "family_center" && "bg-[rgb(38,38,38)]",
               "flex items-center gap-3 p-3 hover:bg-[rgb(255,255,255,.1)] rounded-md"
             )}
           >
             <FamilyCenterIcon />
             <span className="text-sm">Family Center</span>
-          </button>
+          </Link>
         </div>
 
         <div className="flex flex-col gap-3">
@@ -345,17 +338,16 @@ export default function SettingsContent() {
             For professionals
           </h3>
 
-          <a
-            onClick={() => setActiveTab("accountTypeAndToolsSettingsTab")}
+          <Link
+            to="account_type_and_tools"
             className={cn(
-              activeTab === "accountTypeAndToolsSettingsTab" &&
-                "bg-[rgb(38,38,38)]",
+              activeTab === "account_type_and_tools" && "bg-[rgb(38,38,38)]",
               "flex items-center gap-3 p-3 hover:bg-[rgb(255,255,255,.1)] rounded-md"
             )}
           >
             <AccountTypeAndToolsIcon />
             <span className="text-sm">Account type and tools</span>
-          </a>
+          </Link>
         </div>
 
         <div className="flex flex-col gap-3">
@@ -364,37 +356,38 @@ export default function SettingsContent() {
           </h3>
 
           <div className="flex flex-col gap-1">
-            <button
+            <Link
+              to="help"
               className={cn(
-                activeTab === "helpSettings" && "bg-[rgb(38,38,38)]",
+                activeTab === "help" && "bg-[rgb(38,38,38)]",
                 "flex items-center gap-3 p-3 hover:bg-[rgb(255,255,255,.1)] rounded-md"
               )}
             >
               <HelpIcon />
               <span className="text-sm">Help</span>
-            </button>
+            </Link>
 
-            <button
+            <Link
+              to="privacy_center"
               className={cn(
-                activeTab === "privacyCenterSettings" && "bg-[rgb(38,38,38)]",
+                activeTab === "privacy_center" && "bg-[rgb(38,38,38)]",
                 "flex items-center gap-3 p-3 hover:bg-[rgb(255,255,255,.1)] rounded-md"
               )}
             >
               <PrivacyCenterIcon />
               <span className="text-sm">Privacy Center</span>
-            </button>
+            </Link>
 
-            <a
-              onClick={() => setActiveTab("accountStatusSettingsTab")}
+            <Link
+              to="account_status"
               className={cn(
-                activeTab === "accountStatusSettingsTab" &&
-                  "bg-[rgb(38,38,38)]",
+                activeTab === "account_status" && "bg-[rgb(38,38,38)]",
                 "flex items-center gap-3 p-3 hover:bg-[rgb(255,255,255,.1)] rounded-md"
               )}
             >
               <AccountStatusIcon />
               <span className="text-sm">Account Status</span>
-            </a>
+            </Link>
           </div>
         </div>
       </div>

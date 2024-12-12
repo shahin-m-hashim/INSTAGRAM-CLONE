@@ -1,8 +1,8 @@
 import { cn } from "utils/cn";
-export default function MessengerIcon({ active = false, className }) {
+export default function MessengerIcon({ isActive = false, className }) {
   return (
     <>
-      {active ? (
+      {isActive ? (
         <svg
           aria-label="Messenger"
           className={cn("text-white", className)}

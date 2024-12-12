@@ -2,6 +2,7 @@ import useForm from "hooks/useForm";
 import Separator from "components/Separator";
 import Button from "components/wrappers/Button";
 import InputField from "components/fields/InputField";
+import { Link } from "react-router-dom";
 
 const initialFields = {
   identifier: {
@@ -66,7 +67,7 @@ export default function LoginForm() {
             password.
           </span>
         </div> */}
-        <a>Forgot password?</a>
+        <Link to="/accounts/password/reset">Forgot password?</Link>
       </div>
     </form>
   );

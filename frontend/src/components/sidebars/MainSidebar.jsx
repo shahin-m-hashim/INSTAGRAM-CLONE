@@ -7,6 +7,7 @@ import CreateIcon from "icons/CreateIcon";
 import ExploreIcon from "icons/ExploreIcon";
 import HamburgerIcon from "icons/HamburgerIcon";
 import MessengerIcon from "icons/MessengerIcon";
+import { Link, useLocation } from "react-router-dom";
 import ProfilePicture from "components/ProfilePicture";
 import InstagramTextIcon from "icons/InstagramTextIcon";
 import InstagramLogoIcon from "icons/InstagramLogoIcon";
@@ -14,22 +15,15 @@ import NotificationsIcon from "icons/NotificationsIcon";
 import SearchSidebar from "components/sidebars/SearchSidebar";
 import NotificationsSidebar from "components/sidebars/NotificationsSidebar";
 
-export default function Sidebar({ setActiveWidget }) {
-  const isCollapsed = false;
+export default function MainSidebar({ setActiveWidget }) {
+  const activePage = useLocation().pathname;
+  const isCollapsed = activePage === "/direct/inbox";
   const [activeSidebar, setActiveSidebar] = useState(null);
-
-  const handleSidebar = (sidebar) =>
-    activeSidebar === sidebar
-      ? setActiveSidebar(null)
-      : setActiveSidebar(sidebar);
 
   return (
     <>
-      {activeSidebar === "notifications" ? (
-        <NotificationsSidebar />
-      ) : activeSidebar === "search" ? (
-        <SearchSidebar />
-      ) : null}
+      {activeSidebar === "search" && <SearchSidebar />}
+      {activeSidebar === "notifications" && <NotificationsSidebar />}
 
       <div
         className={cn(
@@ -39,37 +33,47 @@ export default function Sidebar({ setActiveWidget }) {
       >
         <div className="size-full bg-black flex-col py-4 px-2 xl:px-4 flex border-r border-r-[rgb(38,38,38,0.7)] text-[rgb(245,245,245)]">
           <div className="xl:my-4">
-            <a
+            <Link
+              to="/"
               className={cn(
                 isCollapsed || activeSidebar ? "flex" : "flex xl:hidden",
                 "items-center justify-center px-2.5 py-3 transition-all duration-100 ease-in rounded-md hover:bg-[rgb(38,38,38,0.7)] gap-4 size-full"
               )}
             >
               <InstagramLogoIcon />
-            </a>
+            </Link>
 
-            <a
+            <Link
+              to="/"
               className={cn(
                 isCollapsed || activeSidebar ? "hidden" : "hidden xl:block",
                 "px-2.5 py-3"
               )}
             >
               <InstagramTextIcon />
-            </a>
+            </Link>
           </div>
 
           <div className="flex flex-col items-center justify-center flex-1 w-full xl:justify-start">
             <div className="flex flex-col items-center justify-between w-full gap-2">
-              <a className="flex items-center flex-col xl:flex-row px-2.5 py-3 transition-all duration-100 ease-in rounded-md hover:bg-[rgb(38,38,38,0.7)] justify-center xl:justify-start gap-4 size-full">
-                <HomeIcon active={true} />
+              <Link
+                to="/"
+                className="flex items-center flex-col xl:flex-row px-2.5 py-3 transition-all duration-100 ease-in rounded-md hover:bg-[rgb(38,38,38,0.7)] justify-center xl:justify-start gap-4 size-full"
+              >
+                <HomeIcon isActive={activePage === "/" && !activeSidebar} />
                 {isCollapsed ||
                   (!activeSidebar && (
                     <span className="hidden xl:block">Home</span>
                   ))}
-              </a>
+              </Link>
 
               <button
-                onClick={() => handleSidebar("search")}
+                onBlur={() => setActiveSidebar(null)}
+                onClick={() =>
+                  setActiveSidebar((prev) =>
+                    prev === "search" ? null : "search"
+                  )
+                }
                 className={cn(
                   activeSidebar === "search" && "outline-1 outline",
                   "items-center flex-col xl:flex-row px-2.5 py-3 transition-all duration-300 ease-in rounded-md hover:bg-[rgb(38,38,38,0.7)] justify-center xl:justify-start gap-4 flex size-full"
@@ -82,43 +86,66 @@ export default function Sidebar({ setActiveWidget }) {
                   ))}
               </button>
 
-              <a className="flex items-center justify-center flex-col xl:flex-row px-2.5 py-3 transition-all duration-100 ease-in rounded-md hover:bg-[rgb(38,38,38,0.7)] gap-4 xl:justify-start size-full">
-                <ExploreIcon />
+              <Link
+                to="explore"
+                className="flex items-center justify-center flex-col xl:flex-row px-2.5 py-3 transition-all duration-100 ease-in rounded-md hover:bg-[rgb(38,38,38,0.7)] gap-4 xl:justify-start size-full"
+              >
+                <ExploreIcon
+                  isActive={activePage === "/explore" && !activeSidebar}
+                />
+
                 {isCollapsed ||
                   (!activeSidebar && (
                     <span className="hidden xl:block">Explore</span>
                   ))}
-              </a>
+              </Link>
 
-              <button className="flex items-center justify-center flex-col xl:flex-row px-2.5 py-3 transition-all duration-100 ease-in rounded-md hover:bg-[rgb(38,38,38,0.7)] gap-4 xl:justify-start size-full">
-                <ReelsIcon />
+              <Link
+                to="reels"
+                className="flex items-center justify-center flex-col xl:flex-row px-2.5 py-3 transition-all duration-100 ease-in rounded-md hover:bg-[rgb(38,38,38,0.7)] gap-4 xl:justify-start size-full"
+              >
+                <ReelsIcon
+                  isActive={activePage === "/reels" && !activeSidebar}
+                />
                 {isCollapsed ||
                   (!activeSidebar && (
                     <span className="hidden xl:block">Reels</span>
                   ))}
-              </button>
+              </Link>
 
-              <a
+              <Link
+                to="direct/inbox"
                 className={cn(
                   activeSidebar === "messenger" && "outline-1 outline",
                   "items-center flex-col xl:flex-row px-2.5 py-3 transition-all duration-300 ease-in rounded-md hover:bg-[rgb(38,38,38,0.7)] justify-center xl:justify-start gap-4 flex size-full"
                 )}
               >
-                <MessengerIcon />
+                <MessengerIcon
+                  isActive={activePage === "/direct/inbox" && !activeSidebar}
+                />
+
                 {isCollapsed ||
                   (!activeSidebar && (
                     <span className="hidden xl:block">Messages</span>
                   ))}
-              </a>
+              </Link>
 
               <button
-                onClick={() => handleSidebar("notifications")}
+                onBlur={() => setActiveSidebar(null)}
+                onClick={() =>
+                  setActiveSidebar((prev) =>
+                    prev === "notifications" ? null : "notifications"
+                  )
+                }
                 className={cn(
                   activeSidebar === "notifications" && "outline-1 outline",
                   "items-center flex-col xl:flex-row px-2.5 py-3 transition-all duration-300 ease-in rounded-md hover:bg-[rgb(38,38,38,0.7)] justify-center xl:justify-start gap-4 flex size-full"
                 )}
               >
-                <NotificationsIcon />
+                <NotificationsIcon
+                  isActive={activeSidebar === "notifications"}
+                />
+
                 {isCollapsed ||
                   (!activeSidebar && (
                     <span className="hidden xl:block">Notifications</span>
@@ -136,13 +163,16 @@ export default function Sidebar({ setActiveWidget }) {
                   ))}
               </button>
 
-              <a className="flex items-center justify-center flex-col xl:flex-row px-2.5 py-3 transition-all duration-100 ease-in rounded-md hover:bg-[rgb(38,38,38,0.7)] gap-4 xl:justify-start size-full">
+              <Link
+                to="profile"
+                className="flex items-center justify-center flex-col xl:flex-row px-2.5 py-3 transition-all duration-100 ease-in rounded-md hover:bg-[rgb(38,38,38,0.7)] gap-4 xl:justify-start size-full"
+              >
                 <ProfilePicture className="size-7" />
                 {isCollapsed ||
                   (!activeSidebar && (
                     <span className="hidden xl:block">Profile</span>
                   ))}
-              </a>
+              </Link>
             </div>
           </div>
 

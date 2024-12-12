@@ -7,24 +7,35 @@ import SettingsIcon from "icons/SettingsIcon";
 import ToggleSwitch from "components/ToggleSwitch";
 import YourActivityIcon from "icons/YourActivityIcon";
 import DropDownArrowIcon from "icons/DropDownArrowIcon";
+import { useNavigate } from "react-router-dom";
 
-export default function MoreWidget({ setShowReportWidget }) {
-  const [showSwitchAppearance, setShowSwitchAppearance] = useState(false);
+export default function MoreWidget({ setActiveWidget }) {
+  const navigate = useNavigate();
+  const [showTab, setShowTab] = useState(false);
+
+  const handleNavigate = () => {
+    setActiveWidget(null);
+    navigate("/settings/edit_profile");
+  };
 
   return (
     <div className="absolute w-[250px] z-10 left-4 bottom-20 pointer-events-auto">
       <div className="flex w-full overflow-hidden">
         <div
           className={cn(
-            showSwitchAppearance ? "-translate-x-[250px]" : "translate-x-0",
+            showTab ? "-translate-x-[250px]" : "translate-x-0",
             "flex w-[250px] flex-shrink-0 flex-col transition-all duration-200 rounded-2xl bg-[rgb(38,38,38)] shadow-md text-[rgb(245,245,245)] ease-in-out"
           )}
         >
           <div className="flex flex-col flex-1 gap-2 p-2">
-            <a className="flex items-center gap-4 px-1 py-2  transition-all duration-100 ease-in rounded-md hover:bg-[rgb(58,58,58)]">
+            <button
+              type="button"
+              onClick={handleNavigate}
+              className="flex items-center gap-4 px-1 py-2  transition-all duration-100 ease-in rounded-md hover:bg-[rgb(58,58,58)]"
+            >
               <SettingsIcon className="w-10" />
               <span>Settings</span>
-            </a>
+            </button>
             <a className="flex items-center gap-4 px-1 py-2  transition-all duration-100 ease-in rounded-md hover:bg-[rgb(58,58,58)]">
               <YourActivityIcon className="w-10" />
               <span>Your Activity</span>
@@ -34,14 +45,14 @@ export default function MoreWidget({ setShowReportWidget }) {
               <span>Saved</span>
             </a>
             <button
-              onClick={() => setShowSwitchAppearance(true)}
+              onClick={() => setShowTab(true)}
               className="flex items-center gap-4 px-3 py-2 transition-all duration-100 ease-in rounded-md hover:bg-[rgb(58,58,58)]"
             >
               <img src="icons/moon.svg" alt="dark-theme" />
               <span>Switch Appearance</span>
             </button>
             <button
-              onClick={() => setShowReportWidget(true)}
+              onClick={() => setActiveWidget("report")}
               className="flex items-center gap-4 px-1 py-2  transition-all duration-100 ease-in rounded-md hover:bg-[rgb(58,58,58)]"
             >
               <ReportIcon className="w-10" />
@@ -68,7 +79,7 @@ export default function MoreWidget({ setShowReportWidget }) {
 
         <div
           className={cn(
-            showSwitchAppearance
+            showTab
               ? "-translate-x-[250px] translate-y-[250px]"
               : "translate-x-0",
             "flex w-[250px] rounded-2xl h-fit bg-[rgb(38,38,38)] shadow-md text-[rgb(245,245,245)] flex-shrink-0 flex-col transition-all duration-200 ease-in-out"
@@ -77,7 +88,7 @@ export default function MoreWidget({ setShowReportWidget }) {
           <div className="flex items-center justify-between gap-4 p-4">
             <div className="flex items-center gap-2">
               <button
-                onClick={() => setShowSwitchAppearance(false)}
+                onClick={() => setShowTab(false)}
                 className="transform rotate-90"
               >
                 <DropDownArrowIcon className="size-3" />

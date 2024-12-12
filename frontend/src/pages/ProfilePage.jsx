@@ -10,12 +10,12 @@ import Button from "components/wrappers/Button";
 import AddPhoneNoIcon from "icons/AddPhoneNoIcon";
 import SharePhotosIcon from "icons/SharePhotosIcon";
 import PhotosOfYouIcon from "icons/PhotosOfYouIcon";
-import AppLayout from "components/wrappers/AppLayout";
 import RoundedSavedIcon from "icons/RoundedSavedIcon";
 import ProfilePicture from "components/ProfilePicture";
 import CompleteProfileIcon from "icons/CompleteProfileIcon";
 import AddProfilePhotoIcon from "icons/AddProfilePhotoIcon";
 import HorizontalScroller from "components/wrappers/HorizontalScroller";
+import SplashScreen from "components/wrappers/SplashScreen";
 
 const items = [
   {
@@ -111,7 +111,7 @@ export default function ProfilePage() {
   const [activeTab, setActiveTab] = useState("postsTab");
 
   return (
-    <AppLayout>
+    <SplashScreen>
       <main className="h-screen overflow-auto min-w-[320px] md:pt-0 pb-[50px] md:pb-0 md:pl-[80px] xl:pl-[250px] pt-[60px]">
         <div className="flex min-h-screen lg:px-6 xl:px-36">
           <div className="flex flex-col py-10 md:py-16 size-full">
@@ -317,6 +317,6 @@ export default function ProfilePage() {
           <Footer />
         </div>
       </main>
-    </AppLayout>
+    </SplashScreen>
   );
 }

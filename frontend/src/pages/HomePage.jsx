@@ -1,18 +1,18 @@
 import Links from "components/Links";
 import Footer from "components/Footer";
 import PostsList from "components/lists/PostsList";
-import AppLayout from "components/wrappers/AppLayout";
 import StoriesList from "components/lists/StoriesList";
 import ProfilePicture from "components/ProfilePicture";
 import AccountsList from "components/lists/AccountsList";
+import SplashScreen from "components/wrappers/SplashScreen";
 import AccountSuggestions from "components/AccountSuggestions";
 import SuggestionCards from "components/cards/SuggestionCards";
 
 export default function HomePage() {
-  const following = 10;
+  const following = 5;
 
   return (
-    <AppLayout>
+    <SplashScreen>
       <main className="h-screen overflow-auto min-w-[320px] md:pt-0 pb-[50px] md:pb-0 md:pl-[80px] xl:pl-[250px] pt-[60px]">
         {following <= 5 ? (
           <AccountSuggestions />
@@ -82,6 +82,6 @@ export default function HomePage() {
           <Footer />
         </div>
       </main>
-    </AppLayout>
+    </SplashScreen>
   );
 }

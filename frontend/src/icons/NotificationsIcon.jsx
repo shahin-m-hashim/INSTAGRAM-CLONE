@@ -1,8 +1,8 @@
 import { cn } from "utils/cn";
-export default function NotificationsIcon({ active = false, className }) {
+export default function NotificationsIcon({ isActive = false, className }) {
   return (
     <>
-      {active ? (
+      {isActive ? (
         <svg
           aria-label="Notifications"
           className={cn("text-white", className)}

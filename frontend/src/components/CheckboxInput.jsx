@@ -1,5 +1,5 @@
 import { cn } from "utils/cn";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import SelectedIcon from "icons/SelectedIcon";
 
 export default function CheckboxInput({
@@ -12,10 +12,6 @@ export default function CheckboxInput({
   const [isChecked, setIsChecked] = useState(checked);
 
   const handleChange = () => setIsChecked(!isChecked);
-
-  useEffect(() => {
-    if (isChecked) console.log(value);
-  }, [isChecked]);
 
   return (
     <label

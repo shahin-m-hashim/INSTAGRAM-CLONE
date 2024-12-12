@@ -2,7 +2,7 @@ import SearchField from "components/fields/SearchField";
 
 export default function SearchSidebar() {
   return (
-    <div className="fixed inset-y-0 w-[400px] left-[80px] pointer-events-auto">
+    <div className="fixed inset-y-0 w-[420px] left-[80px] pointer-events-auto">
       <div className="flex flex-col text-white bg-black size-full border-r border-r-[rgb(54,54,54,0.7)]">
         <div className="flex flex-col w-full gap-6 px-4 py-8  border-b border-b-[rgb(54,54,54,0.7)]">
           <h1 className="mb-4 ml-2 text-2xl font-semibold">Search</h1>

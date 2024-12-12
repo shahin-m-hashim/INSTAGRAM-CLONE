@@ -1,5 +1,6 @@
 import useForm from "hooks/useForm";
 import LockIcon from "icons/LockIcon";
+import { Link } from "react-router-dom";
 import Button from "components/wrappers/Button";
 import InputField from "components/fields/InputField";
 
@@ -63,14 +64,22 @@ export default function PasswordResetForm() {
             <div className="flex-1 border-t border-t-[#262626]"></div>
           </div>
           <div className="text-center">
-            <a className="font-semibold hover:text-gray-400">
+            <Link
+              to="/accounts/signup"
+              className="font-semibold hover:text-gray-400"
+            >
               Create new account
-            </a>
+            </Link>
           </div>
         </div>
       </div>
       <div className="flex items-center justify-center w-full bg-[rgb(18,18,18)] rounded-b-sm h-11">
-        <a className="font-semibold hover:text-gray-400">Back to Login</a>
+        <Link
+          to="/accounts/login"
+          className="font-semibold hover:text-gray-400"
+        >
+          Back to Login
+        </Link>
       </div>
     </form>
   );

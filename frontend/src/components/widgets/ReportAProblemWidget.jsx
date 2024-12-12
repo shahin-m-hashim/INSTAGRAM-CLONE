@@ -3,7 +3,7 @@ import CloseIcon from "icons/CloseIcon";
 import Separator from "components/Separator";
 import Button from "components/wrappers/Button";
 
-export default function ReportAProblemWidget({ setShowReportWidget }) {
+export default function ReportAProblemWidget({ setActiveWidget }) {
   const fileInputRef = useRef();
 
   const handleAddFileClick = () => fileInputRef.current.click();
@@ -56,7 +56,7 @@ export default function ReportAProblemWidget({ setShowReportWidget }) {
           <button
             type="button"
             className="absolute top-3 right-3"
-            onClick={() => setShowReportWidget(false)}
+            onClick={() => setActiveWidget(false)}
           >
             <CloseIcon className="size-5" />
           </button>
