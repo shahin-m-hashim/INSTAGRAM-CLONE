@@ -5,15 +5,13 @@ import DropDownArrowIcon from "icons/DropDownArrowIcon";
 
 export default function EditProfileForm() {
   return (
-    <form className="flex flex-col gap-10 p-4 max-w-[600px] my-4 md:my-14">
-      <h1 className="text-xl font-bold">Edit Profile</h1>
-
+    <form className="flex flex-col gap-10 p-4">
       <div className="flex gap-2 items-center justify-between rounded-xl p-4 bg-[rgb(38,38,38)]">
         <div className="flex items-center flex-1 gap-2 md:gap-5">
           <ProfilePicture storyPadding="0px" />
           <span className="font-semibold">username</span>
         </div>
-        <Button className="text-xs xs:text-sm md:px-3 w-[120px]">
+        <Button className="text-xs xs:text-sm w-[100px] h-6 xs:h-8 md:px-3 xs:w-[120px]">
           Change Photo
         </Button>
       </div>
@@ -94,7 +92,7 @@ export default function EditProfileForm() {
       </div>
 
       <div className="flex justify-end">
-        <Button type="submit" className="w-24">
+        <Button type="submit" className="md:w-24">
           Submit
         </Button>
       </div>

@@ -1,6 +1,6 @@
 import RadioInput from "components/RadioInput";
 
-export default function ContentPreferencesSettingsTab() {
+export default function ContentPreferencesSettingsPage() {
   return (
     <div className="flex flex-col gap-10 p-4 max-w-[600px] my-4 md:my-14 size-full">
       <h1 className="text-xl font-bold">Content preferences</h1>

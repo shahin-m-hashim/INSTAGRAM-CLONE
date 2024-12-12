@@ -1,11 +1,11 @@
 import EyeIcon from "icons/EyeIcon";
 import ImageIcon from "icons/ImageIcon";
 import CommentsIcon from "icons/CommentsIcon";
+import SelectedIcon from "icons/SelectedIcon";
 import ProfilePicture from "components/ProfilePicture";
 import DropDownArrowIcon from "icons/DropDownArrowIcon";
-import SelectedIcon from "icons/SelectedIcon";
 
-export default function AccountStatusSettingsTab() {
+export default function AccountStatusSettingsPage() {
   return (
     <div className="flex flex-col gap-4 max-w-[650px] p-4 my-4 md:my-14 size-full">
       <h1 className="mb-6 text-xl font-bold">Account Status</h1>

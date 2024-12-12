@@ -1,7 +1,7 @@
 import RadioInput from "components/RadioInput";
 import ToggleSwitch from "components/ToggleSwitch";
 
-export default function TagsAndMentionsSettingsTab() {
+export default function TagsAndMentionsSettingsPage() {
   return (
     <div className="flex flex-col gap-10 p-4 max-w-[600px] my-4 md:my-14 size-full">
       <h1 className="text-xl font-bold">Tags and mentions</h1>

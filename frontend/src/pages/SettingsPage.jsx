@@ -1,79 +1,27 @@
-import { useState } from "react";
-import Footer from "components/Footer";
 import AppLayout from "components/wrappers/AppLayout";
-import EditProfileForm from "components/forms/EditProfileForm";
-import MutedAccountsTab from "components/tabs/MutedAccountsTab";
+import SettingsContent from "components/SettingsContent";
+import EditProfilePage from "pages/settings/EditProfilePage";
 import SettingsSidebar from "components/sidebars/SettingsSidebar";
-import CommentsSettingsTab from "components/tabs/CommentsSettingsTab";
-import LikeAndShareCountsTab from "components/tabs/LikeAndShareCountsTab";
-import HiddenWordsSettingsTab from "components/tabs/HiddenWordsSettingsTab";
-import NotificationSettingsTab from "components/tabs/NotificationSettingsTab";
-import CloseFriendsSettingsTab from "components/tabs/CloseFriendsSettingsTab";
-import AccountStatusSettingsTab from "components/tabs/AccountStatusSettingsTab";
-import AccountPrivacySettingsTab from "components/tabs/AccountPrivacySettingsTab";
-import BlockedAccountsSettingsTab from "components/tabs/BlockedAccountsSettingsTab";
-import TagsAndMentionsSettingsTab from "components/tabs/TagsAndMentionsSettingsTab";
-import SharingAndReuseSettingsTab from "components/tabs/SharingAndReuseSettingsTab";
-import HideStoryAndLiveSettingsTab from "components/tabs/HideStoryAndLiveSettingsTab";
-import RestrictedAccountsSettingsTab from "components/tabs/RestrictedAccountsSettingsTab";
-import ContentPreferencesSettingsTab from "components/tabs/ContentPreferencesSettingsTab";
-import AccountTypeAndToolsSettingsTab from "components/tabs/AccountTypeAndToolsSettingsTab";
-import MessagesAndStoryRepliesSettingsTab from "components/tabs/MessagesAndStoryRepliesSettingsTab";
-import ArchivingAndDownloadingSettingsTab from "components/tabs/ArchivingAndDownloadingSettingsTab";
 
 export default function SettingsPage() {
-  const [activeTab, setActiveTab] = useState("profileSettingsTab");
+  const url = "settings/edit_profile";
 
   return (
     <AppLayout>
-      <main className="md:flex min-w-[320px] h-screen overflow-auto md:h-auto md:overflow-hidden md:pt-0 pb-[50px] md:pb-0 pt-[60px] md:pl-[80px] xl:pl-[250px]">
-        <div className="flex justify-center md:block w-full md:w-[310px] xl:w-[330px]">
-          <SettingsSidebar activeTab={activeTab} setActiveTab={setActiveTab} />
+      <main className="md:flex min-w-[320px] h-screen overflow-auto md:h-auto md:overflow-hidden md:pt-0 pb-[50px] pt-[60px] md:pb-0 md:pl-[80px] xl:pl-[250px]">
+        <div className="md:flex hidden justify-center mt-5 md:mt-0 md:h-screen md:overflow-auto flex-shrink-0 md:border-r border-r-[rgb(54,54,54,0.7)]">
+          <SettingsSidebar />
         </div>
 
-        <div className="flex-col justify-between hidden w-full md:flex md:h-screen md:overflow-auto">
-          <div className="flex justify-center w-full">
-            {activeTab === "profileSettingsTab" ? (
-              <EditProfileForm />
-            ) : activeTab === "notificationSettingsTab" ? (
-              <NotificationSettingsTab />
-            ) : activeTab === "accountPrivacySettingsTab" ? (
-              <AccountPrivacySettingsTab />
-            ) : activeTab == "closeFriendsSettingsTab" ? (
-              <CloseFriendsSettingsTab />
-            ) : activeTab === "blockedAccountsSettingsTab" ? (
-              <BlockedAccountsSettingsTab />
-            ) : activeTab === "hideStoryAndLiveSettingsTab" ? (
-              <HideStoryAndLiveSettingsTab />
-            ) : activeTab === "restrictedAccountsSettingsTab" ? (
-              <RestrictedAccountsSettingsTab />
-            ) : activeTab === "mutedAccountsSettingsTab" ? (
-              <MutedAccountsTab />
-            ) : activeTab === "likeAndShareCountSettingsTab" ? (
-              <LikeAndShareCountsTab />
-            ) : activeTab === "messagesAndStoryRepliesSettingsTab" ? (
-              <MessagesAndStoryRepliesSettingsTab />
-            ) : activeTab === "tagsAndMentionsSettingsTab" ? (
-              <TagsAndMentionsSettingsTab />
-            ) : activeTab === "commentsSettingsTab" ? (
-              <CommentsSettingsTab />
-            ) : activeTab === "sharingAndReuseSettingsTab" ? (
-              <SharingAndReuseSettingsTab />
-            ) : activeTab === "hiddenWordsSettingsTab" ? (
-              <HiddenWordsSettingsTab />
-            ) : activeTab === "contentPreferencesSettingsTab" ? (
-              <ContentPreferencesSettingsTab />
-            ) : activeTab === "archivingAndDownloadingSettingsTab" ? (
-              <ArchivingAndDownloadingSettingsTab />
-            ) : activeTab === "accountTypeAndToolsSettingsTab" ? (
-              <AccountTypeAndToolsSettingsTab />
-            ) : activeTab === "accountStatusSettingsTab" ? (
-              <AccountStatusSettingsTab />
-            ) : null}
-          </div>
-
-          <div className="flex justify-center w-full px-5 my-10">
-            <Footer />
+        <div className="w-full md:h-screen md:overflow-auto">
+          <div className="flex justify-center w-full my-5 md:my-0">
+            {url === "settings" ? (
+              <div className="w-full xs:w-[486px] md:hidden">
+                <SettingsContent />
+              </div>
+            ) : (
+              <EditProfilePage />
+            )}
           </div>
         </div>
       </main>

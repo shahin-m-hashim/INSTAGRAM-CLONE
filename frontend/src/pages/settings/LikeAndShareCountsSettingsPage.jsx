@@ -1,6 +1,6 @@
 import ToggleSwitch from "components/ToggleSwitch";
 
-export default function LikeAndShareCountsTab() {
+export default function LikeAndShareCountsSettingsPage() {
   return (
     <div className="flex flex-col gap-4 max-w-[650px] p-4 my-4 md:my-14 size-full">
       <h1 className="mb-6 text-xl font-bold">Like and share counts</h1>

@@ -1,7 +1,7 @@
 import { useState } from "react";
+import Button from "components/wrappers/Button";
 import ToggleSwitch from "components/ToggleSwitch";
 import DropDownArrowIcon from "icons/DropDownArrowIcon";
-import Button from "components/wrappers/Button";
 
 const Tab = ({ setShowTab }) => (
   <>
@@ -49,7 +49,7 @@ const Tab = ({ setShowTab }) => (
   </>
 );
 
-export default function HiddenWordsSettingsTab() {
+export default function HiddenWordsSettingsPage() {
   const [showTab, setShowTab] = useState(false);
 
   return (

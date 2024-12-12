@@ -325,7 +325,7 @@ const EmailNotificationSettings = ({ setActiveTab }) => (
   </>
 );
 
-export default function NotificationSettingsTab() {
+export default function NotificationSettingsPage() {
   const [activeTab, setActiveTab] = useState(null);
 
   return (

@@ -150,7 +150,7 @@ const ShowActivityStatusTab = ({ setActiveTab }) => (
   </>
 );
 
-export default function MessagesAndStoryRepliesSettingsTab() {
+export default function MessagesAndStoryRepliesSettingsPage() {
   const [activeTab, setActiveTab] = useState(null);
 
   return (

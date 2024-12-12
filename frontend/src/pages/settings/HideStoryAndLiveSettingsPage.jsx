@@ -1,7 +1,7 @@
 import SearchField from "components/fields/SearchField";
 import AccountsList from "components/lists/AccountsList";
 
-export default function HideStoryAndLiveSettingsTab() {
+export default function HideStoryAndLiveSettingsPage() {
   return (
     <div className="flex flex-col gap-6 max-w-[650px] p-4 my-4 md:my-14 size-full">
       <h1 className="text-xl font-bold">Hide story and live from</h1>

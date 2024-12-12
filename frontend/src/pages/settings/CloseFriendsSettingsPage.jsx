@@ -1,6 +1,6 @@
 import SearchField from "components/fields/SearchField";
 
-export default function CloseFriendsSettingsTab() {
+export default function CloseFriendsSettingsPage() {
   return (
     <div className="flex flex-col gap-6 max-w-[650px] p-4 my-4 md:my-14 size-full">
       <h1 className="text-xl font-bold">Close Friends</h1>

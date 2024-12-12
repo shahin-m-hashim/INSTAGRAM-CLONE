@@ -15,7 +15,7 @@ export default function App() {
       <SettingsPage />
       {/* {<YourActivityPage />} */}
 
-      {/* <NotFoundPage isAuthenticated={true} /> */}
+      {/* <NotFoundPage /> */}
     </>
   );
 }
