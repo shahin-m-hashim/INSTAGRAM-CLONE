@@ -1,18 +1,8 @@
-import BackArrowIcon from "icons/BackArrowIcon";
-import NewMessageIcon from "icons/NewMessageIcon";
 import StoriesList from "components/lists/StoriesList";
 
-export default function Messenger() {
+export default function MessengerContent() {
   return (
-    <div className="flex h-full md:w-[320px] lg:w-[420px] flex-col gap-3 md:border-r md:border-r-[rgb(54,54,54,0.7)]">
-      <div className="flex items-center p-4 justify-between md:hidden border-b border-b-[rgb(54,54,54,0.7)]">
-        <button type="button">
-          <BackArrowIcon />
-        </button>
-        <h1 className="font-bold">Username</h1>
-        <NewMessageIcon />
-      </div>
-
+    <>
       <div className="px-4 md:py-6">
         <StoriesList showOwnStory={true} />
       </div>
@@ -33,6 +23,6 @@ export default function Messenger() {
           No messages found.
         </p>
       </div>
-    </div>
+    </>
   );
 }

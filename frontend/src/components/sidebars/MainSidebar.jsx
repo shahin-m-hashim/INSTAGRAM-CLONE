@@ -17,7 +17,7 @@ import NotificationsSidebar from "components/sidebars/NotificationsSidebar";
 
 export default function MainSidebar({ setActiveWidget }) {
   const activePage = useLocation().pathname;
-  const isCollapsed = activePage === "/direct/inbox";
+  const isCollapsed = activePage.includes("/direct/inbox");
   const [activeSidebar, setActiveSidebar] = useState(null);
 
   return (
@@ -164,7 +164,7 @@ export default function MainSidebar({ setActiveWidget }) {
               </button>
 
               <Link
-                to="profile"
+                to="username"
                 className="flex items-center justify-center flex-col xl:flex-row px-2.5 py-3 transition-all duration-100 ease-in rounded-md hover:bg-[rgb(38,38,38,0.7)] gap-4 xl:justify-start size-full"
               >
                 <ProfilePicture className="size-7" />

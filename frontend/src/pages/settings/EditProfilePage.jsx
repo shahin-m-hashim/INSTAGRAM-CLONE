@@ -10,7 +10,7 @@ export default function EditProfilePage() {
 
       <EditProfileForm />
 
-      <div className="flex justify-center w-full px-5 my-5 md:my-10">
+      <div className="justify-center hidden w-full px-5 my-5 md:flex md:my-10">
         <Footer />
       </div>
     </div>

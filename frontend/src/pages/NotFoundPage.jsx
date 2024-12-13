@@ -2,14 +2,13 @@ import Footer from "components/Footer";
 import { Link } from "react-router-dom";
 import Button from "components/wrappers/Button";
 import InstagramTextIcon from "icons/InstagramTextIcon";
-import SplashScreen from "components/wrappers/SplashScreen";
 
 const isAuthenticated = true;
 
 export default function NotFoundPage() {
   return (
-    <SplashScreen>
-      <div className="h-screen text-white bg-black">
+    <section className="text-white bg-black scrollbar-dark">
+      <main className="min-w-[320px] h-screen overflow-auto">
         {!isAuthenticated && (
           <nav className="p-4 w-full h-[10vh] border-b border-b-[rgb(54,54,54)]">
             <div className="flex justify-center">
@@ -67,7 +66,7 @@ export default function NotFoundPage() {
             </div>
           </div>
         </div>
-      </div>
-    </SplashScreen>
+      </main>
+    </section>
   );
 }

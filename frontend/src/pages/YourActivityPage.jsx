@@ -19,7 +19,6 @@ import InteractionsIcon from "icons/InteractionsIcon";
 import StoryRepliesIcon from "icons/StoryRepliesIcon";
 import AccountHistoryIcon from "icons/AccountHistoryIcon";
 import PhotosAndVideosIcon from "icons/PhotosAndVideosIcon";
-import SplashScreen from "components/wrappers/SplashScreen";
 
 const InteractionsTab = () => {
   const [activeTab, setActiveTab] = useState("likesTab");
@@ -317,150 +316,148 @@ export default function YourActivityPage() {
   const [activeTab, setActiveTab] = useState("interactionsTab");
 
   return (
-    <SplashScreen>
-      <main className="h-screen overflow-auto min-w-[320px] md:pt-0 pb-[50px] md:pb-0 md:pl-[80px] xl:pl-[250px] pt-[60px]">
-        <div className="flex justify-center w-full md:px-6 xl:px-36">
-          <div className="flex w-full mt-10 rounded-md border border-[rgb(54,54,54)]">
-            <div className="w-[240px] flex flex-col border-r border-r-[rgb(54,54,54)]">
-              <div className="p-4 h-14 border-b border-b-[rgb(54,54,54)]">
-                <h1 className="font-bold">Your Activity</h1>
-              </div>
-
-              <div className="flex flex-col">
-                <a
-                  onClick={() => setActiveTab("interactionsTab")}
-                  className="flex items-start gap-8 p-3 hover:bg-[rgb(18,18,18)]"
-                >
-                  <InteractionsIcon className="size-12" />
-                  <div className="flex flex-col">
-                    <h1
-                      className={cn(
-                        "text-sm",
-                        activeTab === "interactionsTab"
-                          ? "font-bold"
-                          : "font-normal"
-                      )}
-                    >
-                      Interactions
-                    </h1>
-                    <p className="text-xs text-[rgb(168,168,168)]">
-                      Review and delete likes, comments and your other
-                      interactions.
-                    </p>
-                  </div>
-                </a>
-
-                <a
-                  onClick={() => setActiveTab("photosAndVideosTab")}
-                  className="flex items-start gap-8 p-3 hover:bg-[rgb(18,18,18)]"
-                >
-                  <PhotosAndVideosIcon className="size-12" />
-                  <div className="flex flex-col">
-                    <h1
-                      className={cn(
-                        "text-sm",
-                        activeTab === "photosAndVideosTab"
-                          ? "font-bold"
-                          : "font-normal"
-                      )}
-                    >
-                      Photos and videos
-                    </h1>
-                    <p className="text-xs text-[rgb(168,168,168)]">
-                      View, archive or delete photos and videos you&apos;ve
-                      shared.
-                    </p>
-                  </div>
-                </a>
-
-                <a
-                  onClick={() => setActiveTab("accountHistoryTab")}
-                  className="flex items-start gap-8 p-3 hover:bg-[rgb(18,18,18)]"
-                >
-                  <AccountHistoryIcon className="size-12" />
-                  <div className="flex flex-col">
-                    <h1
-                      className={cn(
-                        "text-sm",
-                        activeTab === "accountHistoryTab"
-                          ? "font-bold"
-                          : "font-normal"
-                      )}
-                    >
-                      Account history
-                    </h1>
-                    <p className="text-xs text-[rgb(168,168,168)]">
-                      Review changes you&apos;ve made to your account since you
-                      created it.
-                    </p>
-                  </div>
-                </a>
-
-                <a
-                  onClick={() => setActiveTab("adActivityTab")}
-                  className="flex items-start gap-8 p-3 hover:bg-[rgb(18,18,18)]"
-                >
-                  <AdActivityIcon className="size-12" />
-                  <div className="flex flex-col">
-                    <h1
-                      className={cn(
-                        "text-sm",
-                        activeTab === "adActivityTab"
-                          ? "font-bold"
-                          : "font-normal"
-                      )}
-                    >
-                      Ad activity
-                    </h1>
-                    <p className="text-xs text-[rgb(168,168,168)]">
-                      See which ads you&apos;ve interacted with recently.
-                    </p>
-                  </div>
-                </a>
-
-                <a
-                  onClick={() => setActiveTab("downloadYourInformationTab")}
-                  className="flex items-start gap-8 p-3 hover:bg-[rgb(18,18,18)]"
-                >
-                  <DownloadIcon className="size-12" />
-                  <div className="flex flex-col">
-                    <h1
-                      className={cn(
-                        "text-sm",
-                        activeTab === "downloadYourInformationTab"
-                          ? "font-bold"
-                          : "font-normal"
-                      )}
-                    >
-                      Download your information
-                    </h1>
-                    <p className="text-xs text-[rgb(168,168,168)]">
-                      Download a copy of the information you&apos;ve shared with
-                      instagram.
-                    </p>
-                  </div>
-                </a>
-              </div>
+    <main className="h-screen overflow-auto min-w-[320px] md:pt-0 pb-[50px] md:pb-0 md:pl-[80px] xl:pl-[250px] pt-[60px]">
+      <div className="flex justify-center w-full md:px-6 xl:px-36">
+        <div className="flex w-full mt-10 rounded-md border border-[rgb(54,54,54)]">
+          <div className="w-[240px] flex flex-col border-r border-r-[rgb(54,54,54)]">
+            <div className="p-4 h-14 border-b border-b-[rgb(54,54,54)]">
+              <h1 className="font-bold">Your Activity</h1>
             </div>
 
-            {activeTab === "interactionsTab" ? (
-              <InteractionsTab />
-            ) : activeTab === "photosAndVideosTab" ? (
-              <PhotosAndVideosTab />
-            ) : activeTab === "accountHistoryTab" ? (
-              <AccountHistoryTab />
-            ) : activeTab === "adActivityTab" ? (
-              <AdActivityTab />
-            ) : activeTab === "downloadYourInformationTab" ? (
-              <DownloadYourInformationTab />
-            ) : null}
-          </div>
-        </div>
+            <div className="flex flex-col">
+              <a
+                onClick={() => setActiveTab("interactionsTab")}
+                className="flex items-start gap-8 p-3 hover:bg-[rgb(18,18,18)]"
+              >
+                <InteractionsIcon className="size-12" />
+                <div className="flex flex-col">
+                  <h1
+                    className={cn(
+                      "text-sm",
+                      activeTab === "interactionsTab"
+                        ? "font-bold"
+                        : "font-normal"
+                    )}
+                  >
+                    Interactions
+                  </h1>
+                  <p className="text-xs text-[rgb(168,168,168)]">
+                    Review and delete likes, comments and your other
+                    interactions.
+                  </p>
+                </div>
+              </a>
 
-        <div className="hidden my-10 md:block">
-          <Footer />
+              <a
+                onClick={() => setActiveTab("photosAndVideosTab")}
+                className="flex items-start gap-8 p-3 hover:bg-[rgb(18,18,18)]"
+              >
+                <PhotosAndVideosIcon className="size-12" />
+                <div className="flex flex-col">
+                  <h1
+                    className={cn(
+                      "text-sm",
+                      activeTab === "photosAndVideosTab"
+                        ? "font-bold"
+                        : "font-normal"
+                    )}
+                  >
+                    Photos and videos
+                  </h1>
+                  <p className="text-xs text-[rgb(168,168,168)]">
+                    View, archive or delete photos and videos you&apos;ve
+                    shared.
+                  </p>
+                </div>
+              </a>
+
+              <a
+                onClick={() => setActiveTab("accountHistoryTab")}
+                className="flex items-start gap-8 p-3 hover:bg-[rgb(18,18,18)]"
+              >
+                <AccountHistoryIcon className="size-12" />
+                <div className="flex flex-col">
+                  <h1
+                    className={cn(
+                      "text-sm",
+                      activeTab === "accountHistoryTab"
+                        ? "font-bold"
+                        : "font-normal"
+                    )}
+                  >
+                    Account history
+                  </h1>
+                  <p className="text-xs text-[rgb(168,168,168)]">
+                    Review changes you&apos;ve made to your account since you
+                    created it.
+                  </p>
+                </div>
+              </a>
+
+              <a
+                onClick={() => setActiveTab("adActivityTab")}
+                className="flex items-start gap-8 p-3 hover:bg-[rgb(18,18,18)]"
+              >
+                <AdActivityIcon className="size-12" />
+                <div className="flex flex-col">
+                  <h1
+                    className={cn(
+                      "text-sm",
+                      activeTab === "adActivityTab"
+                        ? "font-bold"
+                        : "font-normal"
+                    )}
+                  >
+                    Ad activity
+                  </h1>
+                  <p className="text-xs text-[rgb(168,168,168)]">
+                    See which ads you&apos;ve interacted with recently.
+                  </p>
+                </div>
+              </a>
+
+              <a
+                onClick={() => setActiveTab("downloadYourInformationTab")}
+                className="flex items-start gap-8 p-3 hover:bg-[rgb(18,18,18)]"
+              >
+                <DownloadIcon className="size-12" />
+                <div className="flex flex-col">
+                  <h1
+                    className={cn(
+                      "text-sm",
+                      activeTab === "downloadYourInformationTab"
+                        ? "font-bold"
+                        : "font-normal"
+                    )}
+                  >
+                    Download your information
+                  </h1>
+                  <p className="text-xs text-[rgb(168,168,168)]">
+                    Download a copy of the information you&apos;ve shared with
+                    instagram.
+                  </p>
+                </div>
+              </a>
+            </div>
+          </div>
+
+          {activeTab === "interactionsTab" ? (
+            <InteractionsTab />
+          ) : activeTab === "photosAndVideosTab" ? (
+            <PhotosAndVideosTab />
+          ) : activeTab === "accountHistoryTab" ? (
+            <AccountHistoryTab />
+          ) : activeTab === "adActivityTab" ? (
+            <AdActivityTab />
+          ) : activeTab === "downloadYourInformationTab" ? (
+            <DownloadYourInformationTab />
+          ) : null}
         </div>
-      </main>
-    </SplashScreen>
+      </div>
+
+      <div className="hidden my-10 md:block">
+        <Footer />
+      </div>
+    </main>
   );
 }

@@ -30,10 +30,6 @@ export default function SettingsContent() {
 
   return (
     <>
-      <div className="hidden py-5 mx-5 md:flex">
-        <h1 className="text-xl font-bold">Settings</h1>
-      </div>
-
       <div className="flex flex-col gap-3 p-5 rounded-xl bg-[rgb(38,38,38)] mx-5">
         <MetaIcon />
 

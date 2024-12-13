@@ -1,28 +1,24 @@
-import {
-  Outlet,
-  Navigate,
-  RouterProvider,
-  createBrowserRouter,
-} from "react-router-dom";
 import HomePage from "pages/HomePage";
 import LoginPage from "pages/LoginPage";
+import InboxPage from "pages/InboxPage";
 import SignUpPage from "pages/SignUpPage";
 import ProfilePage from "pages/ProfilePage";
 import NotFoundPage from "pages/NotFoundPage";
 import SettingsPage from "pages/SettingsPage";
 import MessengerPage from "pages/MessengerPage";
-import AppLayout from "components/wrappers/AppLayout";
 import PasswordResetPage from "pages/PasswordResetPage";
+import PublicLayout from "components/wrappers/PublicLayout";
 import EditProfilePage from "pages/settings/EditProfilePage";
 import SettingsLayout from "components/wrappers/SettingsLayout";
+import ProtectedLayout from "components/wrappers/ProtectedLayout";
+import MessengerLayout from "components/wrappers/MessengerLayout";
+import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import NotificationSettingsPage from "pages/settings/NotificationSettingsPage";
-
-const isAuthenticated = true;
 
 const router = createBrowserRouter([
   {
     path: "accounts",
-    element: isAuthenticated ? <Navigate to="/" replace /> : <Outlet />,
+    element: <PublicLayout />,
     children: [
       {
         path: "",
@@ -45,7 +41,7 @@ const router = createBrowserRouter([
 
   {
     path: "/",
-    element: <AppLayout />,
+    element: <ProtectedLayout />,
     children: [
       {
         path: "",
@@ -61,10 +57,20 @@ const router = createBrowserRouter([
       },
       {
         path: "direct/inbox",
-        element: <MessengerPage />,
+        element: <MessengerLayout />,
+        children: [
+          {
+            path: "",
+            element: <MessengerPage />,
+          },
+          {
+            path: ":username",
+            element: <InboxPage />,
+          },
+        ],
       },
       {
-        path: "profile",
+        path: "username",
         element: <ProfilePage />,
       },
       {
