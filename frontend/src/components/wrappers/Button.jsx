@@ -1,6 +1,7 @@
 import { cn } from "../../utils/cn";
 
 export default function Button({
+  onClick,
   children,
   reference,
   className,
@@ -11,6 +12,7 @@ export default function Button({
     <button
       type={type}
       ref={reference}
+      onClick={onClick}
       disabled={disabled}
       className={cn(
         disabled ? "opacity-70 pointer-events-none" : "pointer-events-auto",

@@ -1,6 +1,7 @@
 import HomePage from "pages/HomePage";
 import LoginPage from "pages/LoginPage";
 import InboxPage from "pages/InboxPage";
+import ErrorPage from "pages/ErrorPage";
 import SignUpPage from "pages/SignUpPage";
 import ProfilePage from "pages/ProfilePage";
 import NotFoundPage from "pages/NotFoundPage";
@@ -19,6 +20,7 @@ const router = createBrowserRouter([
   {
     path: "accounts",
     element: <PublicLayout />,
+    errorElement: <ErrorPage />,
     children: [
       {
         path: "",
@@ -42,6 +44,7 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <ProtectedLayout />,
+    errorElement: <ErrorPage />,
     children: [
       {
         path: "",
@@ -97,6 +100,7 @@ const router = createBrowserRouter([
   {
     path: "*",
     element: <NotFoundPage />,
+    errorElement: <ErrorPage />,
   },
 ]);
 
