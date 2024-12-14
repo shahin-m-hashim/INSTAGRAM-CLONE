@@ -5,17 +5,27 @@ export default function SplashScreen({ children, delay = 500 }) {
 
   useEffect(() => {
     let timer;
-    const preventScroll = (e) => e.preventDefault();
 
     const handlePageLoad = () => {
       timer = setTimeout(() => {
         setIsLoading(false);
-        window.removeEventListener("wheel", preventScroll);
-        window.removeEventListener("touchmove", preventScroll);
-      }, delay);
 
-      window.addEventListener("wheel", preventScroll, { passive: false });
-      window.addEventListener("touchmove", preventScroll, { passive: false });
+        document
+          .getElementById("topNavbar")
+          .classList.add("pointer-events-auto");
+
+        document
+          .getElementById("bottomNavbar")
+          .classList.add("pointer-events-auto");
+
+        document
+          .getElementById("main")
+          .classList.add("pointer-events-auto", "overflow-auto");
+
+        document
+          .getElementById("sidebar")
+          .classList.add("pointer-events-auto", "overflow-y-auto");
+      }, delay);
     };
 
     if (document.readyState === "complete") {
@@ -26,17 +36,14 @@ export default function SplashScreen({ children, delay = 500 }) {
 
     return () => {
       clearTimeout(timer);
-      window.removeEventListener("load", handlePageLoad);
-      window.removeEventListener("wheel", preventScroll);
-      window.removeEventListener("touchmove", preventScroll);
     };
   }, [delay]);
 
   return (
     <>
       {isLoading && (
-        <div className="fixed inset-0 h-screen z-[1000] pointer-events-none">
-          <div className="flex flex-col items-center justify-center h-screen bg-black">
+        <div className="fixed inset-0 min-w-[320px] h-screen z-[1000] pointer-events-none">
+          <div className="flex flex-col items-center justify-center text-white bg-black size-full">
             <div className="flex flex-col items-center justify-end flex-1">
               <img
                 width="60"

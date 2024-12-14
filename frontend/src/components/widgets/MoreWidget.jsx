@@ -4,18 +4,18 @@ import SaveIcon from "icons/SaveIcon";
 import ReportIcon from "icons/ReportIcon";
 import Separator from "components/Separator";
 import SettingsIcon from "icons/SettingsIcon";
+import { useNavigate } from "react-router-dom";
 import ToggleSwitch from "components/ToggleSwitch";
 import YourActivityIcon from "icons/YourActivityIcon";
 import DropDownArrowIcon from "icons/DropDownArrowIcon";
-import { useNavigate } from "react-router-dom";
 
-export default function MoreWidget({ setActiveWidget }) {
+export default function MoreWidget({ startTransition, setActiveWidget }) {
   const navigate = useNavigate();
   const [showTab, setShowTab] = useState(false);
 
   const handleNavigate = () => {
     setActiveWidget(null);
-    navigate("/settings/edit_profile");
+    startTransition(() => navigate("/settings/edit_profile"));
   };
 
   return (

@@ -1,20 +1,45 @@
-import HomePage from "pages/HomePage";
-import LoginPage from "pages/LoginPage";
-import InboxPage from "pages/InboxPage";
+import { lazy } from "react";
+import wait from "utils/wait";
+import { RouterProvider, createBrowserRouter } from "react-router-dom";
+
+// COMMON
 import ErrorPage from "pages/ErrorPage";
-import SignUpPage from "pages/SignUpPage";
-import ProfilePage from "pages/ProfilePage";
 import NotFoundPage from "pages/NotFoundPage";
-import SettingsPage from "pages/SettingsPage";
-import MessengerPage from "pages/MessengerPage";
-import PasswordResetPage from "pages/PasswordResetPage";
+
+// LAYOUTS
 import PublicLayout from "components/wrappers/PublicLayout";
-import EditProfilePage from "pages/settings/EditProfilePage";
 import SettingsLayout from "components/wrappers/SettingsLayout";
 import ProtectedLayout from "components/wrappers/ProtectedLayout";
 import MessengerLayout from "components/wrappers/MessengerLayout";
-import { RouterProvider, createBrowserRouter } from "react-router-dom";
-import NotificationSettingsPage from "pages/settings/NotificationSettingsPage";
+
+// PUBLIC
+import LoginPage from "pages/LoginPage";
+import SignUpPage from "pages/SignUpPage";
+import PasswordResetPage from "pages/PasswordResetPage";
+
+// PROTECTED
+const HomePage = lazy(() => wait(300).then(() => import("pages/HomePage")));
+const InboxPage = lazy(() => wait(300).then(() => import("pages/InboxPage")));
+
+const ProfilePage = lazy(() =>
+  wait(300).then(() => import("pages/ProfilePage"))
+);
+
+const SettingsPage = lazy(() =>
+  wait(300).then(() => import("pages/SettingsPage"))
+);
+
+const MessengerPage = lazy(() =>
+  wait(300).then(() => import("pages/MessengerPage"))
+);
+
+const EditProfilePage = lazy(() =>
+  wait(300).then(() => import("pages/settings/EditProfilePage"))
+);
+
+const NotificationSettingsPage = lazy(() =>
+  wait(300).then(() => import("pages/settings/NotificationSettingsPage"))
+);
 
 const router = createBrowserRouter([
   {

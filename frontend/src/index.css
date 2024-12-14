@@ -55,6 +55,32 @@ input:-webkit-autofill:focus {
   );
 }
 
+.navigation-transition {
+  width: 100%;
+  background-image: linear-gradient(
+    to right,
+    #ffd600,
+    #ff7a00,
+    #ff0069,
+    #d300c5,
+    #7638fa,
+    #ffd600
+  );
+}
+
+.navigation-transition.active {
+  animation: navigation 300ms ease-in;
+}
+
+@keyframes navigation {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
 textarea {
   resize: none !important;
 }

@@ -26,9 +26,10 @@ export default function MainSidebar({ setActiveWidget }) {
       {activeSidebar === "notifications" && <NotificationsSidebar />}
 
       <div
+        id="sidebar"
         className={cn(
-          isCollapsed || activeSidebar ? "w-[80px]" : "w-[80px] xl:w-[250px]",
-          "hidden md:block absolute inset-y-0 left-0 pointer-events-auto"
+          "hidden md:block absolute inset-y-0 left-0",
+          isCollapsed || activeSidebar ? "w-[80px]" : "w-[80px] xl:w-[250px]"
         )}
       >
         <div className="size-full bg-black flex-col py-4 px-2 xl:px-4 flex border-r border-r-[rgb(38,38,38,0.7)] text-[rgb(245,245,245)]">

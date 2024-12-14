@@ -73,10 +73,11 @@ const Settings = ({ page }) => (
 export default function TopNavbar() {
   const url = useLocation().pathname.replace("/", "").split("/");
 
-  console.log(url);
-
   return (
-    <nav className="block md:hidden absolute inset-x-0 top-0 h-[60px] pointer-events-auto">
+    <nav
+      id="topNavbar"
+      className="block md:hidden absolute inset-x-0 top-0 h-[60px]"
+    >
       <div className="size-full flex gap-2 justify-between items-center px-4 bg-black text-white border-b border-b-[rgb(38,38,38,0.7)]">
         {url[0] === "settings" ? (
           <Settings page={url[1]} />
