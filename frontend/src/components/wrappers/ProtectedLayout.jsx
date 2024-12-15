@@ -22,7 +22,10 @@ export default function ProtectedLayout() {
     <SplashScreen>
       <section className="min-h-screen min-w-[320px] bg-black text-white scrollbar-dark pointer-events-none">
         <div className="fixed bg-transparent inset-0 z-50 h-screen min-w-[320px] overflow-hidden">
-          <MainSidebar setActiveWidget={setActiveWidget} />
+          <MainSidebar
+            startTransition={startTransition}
+            setActiveWidget={setActiveWidget}
+          />
           <TopNavbar />
           <BottomNavbar />
 
@@ -44,7 +47,7 @@ export default function ProtectedLayout() {
 
         {isPending && <NavigationTransition />}
 
-        <div id="main" className="absolute inset-0 z-0">
+        <div id="main" className="absolute inset-0 z-0 pointer-events-auto">
           <Outlet key={location.key} />
         </div>
       </section>

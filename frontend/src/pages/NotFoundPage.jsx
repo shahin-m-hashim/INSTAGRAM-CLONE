@@ -2,7 +2,7 @@ import Footer from "components/Footer";
 import NotFoundNavbar from "components/navbars/NotFoundNavbar";
 import NotFoundContent from "components/contents/NotFoundContent";
 
-const isAuthenticated = false;
+const isAuthenticated = true;
 
 export default function NotFoundPage() {
   return (

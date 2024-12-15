@@ -7,18 +7,20 @@ import CreateIcon from "icons/CreateIcon";
 import ExploreIcon from "icons/ExploreIcon";
 import HamburgerIcon from "icons/HamburgerIcon";
 import MessengerIcon from "icons/MessengerIcon";
-import { Link, useLocation } from "react-router-dom";
 import ProfilePicture from "components/ProfilePicture";
 import InstagramTextIcon from "icons/InstagramTextIcon";
 import InstagramLogoIcon from "icons/InstagramLogoIcon";
 import NotificationsIcon from "icons/NotificationsIcon";
+import { useLocation, useNavigate } from "react-router-dom";
 import SearchSidebar from "components/sidebars/SearchSidebar";
 import NotificationsSidebar from "components/sidebars/NotificationsSidebar";
 
-export default function MainSidebar({ setActiveWidget }) {
+export default function MainSidebar({ startTransition, setActiveWidget }) {
+  const navigate = useNavigate();
   const activePage = useLocation().pathname;
   const isCollapsed = activePage.includes("/direct/inbox");
   const [activeSidebar, setActiveSidebar] = useState(null);
+  const navigateTo = (path) => startTransition(() => navigate(path));
 
   return (
     <>
@@ -28,37 +30,37 @@ export default function MainSidebar({ setActiveWidget }) {
       <div
         id="sidebar"
         className={cn(
-          "hidden md:block absolute inset-y-0 left-0",
-          isCollapsed || activeSidebar ? "w-[80px]" : "w-[80px] xl:w-[250px]"
+          isCollapsed || activeSidebar ? "w-[80px]" : "w-[80px] xl:w-[250px]",
+          "hidden md:block absolute inset-y-0 left-0 pointer-events-auto overflow-y-auto"
         )}
       >
         <div className="size-full bg-black flex-col py-4 px-2 xl:px-4 flex border-r border-r-[rgb(38,38,38,0.7)] text-[rgb(245,245,245)]">
           <div className="xl:my-4">
-            <Link
-              to="/"
+            <button
+              onClick={() => navigateTo("/")}
               className={cn(
                 isCollapsed || activeSidebar ? "flex" : "flex xl:hidden",
                 "items-center justify-center px-2.5 py-3 transition-all duration-100 ease-in rounded-md hover:bg-[rgb(38,38,38,0.7)] gap-4 size-full"
               )}
             >
               <InstagramLogoIcon />
-            </Link>
+            </button>
 
-            <Link
-              to="/"
+            <button
+              onClick={() => navigateTo("/")}
               className={cn(
                 isCollapsed || activeSidebar ? "hidden" : "hidden xl:block",
                 "px-2.5 py-3"
               )}
             >
               <InstagramTextIcon />
-            </Link>
+            </button>
           </div>
 
           <div className="flex flex-col items-center justify-center flex-1 w-full xl:justify-start">
             <div className="flex flex-col items-center justify-between w-full gap-2">
-              <Link
-                to="/"
+              <button
+                onClick={() => navigateTo("/")}
                 className="flex items-center flex-col xl:flex-row px-2.5 py-3 transition-all duration-100 ease-in rounded-md hover:bg-[rgb(38,38,38,0.7)] justify-center xl:justify-start gap-4 size-full"
               >
                 <HomeIcon isActive={activePage === "/" && !activeSidebar} />
@@ -66,10 +68,10 @@ export default function MainSidebar({ setActiveWidget }) {
                   (!activeSidebar && (
                     <span className="hidden xl:block">Home</span>
                   ))}
-              </Link>
+              </button>
 
               <button
-                onBlur={() => setActiveSidebar(null)}
+                type="button"
                 onClick={() =>
                   setActiveSidebar((prev) =>
                     prev === "search" ? null : "search"
@@ -87,8 +89,8 @@ export default function MainSidebar({ setActiveWidget }) {
                   ))}
               </button>
 
-              <Link
-                to="explore"
+              <button
+                onClick={() => navigateTo("explore")}
                 className="flex items-center justify-center flex-col xl:flex-row px-2.5 py-3 transition-all duration-100 ease-in rounded-md hover:bg-[rgb(38,38,38,0.7)] gap-4 xl:justify-start size-full"
               >
                 <ExploreIcon
@@ -99,10 +101,10 @@ export default function MainSidebar({ setActiveWidget }) {
                   (!activeSidebar && (
                     <span className="hidden xl:block">Explore</span>
                   ))}
-              </Link>
+              </button>
 
-              <Link
-                to="reels"
+              <button
+                onClick={() => navigateTo("reels")}
                 className="flex items-center justify-center flex-col xl:flex-row px-2.5 py-3 transition-all duration-100 ease-in rounded-md hover:bg-[rgb(38,38,38,0.7)] gap-4 xl:justify-start size-full"
               >
                 <ReelsIcon
@@ -112,10 +114,10 @@ export default function MainSidebar({ setActiveWidget }) {
                   (!activeSidebar && (
                     <span className="hidden xl:block">Reels</span>
                   ))}
-              </Link>
+              </button>
 
-              <Link
-                to="direct/inbox"
+              <button
+                onClick={() => navigateTo("direct/inbox")}
                 className={cn(
                   activeSidebar === "messenger" && "outline-1 outline",
                   "items-center flex-col xl:flex-row px-2.5 py-3 transition-all duration-300 ease-in rounded-md hover:bg-[rgb(38,38,38,0.7)] justify-center xl:justify-start gap-4 flex size-full"
@@ -129,7 +131,7 @@ export default function MainSidebar({ setActiveWidget }) {
                   (!activeSidebar && (
                     <span className="hidden xl:block">Messages</span>
                   ))}
-              </Link>
+              </button>
 
               <button
                 onBlur={() => setActiveSidebar(null)}
@@ -164,8 +166,8 @@ export default function MainSidebar({ setActiveWidget }) {
                   ))}
               </button>
 
-              <Link
-                to="username"
+              <button
+                onClick={() => navigateTo("username")}
                 className="flex items-center justify-center flex-col xl:flex-row px-2.5 py-3 transition-all duration-100 ease-in rounded-md hover:bg-[rgb(38,38,38,0.7)] gap-4 xl:justify-start size-full"
               >
                 <ProfilePicture className="size-7" />
@@ -173,7 +175,7 @@ export default function MainSidebar({ setActiveWidget }) {
                   (!activeSidebar && (
                     <span className="hidden xl:block">Profile</span>
                   ))}
-              </Link>
+              </button>
             </div>
           </div>
 

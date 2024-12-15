@@ -75,8 +75,8 @@ export default function TopNavbar() {
 
   return (
     <nav
-      id="topNavbar"
-      className="block md:hidden absolute inset-x-0 top-0 h-[60px]"
+      id="topNav"
+      className="block md:hidden absolute inset-x-0 top-0 h-[60px] pointer-events-auto overflow-x-auto"
     >
       <div className="size-full flex gap-2 justify-between items-center px-4 bg-black text-white border-b border-b-[rgb(38,38,38,0.7)]">
         {url[0] === "settings" ? (

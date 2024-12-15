@@ -7,8 +7,8 @@ import MessengerIcon from "icons/MessengerIcon";
 export default function BottomNavbar() {
   return (
     <nav
-      id="bottomNavbar"
-      className="absolute block md:hidden inset-x-0 bottom-0 h-[50px]"
+      id="bottomNav"
+      className="absolute block md:hidden inset-x-0 bottom-0 h-[50px] pointer-events-auto overflow-x-auto"
     >
       <div className="size-full flex border-t border-t-[rgb(38,38,38,0.7)] bg-black text-white xs:px-4">
         <div className="flex items-center justify-between w-full">

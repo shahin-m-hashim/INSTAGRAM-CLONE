@@ -7,25 +7,23 @@ export default function SplashScreen({ children, delay = 500 }) {
     let timer;
 
     const handlePageLoad = () => {
+      const main = document.getElementById("main");
+      const topNav = document.getElementById("topNav");
+      const sidebar = document.getElementById("sidebar");
+      const bottomNav = document.getElementById("bottomNav");
+
       timer = setTimeout(() => {
         setIsLoading(false);
-
-        document
-          .getElementById("topNavbar")
-          .classList.add("pointer-events-auto");
-
-        document
-          .getElementById("bottomNavbar")
-          .classList.add("pointer-events-auto");
-
-        document
-          .getElementById("main")
-          .classList.add("pointer-events-auto", "overflow-auto");
-
-        document
-          .getElementById("sidebar")
-          .classList.add("pointer-events-auto", "overflow-y-auto");
+        main && main.classList.remove("disable-on-load");
+        topNav && topNav.classList.remove("disable-on-load");
+        sidebar && sidebar.classList.remove("disable-on-load");
+        bottomNav && bottomNav.classList.remove("disable-on-load");
       }, delay);
+
+      main && main.classList.add("disable-on-load");
+      topNav && topNav.classList.add("disable-on-load");
+      sidebar && sidebar.classList.add("disable-on-load");
+      bottomNav && bottomNav.classList.add("disable-on-load");
     };
 
     if (document.readyState === "complete") {
@@ -37,7 +35,7 @@ export default function SplashScreen({ children, delay = 500 }) {
     return () => {
       clearTimeout(timer);
     };
-  }, [delay]);
+  }, []);
 
   return (
     <>

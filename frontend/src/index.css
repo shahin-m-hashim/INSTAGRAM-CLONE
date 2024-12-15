@@ -35,6 +35,11 @@ input:-webkit-autofill:focus {
   -webkit-box-shadow: 0 0 0px 1000px rgb(18, 18, 18) inset;
 }
 
+.disable-on-load {
+  overflow: hidden;
+  pointer-events: none !important;
+}
+
 .scrollbar-hidden {
   scrollbar-width: none; /* Firefox */
   -ms-overflow-style: none; /* IE and Edge */
