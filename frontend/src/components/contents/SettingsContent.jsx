@@ -330,16 +330,10 @@ export default function SettingsContent() {
             For families
           </h3>
 
-          <TransitionLink
-            to="family_center"
-            className={cn(
-              activeTab === "family_center" && "bg-[rgb(38,38,38)]",
-              "flex items-center gap-3 p-3 hover:bg-[rgb(255,255,255,.1)] rounded-md"
-            )}
-          >
+          <div className="flex items-center gap-3 p-3 hover:bg-[rgb(255,255,255,.1)] rounded-md">
             <FamilyCenterIcon />
             <span className="text-sm">Family Center</span>
-          </TransitionLink>
+          </div>
         </div>
 
         <div className="flex flex-col gap-3">
@@ -376,16 +370,10 @@ export default function SettingsContent() {
               <span className="text-sm">Help</span>
             </TransitionLink>
 
-            <TransitionLink
-              to="privacy_center"
-              className={cn(
-                activeTab === "privacy_center" && "bg-[rgb(38,38,38)]",
-                "flex items-center gap-3 p-3 hover:bg-[rgb(255,255,255,.1)] rounded-md"
-              )}
-            >
+            <div className="flex items-center gap-3 p-3 hover:bg-[rgb(255,255,255,.1)] rounded-md">
               <PrivacyCenterIcon />
               <span className="text-sm">Privacy Center</span>
-            </TransitionLink>
+            </div>
 
             <TransitionLink
               to="account_status"

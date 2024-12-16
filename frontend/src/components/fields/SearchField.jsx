@@ -3,7 +3,7 @@ import CrossIcon from "icons/CrossIcon";
 import SearchIcon from "icons/SearchIcon";
 import { useEffect, useState } from "react";
 
-export default function SearchField() {
+export default function SearchField({ className }) {
   const [state, setState] = useState({
     value: "",
     isFocused: false,
@@ -23,7 +23,7 @@ export default function SearchField() {
   const handleClear = () => setState({ value: "", isFocused: false });
 
   return (
-    <div className="relative size-full">
+    <div className={cn("relative w-full h-10", className)}>
       <input
         type="text"
         name="search"

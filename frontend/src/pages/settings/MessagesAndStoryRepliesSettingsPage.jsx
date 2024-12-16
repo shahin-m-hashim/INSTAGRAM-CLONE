@@ -1,8 +1,8 @@
 import { useState } from "react";
+import Footer from "components/Footer";
 import RadioInput from "components/RadioInput";
 import ToggleSwitch from "components/ToggleSwitch";
 import DropDownArrowIcon from "icons/DropDownArrowIcon";
-import Footer from "components/Footer";
 
 const StoryRepliesTab = ({ setActiveTab }) => (
   <>
