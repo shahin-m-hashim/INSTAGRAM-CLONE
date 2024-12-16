@@ -1,8 +1,8 @@
 import HomeIcon from "icons/HomeIcon";
 import ReelsIcon from "icons/ReelsIcon";
-import { Link } from "react-router-dom";
 import ExploreIcon from "icons/ExploreIcon";
 import MessengerIcon from "icons/MessengerIcon";
+import TransitionLink from "components/TransitionLink";
 
 export default function BottomNavbar() {
   return (
@@ -12,35 +12,35 @@ export default function BottomNavbar() {
     >
       <div className="size-full flex border-t border-t-[rgb(38,38,38,0.7)] bg-black text-white xs:px-4">
         <div className="flex items-center justify-between w-full">
-          <Link
+          <TransitionLink
             to="/"
             className="flex flex-1 items-center justify-center gap-4 px-2.5 py-3"
           >
             <HomeIcon />
-          </Link>
+          </TransitionLink>
 
-          <Link
+          <TransitionLink
             to="explore"
             className="flex flex-1 items-center justify-center gap-4 px-2.5 py-3"
           >
             <ExploreIcon />
-          </Link>
+          </TransitionLink>
 
-          <Link
+          <TransitionLink
             to="reels"
             className="flex flex-1 items-center justify-center gap-4 px-2.5 py-3"
           >
             <ReelsIcon />
-          </Link>
+          </TransitionLink>
 
-          <Link
+          <TransitionLink
             to="direct/inbox"
             className="flex flex-1 items-center justify-center gap-4 px-2.5 py-3"
           >
             <MessengerIcon />
-          </Link>
+          </TransitionLink>
 
-          <Link
+          <TransitionLink
             to="username"
             className="flex flex-1 items-center justify-center gap-4 px-2.5 py-3"
           >
@@ -48,7 +48,7 @@ export default function BottomNavbar() {
               className="size-[24px] rounded-full"
               src="images/default_dp_dark.webp"
             />
-          </Link>
+          </TransitionLink>
         </div>
       </div>
     </nav>

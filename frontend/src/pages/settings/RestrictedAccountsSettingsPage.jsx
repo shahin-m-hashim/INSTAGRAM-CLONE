@@ -1,16 +1,28 @@
+import Footer from "components/Footer";
+
 export default function RestrictedAccountsSettingsPage() {
   return (
-    <div className="flex flex-col gap-6 max-w-[650px] p-4 my-4 md:my-14 size-full">
-      <h1 className="text-xl font-bold">Restricted accounts</h1>
-      <p className="text-[rgb(168,168,168)]">
-        Protect yourself from unwanted interactions without having to block or
-        unfollow people you know. You can restrict them anytime from their
-        profiles. <a className="text-white">Learn how it works</a>
-      </p>
-      <div className="flex items-center justify-center size-full">
-        <span className="text-sm text-[rgb(168,168,168)]">
-          You haven&apos;t restricted anyone.
-        </span>
+    <div className="flex flex-col justify-between max-w-[600px] p-4 w-full">
+      <div className="flex flex-col flex-1 w-full gap-10">
+        <div className="hidden mt-14 md:block">
+          <h1 className="text-xl font-bold">Restricted accounts</h1>
+        </div>
+
+        <p className="text-[rgb(168,168,168)]">
+          Protect yourself from unwanted interactions without having to block or
+          unfollow people you know. You can restrict them anytime from their
+          profiles. <a className="text-white">Learn how it works</a>
+        </p>
+
+        <div className="flex flex-col items-center justify-center flex-1 w-full">
+          <span className="text-sm text-[rgb(168,168,168)]">
+            You haven&apos;t restricted anyone.
+          </span>
+        </div>
+      </div>
+
+      <div className="hidden w-full px-5 my-5 md:flex md:my-10">
+        <Footer />
       </div>
     </div>
   );

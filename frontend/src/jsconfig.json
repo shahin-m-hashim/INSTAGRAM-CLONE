@@ -10,6 +10,7 @@
       "utils": ["./src/utils/*"],
       "icons": ["./src/icons/*"],
       "assets": ["./src/assets/*"],
+      "providers": ["./src/providers/*"],
       "components": ["./src/components/*"]
     }
   },

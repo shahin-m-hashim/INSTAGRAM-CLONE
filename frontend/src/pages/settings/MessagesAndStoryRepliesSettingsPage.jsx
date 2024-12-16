@@ -2,6 +2,7 @@ import { useState } from "react";
 import RadioInput from "components/RadioInput";
 import ToggleSwitch from "components/ToggleSwitch";
 import DropDownArrowIcon from "icons/DropDownArrowIcon";
+import Footer from "components/Footer";
 
 const StoryRepliesTab = ({ setActiveTab }) => (
   <>
@@ -156,7 +157,7 @@ export default function MessagesAndStoryRepliesSettingsPage() {
   return (
     <>
       {activeTab ? (
-        <div className="flex flex-col gap-10 max-w-[650px] p-4 my-4 md:my-14 size-full">
+        <div className="flex flex-col gap-10 max-w-[650px] p-4 w-full">
           {activeTab === "storyReplies" ? (
             <StoryRepliesTab setActiveTab={setActiveTab} />
           ) : activeTab === "messageControls" ? (
@@ -166,45 +167,53 @@ export default function MessagesAndStoryRepliesSettingsPage() {
           )}
         </div>
       ) : (
-        <div className="flex flex-col gap-4 p-4 max-w-[600px] my-4 md:my-14 size-full">
-          <h1 className="text-xl font-bold">Messages and story replies</h1>
+        <div className="flex flex-col justify-between p-4 max-w-[600px] w-full">
+          <div className="flex flex-col w-full gap-4">
+            <div className="hidden mb-5 mt-14 md:block">
+              <h1 className="text-xl font-bold">Messages and story replies</h1>
+            </div>
 
-          <h2 className="my-2 font-bold">How people can reach you</h2>
-          <div className="flex flex-col gap-6 px-4 py-5 rounded-2xl border border-[rgb(54,54,54,0.7)]">
-            <button
-              type="button"
-              onClick={() => setActiveTab("messageControls")}
-              className="flex items-center justify-between gap-4"
-            >
-              <span className="text-sm">Message Controls</span>
-              <div className="transform -rotate-90">
-                <DropDownArrowIcon />
-              </div>
-            </button>
-            <button
-              type="button"
-              onClick={() => setActiveTab("storyReplies")}
-              className="flex items-center justify-between gap-4"
-            >
-              <span className="text-sm">Story Replies</span>
-              <div className="transform -rotate-90">
-                <DropDownArrowIcon />
-              </div>
-            </button>
+            <h2 className="my-2 font-bold">How people can reach you</h2>
+            <div className="flex flex-col gap-6 px-4 py-5 rounded-2xl border border-[rgb(54,54,54,0.7)]">
+              <button
+                type="button"
+                onClick={() => setActiveTab("messageControls")}
+                className="flex items-center justify-between gap-4"
+              >
+                <span className="text-sm">Message Controls</span>
+                <div className="transform -rotate-90">
+                  <DropDownArrowIcon />
+                </div>
+              </button>
+              <button
+                type="button"
+                onClick={() => setActiveTab("storyReplies")}
+                className="flex items-center justify-between gap-4"
+              >
+                <span className="text-sm">Story Replies</span>
+                <div className="transform -rotate-90">
+                  <DropDownArrowIcon />
+                </div>
+              </button>
+            </div>
+
+            <h2 className="my-2 font-bold">Who can see you&apos;re online</h2>
+            <div className="flex flex-col gap-6 px-4 py-5 rounded-2xl border border-[rgb(54,54,54,0.7)]">
+              <button
+                type="button"
+                onClick={() => setActiveTab("showActivityStatus")}
+                className="flex items-center justify-between gap-4"
+              >
+                <span className="text-sm">Show Activity Status</span>
+                <div className="transform -rotate-90">
+                  <DropDownArrowIcon />
+                </div>
+              </button>
+            </div>
           </div>
 
-          <h2 className="my-2 font-bold">Who can see you&apos;re online</h2>
-          <div className="flex flex-col gap-6 px-4 py-5 rounded-2xl border border-[rgb(54,54,54,0.7)]">
-            <button
-              type="button"
-              onClick={() => setActiveTab("showActivityStatus")}
-              className="flex items-center justify-between gap-4"
-            >
-              <span className="text-sm">Show Activity Status</span>
-              <div className="transform -rotate-90">
-                <DropDownArrowIcon />
-              </div>
-            </button>
+          <div className="hidden w-full px-5 my-5 md:flex md:my-10">
+            <Footer />
           </div>
         </div>
       )}

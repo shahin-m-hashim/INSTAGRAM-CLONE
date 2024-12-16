@@ -5,12 +5,14 @@ import PrivacyIcon from "icons/PrivacyIcon";
 import BlockedIcon from "icons/BlockedIcon";
 import CommentsIcon from "icons/CommentsIcon";
 import LanguageIcon from "icons/LanguageIcon";
+import { useLocation } from "react-router-dom";
 import MessengerIcon from "icons/MessengerIcon";
 import EditProfileIcon from "icons/EditProfileIcon";
 import HiddenWordsIcon from "icons/HiddenWordsIcon";
-import { Link, useLocation } from "react-router-dom";
 import CloseFriendsIcon from "icons/CloseFriendsIcon";
 import FamilyCenterIcon from "icons/FamilyCenterIcon";
+import YourActivityIcon from "icons/YourActivityIcon";
+import TransitionLink from "components/TransitionLink";
 import MutedAccountsIcon from "icons/MutedAccountsIcon";
 import PrivacyCenterIcon from "icons/PrivacyCenterIcon";
 import AccountStatusIcon from "icons/AccountStatusIcon";
@@ -26,7 +28,7 @@ import AccountTypeAndToolsIcon from "icons/AccountTypeAndToolsIcon";
 import ArchivingAndDownloadingIcon from "icons/ArchivingAndDownloadingIcon";
 
 export default function SettingsContent() {
-  const activeTab = useLocation().pathname.split("/")[1];
+  const activeTab = useLocation().pathname.split("/")[2];
 
   return (
     <>
@@ -78,7 +80,7 @@ export default function SettingsContent() {
           </h3>
 
           <div className="flex flex-col gap-1">
-            <Link
+            <TransitionLink
               to="edit_profile"
               className={cn(
                 activeTab === "edit_profile" && "bg-[rgb(38,38,38)]",
@@ -87,9 +89,20 @@ export default function SettingsContent() {
             >
               <EditProfileIcon />
               <span className="text-sm">Edit profile</span>
-            </Link>
+            </TransitionLink>
 
-            <Link
+            <TransitionLink
+              to="/your_activity"
+              className={cn(
+                activeTab === "edit_profile" && "bg-[rgb(38,38,38)]",
+                "flex md:hidden items-center gap-3 p-3 hover:bg-[rgb(255,255,255,.1)] rounded-md"
+              )}
+            >
+              <YourActivityIcon />
+              <span className="text-sm">Your Activity</span>
+            </TransitionLink>
+
+            <TransitionLink
               to="notifications"
               className={cn(
                 activeTab === "notifications" && "bg-[rgb(38,38,38)]",
@@ -98,7 +111,7 @@ export default function SettingsContent() {
             >
               <BellNotificationIcon />
               <span className="text-sm">Notifications</span>
-            </Link>
+            </TransitionLink>
           </div>
         </div>
 
@@ -108,7 +121,7 @@ export default function SettingsContent() {
           </h3>
 
           <div className="flex flex-col gap-1">
-            <Link
+            <TransitionLink
               to="account_privacy"
               className={cn(
                 activeTab === "account_privacy" && "bg-[rgb(38,38,38)]",
@@ -117,9 +130,9 @@ export default function SettingsContent() {
             >
               <PrivacyIcon />
               <span className="text-sm">Account privacy</span>
-            </Link>
+            </TransitionLink>
 
-            <Link
+            <TransitionLink
               to="close_friends"
               className={cn(
                 activeTab === "close_friends" && "bg-[rgb(38,38,38)]",
@@ -128,9 +141,9 @@ export default function SettingsContent() {
             >
               <CloseFriendsIcon />
               <span className="text-sm">Close Friends</span>
-            </Link>
+            </TransitionLink>
 
-            <Link
+            <TransitionLink
               to="blocked_accounts"
               className={cn(
                 activeTab === "blocked_accounts" && "bg-[rgb(38,38,38)]",
@@ -139,9 +152,9 @@ export default function SettingsContent() {
             >
               <BlockedIcon />
               <span className="text-sm">Blocked</span>
-            </Link>
+            </TransitionLink>
 
-            <Link
+            <TransitionLink
               to="story_and_live"
               className={cn(
                 activeTab === "story_and_live" && "bg-[rgb(38,38,38)]",
@@ -150,7 +163,7 @@ export default function SettingsContent() {
             >
               <HideStoryAndLiveIcon />
               <span className="text-sm">Hide story and live</span>
-            </Link>
+            </TransitionLink>
           </div>
         </div>
 
@@ -160,19 +173,19 @@ export default function SettingsContent() {
           </h3>
 
           <div className="flex flex-col gap-1">
-            <Link
-              to="settings/message_and_story_replies"
+            <TransitionLink
+              to="messages_and_story_replies"
               className={cn(
-                activeTab === "message_and_story_replies" &&
+                activeTab === "messages_and_story_replies" &&
                   "bg-[rgb(38,38,38)]",
                 "flex items-center gap-3 p-3 hover:bg-[rgb(255,255,255,.1)] rounded-md"
               )}
             >
               <MessengerIcon />
               <span className="text-sm">Messages and story replies</span>
-            </Link>
+            </TransitionLink>
 
-            <Link
+            <TransitionLink
               to="tags_and_mentions"
               className={cn(
                 activeTab === "tags_and_mentions" && "bg-[rgb(38,38,38)]",
@@ -181,9 +194,9 @@ export default function SettingsContent() {
             >
               <TagsAndMentionsIcon />
               <span className="text-sm">Tags and mentions</span>
-            </Link>
+            </TransitionLink>
 
-            <Link
+            <TransitionLink
               to="comments"
               className={cn(
                 activeTab === "comments" && "bg-[rgb(38,38,38)]",
@@ -192,9 +205,9 @@ export default function SettingsContent() {
             >
               <CommentsIcon />
               <span className="text-sm">Comments</span>
-            </Link>
+            </TransitionLink>
 
-            <Link
+            <TransitionLink
               to="sharing_and_reuse"
               className={cn(
                 activeTab === "sharing_and_reuse" && "bg-[rgb(38,38,38)]",
@@ -203,9 +216,9 @@ export default function SettingsContent() {
             >
               <SharingAndReuseIcon />
               <span className="text-sm">Sharing and reuse</span>
-            </Link>
+            </TransitionLink>
 
-            <Link
+            <TransitionLink
               to="restricted_accounts"
               className={cn(
                 activeTab === "restricted_accounts" && "bg-[rgb(38,38,38)]",
@@ -214,9 +227,9 @@ export default function SettingsContent() {
             >
               <RestrictedAccountsIcon />
               <span className="text-sm">Restricted accounts</span>
-            </Link>
+            </TransitionLink>
 
-            <Link
+            <TransitionLink
               to="hidden_words"
               className={cn(
                 activeTab === "hidden_words" && "bg-[rgb(38,38,38)]",
@@ -225,7 +238,7 @@ export default function SettingsContent() {
             >
               <HiddenWordsIcon />
               <span className="text-sm">Hidden Words</span>
-            </Link>
+            </TransitionLink>
           </div>
         </div>
 
@@ -235,7 +248,7 @@ export default function SettingsContent() {
           </h3>
 
           <div className="flex flex-col gap-1">
-            <Link
+            <TransitionLink
               to="muted_accounts"
               className={cn(
                 activeTab === "muted_accounts" && "bg-[rgb(38,38,38)]",
@@ -244,9 +257,9 @@ export default function SettingsContent() {
             >
               <MutedAccountsIcon />
               <span className="text-sm">Muted accounts</span>
-            </Link>
+            </TransitionLink>
 
-            <Link
+            <TransitionLink
               to="content_preferences"
               className={cn(
                 activeTab === "content_preferences" && "bg-[rgb(38,38,38)]",
@@ -255,9 +268,9 @@ export default function SettingsContent() {
             >
               <ContentPreferencesIcon />
               <span className="text-sm">Content preferences</span>
-            </Link>
+            </TransitionLink>
 
-            <Link
+            <TransitionLink
               to="like_and_share_counts"
               className={cn(
                 activeTab === "like_and_share_counts" && "bg-[rgb(38,38,38)]",
@@ -266,7 +279,7 @@ export default function SettingsContent() {
             >
               <LikeAndShareCountsIcon />
               <span className="text-sm">Like and share counts</span>
-            </Link>
+            </TransitionLink>
           </div>
         </div>
 
@@ -276,7 +289,7 @@ export default function SettingsContent() {
           </h3>
 
           <div className="flex flex-col gap-1">
-            <Link
+            <TransitionLink
               to="archiving_and_downloading"
               className={cn(
                 activeTab === "archiving_and_downloading" &&
@@ -286,9 +299,9 @@ export default function SettingsContent() {
             >
               <ArchivingAndDownloadingIcon />
               <span className="text-sm">Archiving and downloading</span>
-            </Link>
+            </TransitionLink>
 
-            <Link
+            <TransitionLink
               to="language"
               className={cn(
                 activeTab === "language" && "bg-[rgb(38,38,38)]",
@@ -297,9 +310,9 @@ export default function SettingsContent() {
             >
               <LanguageIcon />
               <span className="text-sm">Language</span>
-            </Link>
+            </TransitionLink>
 
-            <Link
+            <TransitionLink
               to="website_permissions"
               className={cn(
                 activeTab === "website_permissions" && "bg-[rgb(38,38,38)]",
@@ -308,7 +321,7 @@ export default function SettingsContent() {
             >
               <WebsitePermissionsIcon />
               <span className="text-sm">Website permissions</span>
-            </Link>
+            </TransitionLink>
           </div>
         </div>
 
@@ -317,7 +330,7 @@ export default function SettingsContent() {
             For families
           </h3>
 
-          <Link
+          <TransitionLink
             to="family_center"
             className={cn(
               activeTab === "family_center" && "bg-[rgb(38,38,38)]",
@@ -326,7 +339,7 @@ export default function SettingsContent() {
           >
             <FamilyCenterIcon />
             <span className="text-sm">Family Center</span>
-          </Link>
+          </TransitionLink>
         </div>
 
         <div className="flex flex-col gap-3">
@@ -334,7 +347,7 @@ export default function SettingsContent() {
             For professionals
           </h3>
 
-          <Link
+          <TransitionLink
             to="account_type_and_tools"
             className={cn(
               activeTab === "account_type_and_tools" && "bg-[rgb(38,38,38)]",
@@ -343,7 +356,7 @@ export default function SettingsContent() {
           >
             <AccountTypeAndToolsIcon />
             <span className="text-sm">Account type and tools</span>
-          </Link>
+          </TransitionLink>
         </div>
 
         <div className="flex flex-col gap-3">
@@ -352,7 +365,7 @@ export default function SettingsContent() {
           </h3>
 
           <div className="flex flex-col gap-1">
-            <Link
+            <TransitionLink
               to="help"
               className={cn(
                 activeTab === "help" && "bg-[rgb(38,38,38)]",
@@ -361,9 +374,9 @@ export default function SettingsContent() {
             >
               <HelpIcon />
               <span className="text-sm">Help</span>
-            </Link>
+            </TransitionLink>
 
-            <Link
+            <TransitionLink
               to="privacy_center"
               className={cn(
                 activeTab === "privacy_center" && "bg-[rgb(38,38,38)]",
@@ -372,9 +385,9 @@ export default function SettingsContent() {
             >
               <PrivacyCenterIcon />
               <span className="text-sm">Privacy Center</span>
-            </Link>
+            </TransitionLink>
 
-            <Link
+            <TransitionLink
               to="account_status"
               className={cn(
                 activeTab === "account_status" && "bg-[rgb(38,38,38)]",
@@ -383,7 +396,7 @@ export default function SettingsContent() {
             >
               <AccountStatusIcon />
               <span className="text-sm">Account Status</span>
-            </Link>
+            </TransitionLink>
           </div>
         </div>
       </div>

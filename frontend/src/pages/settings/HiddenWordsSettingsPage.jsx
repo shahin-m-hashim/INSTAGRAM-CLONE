@@ -2,10 +2,11 @@ import { useState } from "react";
 import Button from "components/wrappers/Button";
 import ToggleSwitch from "components/ToggleSwitch";
 import DropDownArrowIcon from "icons/DropDownArrowIcon";
+import Footer from "components/Footer";
 
 const Tab = ({ setShowTab }) => (
   <>
-    <div className="flex items-center gap-4">
+    <div className="flex items-center gap-4 mt-14">
       <button
         type="button"
         className="transform rotate-90"
@@ -53,77 +54,87 @@ export default function HiddenWordsSettingsPage() {
   const [showTab, setShowTab] = useState(false);
 
   return (
-    <div className="flex flex-col gap-10 p-4 max-w-[600px] my-4 md:my-14 size-full">
-      {showTab ? (
-        <Tab setShowTab={setShowTab} />
-      ) : (
-        <>
-          <h1 className="text-xl font-bold">Hidden Words</h1>
-
-          <div className="flex flex-col gap-2">
-            <h2 className="font-bold">Offensive words and phrases</h2>
-            <p className="text-xs text-[rgb(168,168,168)]">
-              When these settings are on, Instagram automatically hides some
-              comments and message requests.
-            </p>
-          </div>
-
-          <div className="flex flex-col gap-4">
-            <div className="flex items-center justify-between">
-              <span>Hide comments</span>
-              <ToggleSwitch checked={true} />
+    <div className="flex flex-col justify-between p-4 max-w-[600px] w-full">
+      <div className="flex flex-col w-full gap-10">
+        {showTab ? (
+          <Tab setShowTab={setShowTab} />
+        ) : (
+          <>
+            <div className="hidden mt-14 md:block">
+              <h1 className="text-xl font-bold">Hidden Words</h1>
             </div>
 
-            <p className="text-xs text-[rgb(168,168,168)]">
-              Instagram will automatically move a variety of comments, such as
-              those that are potentially offensive or spam, to a separate
-              section. Anyone can see these comments and you can unhide them
-              anytime.
-            </p>
-          </div>
-
-          <div className="flex flex-col gap-4">
-            <div className="flex items-center justify-between">
-              <span>Advanced comment filtering</span>
-              <ToggleSwitch />
+            <div className="flex flex-col gap-2">
+              <h2 className="font-bold">Offensive words and phrases</h2>
+              <p className="text-xs text-[rgb(168,168,168)]">
+                When these settings are on, Instagram automatically hides some
+                comments and message requests.
+              </p>
             </div>
 
-            <p className="text-xs text-[rgb(168,168,168)]">
-              Even more comments that meet our criteria will automatically be
-              hidden.
-            </p>
-          </div>
+            <div className="flex flex-col gap-4">
+              <div className="flex items-center justify-between">
+                <span>Hide comments</span>
+                <ToggleSwitch checked={true} />
+              </div>
 
-          <div className="flex flex-col gap-2">
-            <div className="flex items-center justify-between">
-              <span>Hide message requests</span>
-              <ToggleSwitch />
+              <p className="text-xs text-[rgb(168,168,168)]">
+                Instagram will automatically move a variety of comments, such as
+                those that are potentially offensive or spam, to a separate
+                section. Anyone can see these comments and you can unhide them
+                anytime.
+              </p>
             </div>
 
-            <p className="text-xs text-[rgb(168,168,168)]">
-              Message requests that may be offensive will be moved to the hidden
-              requests folder. We&apos;ll also filter notifications for these
-              messages.
-            </p>
-          </div>
+            <div className="flex flex-col gap-4">
+              <div className="flex items-center justify-between">
+                <span>Advanced comment filtering</span>
+                <ToggleSwitch />
+              </div>
 
-          <div className="flex flex-col gap-6">
-            <h1 className="font-bold">Custom words and phrases</h1>
-            <div className="flex flex-col gap-6 px-4 py-5 rounded-2xl border border-[rgb(54,54,54,0.7)]">
-              <button
-                type="button"
-                onClick={() => setShowTab(true)}
-                className="flex items-center justify-between gap-4"
-              >
-                <span className="text-sm">Manage custom words and phrases</span>
-                <div className="transform -rotate-90">
-                  <DropDownArrowIcon />
-                </div>
-              </button>
+              <p className="text-xs text-[rgb(168,168,168)]">
+                Even more comments that meet our criteria will automatically be
+                hidden.
+              </p>
             </div>
-          </div>
-        </>
-      )}
+
+            <div className="flex flex-col gap-2">
+              <div className="flex items-center justify-between">
+                <span>Hide message requests</span>
+                <ToggleSwitch />
+              </div>
+
+              <p className="text-xs text-[rgb(168,168,168)]">
+                Message requests that may be offensive will be moved to the
+                hidden requests folder. We&apos;ll also filter notifications for
+                these messages.
+              </p>
+            </div>
+
+            <div className="flex flex-col gap-6">
+              <h1 className="font-bold">Custom words and phrases</h1>
+              <div className="flex flex-col gap-6 px-4 py-5 rounded-2xl border border-[rgb(54,54,54,0.7)]">
+                <button
+                  type="button"
+                  onClick={() => setShowTab(true)}
+                  className="flex items-center justify-between gap-4"
+                >
+                  <span className="text-sm">
+                    Manage custom words and phrases
+                  </span>
+                  <div className="transform -rotate-90">
+                    <DropDownArrowIcon />
+                  </div>
+                </button>
+              </div>
+            </div>
+          </>
+        )}
+      </div>
+
+      <div className="hidden w-full px-5 my-5 md:flex md:my-10">
+        <Footer />
+      </div>
     </div>
   );
 }

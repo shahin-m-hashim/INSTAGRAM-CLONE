@@ -5,6 +5,7 @@ import Separator from "components/Separator";
 import RadioInput from "components/RadioInput";
 import ToggleSwitch from "components/ToggleSwitch";
 import DropDownArrowIcon from "icons/DropDownArrowIcon";
+import Footer from "components/Footer";
 
 const pushOptions = [
   {
@@ -331,7 +332,7 @@ export default function NotificationSettingsPage() {
   return (
     <>
       {activeTab ? (
-        <div className="flex flex-col gap-10 max-w-[650px] p-4 my-4 md:my-14 size-full">
+        <div className="flex flex-col gap-10 max-w-[650px] p-4 my-5 w-full">
           {activeTab === "push" ? (
             <PushNotificationSettings setActiveTab={setActiveTab} />
           ) : (
@@ -339,29 +340,38 @@ export default function NotificationSettingsPage() {
           )}
         </div>
       ) : (
-        <div className="flex flex-col gap-4 p-4 max-w-[600px] my-4 md:my-14 size-full">
-          <h1 className="text-xl font-bold">Notifications</h1>
-          <div className="flex flex-col gap-6 px-4 py-5 rounded-2xl border border-[rgb(54,54,54,0.7)]">
-            <button
-              type="button"
-              onClick={() => setActiveTab("push")}
-              className="flex items-center justify-between gap-4"
-            >
-              <span className="text-sm">Push Notifications</span>
-              <div className="transform -rotate-90">
-                <DropDownArrowIcon />
-              </div>
-            </button>
-            <button
-              type="button"
-              onClick={() => setActiveTab("email")}
-              className="flex items-center justify-between gap-4"
-            >
-              <span className="text-sm">Email Notifications</span>
-              <div className="transform -rotate-90">
-                <DropDownArrowIcon />
-              </div>
-            </button>
+        <div className="flex flex-col justify-between px-4 max-w-[600px] w-full">
+          <div className="flex flex-col gap-4">
+            <div className="hidden px-4 mb-5 mt-14 md:block">
+              <h1 className="text-xl font-bold">Notifications</h1>
+            </div>
+
+            <div className="flex flex-col gap-6 px-4 py-5 rounded-2xl border border-[rgb(54,54,54,0.7)]">
+              <button
+                type="button"
+                onClick={() => setActiveTab("push")}
+                className="flex items-center justify-between gap-4"
+              >
+                <span className="text-sm">Push Notifications</span>
+                <div className="transform -rotate-90">
+                  <DropDownArrowIcon />
+                </div>
+              </button>
+              <button
+                type="button"
+                onClick={() => setActiveTab("email")}
+                className="flex items-center justify-between gap-4"
+              >
+                <span className="text-sm">Email Notifications</span>
+                <div className="transform -rotate-90">
+                  <DropDownArrowIcon />
+                </div>
+              </button>
+            </div>
+          </div>
+
+          <div className="hidden w-full px-5 my-5 md:flex md:my-10">
+            <Footer />
           </div>
         </div>
       )}

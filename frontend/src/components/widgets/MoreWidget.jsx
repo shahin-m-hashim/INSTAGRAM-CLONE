@@ -1,22 +1,18 @@
 import { cn } from "utils/cn";
-import { useState } from "react";
 import SaveIcon from "icons/SaveIcon";
 import ReportIcon from "icons/ReportIcon";
+import { useContext, useState } from "react";
 import Separator from "components/Separator";
 import SettingsIcon from "icons/SettingsIcon";
-import { useNavigate } from "react-router-dom";
 import ToggleSwitch from "components/ToggleSwitch";
+import GlobalContext from "providers/GlobalProvider";
 import YourActivityIcon from "icons/YourActivityIcon";
+import TransitionLink from "components/TransitionLink";
 import DropDownArrowIcon from "icons/DropDownArrowIcon";
 
-export default function MoreWidget({ startTransition, setActiveWidget }) {
-  const navigate = useNavigate();
+export default function MoreWidget() {
   const [showTab, setShowTab] = useState(false);
-
-  const handleNavigate = () => {
-    setActiveWidget(null);
-    startTransition(() => navigate("/settings/edit_profile"));
-  };
+  const { setActiveWidget } = useContext(GlobalContext);
 
   return (
     <div className="absolute w-[250px] z-10 left-4 bottom-20 pointer-events-auto">
@@ -28,18 +24,22 @@ export default function MoreWidget({ startTransition, setActiveWidget }) {
           )}
         >
           <div className="flex flex-col flex-1 gap-2 p-2">
-            <button
-              type="button"
-              onClick={handleNavigate}
+            <TransitionLink
+              to="/settings/edit_profile"
               className="flex items-center gap-4 px-1 py-2  transition-all duration-100 ease-in rounded-md hover:bg-[rgb(58,58,58)]"
             >
               <SettingsIcon className="w-10" />
               <span>Settings</span>
-            </button>
-            <a className="flex items-center gap-4 px-1 py-2  transition-all duration-100 ease-in rounded-md hover:bg-[rgb(58,58,58)]">
+            </TransitionLink>
+
+            <TransitionLink
+              to="/your_activity"
+              className="flex items-center gap-4 px-1 py-2  transition-all duration-100 ease-in rounded-md hover:bg-[rgb(58,58,58)]"
+            >
               <YourActivityIcon className="w-10" />
               <span>Your Activity</span>
-            </a>
+            </TransitionLink>
+
             <a className="flex items-center gap-4 px-1 py-2  transition-all duration-100 ease-in rounded-md hover:bg-[rgb(58,58,58)]">
               <SaveIcon className="w-10" />
               <span>Saved</span>

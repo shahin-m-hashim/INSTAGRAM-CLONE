@@ -73,8 +73,19 @@ input:-webkit-autofill:focus {
   );
 }
 
-.navigation-transition.active {
-  animation: navigation 300ms ease-in;
+.navigation-transition {
+  top: 0;
+  left: 0;
+  height: 2px;
+  z-index: 100;
+  position: fixed;
+  animation: navigation 500ms linear infinite;
+}
+
+@media screen and (min-width: 768px) {
+  .navigation-transition {
+    height: 4px;
+  }
 }
 
 @keyframes navigation {

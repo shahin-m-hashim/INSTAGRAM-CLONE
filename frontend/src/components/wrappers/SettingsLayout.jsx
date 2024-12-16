@@ -8,8 +8,8 @@ export default function SettingsLayout() {
         <SettingsSidebar />
       </div>
 
-      <div className="w-full md:h-screen md:overflow-auto">
-        <div className="flex justify-center my-5 md:my-0">
+      <div className="flex flex-col w-full md:h-screen md:overflow-auto">
+        <div className="flex justify-center flex-1 my-5 md:my-0">
           <Outlet />
         </div>
       </div>

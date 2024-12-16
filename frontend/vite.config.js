@@ -12,6 +12,7 @@ export default defineConfig({
       pages: "/src/pages",
       mocks: "/src/mocks",
       routes: "/src/routes",
+      providers: "/src/providers",
       components: "/src/components",
     },
   },

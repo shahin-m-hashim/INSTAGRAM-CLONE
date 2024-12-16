@@ -1,26 +1,28 @@
 import { cn } from "utils/cn";
-import { useState } from "react";
 import HomeIcon from "icons/HomeIcon";
 import ReelsIcon from "icons/ReelsIcon";
 import SearchIcon from "icons/SearchIcon";
 import CreateIcon from "icons/CreateIcon";
 import ExploreIcon from "icons/ExploreIcon";
+import { useContext, useState } from "react";
 import HamburgerIcon from "icons/HamburgerIcon";
 import MessengerIcon from "icons/MessengerIcon";
+import { Link, useLocation } from "react-router-dom";
+import GlobalContext from "providers/GlobalProvider";
 import ProfilePicture from "components/ProfilePicture";
+import TransitionLink from "components/TransitionLink";
 import InstagramTextIcon from "icons/InstagramTextIcon";
 import InstagramLogoIcon from "icons/InstagramLogoIcon";
 import NotificationsIcon from "icons/NotificationsIcon";
-import { useLocation, useNavigate } from "react-router-dom";
 import SearchSidebar from "components/sidebars/SearchSidebar";
 import NotificationsSidebar from "components/sidebars/NotificationsSidebar";
 
-export default function MainSidebar({ startTransition, setActiveWidget }) {
-  const navigate = useNavigate();
-  const activePage = useLocation().pathname;
-  const isCollapsed = activePage.includes("/direct/inbox");
+export default function MainSidebar() {
+  const url = useLocation().pathname.split("/");
+  const { setActiveWidget } = useContext(GlobalContext);
   const [activeSidebar, setActiveSidebar] = useState(null);
-  const navigateTo = (path) => startTransition(() => navigate(path));
+
+  const isCollapsed = url[1] === "direct";
 
   return (
     <>
@@ -36,39 +38,39 @@ export default function MainSidebar({ startTransition, setActiveWidget }) {
       >
         <div className="size-full bg-black flex-col py-4 px-2 xl:px-4 flex border-r border-r-[rgb(38,38,38,0.7)] text-[rgb(245,245,245)]">
           <div className="xl:my-4">
-            <button
-              onClick={() => navigateTo("/")}
+            <TransitionLink
+              to="/"
               className={cn(
                 isCollapsed || activeSidebar ? "flex" : "flex xl:hidden",
                 "items-center justify-center px-2.5 py-3 transition-all duration-100 ease-in rounded-md hover:bg-[rgb(38,38,38,0.7)] gap-4 size-full"
               )}
             >
               <InstagramLogoIcon />
-            </button>
+            </TransitionLink>
 
-            <button
-              onClick={() => navigateTo("/")}
+            <TransitionLink
+              to="/"
               className={cn(
                 isCollapsed || activeSidebar ? "hidden" : "hidden xl:block",
                 "px-2.5 py-3"
               )}
             >
               <InstagramTextIcon />
-            </button>
+            </TransitionLink>
           </div>
 
           <div className="flex flex-col items-center justify-center flex-1 w-full xl:justify-start">
             <div className="flex flex-col items-center justify-between w-full gap-2">
-              <button
-                onClick={() => navigateTo("/")}
+              <TransitionLink
+                to="/"
                 className="flex items-center flex-col xl:flex-row px-2.5 py-3 transition-all duration-100 ease-in rounded-md hover:bg-[rgb(38,38,38,0.7)] justify-center xl:justify-start gap-4 size-full"
               >
-                <HomeIcon isActive={activePage === "/" && !activeSidebar} />
+                <HomeIcon isActive={!url[1] && !activeSidebar} />
                 {isCollapsed ||
                   (!activeSidebar && (
                     <span className="hidden xl:block">Home</span>
                   ))}
-              </button>
+              </TransitionLink>
 
               <button
                 type="button"
@@ -89,49 +91,47 @@ export default function MainSidebar({ startTransition, setActiveWidget }) {
                   ))}
               </button>
 
-              <button
-                onClick={() => navigateTo("explore")}
+              <TransitionLink
+                to="explore"
                 className="flex items-center justify-center flex-col xl:flex-row px-2.5 py-3 transition-all duration-100 ease-in rounded-md hover:bg-[rgb(38,38,38,0.7)] gap-4 xl:justify-start size-full"
               >
                 <ExploreIcon
-                  isActive={activePage === "/explore" && !activeSidebar}
+                  isActive={url[1] === "explore" && !activeSidebar}
                 />
 
                 {isCollapsed ||
                   (!activeSidebar && (
                     <span className="hidden xl:block">Explore</span>
                   ))}
-              </button>
+              </TransitionLink>
 
-              <button
-                onClick={() => navigateTo("reels")}
+              <TransitionLink
+                to="reels"
                 className="flex items-center justify-center flex-col xl:flex-row px-2.5 py-3 transition-all duration-100 ease-in rounded-md hover:bg-[rgb(38,38,38,0.7)] gap-4 xl:justify-start size-full"
               >
-                <ReelsIcon
-                  isActive={activePage === "/reels" && !activeSidebar}
-                />
+                <ReelsIcon isActive={url[1] === "reels" && !activeSidebar} />
                 {isCollapsed ||
                   (!activeSidebar && (
                     <span className="hidden xl:block">Reels</span>
                   ))}
-              </button>
+              </TransitionLink>
 
-              <button
-                onClick={() => navigateTo("direct/inbox")}
+              <TransitionLink
+                to="direct/inbox"
                 className={cn(
                   activeSidebar === "messenger" && "outline-1 outline",
                   "items-center flex-col xl:flex-row px-2.5 py-3 transition-all duration-300 ease-in rounded-md hover:bg-[rgb(38,38,38,0.7)] justify-center xl:justify-start gap-4 flex size-full"
                 )}
               >
                 <MessengerIcon
-                  isActive={activePage === "/direct/inbox" && !activeSidebar}
+                  isActive={url[1] === "direct" && !activeSidebar}
                 />
 
                 {isCollapsed ||
                   (!activeSidebar && (
                     <span className="hidden xl:block">Messages</span>
                   ))}
-              </button>
+              </TransitionLink>
 
               <button
                 onBlur={() => setActiveSidebar(null)}
@@ -166,8 +166,8 @@ export default function MainSidebar({ startTransition, setActiveWidget }) {
                   ))}
               </button>
 
-              <button
-                onClick={() => navigateTo("username")}
+              <Link
+                to="username"
                 className="flex items-center justify-center flex-col xl:flex-row px-2.5 py-3 transition-all duration-100 ease-in rounded-md hover:bg-[rgb(38,38,38,0.7)] gap-4 xl:justify-start size-full"
               >
                 <ProfilePicture className="size-7" />
@@ -175,7 +175,7 @@ export default function MainSidebar({ startTransition, setActiveWidget }) {
                   (!activeSidebar && (
                     <span className="hidden xl:block">Profile</span>
                   ))}
-              </button>
+              </Link>
             </div>
           </div>
 
