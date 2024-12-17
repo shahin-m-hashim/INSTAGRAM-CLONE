@@ -1,8 +1,12 @@
+import { useContext } from "react";
 import CloseIcon from "icons/CloseIcon";
 import NewPostIcon from "icons/NewPostIcon";
 import Button from "components/wrappers/Button";
+import GlobalContext from "providers/GlobalProvider";
 
-export default function CreateNewPostWidget({ setActiveWidget }) {
+export default function CreateNewPostWidget() {
+  const { setActiveWidget } = useContext(GlobalContext);
+
   return (
     <div className="absolute inset-0 z-10 backdrop-brightness-[0.4] pointer-events-auto">
       <div className="flex items-center justify-center size-full">
@@ -12,6 +16,7 @@ export default function CreateNewPostWidget({ setActiveWidget }) {
 
             <div className="absolute -top-1 -right-2">
               <button
+                type="button"
                 onClick={() => setActiveWidget(null)}
                 className="flex items-center justify-end p-5"
               >

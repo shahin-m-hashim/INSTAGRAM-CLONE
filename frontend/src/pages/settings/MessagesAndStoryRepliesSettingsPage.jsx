@@ -6,7 +6,7 @@ import DropDownArrowIcon from "icons/DropDownArrowIcon";
 
 const StoryRepliesTab = ({ setActiveTab }) => (
   <>
-    <div className="flex items-center gap-4">
+    <div className="flex items-center gap-4 mb-5">
       <button
         type="button"
         className="transform rotate-90"
@@ -36,7 +36,7 @@ const StoryRepliesTab = ({ setActiveTab }) => (
 
 const MessageControlsTab = ({ setActiveTab }) => (
   <>
-    <div className="flex items-center gap-4">
+    <div className="flex items-center gap-4 mb-5">
       <button
         type="button"
         className="transform rotate-90"
@@ -123,7 +123,7 @@ const MessageControlsTab = ({ setActiveTab }) => (
 
 const ShowActivityStatusTab = ({ setActiveTab }) => (
   <>
-    <div className="flex items-center gap-4">
+    <div className="flex items-center gap-4 mb-5">
       <button
         type="button"
         className="transform rotate-90"
@@ -155,21 +155,19 @@ export default function MessagesAndStoryRepliesSettingsPage() {
   const [activeTab, setActiveTab] = useState(null);
 
   return (
-    <>
-      {activeTab ? (
-        <div className="flex flex-col gap-10 max-w-[650px] p-4 w-full">
-          {activeTab === "storyReplies" ? (
+    <div className="flex flex-col justify-between p-4 max-w-[600px] w-full">
+      <div className="flex flex-col w-full gap-4 mt-14">
+        {activeTab ? (
+          activeTab === "storyReplies" ? (
             <StoryRepliesTab setActiveTab={setActiveTab} />
           ) : activeTab === "messageControls" ? (
             <MessageControlsTab setActiveTab={setActiveTab} />
           ) : (
             <ShowActivityStatusTab setActiveTab={setActiveTab} />
-          )}
-        </div>
-      ) : (
-        <div className="flex flex-col justify-between p-4 max-w-[600px] w-full">
-          <div className="flex flex-col w-full gap-4">
-            <div className="hidden mb-5 mt-14 md:block">
+          )
+        ) : (
+          <>
+            <div className="hidden mb-5 md:block">
               <h1 className="text-xl font-bold">Messages and story replies</h1>
             </div>
 
@@ -210,13 +208,13 @@ export default function MessagesAndStoryRepliesSettingsPage() {
                 </div>
               </button>
             </div>
-          </div>
+          </>
+        )}
+      </div>
 
-          <div className="hidden w-full px-5 my-5 md:flex md:my-10">
-            <Footer />
-          </div>
-        </div>
-      )}
-    </>
+      <div className="hidden w-full px-5 my-5 md:flex md:my-10">
+        <Footer />
+      </div>
+    </div>
   );
 }

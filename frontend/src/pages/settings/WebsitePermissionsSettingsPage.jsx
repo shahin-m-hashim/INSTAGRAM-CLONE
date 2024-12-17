@@ -1,7 +1,8 @@
+import { cn } from "utils/cn";
+import { useState } from "react";
 import Footer from "components/Footer";
 import Separator from "components/Separator";
-import { useState } from "react";
-import { cn } from "utils/cn";
+import { firstCharToUpperCase } from "utils/casing";
 
 const Active = () => (
   <div className="flex flex-col gap-6">
@@ -80,7 +81,7 @@ export default function WebsitePermissionsSettingsPage() {
                     activeTab === tab ? "text-white" : "text-[rgb(138,138,138)]"
                   )}
                 >
-                  {tab.charAt(0).toUpperCase() + tab.slice(1)}
+                  {firstCharToUpperCase(tab)}
                 </h1>
                 {activeTab === tab && (
                   <div className="absolute inset-x-0 -bottom-[2px]">
