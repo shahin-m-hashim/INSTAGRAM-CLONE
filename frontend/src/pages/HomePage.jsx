@@ -11,10 +11,7 @@ export default function HomePage() {
   const following = 52;
 
   return (
-    <main
-      id="home"
-      className="h-screen overflow-auto min-w-[320px] md:pt-0 pb-[50px] md:pb-0 md:pl-[80px] xl:pl-[250px] pt-[60px]"
-    >
+    <main className="h-screen overflow-auto min-w-[320px] md:pt-0 pb-[50px] md:pb-0 md:pl-[80px] xl:pl-[250px] pt-[60px]">
       {following <= 5 ? (
         <AccountSuggestions />
       ) : (

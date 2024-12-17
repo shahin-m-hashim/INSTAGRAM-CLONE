@@ -1,6 +1,7 @@
 import { lazy } from "react";
 import wait from "utils/wait";
 import HelpSettingsLayout from "components/wrappers/HelpSettingsLayout";
+import supportRequestsRoute from "routes/protected/settingsRoutes/help/supportRequestsRoute";
 
 const HelpSettingsPage = lazy(() =>
   wait(300).then(() => import("pages/settings/HelpSettingsPage"))
@@ -8,10 +9,6 @@ const HelpSettingsPage = lazy(() =>
 
 const PrivacyAndSecurityPage = lazy(() =>
   wait(300).then(() => import("pages/settings/help/PrivacyAndSecurityPage"))
-);
-
-const SupportRequestsPage = lazy(() =>
-  wait(300).then(() => import("pages/settings/help/SupportRequestsPage"))
 );
 
 const helpRoutes = {
@@ -26,10 +23,7 @@ const helpRoutes = {
       path: "privacy_and_security",
       element: <PrivacyAndSecurityPage />,
     },
-    {
-      path: "support_requests",
-      element: <SupportRequestsPage />,
-    },
+    supportRequestsRoute,
   ],
 };
 

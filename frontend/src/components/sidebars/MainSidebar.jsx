@@ -30,7 +30,6 @@ export default function MainSidebar() {
       {activeSidebar === "notifications" && <NotificationsSidebar />}
 
       <div
-        id="sidebar"
         className={cn(
           isCollapsed || activeSidebar ? "w-[80px]" : "w-[80px] xl:w-[250px]",
           "hidden md:block absolute inset-y-0 left-0 pointer-events-auto overflow-y-auto"

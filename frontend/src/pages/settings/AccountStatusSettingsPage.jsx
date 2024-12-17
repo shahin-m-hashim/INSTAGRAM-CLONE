@@ -1,10 +1,10 @@
 import EyeIcon from "icons/EyeIcon";
+import Footer from "components/Footer";
 import ImageIcon from "icons/ImageIcon";
 import CommentsIcon from "icons/CommentsIcon";
 import SelectedIcon from "icons/SelectedIcon";
 import ProfilePicture from "components/ProfilePicture";
 import DropDownArrowIcon from "icons/DropDownArrowIcon";
-import Footer from "components/Footer";
 
 export default function AccountStatusSettingsPage() {
   return (
@@ -28,8 +28,8 @@ export default function AccountStatusSettingsPage() {
 
         <div className="flex flex-col gap-6">
           <a className="flex items-center justify-between gap-4">
-            <div className="flex items-center gap-2">
-              <ImageIcon />
+            <div className="flex items-center gap-3">
+              <ImageIcon className="min-w-5" />
               <span>Removed content and messaging issues</span>
             </div>
             <div className="flex items-center gap-2">
@@ -41,8 +41,8 @@ export default function AccountStatusSettingsPage() {
           </a>
 
           <a className="flex items-center justify-between gap-4">
-            <div className="flex items-center gap-2">
-              <EyeIcon />
+            <div className="flex items-center gap-3">
+              <EyeIcon className="min-w-5" />
               <span>Content lowered in feed</span>
             </div>
             <div className="flex items-center gap-2">
@@ -54,8 +54,8 @@ export default function AccountStatusSettingsPage() {
           </a>
 
           <a className="flex items-center justify-between gap-4">
-            <div className="flex items-center gap-2">
-              <CommentsIcon />
+            <div className="flex items-center gap-3">
+              <CommentsIcon className="min-w-5" />
               <span>Features you can&apos;t use</span>
             </div>
             <div className="flex items-center gap-2">

@@ -12,10 +12,10 @@ import SharePhotosIcon from "icons/SharePhotosIcon";
 import PhotosOfYouIcon from "icons/PhotosOfYouIcon";
 import RoundedSavedIcon from "icons/RoundedSavedIcon";
 import ProfilePicture from "components/ProfilePicture";
+import TransitionLink from "components/TransitionLink";
 import CompleteProfileIcon from "icons/CompleteProfileIcon";
 import AddProfilePhotoIcon from "icons/AddProfilePhotoIcon";
 import HorizontalScroller from "components/wrappers/HorizontalScroller";
-import { Link } from "react-router-dom";
 
 const items = [
   {
@@ -130,12 +130,12 @@ export default function ProfilePage() {
                   <div className="flex flex-col items-center w-full gap-4 sm:flex-row">
                     <span>Username</span>
 
-                    <Link
+                    <TransitionLink
                       to="/settings/edit_profile"
                       className="px-3 text-center font-semibold w-32 md:w-auto py-1 text-sm text-white bg-[rgb(54,54,54)] rounded-md"
                     >
                       Edit Profile
-                    </Link>
+                    </TransitionLink>
 
                     <button className="px-3 font-semibold w-32 md:w-auto py-1 text-sm text-white bg-[rgb(54,54,54)] rounded-md">
                       View Archive

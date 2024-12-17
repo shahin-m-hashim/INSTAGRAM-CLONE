@@ -29,9 +29,7 @@ const Home = () => (
 
     <div className="flex justify-end flex-1 h-full">
       <div className="flex items-center gap-3">
-        <div className="h-8">
-          <SearchField />
-        </div>
+        <SearchField className="h-8" />
 
         <a className="items-center gap-4">
           <NotificationsIcon />
@@ -129,7 +127,13 @@ const Settings = ({ page }) => {
         return page[1] === "privacy_and_security"
           ? "Privacy And Security"
           : page[1] === "support_requests"
-          ? "Support Requests"
+          ? page[2] === "reports"
+            ? "Reports"
+            : page[2] === "safety_notices"
+            ? "Safety Notices"
+            : page[2] === "violations"
+            ? "Violations"
+            : "Support Requests"
           : "Help";
 
       case "account_status":
@@ -155,10 +159,7 @@ export default function TopNavbar() {
   const url = useLocation().pathname.split("/");
 
   return (
-    <nav
-      id="topNav"
-      className="block md:hidden absolute inset-x-0 top-0 h-[60px] pointer-events-auto overflow-x-auto"
-    >
+    <nav className="block md:hidden absolute inset-x-0 top-0 h-[60px] pointer-events-auto overflow-x-auto">
       <div className="size-full flex gap-2 justify-between items-center px-4 bg-black text-white border-b border-b-[rgb(38,38,38,0.7)]">
         {url[1] === "settings" ? (
           <Settings page={url.slice(2)} />

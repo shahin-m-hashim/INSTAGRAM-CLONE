@@ -1,10 +1,13 @@
-import { useRef } from "react";
 import CloseIcon from "icons/CloseIcon";
+import { useContext, useRef } from "react";
 import Separator from "components/Separator";
 import Button from "components/wrappers/Button";
+import GlobalContext from "providers/GlobalProvider";
 
-export default function ReportAProblemWidget({ setActiveWidget }) {
+export default function ReportAProblemWidget() {
   const fileInputRef = useRef();
+
+  const { setActiveWidget } = useContext(GlobalContext);
 
   const handleAddFileClick = () => fileInputRef.current.click();
 
