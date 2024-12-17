@@ -1,6 +1,6 @@
 import Footer from "components/Footer";
-import RadioInput from "components/RadioInput";
 import ToggleSwitch from "components/ToggleSwitch";
+import GroupedOptions from "components/GroupedOptions";
 
 export default function CommentsSettingsPage() {
   return (
@@ -13,38 +13,26 @@ export default function CommentsSettingsPage() {
         <div className="flex flex-col gap-6">
           <h1 className="text-sm font-semibold">Allow comments from</h1>
 
-          <div className="flex flex-col gap-4">
-            <div className="flex items-center gap-4">
-              <RadioInput checked={true} />
-              <span className="text-sm">Everyone</span>
-            </div>
-
-            <div className="flex items-center gap-4">
-              <RadioInput />
-              <div className="flex flex-col gap-1">
-                <span className="text-sm">People You Follow</span>
-                <p className="text-xs text-[rgb(168,168,168)]">0 People</p>
-              </div>
-            </div>
-
-            <div className="flex items-center gap-4">
-              <RadioInput />
-              <div className="flex flex-col gap-1">
-                <span className="text-sm">Your Followers</span>
-                <p className="text-xs text-[rgb(168,168,168)]">1 Person</p>
-              </div>
-            </div>
-
-            <div className="flex items-center gap-4">
-              <RadioInput />
-              <div className="flex flex-col gap-1">
-                <span className="text-sm">
-                  People You Follow and Your Followers
-                </span>
-                <p className="text-xs text-[rgb(168,168,168)]">1 Person</p>
-              </div>
-            </div>
-          </div>
+          <GroupedOptions
+            type="simple-borderless"
+            options={[
+              {
+                title: "Everyone",
+              },
+              {
+                title: "People You Follow",
+                description: "0 People",
+              },
+              {
+                title: "Your Followers",
+                description: "1 Person",
+              },
+              {
+                title: "People You Follow and Your Followers",
+                description: "1 Person",
+              },
+            ]}
+          />
 
           <div className="flex justify-between">
             <div className="flex flex-col gap-2">

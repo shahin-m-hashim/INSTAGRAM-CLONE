@@ -1,6 +1,6 @@
 import Footer from "components/Footer";
-import RadioInput from "components/RadioInput";
 import ToggleSwitch from "components/ToggleSwitch";
+import GroupedOptions from "components/GroupedOptions";
 
 export default function SharingAndReuseSettingsPage() {
   return (
@@ -10,7 +10,7 @@ export default function SharingAndReuseSettingsPage() {
           <h1 className="text-xl font-bold">Sharing and reuse</h1>
         </div>
 
-        <div className="flex flex-col gap-3">
+        <div className="flex flex-col gap-4">
           <h1 className="font-semibold">Allow people to share your content</h1>
 
           <div className="flex flex-col gap-6 px-4 py-5 rounded-2xl border border-[rgb(54,54,54,0.7)]">
@@ -26,7 +26,7 @@ export default function SharingAndReuseSettingsPage() {
           </div>
         </div>
 
-        <div className="flex flex-col gap-3">
+        <div className="flex flex-col gap-4">
           <h1>Who can create with your content</h1>
 
           <p className="text-xs text-[rgb(168,168,168)] ">
@@ -35,26 +35,23 @@ export default function SharingAndReuseSettingsPage() {
             <a className="text-white hover:underline">Learn more</a>
           </p>
 
-          <div className="flex flex-col gap-6 px-4 py-5 rounded-2xl border border-[rgb(54,54,54,0.7)]">
-            <div className="flex items-center justify-between">
-              <span>Everyone</span>
-              <RadioInput className="size-5" checked={true} />
-            </div>
-            <div className="flex items-center justify-between">
-              <div className="flex flex-col gap-1">
-                <span className="text-sm">People You Follow</span>
-                <p className="text-xs text-[rgb(168,168,168)]">0 People</p>
-              </div>
-              <RadioInput className="size-5" />
-            </div>
-            <div className="flex items-center justify-between">
-              <span>No one</span>
-              <RadioInput className="size-5" />
-            </div>
-          </div>
+          <GroupedOptions
+            options={[
+              {
+                title: "Everyone",
+              },
+              {
+                title: "People You Follow",
+                description: "0 People",
+              },
+              {
+                title: "No one",
+              },
+            ]}
+          />
         </div>
 
-        <div className="flex flex-col gap-3">
+        <div className="flex flex-col gap-4">
           <h1 className="mb-4 font-bold">Allow people to share externally</h1>
 
           <h2>Website embeds</h2>
@@ -64,19 +61,19 @@ export default function SharingAndReuseSettingsPage() {
             <a className="text-white hover:underline">Learn more</a>
           </p>
 
-          <div className="flex flex-col gap-6 px-4 py-5 rounded-2xl border border-[rgb(54,54,54,0.7)]">
-            <div className="flex items-center justify-between">
-              <span>On</span>
-              <RadioInput className="size-5" checked={true} />
-            </div>
-            <div className="flex items-center justify-between">
-              <span>Off</span>
-              <RadioInput className="size-5" />
-            </div>
-          </div>
+          <GroupedOptions
+            options={[
+              {
+                title: "On",
+              },
+              {
+                title: "Off",
+              },
+            ]}
+          />
         </div>
 
-        <div className="flex flex-col gap-3">
+        <div className="flex flex-col gap-4">
           <h1 className="font-semibold">
             Allow businesses to interact with you
           </h1>

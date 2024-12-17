@@ -126,7 +126,11 @@ const Settings = ({ page }) => {
         return "Account Type And Tools";
 
       case "help":
-        return "Help";
+        return page[1] === "privacy_and_security"
+          ? "Privacy And Security"
+          : page[1] === "support_requests"
+          ? "Support Requests"
+          : "Help";
 
       case "account_status":
         return "Account Status";

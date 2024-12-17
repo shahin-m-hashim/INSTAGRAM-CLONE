@@ -1,8 +1,10 @@
 import { lazy } from "react";
 import wait from "utils/wait";
 import SettingsLayout from "components/wrappers/SettingsLayout";
-import notificationsRoute from "routes/protected/settingsRoutes/notificationsRoute";
-import messageAndStoryRepliesRoute from "routes/protected/settingsRoutes/MessageAndStoryRepliesRoute";
+import helpRoutes from "routes/protected/settingsRoutes/helpRoutes";
+import hiddenWordsRoutes from "routes/protected/settingsRoutes/hiddenWordsRoutes";
+import notificationsRoutes from "routes/protected/settingsRoutes/notificationsRoutes";
+import messageAndStoryRepliesRoutes from "routes/protected/settingsRoutes/messageAndStoryRepliesRoutes";
 
 const SettingsPage = lazy(() =>
   wait(300).then(() => import("pages/SettingsPage"))
@@ -44,10 +46,6 @@ const RestrictedAccountsSettingsPage = lazy(() =>
   wait(300).then(() => import("pages/settings/RestrictedAccountsSettingsPage"))
 );
 
-const HiddenWordsSettingsPage = lazy(() =>
-  wait(300).then(() => import("pages/settings/HiddenWordsSettingsPage"))
-);
-
 const LanguageSettingsPage = lazy(() =>
   wait(300).then(() => import("pages/settings/LanguageSettingsPage"))
 );
@@ -78,10 +76,6 @@ const AccountTypeAndToolsSettingsPage = lazy(() =>
   wait(300).then(() => import("pages/settings/AccountTypeAndToolsSettingsPage"))
 );
 
-const HelpSettingsPage = lazy(() =>
-  wait(300).then(() => import("pages/settings/HelpSettingsPage"))
-);
-
 const AccountStatusSettingsPage = lazy(() =>
   wait(300).then(() => import("pages/settings/AccountStatusSettingsPage"))
 );
@@ -98,7 +92,7 @@ const settingsRoutes = {
       path: "edit_profile",
       element: <EditProfilePage />,
     },
-    notificationsRoute,
+    notificationsRoutes,
     {
       path: "account_privacy",
       element: <AccountPrivacySettingsPage />,
@@ -115,7 +109,7 @@ const settingsRoutes = {
       path: "story_and_live",
       element: <StoryAndLiveSettingsPage />,
     },
-    messageAndStoryRepliesRoute,
+    messageAndStoryRepliesRoutes,
     {
       path: "tags_and_mentions",
       element: <TagsAndMentionsSettingsPage />,
@@ -132,10 +126,7 @@ const settingsRoutes = {
       path: "restricted_accounts",
       element: <RestrictedAccountsSettingsPage />,
     },
-    {
-      path: "hidden_words",
-      element: <HiddenWordsSettingsPage />,
-    },
+    hiddenWordsRoutes,
     {
       path: "language",
       element: <LanguageSettingsPage />,
@@ -164,10 +155,7 @@ const settingsRoutes = {
       path: "account_type_and_tools",
       element: <AccountTypeAndToolsSettingsPage />,
     },
-    {
-      path: "help",
-      element: <HelpSettingsPage />,
-    },
+    helpRoutes,
     {
       path: "account_status",
       element: <AccountStatusSettingsPage />,

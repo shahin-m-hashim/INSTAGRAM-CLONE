@@ -8,7 +8,7 @@ export default function MessageControlsSettingsPage() {
         <NavigateBackBtn />
         <h1 className="text-xl font-bold">Message controls</h1>
       </div>
-      <p className="text-xs text-[rgb(168,168,168)] w-9/12">
+      <p className="text-xs text-[rgb(168,168,168)] md:w-9/12">
         People you follow or have chatted with before can always message you
         unless you block them. When anyone else sends you a message, you can
         receive it as a message request that you can accept or delete.

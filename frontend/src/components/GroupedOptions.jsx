@@ -57,10 +57,18 @@ export default function GroupedOptions({
           {options.map((option, idx) => (
             <li key={idx} className="flex flex-col gap-6">
               <div className="flex items-center gap-4">
-                <RadioInput id={option} />
-                <label htmlFor={option} className="text-sm">
-                  {option}
-                </label>
+                <RadioInput id={option.title} />
+
+                <div className="flex flex-col gap-1">
+                  <label htmlFor={option.title} className="text-sm">
+                    {option.title}
+                  </label>
+                  {option.description && (
+                    <p className="text-xs text-[rgb(168,168,168)]">
+                      {option.description}
+                    </p>
+                  )}
+                </div>
               </div>
             </li>
           ))}
@@ -71,9 +79,11 @@ export default function GroupedOptions({
             <li key={idx} className="flex items-center justify-between gap-1">
               <div className="flex flex-col gap-1">
                 <label>{option.title}</label>
-                <p className="text-xs text-[rgb(168,168,168)]">
-                  {option.description}
-                </p>
+                {option.description && (
+                  <p className="text-xs text-[rgb(168,168,168)]">
+                    {option.description}
+                  </p>
+                )}
               </div>
               <RadioInput className="min-w-5 size-5" />
             </li>

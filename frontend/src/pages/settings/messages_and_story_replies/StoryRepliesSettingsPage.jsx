@@ -11,7 +11,17 @@ export default function StoryRepliesSettingsPage() {
       <h2 className="mb-2 font-bold">Who can reply to your stories</h2>
       <GroupedOptions
         type="simple-borderless"
-        options={["Everyone", "People you follow", "Off"]}
+        options={[
+          {
+            title: "Everyone",
+          },
+          {
+            title: "People you follow",
+          },
+          {
+            title: "Off",
+          },
+        ]}
       />
     </>
   );

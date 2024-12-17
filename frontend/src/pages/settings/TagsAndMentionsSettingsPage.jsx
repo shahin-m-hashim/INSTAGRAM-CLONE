@@ -1,16 +1,16 @@
 import Footer from "components/Footer";
-import RadioInput from "components/RadioInput";
 import ToggleSwitch from "components/ToggleSwitch";
+import GroupedOptions from "components/GroupedOptions";
 
 export default function TagsAndMentionsSettingsPage() {
   return (
     <div className="flex flex-col justify-between p-4 max-w-[600px] w-full">
-      <div className="flex flex-col w-full gap-10">
-        <div className="hidden mt-14 md:block">
+      <div className="flex flex-col w-full gap-10 md:mt-14">
+        <div className="hidden md:block">
           <h1 className="text-xl font-bold">Tags and mentions</h1>
         </div>
 
-        <div className="flex flex-col gap-3">
+        <div className="flex flex-col gap-4">
           <h1>Who can tag you</h1>
 
           <p className="text-xs text-[rgb(168,168,168)] ">
@@ -19,20 +19,19 @@ export default function TagsAndMentionsSettingsPage() {
             everyone.
           </p>
 
-          <div className="flex flex-col gap-6 px-4 py-5 rounded-2xl border border-[rgb(54,54,54,0.7)]">
-            <div className="flex items-center justify-between">
-              <span>Allow tags from everyone</span>
-              <RadioInput className="size-5" checked={true} />
-            </div>
-            <div className="flex items-center justify-between">
-              <span>Allow tags from people you follow</span>
-              <RadioInput className="size-5" />
-            </div>
-            <div className="flex items-center justify-between">
-              <span>Don&apos;t allow tags</span>
-              <RadioInput className="size-5" />
-            </div>
-          </div>
+          <GroupedOptions
+            options={[
+              {
+                title: "Allow tags from everyone",
+              },
+              {
+                title: "Allow tags from people you follow",
+              },
+              {
+                title: "Don't allow tags",
+              },
+            ]}
+          />
 
           <div className="flex justify-between px-4 py-5 rounded-2xl border border-[rgb(54,54,54,0.7)]">
             <div className="flex flex-col gap-2">
@@ -45,27 +44,26 @@ export default function TagsAndMentionsSettingsPage() {
           </div>
         </div>
 
-        <div className="flex flex-col gap-3">
+        <div className="flex flex-col gap-4">
           <h1>Who can @mention you</h1>
           <p className="text-xs text-[rgb(168,168,168)] ">
             Choose who can @mention you to link your account in their stories,
             comments, live videos, and captions. When people try to @mention
             you, they&apos;ll see if you don&apos;t allow @mentions.
           </p>
-          <div className="flex flex-col gap-6 px-4 py-5 rounded-2xl border border-[rgb(54,54,54,0.7)]">
-            <div className="flex items-center justify-between">
-              <span>Allow mentions from everyone</span>
-              <RadioInput className="size-5" checked={true} />
-            </div>
-            <div className="flex items-center justify-between">
-              <span>Allow mentions from people you follow</span>
-              <RadioInput className="size-5" />
-            </div>
-            <div className="flex items-center justify-between">
-              <span>Don&apos;t allow mentions</span>
-              <RadioInput className="size-5" />
-            </div>
-          </div>
+          <GroupedOptions
+            options={[
+              {
+                title: "Allow mentions from everyone",
+              },
+              {
+                title: "Allow mentions from people you follow",
+              },
+              {
+                title: "Don't allow mentions",
+              },
+            ]}
+          />
         </div>
       </div>
 

@@ -1,10 +1,10 @@
 import Footer from "components/Footer";
 import { Outlet } from "react-router-dom";
 
-export default function MessagesAndStoryRepliesSettingsLayout() {
+export default function HiddenWordSettingsLayout() {
   return (
     <div className="flex flex-col justify-between p-4 max-w-[600px] w-full">
-      <div className="flex flex-col w-full gap-6 md:mt-14">
+      <div className="flex flex-col w-full gap-10">
         <Outlet />
       </div>
 
