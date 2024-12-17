@@ -4,8 +4,8 @@ import ToggleSwitch from "components/ToggleSwitch";
 export default function AccountPrivacySettingsPage() {
   return (
     <div className="flex flex-col justify-between max-w-[650px] px-4 w-full">
-      <div className="flex flex-col gap-10">
-        <div className="hidden px-4 mt-14 md:block">
+      <div className="flex flex-col gap-10 my-5 md:mt-14">
+        <div className="hidden px-4 md:block">
           <h1 className="text-xl font-bold">Account Privacy</h1>
         </div>
 

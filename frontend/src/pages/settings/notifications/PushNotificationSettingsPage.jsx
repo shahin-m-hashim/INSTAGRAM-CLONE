@@ -5,177 +5,177 @@ import NavigateBackBtn from "components/NavigateBackBtn";
 const pushOptions = [
   {
     type: "extended",
-    heading: "Likes",
+    title: "Likes",
     example: "johnappleseed liked your photo.",
   },
   {
     type: "extended",
-    heading: "Likes and comments on photos of you",
+    title: "Likes and comments on photos of you",
     example: "johnappleseed commented on a post you're tagged in.",
   },
   {
-    heading: "Comments",
+    title: "Comments",
     type: "extended",
     example: `johnappleseed commented: "Nice shot!"`,
   },
   {
-    heading: "Comment likes",
+    title: "Comment likes",
     type: "on/off",
     example: `johnappleseed liked your comment: Nice shot!`,
   },
   {
-    heading: "Comment daily digest",
+    title: "Comment daily digest",
     type: "extended",
     example: `johnappleseed recently commented on this post: Nice shot!`,
   },
   {
-    heading: "First posts and stories",
+    title: "First posts and stories",
     type: "extended",
     example: `See johnappleseed's first story on Instagram, and other similar notifications.`,
   },
   {
-    heading: "Notes",
+    title: "Notes",
     type: "on/off",
     example: `johnappleseed, janeappleseed and 3 others shared notes.`,
   },
   {
-    heading: "Add to post submissions",
+    title: "Add to post submissions",
     type: "on/off",
     example: `johnappleseed and 3 others want to add to your post. Review their submissions.`,
   },
   {
-    heading: "Added to post",
+    title: "Added to post",
     type: "on/off",
     example: `johnappleseed added your photo to their post.`,
   },
   {
-    heading: "Mention requests",
+    title: "Mention requests",
     type: "extended",
     example: `johnappleseed requested to be mentioned in your story.`,
   },
   {
-    heading: "New followers",
+    title: "New followers",
     type: "on/off",
     example: `John Appleseed (johnappleseed) started following you.`,
   },
   {
-    heading: "Accepted follow requests",
+    title: "Accepted follow requests",
     type: "on/off",
     example: `John Appleseed (johnappleseed) accepted your follow request.`,
   },
   {
-    heading: "Account suggestions",
+    title: "Account suggestions",
     type: "on/off",
     example: `johnappleseed, who you might know, is on Instagram, and other similar notifications.`,
   },
   {
-    heading: "Mentions in bio",
+    title: "Mentions in bio",
     type: "extended",
     example: `johnappleseed mentioned you in their bio.`,
   },
   {
-    heading: "Message requests",
+    title: "Message requests",
     type: "on/off",
     example: `johnappleseed wants to send you a message.`,
   },
   {
-    heading: "Messages from individual and group chats",
+    title: "Messages from individual and group chats",
     type: "on/off",
     example: "johnappleseed sent you a message.",
   },
   {
-    heading: "Message reminders",
+    title: "Message reminders",
     type: "on/off",
     example: `johnappleseed sent you a message (1d ago).`,
   },
   {
-    heading: "Group requests",
+    title: "Group requests",
     type: "on/off",
     example: `johnappleseed wants to add janeappleseed to your group.`,
   },
   {
-    heading: `Broadcast channel invites`,
+    title: `Broadcast channel invites`,
     type: "on/off",
     example: `johnappleseed invited you to join their broadcast channel: Hello World!`,
   },
   {
-    heading: "Broadcast channel messages",
+    title: "Broadcast channel messages",
     type: "on/off",
     example: "johnappleseed sent you a message.",
   },
   {
-    heading: "Social channel messages",
+    title: "Social channel messages",
     type: "on/off",
     example: "johnappleseed sent you a message.",
   },
   {
-    heading: "Original audio",
+    title: "Original audio",
     type: "on/off",
     example: "johnappleseed created a reel with your audio.",
   },
   {
-    heading: "Remixes",
+    title: "Remixes",
     type: "on/off",
     example: "johnappleseed remixed your reel.",
   },
   {
-    heading: "Live videos",
+    title: "Live videos",
     type: "on/off",
     example: "johnappleseed started a live video.",
   },
   {
-    heading: "Recently uploaded reels",
+    title: "Recently uploaded reels",
     type: "on/off",
     example: "johnappleseed, johndoe and janedoe recently shared new reels.",
   },
   {
-    heading: "Most watched reels",
+    title: "Most watched reels",
     type: "on/off",
     example: "Check out the most watched reels in your location today.",
   },
   {
-    heading: "Add Yours",
+    title: "Add Yours",
     type: "on/off",
     example: "johnappleseed started an Add Yours prompt.",
   },
   {
-    heading: "Reels made for you",
+    title: "Reels made for you",
     type: "on/off",
     example: "See new reels made for you.",
   },
   {
-    heading: "Your fundraisers",
+    title: "Your fundraisers",
     type: "on/off",
     example: "johnappleseed donated to your fundraiser.",
   },
   {
-    heading: "Fundraisers by others",
+    title: "Fundraisers by others",
     type: "on/off",
     example: "johnappleseed started a fundraiser.",
   },
   {
-    heading: "Reminders",
+    title: "Reminders",
     type: "on/off",
     example: "You have unseen notifications, and other similar notifications.",
   },
   {
-    heading: "Product announcements & feedback",
+    title: "Product announcements & feedback",
     type: "on/off",
     example: "Download Boomerang, Instagram's latest app.",
   },
   {
-    heading: "Support requests",
+    title: "Support requests",
     type: "on/off",
     example: "Your support request from July 10 was just updated.",
   },
   {
-    heading: "Trending places",
+    title: "Trending places",
     type: "on/off",
     example:
       "John Appleseed Park is a trending place near you. See what's being shared.",
   },
   {
-    heading: "Birthdays",
+    title: "Birthdays",
     type: "on/off",
     example: "johnappleseed has a birthday today!",
   },
@@ -184,7 +184,7 @@ const pushOptions = [
 export default function PushNotificationSettingsPage() {
   return (
     <>
-      <div className="flex items-center gap-4 mb-5 -ml-2">
+      <div className="items-center hidden gap-4 mb-5 -ml-2 md:flex">
         <NavigateBackBtn />
         <h1 className="text-xl font-bold">Push Notifications</h1>
       </div>
@@ -192,7 +192,7 @@ export default function PushNotificationSettingsPage() {
       <div className="flex flex-col gap-6">
         <div className="flex justify-between">
           <span>Pause all</span>
-          <ToggleSwitch checked={true} />
+          <ToggleSwitch />
         </div>
         <GroupedOptions options={pushOptions} type="advanced" />
 

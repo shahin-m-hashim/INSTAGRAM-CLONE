@@ -9,7 +9,7 @@ export default function SettingsLayout() {
       </div>
 
       <div className="flex flex-col w-full md:h-screen md:overflow-auto">
-        <div className="flex justify-center flex-1 my-5 md:my-0">
+        <div className="flex justify-center flex-1">
           <Outlet />
         </div>
       </div>

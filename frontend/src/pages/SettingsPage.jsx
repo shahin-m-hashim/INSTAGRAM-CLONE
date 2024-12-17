@@ -6,7 +6,7 @@ export default function SettingsPage() {
     return <Navigate to="/settings/edit_profile" replace />;
 
   return (
-    <div className="w-full xs:w-[486px] md:hidden">
+    <div className="w-full my-5 xs:w-[486px] md:hidden">
       <SettingsContent />
     </div>
   );

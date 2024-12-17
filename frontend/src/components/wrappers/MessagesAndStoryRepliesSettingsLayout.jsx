@@ -1,10 +1,10 @@
 import Footer from "components/Footer";
 import { Outlet } from "react-router-dom";
 
-export default function NotificationSettingsLayout() {
+export default function MessagesAndStoryRepliesSettingsLayout() {
   return (
-    <div className="flex flex-col justify-between px-4 max-w-[600px] w-full">
-      <div className="flex flex-col gap-4 my-5 md:mt-14">
+    <div className="flex flex-col justify-between p-4 max-w-[600px] w-full">
+      <div className="flex flex-col w-full gap-4 md:mt-14">
         <Outlet />
       </div>
 

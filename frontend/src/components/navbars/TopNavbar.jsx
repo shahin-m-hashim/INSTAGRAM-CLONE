@@ -55,59 +55,97 @@ const Messenger = () => (
   </div>
 );
 
-const Settings = ({ page }) => (
-  <div className="relative flex items-center justify-center w-full">
-    <div className="absolute left-0">
-      <NavigateBackBtn />
-    </div>
+const Settings = ({ page }) => {
+  const getPageTitle = () => {
+    switch (page[0]) {
+      case "edit_profile":
+        return "Edit profile";
 
-    <h1 className="font-semibold">
-      {page === "edit_profile"
-        ? "Edit profile"
-        : page === "notifications"
-        ? "Notifications"
-        : page === "account_privacy"
-        ? "Account Privacy"
-        : page === "close_friends"
-        ? "Close Friends"
-        : page === "blocked_accounts"
-        ? "Blocked Accounts"
-        : page === "story_and_live"
-        ? "Story And Live"
-        : page === "messages_and_story_replies"
-        ? "Messages And Story Replies"
-        : page === "tags_and_mentions"
-        ? "Tags And Mentions"
-        : page === "comments"
-        ? "Comments"
-        : page === "sharing_and_reuse"
-        ? "Sharing And Reuse"
-        : page === "restricted_accounts"
-        ? "Restricted Accounts"
-        : page === "hidden_words"
-        ? "Hidden Words"
-        : page === "language"
-        ? "Language"
-        : page === "muted_accounts"
-        ? "Muted Accounts"
-        : page === "content_preferences"
-        ? "Content Preferences"
-        : page === "like_and_share_counts"
-        ? "Like And Share Counts"
-        : page === "archiving_and_downloading"
-        ? "Archiving And Downloading"
-        : page === "website_permissions"
-        ? "Website Permissions"
-        : page === "account_type_and_tools"
-        ? "Account Type And Tools"
-        : page === "help"
-        ? "Help"
-        : page === "account_status"
-        ? "Account Status"
-        : "Settings And privacy"}
-    </h1>
-  </div>
-);
+      case "notifications":
+        return page[1] === "push"
+          ? "Push Notifications"
+          : page[1] === "email"
+          ? "Email Notifications"
+          : "Notifications";
+
+      case "account_privacy":
+        return "Account Privacy";
+
+      case "close_friends":
+        return "Close Friends";
+
+      case "blocked_accounts":
+        return "Blocked Accounts";
+
+      case "story_and_live":
+        return "Story And Live";
+
+      case "messages_and_story_replies":
+        return page[1] === "message_controls"
+          ? "Message Controls"
+          : page[1] === "story_replies"
+          ? "Story Replies"
+          : page[1] === "show_activity_status"
+          ? "Show Activity Status"
+          : "Messages And Story Replies";
+
+      case "tags_and_mentions":
+        return "Tags And Mentions";
+
+      case "comments":
+        return "Comments";
+
+      case "sharing_and_reuse":
+        return "Sharing And Reuse";
+
+      case "restricted_accounts":
+        return "Restricted Accounts";
+
+      case "hidden_words":
+        return "Hidden Words";
+
+      case "language":
+        return "Language";
+
+      case "muted_accounts":
+        return "Muted Accounts";
+
+      case "content_preferences":
+        return "Content Preferences";
+
+      case "like_and_share_counts":
+        return "Like And Share Counts";
+
+      case "archiving_and_downloading":
+        return "Archiving And Downloading";
+
+      case "website_permissions":
+        return "Website Permissions";
+
+      case "account_type_and_tools":
+        return "Account Type And Tools";
+
+      case "help":
+        return "Help";
+
+      case "account_status":
+        return "Account Status";
+
+      default:
+        return "Settings And Privacy";
+    }
+  };
+
+  return (
+    <div className="relative flex items-center justify-center w-full">
+      <div className="absolute left-0">
+        <NavigateBackBtn />
+      </div>
+
+      <h1 className="font-semibold">{getPageTitle()}</h1>
+    </div>
+  );
+};
 
 export default function TopNavbar() {
   const url = useLocation().pathname.split("/");
@@ -119,7 +157,7 @@ export default function TopNavbar() {
     >
       <div className="size-full flex gap-2 justify-between items-center px-4 bg-black text-white border-b border-b-[rgb(38,38,38,0.7)]">
         {url[1] === "settings" ? (
-          <Settings page={url[2]} />
+          <Settings page={url.slice(2)} />
         ) : url[1] === "direct" ? (
           <Messenger />
         ) : url[1] === "username" ? (

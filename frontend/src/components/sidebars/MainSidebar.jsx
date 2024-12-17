@@ -5,9 +5,9 @@ import SearchIcon from "icons/SearchIcon";
 import CreateIcon from "icons/CreateIcon";
 import ExploreIcon from "icons/ExploreIcon";
 import { useContext, useState } from "react";
+import { useLocation } from "react-router-dom";
 import HamburgerIcon from "icons/HamburgerIcon";
 import MessengerIcon from "icons/MessengerIcon";
-import { Link, useLocation } from "react-router-dom";
 import GlobalContext from "providers/GlobalProvider";
 import ProfilePicture from "components/ProfilePicture";
 import TransitionLink from "components/TransitionLink";
@@ -166,7 +166,7 @@ export default function MainSidebar() {
                   ))}
               </button>
 
-              <Link
+              <TransitionLink
                 to="username"
                 className="flex items-center justify-center flex-col xl:flex-row px-2.5 py-3 transition-all duration-100 ease-in rounded-md hover:bg-[rgb(38,38,38,0.7)] gap-4 xl:justify-start size-full"
               >
@@ -175,7 +175,7 @@ export default function MainSidebar() {
                   (!activeSidebar && (
                     <span className="hidden xl:block">Profile</span>
                   ))}
-              </Link>
+              </TransitionLink>
             </div>
           </div>
 

@@ -1,7 +1,6 @@
 {
   "compilerOptions": {
     "baseUrl": ".",
-    "module": "esnext",
     "paths": {
       "src/*": ["./src/*"],
       "lib": ["./src/lib/*"],

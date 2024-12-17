@@ -11,7 +11,6 @@ export default function NotificationSettingsPage() {
       <div className="flex flex-col gap-6 px-4 py-5 rounded-2xl border border-[rgb(54,54,54,0.7)]">
         <TransitionLink
           to="push"
-          type="button"
           className="flex items-center justify-between gap-4"
         >
           <span className="text-sm">Push Notifications</span>

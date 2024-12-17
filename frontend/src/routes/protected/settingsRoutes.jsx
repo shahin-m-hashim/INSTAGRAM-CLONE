@@ -1,7 +1,8 @@
 import { lazy } from "react";
 import wait from "utils/wait";
 import SettingsLayout from "components/wrappers/SettingsLayout";
-import notificationsRoute from "routes/protected/settingsRoutes/NotificationsRoute";
+import notificationsRoute from "routes/protected/settingsRoutes/notificationsRoute";
+import messageAndStoryRepliesRoute from "routes/protected/settingsRoutes/MessageAndStoryRepliesRoute";
 
 const SettingsPage = lazy(() =>
   wait(300).then(() => import("pages/SettingsPage"))
@@ -25,12 +26,6 @@ const BlockedAccountsSettingsPage = lazy(() =>
 
 const StoryAndLiveSettingsPage = lazy(() =>
   wait(300).then(() => import("pages/settings/StoryAndLiveSettingsPage"))
-);
-
-const MessagesAndStoryRepliesSettingsPage = lazy(() =>
-  wait(300).then(() =>
-    import("pages/settings/MessagesAndStoryRepliesSettingsPage")
-  )
 );
 
 const TagsAndMentionsSettingsPage = lazy(() =>
@@ -120,10 +115,7 @@ const settingsRoutes = {
       path: "story_and_live",
       element: <StoryAndLiveSettingsPage />,
     },
-    {
-      path: "messages_and_story_replies",
-      element: <MessagesAndStoryRepliesSettingsPage />,
-    },
+    messageAndStoryRepliesRoute,
     {
       path: "tags_and_mentions",
       element: <TagsAndMentionsSettingsPage />,

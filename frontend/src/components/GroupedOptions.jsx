@@ -12,7 +12,7 @@ export default function GroupedOptions({
         <ul className="flex flex-col gap-4">
           {options.map((option, idx) => (
             <li key={idx} className="flex flex-col gap-6">
-              <h1 className="font-bold">{option.heading}</h1>
+              <h1 className="font-bold">{option.title}</h1>
 
               {option.type === "on/off" ? (
                 <>
@@ -52,22 +52,30 @@ export default function GroupedOptions({
             </li>
           ))}
         </ul>
-      ) : (
-        <ul className="flex flex-col gap-4 border border-[rgb(54,54,54)] p-4 rounded-lg">
+      ) : type === "simple-borderless" ? (
+        <ul className="flex flex-col gap-6">
           {options.map((option, idx) => (
             <li key={idx} className="flex flex-col gap-6">
-              <div className="flex items-center justify-between">
+              <div className="flex items-center gap-4">
+                <RadioInput id={option} />
                 <label htmlFor={option} className="text-sm">
                   {option}
                 </label>
-                <RadioInput id={option} />
               </div>
-              <div className="flex items-center justify-between">
-                <label htmlFor="off" className="text-sm">
-                  Off
-                </label>
-                <RadioInput id="off" />
+            </li>
+          ))}
+        </ul>
+      ) : (
+        <ul className="flex flex-col gap-6 px-4 py-5 rounded-2xl border border-[rgb(54,54,54,0.7)]">
+          {options.map((option, idx) => (
+            <li key={idx} className="flex items-center justify-between gap-1">
+              <div className="flex flex-col gap-1">
+                <label>{option.title}</label>
+                <p className="text-xs text-[rgb(168,168,168)]">
+                  {option.description}
+                </p>
               </div>
+              <RadioInput className="min-w-5 size-5" />
             </li>
           ))}
         </ul>
