@@ -137,7 +137,13 @@ const Settings = ({ page }) => {
           : "Help";
 
       case "account_status":
-        return "Account Status";
+        return page[1] === "removed_content"
+          ? "Removed Content"
+          : page[1] === "content_lowered"
+          ? "Content Lowered"
+          : page[1] === "hidden_features"
+          ? "Hidden Features"
+          : "Account Status";
 
       default:
         return "Settings And Privacy";

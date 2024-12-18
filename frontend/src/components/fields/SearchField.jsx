@@ -23,7 +23,12 @@ export default function SearchField({ className }) {
   const handleClear = () => setState({ value: "", isFocused: false });
 
   return (
-    <div className={cn("relative w-full h-10", className)}>
+    <div
+      className={cn(
+        "bg-[rgb(54,54,54)] relative w-full h-10 rounded-md",
+        className
+      )}
+    >
       <input
         type="text"
         name="search"
@@ -33,7 +38,10 @@ export default function SearchField({ className }) {
         placeholder="Search"
         onFocus={handleFocus}
         onChange={handleChange}
-        className="bg-[rgb(54,54,54)] text-xs text-[rgb(245,245,245)] focus:outline-none h-full px-10 focus:px-3.5 w-full rounded-md"
+        className={cn(
+          " text-xs text-[rgb(245,245,245)] focus:outline-none h-full px-10 focus:px-3.5 w-full rounded-md",
+          className
+        )}
       />
       <div
         className={cn(

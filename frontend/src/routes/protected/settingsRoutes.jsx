@@ -4,6 +4,7 @@ import SettingsLayout from "components/wrappers/SettingsLayout";
 import helpRoutes from "routes/protected/settingsRoutes/helpRoutes";
 import hiddenWordsRoutes from "routes/protected/settingsRoutes/hiddenWordsRoutes";
 import notificationsRoutes from "routes/protected/settingsRoutes/notificationsRoutes";
+import accountStatusRoutes from "routes/protected/settingsRoutes/accountStatusRoutes";
 import messageAndStoryRepliesRoutes from "routes/protected/settingsRoutes/messageAndStoryRepliesRoutes";
 
 const SettingsPage = lazy(() =>
@@ -74,10 +75,6 @@ const WebsitePermissionsSettingsPage = lazy(() =>
 
 const AccountTypeAndToolsSettingsPage = lazy(() =>
   wait(300).then(() => import("pages/settings/AccountTypeAndToolsSettingsPage"))
-);
-
-const AccountStatusSettingsPage = lazy(() =>
-  wait(300).then(() => import("pages/settings/AccountStatusSettingsPage"))
 );
 
 const settingsRoutes = {
@@ -156,10 +153,7 @@ const settingsRoutes = {
       element: <AccountTypeAndToolsSettingsPage />,
     },
     helpRoutes,
-    {
-      path: "account_status",
-      element: <AccountStatusSettingsPage />,
-    },
+    accountStatusRoutes,
   ],
 };
 

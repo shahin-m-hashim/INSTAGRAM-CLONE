@@ -5,6 +5,7 @@ import SplashScreen from "components/wrappers/SplashScreen";
 import settingsRoutes from "routes/protected/settingsRoutes";
 import messengerRoutes from "routes/protected/messengerRoutes";
 import ProtectedLayout from "components/wrappers/ProtectedLayout";
+import SwitchAccountsPage from "pages/SwitchAccountsPage";
 
 const HomePage = lazy(() => wait(300).then(() => import("pages/HomePage")));
 
@@ -44,6 +45,10 @@ const protectedRoutes = {
     {
       path: "explore",
       element: <></>,
+    },
+    {
+      path: "accounts/convert_to_professional_account",
+      element: <SwitchAccountsPage />,
     },
     messengerRoutes,
     settingsRoutes,

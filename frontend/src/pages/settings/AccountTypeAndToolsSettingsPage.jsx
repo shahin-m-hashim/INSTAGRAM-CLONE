@@ -1,4 +1,5 @@
 import Footer from "components/Footer";
+import TransitionLink from "components/TransitionLink";
 import DropDownArrowIcon from "icons/DropDownArrowIcon";
 
 export default function AccountTypeAndToolsSettingsPage() {
@@ -12,12 +13,15 @@ export default function AccountTypeAndToolsSettingsPage() {
         <div className="flex flex-col gap-6">
           <h1 className="font-bold">Account Type</h1>
           <div className="flex flex-col gap-6 px-4 py-5 rounded-2xl border border-[rgb(54,54,54,0.7)]">
-            <a className="flex items-center justify-between gap-4">
+            <TransitionLink
+              to="/accounts/convert_to_professional_account"
+              className="flex items-center justify-between gap-4"
+            >
               <span className="text-sm">Switch to professional account</span>
               <div className="transform -rotate-90">
                 <DropDownArrowIcon />
               </div>
-            </a>
+            </TransitionLink>
           </div>
         </div>
       </div>
