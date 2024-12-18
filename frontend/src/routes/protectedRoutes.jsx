@@ -1,17 +1,14 @@
 import wait from "utils/wait";
 import { lazy, Suspense } from "react";
 import ErrorPage from "pages/ErrorPage";
+import SwitchAccountsPage from "pages/SwitchAccountsPage";
 import SplashScreen from "components/wrappers/SplashScreen";
 import settingsRoutes from "routes/protected/settingsRoutes";
+import activityRoutes from "routes/protected/activityRoutes";
 import messengerRoutes from "routes/protected/messengerRoutes";
 import ProtectedLayout from "components/wrappers/ProtectedLayout";
-import SwitchAccountsPage from "pages/SwitchAccountsPage";
 
 const HomePage = lazy(() => wait(300).then(() => import("pages/HomePage")));
-
-const YourActivityPage = lazy(() =>
-  wait(300).then(() => import("pages/YourActivityPage"))
-);
 
 const ProfilePage = lazy(() =>
   wait(300).then(() => import("pages/ProfilePage"))
@@ -34,10 +31,7 @@ const protectedRoutes = {
       path: "username",
       element: <ProfilePage />,
     },
-    {
-      path: "your_activity",
-      element: <YourActivityPage />,
-    },
+    activityRoutes,
     {
       path: "reels",
       element: <></>,

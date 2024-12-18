@@ -2,13 +2,11 @@ import { lazy } from "react";
 import wait from "utils/wait";
 import MessengerLayout from "components/wrappers/MessengerLayout";
 
-// Cleaner way to wrap lazy imports with delay
-const lazyWithDelay = (importPath, delay = 300) =>
-  lazy(() => wait(delay).then(importPath));
+const InboxPage = lazy(() => wait(300).then(() => import("pages/InboxPage")));
 
-// Use the helper function for imports
-const InboxPage = lazyWithDelay(() => import("pages/InboxPage"));
-const MessengerPage = lazyWithDelay(() => import("pages/MessengerPage"));
+const MessengerPage = lazy(() =>
+  wait(300).then(() => import("pages/MessengerPage"))
+);
 
 const messengerRoutes = {
   path: "direct/inbox",

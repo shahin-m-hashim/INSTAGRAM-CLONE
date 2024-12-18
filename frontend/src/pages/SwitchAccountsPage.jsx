@@ -22,7 +22,7 @@ const SelectACategory = () => (
       option to display or hide this on your profile.
     </p>
     <div className="flex items-center gap-2">
-      <CheckboxInput type="square" className="size-4" />
+      <CheckboxInput className="size-4" />
       <span className="text-sm">Show category on profile</span>
     </div>
 

@@ -1,0 +1,135 @@
+import { cn } from "utils/cn";
+import DownloadIcon from "icons/DownloadIcon";
+import { useLocation } from "react-router-dom";
+import AdActivityIcon from "icons/AdActivityIcon";
+import InteractionsIcon from "icons/InteractionsIcon";
+import TransitionLink from "components/TransitionLink";
+import AccountHistoryIcon from "icons/AccountHistoryIcon";
+import PhotosAndVideosIcon from "icons/PhotosAndVideosIcon";
+
+export default function ActivityContent() {
+  const activePage = useLocation().pathname.split("/")[2];
+
+  return (
+    <>
+      <div className="px-4 py-7 md:py-4 md:px-6 md:h-14 md:border-b md:border-b-[rgb(54,54,54)]">
+        <h1 className="hidden font-bold md:block">Your Activity</h1>
+        <div className="block text-center md:hidden">
+          <h1 className="mb-4 text-2xl font-bold">
+            One place to manage your activity
+          </h1>
+          <p className="text-sm">
+            We&apos;ve added more tools for you to review and manage your
+            photos, videos, account and activity on Instagram.
+          </p>
+        </div>
+      </div>
+
+      <div className="flex flex-col justify-between flex-1">
+        <TransitionLink
+          to="interactions"
+          className="flex items-center gap-8 p-3 hover:bg-[rgb(18,18,18)] md:border-none border-y border-y-[rgb(54,54,54)]"
+        >
+          <InteractionsIcon className="min-w-6 md:size-12" />
+          <div className="flex flex-col">
+            <h1
+              className={cn(
+                "text-sm",
+                activePage === "interactions" ? "font-bold" : "font-normal"
+              )}
+            >
+              Interactions
+            </h1>
+            <p className="text-xs text-[rgb(168,168,168)]">
+              Review and delete likes, comments and your other interactions.
+            </p>
+          </div>
+        </TransitionLink>
+
+        <TransitionLink
+          to="photos_and_videos"
+          className="flex items-center gap-8 p-3 hover:bg-[rgb(18,18,18)] md:border-none border-y border-y-[rgb(54,54,54)]"
+        >
+          <PhotosAndVideosIcon className="min-w-6 md:size-12" />
+          <div className="flex flex-col">
+            <h1
+              className={cn(
+                "text-sm",
+                activePage === "photos_and_videos" ? "font-bold" : "font-normal"
+              )}
+            >
+              Photos and videos
+            </h1>
+            <p className="text-xs text-[rgb(168,168,168)]">
+              View, archive or delete photos and videos you&apos;ve shared.
+            </p>
+          </div>
+        </TransitionLink>
+
+        <TransitionLink
+          to="account_history"
+          className="flex items-center gap-8 p-3 hover:bg-[rgb(18,18,18)] md:border-none border-y border-y-[rgb(54,54,54)]"
+        >
+          <AccountHistoryIcon className="min-w-6 md:size-12" />
+          <div className="flex flex-col">
+            <h1
+              className={cn(
+                "text-sm",
+                activePage === "account_history" ? "font-bold" : "font-normal"
+              )}
+            >
+              Account history
+            </h1>
+            <p className="text-xs text-[rgb(168,168,168)]">
+              Review changes you&apos;ve made to your account since you created
+              it.
+            </p>
+          </div>
+        </TransitionLink>
+
+        <TransitionLink
+          to="ad_activity"
+          className="flex items-center gap-8 p-3 hover:bg-[rgb(18,18,18)] md:border-none border-y border-y-[rgb(54,54,54)]"
+        >
+          <AdActivityIcon className="min-w-5 md:size-10" />
+          <div className="flex flex-col">
+            <h1
+              className={cn(
+                "text-sm",
+                activePage === "ad_activity" ? "font-bold" : "font-normal"
+              )}
+            >
+              Ad activity
+            </h1>
+            <p className="text-xs text-[rgb(168,168,168)]">
+              See which ads you&apos;ve interacted with recently.
+            </p>
+          </div>
+        </TransitionLink>
+
+        <TransitionLink
+          to="download_your_info"
+          className="flex items-center gap-8 p-3 hover:bg-[rgb(18,18,18)] md:border-none border-y border-y-[rgb(54,54,54)]"
+        >
+          <DownloadIcon className="min-w-6 md:size-12" />
+          <div className="flex flex-col">
+            <h1
+              className={cn(
+                "text-sm",
+                activePage === "download_your_info"
+                  ? "font-bold"
+                  : "font-normal"
+              )}
+            >
+              Download your information
+            </h1>
+            <p className="text-xs text-[rgb(168,168,168)]">
+              Download a copy of the information you&apos;ve shared with
+              instagram.
+            </p>
+          </div>
+        </TransitionLink>
+      </div>
+    </>
+  );
+}

@@ -39,7 +39,7 @@ export default function SearchField({ className }) {
         onFocus={handleFocus}
         onChange={handleChange}
         className={cn(
-          " text-xs text-[rgb(245,245,245)] focus:outline-none h-full px-10 focus:px-3.5 w-full rounded-md",
+          "bg-[rgb(54,54,54)] text-xs text-[rgb(245,245,245)] focus:outline-none h-full px-10 focus:px-3.5 w-full rounded-md",
           className
         )}
       />
