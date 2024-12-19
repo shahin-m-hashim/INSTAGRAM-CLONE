@@ -1,11 +1,9 @@
-import { cn } from "utils/cn";
-
-export default function SharingAndReuseIcon({ className }) {
+export default function SharingAndReuseIcon({ className = "" }) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       aria-label=""
-      className={cn("text-white", className)}
+      className={className}
       fill="currentColor"
       height="24"
       role="img"

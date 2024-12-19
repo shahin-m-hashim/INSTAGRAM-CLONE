@@ -11,7 +11,7 @@ export default function HiddenWordsSettingsPage() {
 
       <div className="flex flex-col gap-2">
         <h2 className="font-bold">Offensive words and phrases</h2>
-        <p className="text-xs text-[rgb(168,168,168)]">
+        <p className="text-xs  text-secondary">
           When these settings are on, Instagram automatically hides some
           comments and message requests.
         </p>
@@ -23,7 +23,7 @@ export default function HiddenWordsSettingsPage() {
           <ToggleSwitch checked={true} />
         </div>
 
-        <p className="text-xs text-[rgb(168,168,168)]">
+        <p className="text-xs  text-secondary">
           Instagram will automatically move a variety of comments, such as those
           that are potentially offensive or spam, to a separate section. Anyone
           can see these comments and you can unhide them anytime.
@@ -36,7 +36,7 @@ export default function HiddenWordsSettingsPage() {
           <ToggleSwitch />
         </div>
 
-        <p className="text-xs text-[rgb(168,168,168)]">
+        <p className="text-xs  text-secondary">
           Even more comments that meet our criteria will automatically be
           hidden.
         </p>
@@ -48,7 +48,7 @@ export default function HiddenWordsSettingsPage() {
           <ToggleSwitch />
         </div>
 
-        <p className="text-xs text-[rgb(168,168,168)]">
+        <p className="text-xs  text-secondary">
           Message requests that may be offensive will be moved to the hidden
           requests folder. We&apos;ll also filter notifications for these
           messages.

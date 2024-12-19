@@ -1,10 +1,8 @@
-import { cn } from "utils/cn";
-
-export default function InteractionsIcon({ className }) {
+export default function InteractionsIcon({ className = "" }) {
   return (
     <svg
       aria-label="Interactions, review and delete likes, comments and your other interactions."
-      className={cn("text-white", className)}
+      className={className}
       fill="currentColor"
       height={24}
       role="img"

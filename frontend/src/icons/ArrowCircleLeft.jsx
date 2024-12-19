@@ -1,13 +1,11 @@
-import { cn } from "utils/cn";
-
-export default function ArrowCircleLeft({ className }) {
+export default function ArrowCircleLeft({ className = "" }) {
   return (
     <svg
       role="img"
       data-prefix="fas"
       aria-hidden="true"
       viewBox="0 0 512 512"
-      className={cn("text-white", className)}
+      className={className}
       data-icon="arrow-circle-left"
       xmlns="http://www.w3.org/2000/svg"
     >

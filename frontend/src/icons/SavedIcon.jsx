@@ -1,4 +1,4 @@
-export default function SavedIcon({ className = "text-white" }) {
+export default function SavedIcon({ className = "" }) {
   return (
     <svg
       aria-label

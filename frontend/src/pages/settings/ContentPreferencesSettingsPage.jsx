@@ -12,7 +12,7 @@ export default function ContentPreferencesSettingsPage() {
         <div className="flex flex-col gap-2">
           <h2 className="text-lg font-bold">Sensitive content control</h2>
 
-          <p className="text-xs text-[rgb(168,168,168)]">
+          <p className="text-xs  text-secondary">
             Sensitive content doesn&apos;t go against our Community Guidelines,
             but refers to topics some people may not want to see.{" "}
             <a className="text-white hover:underline">Learn more.</a>
@@ -23,7 +23,7 @@ export default function ContentPreferencesSettingsPage() {
           <div className="flex flex-col gap-2">
             <h1>Choose how much sensitive content to see:</h1>
 
-            <p className="text-xs text-[rgb(168,168,168)]">
+            <p className="text-xs  text-secondary">
               This affects search results as well as recommended content in
               Explore, Reels, feed and hashtag pages. This also affects comments
               you see on other people&apos;s posts.

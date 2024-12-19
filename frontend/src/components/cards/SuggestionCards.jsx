@@ -10,7 +10,7 @@ export default function SuggestionCards() {
         {users.map((user) => (
           <div
             key={user.id}
-            className="flex min-w-[170px] relative h-full flex-col border border-[rgb(54,54,54)]"
+            className="flex min-w-[170px] relative h-full flex-col border border-primary"
           >
             <div className="flex flex-col items-center justify-center flex-1 gap-2 my-4">
               <div className="flex justify-center w-full">
@@ -32,8 +32,10 @@ export default function SuggestionCards() {
               </div>
             </div>
 
-            <div className="text-center border-t border-t-[rgb(54,54,54)] py-2">
-              <a className="text-[rgb(0,149,246)] font-semibold">Follow</a>
+            <div className="py-2 text-center border-t border-t-primary">
+              <a className="font-semibold text-link hover:text-link-hover">
+                Follow
+              </a>
             </div>
 
             <div className="absolute top-2 right-2">

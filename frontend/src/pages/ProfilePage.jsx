@@ -55,11 +55,11 @@ const PostsTab = () => (
           return (
             <li
               key={idx}
-              className="flex flex-col flex-shrink-0 items-center gap-4 border-[1px] border-[rgb(54,54,54)] p-4 w-64 h-60 rounded-md"
+              className="flex flex-col items-center flex-shrink-0 w-64 gap-4 p-4 border rounded-md border-primary h-60"
             >
               <Icon />
               <p className="text-sm font-semibold">{item.heading}</p>
-              <p className="text-xs text-[rgb(168,168,168)]">{item.caption}</p>
+              <p className="text-xs text-secondary">{item.caption}</p>
               <div className="flex justify-center w-full mt-auto">
                 <Button className="min-w-[152px]">{item.button}</Button>
               </div>
@@ -74,10 +74,10 @@ const PostsTab = () => (
 const SavedTab = () => (
   <div className="flex flex-col w-full gap-10 px-5">
     <div className="flex items-center justify-between w-full">
-      <p className="text-xs  text-[rgb(168,168,168)]">
+      <p className="text-xs text-secondary">
         Only you can see what you&apos;ve saved
       </p>
-      <a className="text-xs font-semibold text-[rgb(0,149,246)] hover:text-white">
+      <a className="text-sm font-semibold text-link hover:text-link-hover">
         + New Collection
       </a>
     </div>
@@ -111,7 +111,7 @@ export default function ProfilePage() {
   const [activeTab, setActiveTab] = useState("postsTab");
 
   return (
-    <main className="h-screen overflow-auto min-w-[320px] md:pt-0 pb-[50px] md:pb-0 md:pl-[80px] xl:pl-[250px] pt-[60px]">
+    <main className="bg-primary text-primary h-screen overflow-auto min-w-[320px] md:pt-0 pb-[50px] md:pb-0 md:pl-[80px] xl:pl-[250px] pt-[60px]">
       <div className="flex min-h-screen lg:px-6 xl:px-36">
         <div className="flex flex-col py-10 md:py-16 size-full">
           <div className="flex flex-col w-full gap-8 md:gap-14">
@@ -128,16 +128,16 @@ export default function ProfilePage() {
               <div className="flex flex-1">
                 <div className="flex flex-col flex-1 gap-4">
                   <div className="flex flex-col items-center w-full gap-4 sm:flex-row">
-                    <span>Username</span>
+                    <span className="text-xl font-semibold">Username</span>
 
                     <TransitionLink
                       to="/settings/edit_profile"
-                      className="px-3 text-center font-semibold w-32 md:w-auto py-1 text-sm text-white bg-[rgb(54,54,54)] rounded-md"
+                      className="w-32 px-3 py-1 text-sm font-semibold text-center rounded-md bg-button md:w-auto"
                     >
                       Edit Profile
                     </TransitionLink>
 
-                    <button className="px-3 font-semibold w-32 md:w-auto py-1 text-sm text-white bg-[rgb(54,54,54)] rounded-md">
+                    <button className="w-32 px-3 py-1 text-sm font-semibold rounded-md bg-button md:w-auto">
                       View Archive
                     </button>
 
@@ -165,12 +165,12 @@ export default function ProfilePage() {
 
             <div className="flex flex-1 gap-2 mx-5 md:mx-10">
               <div className="flex flex-col items-center gap-2">
-                <div className="relative rounded-full size-16 md:size-[5.5rem] bg-black border-2 border-[rgb(54,54,54)]">
+                <div className="relative rounded-full size-16 md:size-[5.5rem] border-2 border-primary">
                   <div className="absolute inset-[3px]">
-                    <div className="flex items-center bg-[rgb(18,18,18)] justify-center rounded-full size-full">
+                    <div className="flex items-center justify-center rounded-full bg-widget size-full">
                       <img
-                        src="icons/add.svg"
                         alt="add"
+                        src="icons/add.svg"
                         className="size-6 md:size-auto"
                       />
                     </div>
@@ -186,21 +186,17 @@ export default function ProfilePage() {
             <div className="flex my-2.5 text-sm justify-evenly size-full">
               <div className="flex flex-col items-center justify-center">
                 <span>0</span>
-                <span className="text-sm text-[rgb(168,168,168)]">posts</span>
+                <span className="text-sm text-secondary">posts</span>
               </div>
 
               <div className="flex flex-col items-center justify-center">
                 <span>0</span>
-                <span className="text-sm text-[rgb(168,168,168)]">
-                  followers
-                </span>
+                <span className="text-sm text-secondary">followers</span>
               </div>
 
               <div className="flex flex-col items-center justify-center">
                 <span>0</span>
-                <span className="text-sm text-[rgb(168,168,168)]">
-                  following
-                </span>
+                <span className="text-sm text-secondary">following</span>
               </div>
             </div>
             <div className="md:hidden">
@@ -218,21 +214,17 @@ export default function ProfilePage() {
                 className="relative flex items-center justify-center flex-1 gap-2 md:flex-initial"
               >
                 {activeTab === "postsTab" && (
-                  <div className="absolute inset-x-0 md:-inset-x-2 bottom-[2.8rem] md:bottom-10 h-[2px] bg-white" />
+                  <div className="absolute inset-x-0 md:-inset-x-2 bottom-[2.8rem] md:bottom-10 h-[2px] bg-secondary" />
                 )}
                 <PostsIcon
                   className={cn(
-                    activeTab === "postsTab"
-                      ? "text-[rgb(0,149,246)] md:text-[rgb(245,245,245)]"
-                      : "text-[rgb(245,245,245)]",
+                    activeTab === "postsTab" ? "text-link" : "text-primary",
                     "size-6 md:size-3"
                   )}
                 />
                 <span
                   className={cn(
-                    activeTab === "postsTab"
-                      ? "text-[rgb(245,245,245)]"
-                      : "text-[rgb(168,168,168)]",
+                    activeTab === "postsTab" ? "" : " text-primary",
                     "hidden md:block"
                   )}
                 >
@@ -245,21 +237,19 @@ export default function ProfilePage() {
                 className="relative flex items-center justify-center flex-1 gap-2 md:flex-initial"
               >
                 {activeTab === "savedTab" && (
-                  <div className="absolute inset-x-0 md:-inset-x-2 bottom-[2.8rem] md:bottom-10 h-[2px] bg-white" />
+                  <div className="absolute inset-x-0 md:-inset-x-2 bottom-[2.8rem] md:bottom-10 h-[2px] bg-secondary" />
                 )}
                 <SaveIcon
                   className={cn(
                     activeTab === "savedTab"
-                      ? "text-[rgb(0,149,246)] md:text-[rgb(245,245,245)]"
-                      : "text-[rgb(245,245,245)]",
+                      ? "text-link hover:text-link-hover md:"
+                      : "",
                     "size-6 md:size-3"
                   )}
                 />
                 <span
                   className={cn(
-                    activeTab === "savedTab"
-                      ? "text-[rgb(245,245,245)]"
-                      : "text-[rgb(168,168,168)]",
+                    activeTab === "savedTab" ? "" : " text-secondary",
                     "hidden md:block"
                   )}
                 >
@@ -272,22 +262,20 @@ export default function ProfilePage() {
                 className="relative flex items-center justify-center flex-1 gap-2 md:flex-initial"
               >
                 {activeTab === "taggedTab" && (
-                  <div className="absolute inset-x-0 md:-inset-x-2 bottom-[2.8rem] md:bottom-10 h-[2px] bg-white" />
+                  <div className="absolute inset-x-0 md:-inset-x-2 bottom-[2.8rem] md:bottom-10 h-[2px] bg-secondary" />
                 )}
 
                 <TaggedIcon
                   className={cn(
                     activeTab === "taggedTab"
-                      ? "text-[rgb(0,149,246)] md:text-[rgb(245,245,245)]"
-                      : "text-[rgb(245,245,245)]",
+                      ? "text-link hover:text-link-hover md:"
+                      : "",
                     "size-6 md:size-3"
                   )}
                 />
                 <span
                   className={cn(
-                    activeTab === "taggedTab"
-                      ? "text-[rgb(245,245,245)]"
-                      : "text-[rgb(168,168,168)]",
+                    activeTab === "taggedTab" ? "" : " text-secondary",
                     "hidden md:block"
                   )}
                 >

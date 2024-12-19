@@ -1,10 +1,8 @@
-import { cn } from "utils/cn";
-
-export default function CommunityStandardsLockIcon({ className }) {
+export default function CommunityStandardsLockIcon({ className = "" }) {
   return (
     <svg
       aria-label="Shield icon"
-      className={cn("text-white", className)}
+      className={className}
       fill="currentColor"
       height={24}
       role="img"

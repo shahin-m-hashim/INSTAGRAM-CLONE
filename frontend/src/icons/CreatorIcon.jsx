@@ -1,10 +1,8 @@
-import { cn } from "utils/cn";
-
-export default function CreatorIcon({ className }) {
+export default function CreatorIcon({ className = "" }) {
   return (
     <svg
       aria-label="Media creator icon"
-      className={cn("text-white", className)}
+      className={className}
       fill="currentColor"
       height={24}
       role="img"

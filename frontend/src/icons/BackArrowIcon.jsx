@@ -1,10 +1,8 @@
-import { cn } from "utils/cn";
-
 export default function BackArrowIcon({ className = "" }) {
   return (
     <svg
       aria-label="Back"
-      className={cn("text-white", className)}
+      className={className}
       fill="currentColor"
       height={24}
       role="img"

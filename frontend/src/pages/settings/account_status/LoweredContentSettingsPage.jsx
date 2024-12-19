@@ -20,7 +20,9 @@ export default function LoweredContentSettingsPage() {
             <p className="font-bold">Your posts are not lowered in feed.</p>
             <p className="text-[rgb(138,138,138)]">
               Thank you for following our{" "}
-              <span className="text-[rgb(0,149,246)]">Community Standards</span>
+              <span className="text-link hover:text-link-hover">
+                Community Standards
+              </span>
               .
             </p>
           </div>
@@ -29,7 +31,7 @@ export default function LoweredContentSettingsPage() {
 
       <div className="flex flex-col gap-6">
         <h2 className="font-bold">What this means</h2>
-        <p className="text-sm text-[rgb(168,168,168)]">
+        <p className="text-sm  text-secondary">
           Followers do not need to scroll lower in feed to find your posts.
         </p>
       </div>

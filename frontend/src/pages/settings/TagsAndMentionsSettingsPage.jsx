@@ -13,7 +13,7 @@ export default function TagsAndMentionsSettingsPage() {
         <div className="flex flex-col gap-4">
           <h1>Who can tag you</h1>
 
-          <p className="text-xs text-[rgb(168,168,168)] ">
+          <p className="text-xs  text-secondary ">
             Choose who can tag you in their photos and videos. When people try
             to tag you, they&apos;ll see if you don&apos;t allow tags from
             everyone.
@@ -36,9 +36,7 @@ export default function TagsAndMentionsSettingsPage() {
           <div className="flex justify-between px-4 py-5 rounded-2xl border border-[rgb(54,54,54,0.7)]">
             <div className="flex flex-col gap-2">
               <span>Tag options</span>
-              <p className="text-xs text-[rgb(168,168,168)]">
-                Manually approve tags
-              </p>
+              <p className="text-xs  text-secondary">Manually approve tags</p>
             </div>
             <ToggleSwitch />
           </div>
@@ -46,7 +44,7 @@ export default function TagsAndMentionsSettingsPage() {
 
         <div className="flex flex-col gap-4">
           <h1>Who can @mention you</h1>
-          <p className="text-xs text-[rgb(168,168,168)] ">
+          <p className="text-xs  text-secondary ">
             Choose who can @mention you to link your account in their stories,
             comments, live videos, and captions. When people try to @mention
             you, they&apos;ll see if you don&apos;t allow @mentions.

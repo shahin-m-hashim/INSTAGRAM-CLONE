@@ -6,7 +6,7 @@ const isAuthenticated = true;
 
 export default function NotFoundPage() {
   return (
-    <section className="text-white bg-black scrollbar-dark">
+    <section className="bg-primary text-primary">
       <main className="min-w-[320px] h-screen overflow-auto">
         {!isAuthenticated && <NotFoundNavbar />}
 

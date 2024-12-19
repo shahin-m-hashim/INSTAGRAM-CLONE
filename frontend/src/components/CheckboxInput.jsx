@@ -6,7 +6,6 @@ export default function CheckboxInput({
   id,
   className,
   value = "",
-  theme = "dark",
   checked = false,
   type = "rounded",
 }) {
@@ -21,7 +20,6 @@ export default function CheckboxInput({
           <label
             htmlFor={id}
             className={cn(
-              theme === "dark" ? "border-white" : "border-black",
               "inline-block border size-6 cursor-pointer rounded-full",
               className
             )}
@@ -36,14 +34,7 @@ export default function CheckboxInput({
               onChange={handleChange}
             />
 
-            {isChecked && (
-              <SelectedIcon
-                className={cn(
-                  "size-full",
-                  theme === "dark" ? "text-white" : "text-black"
-                )}
-              />
-            )}
+            {isChecked && <SelectedIcon />}
           </label>
         </>
       ) : (
@@ -51,9 +42,6 @@ export default function CheckboxInput({
           <label
             htmlFor={id}
             className={cn(
-              theme === "dark"
-                ? "bg-white border-white"
-                : "bg-black border-white",
               "relative inline-block border size-6 cursor-pointer rounded-sm",
               className
             )}
@@ -68,29 +56,7 @@ export default function CheckboxInput({
               onChange={handleChange}
             />
 
-            {isChecked && (
-              <svg
-                aria-label
-                role="img"
-                width={10}
-                height={10}
-                fill="currentColor"
-                viewBox="0 0 24 24"
-                className={cn(
-                  "size-full p-[2px]",
-                  theme === "dark" ? "text-black" : "text-white"
-                )}
-              >
-                <polyline
-                  fill="none"
-                  strokeWidth={3}
-                  stroke="currentColor"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  points="21.648 5.352 9.002 17.998 2.358 11.358"
-                />
-              </svg>
-            )}
+            {isChecked && <SelectedIcon className="size-full p-[2px]" />}
           </label>
         </>
       )}

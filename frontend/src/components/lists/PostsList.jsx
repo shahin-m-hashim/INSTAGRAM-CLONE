@@ -55,7 +55,7 @@ export default function PostsList() {
                     </div>
                     <div className="flex items-center gap-2">
                       <span className="pb-2 font-bold">.</span>
-                      <span className="text-[rgb(168,168,168)]">
+                      <span className=" text-secondary">
                         {post.timeExtended}
                       </span>
                     </div>
@@ -102,9 +102,7 @@ export default function PostsList() {
                 <a className="text-[rgb(170,170,170)] text-sm">
                   View all {post.noOfComments} comments
                 </a>
-                <p className="text-sm text-[rgb(168,168,168)]">
-                  {post.postedAt}
-                </p>
+                <p className="text-sm  text-secondary">{post.postedAt}</p>
               </div>
             </div>
           </div>

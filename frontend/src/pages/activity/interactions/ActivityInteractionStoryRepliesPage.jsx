@@ -5,7 +5,7 @@ export default function ActivityInteractionStoryRepliesPage() {
       <h1 className="text-2xl font-bold">
         You haven&apos;t responded to any stickers
       </h1>
-      <p className="text-sm text-[rgb(168,168,168)]">
+      <p className="text-sm  text-secondary">
         When you reply to someone else&apos;s sticker, it&apos;ll show up here.
       </p>
     </div>

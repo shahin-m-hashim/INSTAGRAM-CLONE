@@ -1,9 +1,8 @@
-import { cn } from "utils/cn";
-export default function PostsIcon({ className }) {
+export default function PostsIcon({ className = "" }) {
   return (
     <svg
       aria-label
-      className={cn("text-white", className)}
+      className={className}
       fill="currentColor"
       height={12}
       role="img"

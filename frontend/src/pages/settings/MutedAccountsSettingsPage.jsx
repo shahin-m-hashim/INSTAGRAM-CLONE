@@ -9,7 +9,7 @@ export default function MutedAccountsSettingsPage() {
         </div>
 
         <div className="flex flex-col items-center justify-center flex-1 w-full">
-          <span className="text-sm text-[rgb(168,168,168)]">
+          <span className="text-sm  text-secondary">
             You haven&apos;t muted anyone.
           </span>
         </div>

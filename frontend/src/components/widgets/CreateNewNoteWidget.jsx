@@ -27,10 +27,10 @@ export default function CreateNewNoteWidget({ setActiveWidget }) {
 
   return (
     <div className="absolute inset-0 z-10 backdrop-brightness-[0.4] pointer-events-auto">
-      <div className="flex items-center justify-center size-full">
+      <div className="flex items-center justify-center bg-widget size-full">
         <form
           onSubmit={handleSubmit}
-          className="relative flex flex-col rounded-lg w-[300px] md:w-[500px] h-[300px] bg-[rgb(38,38,38)] text-[rgb(245,245,245)]"
+          className="relative flex flex-col rounded-lg w-[300px] md:w-[500px] h-[300px]"
         >
           <div className="flex justify-between w-full p-3">
             <button type="button" onClick={() => setActiveWidget(null)}>
@@ -43,7 +43,7 @@ export default function CreateNewNoteWidget({ setActiveWidget }) {
             </Button>
           </div>
 
-          <Separator straight={true} className="bg-[rgb(54,54,54)]" />
+          <Separator straight={true} />
 
           <div className="flex-1 w-full p-4">
             <textarea

@@ -14,13 +14,13 @@ export default function LikeAndShareCountsSettingsPage() {
           <ToggleSwitch />
         </div>
 
-        <p className="text-xs text-[rgb(168,168,168)]">
+        <p className="text-xs  text-secondary">
           On Instagram, the number of likes on posts and reels from other
           accounts will be hidden. You can hide the number of likes on your own
           posts and reels by going to Advanced settings before sharing.
         </p>
 
-        <p className="text-xs text-[rgb(168,168,168)]">
+        <p className="text-xs  text-secondary">
           On Threads, the number of likes, views, reposts and quotes on posts
           from other profiles will be hidden. You can hide these on your own
           posts from the menu for each post.{" "}

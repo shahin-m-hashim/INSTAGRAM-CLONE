@@ -4,7 +4,7 @@ import CircledNotificationsIcon from "icons/CircledNotificationsIcon";
 export default function NotificationsSidebar() {
   return (
     <div className="fixed inset-y-0 w-[420px] left-[80px] pointer-events-auto">
-      <div className="flex flex-col p-5 text-white overflow-y-auto bg-black size-full border-r border-r-[rgb(54,54,54,0.7)]">
+      <div className="flex flex-col p-5 overflow-y-auto border-r-2 text-primary bg-primary size-full border-r-primary">
         <div className="w-full">
           <h1 className="text-2xl font-bold">Notifications</h1>
         </div>

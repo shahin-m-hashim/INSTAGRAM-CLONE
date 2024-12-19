@@ -29,7 +29,7 @@ export default function SharingAndReuseSettingsPage() {
         <div className="flex flex-col gap-4">
           <h1>Who can create with your content</h1>
 
-          <p className="text-xs text-[rgb(168,168,168)] ">
+          <p className="text-xs  text-secondary ">
             This controls who can create reels or stories that include your
             videos or photos and download them as part of their content.{" "}
             <a className="text-white hover:underline">Learn more</a>
@@ -55,7 +55,7 @@ export default function SharingAndReuseSettingsPage() {
           <h1 className="mb-4 font-bold">Allow people to share externally</h1>
 
           <h2>Website embeds</h2>
-          <p className="text-xs text-[rgb(168,168,168)] ">
+          <p className="text-xs  text-secondary ">
             When this is on, your public posts or profile can be shown outside
             of Instagram, including articles and blogs.{" "}
             <a className="text-white hover:underline">Learn more</a>
@@ -81,7 +81,7 @@ export default function SharingAndReuseSettingsPage() {
           <div className="flex flex-col gap-2 px-4 py-5 rounded-2xl border border-[rgb(54,54,54,0.7)]">
             <h1>Featured content requests in shops</h1>
             <div className="flex items-center justify-between">
-              <p className="text-xs text-[rgb(168,168,168)] ">
+              <p className="text-xs  text-secondary ">
                 When this is on, business accounts can request to feature your
                 photos and videos in their shops across Meta Company Products
                 when you tag accounts with shops or use hashtags related to

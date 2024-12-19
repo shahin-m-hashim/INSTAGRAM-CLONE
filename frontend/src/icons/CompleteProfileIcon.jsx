@@ -1,10 +1,8 @@
-import { cn } from "utils/cn";
-
-export default function CompleteProfileIcon({ className }) {
+export default function CompleteProfileIcon({ className = "" }) {
   return (
     <svg
       aria-label="Add your name and bio so friends can find you."
-      className={cn("text-white", className)}
+      className={className}
       fill="currentColor"
       height={56}
       role="img"

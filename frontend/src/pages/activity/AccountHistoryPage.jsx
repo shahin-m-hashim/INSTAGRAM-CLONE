@@ -17,7 +17,7 @@ export default function AccountHistoryPage() {
 
         <div className="flex items-center gap-4">
           <span className="font-bold">Newest to oldest</span>
-          <button className="border border-[rgb(54,54,54)] px-4 py-2 rounded-md text-sm font-bold">
+          <button className="border  px-4 py-2 rounded-md text-sm font-bold">
             Sort & Filter
           </button>
         </div>
@@ -32,7 +32,7 @@ export default function AccountHistoryPage() {
             <EmailIcon className="size-6" />
             <div>
               <span>Email</span>
-              <p className="text-sm text-[rgb(168,168,168)]">
+              <p className="text-sm  text-secondary">
                 Your changed your email address to{" "}
                 <span className="font-semibold">example@gmail.com</span> 1h
               </p>
@@ -43,7 +43,7 @@ export default function AccountHistoryPage() {
             <IIcon className="size-6" />
             <div>
               <span>Account created</span>
-              <p className="text-sm text-[rgb(168,168,168)]">
+              <p className="text-sm  text-secondary">
                 Your account was created on{" "}
                 <span className="font-semibold text-[rgb(138,138,138)]">
                   December 14, 2022

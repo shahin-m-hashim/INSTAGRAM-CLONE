@@ -57,7 +57,7 @@ const SelectACategory = () => (
 
 const Creator = () => (
   <div className="flex flex-col items-center gap-4">
-    <div className="border border-[rgb(54,54,54)] flex justify-center items-center rounded-full p-4">
+    <div className="border  flex justify-center items-center rounded-full p-4">
       <CreatorIcon />
     </div>
     <h1 className="text-2xl font-bold">Creator</h1>
@@ -103,7 +103,7 @@ const Creator = () => (
 
 const Business = () => (
   <div className="flex flex-col items-center gap-4">
-    <div className="border border-[rgb(54,54,54)] flex justify-center items-center rounded-full p-4">
+    <div className="border  flex justify-center items-center rounded-full p-4">
       <BusinessIcon />
     </div>
     <h1 className="text-2xl font-bold">Business</h1>
@@ -160,8 +160,8 @@ export default function SwitchAccountsPage() {
   return (
     <main className="h-screen flex flex-col justify-between overflow-auto min-w-[320px] md:pt-0 pb-[50px] md:pb-0 md:pl-[80px] xl:pl-[250px] pt-[60px]">
       <div className="flex items-center justify-center flex-1 px-4 my-5">
-        <div className="flex  flex-col border border-[rgb(54,54,54)] w-full max-w-[600px] rounded-lg">
-          <div className="flex flex-col gap-4 p-6 border-b border-b-[rgb(54,54,54)]">
+        <div className="flex  flex-col border  w-full max-w-[600px] rounded-lg">
+          <div className="flex flex-col gap-4 p-6 border-b border-b-tertiary">
             {!formData.showChooseCategory &&
             formData.preferredAccountType === "creator" ? (
               <Creator />
@@ -184,14 +184,14 @@ export default function SwitchAccountsPage() {
                       preferredAccountType: "creator",
                     }))
                   }
-                  className="border border-[rgb(54,54,54)] rounded-xl p-4"
+                  className="border  rounded-xl p-4"
                 >
                   <div className="flex flex-col items-center gap-4">
-                    <div className="border border-[rgb(54,54,54)] flex justify-center items-center rounded-full p-4">
+                    <div className="border  flex justify-center items-center rounded-full p-4">
                       <CreatorIcon />
                     </div>
                     <h1 className="text-lg font-bold">Creator</h1>
-                    <p className="text-xs text-[rgb(168,168,168)]">
+                    <p className="text-xs  text-secondary">
                       Best for public figures,content producers, artists, and
                       influence&apos;s.
                     </p>
@@ -206,14 +206,14 @@ export default function SwitchAccountsPage() {
                       preferredAccountType: "business",
                     }))
                   }
-                  className="border border-[rgb(54,54,54)] rounded-xl p-4"
+                  className="border  rounded-xl p-4"
                 >
                   <div className="flex flex-col items-center gap-4">
-                    <div className="border border-[rgb(54,54,54)] flex justify-center items-center rounded-full p-4">
+                    <div className="border  flex justify-center items-center rounded-full p-4">
                       <BusinessIcon />
                     </div>
                     <h1 className="text-lg font-bold">Business</h1>
-                    <p className="text-xs text-[rgb(168,168,168)]">
+                    <p className="text-xs  text-secondary">
                       Best for retailers, brands, organizations, and service
                       providers.
                     </p>
@@ -242,7 +242,7 @@ export default function SwitchAccountsPage() {
                         preferredAccountType: "",
                       }))
                 }
-                className="rounded-lg w-20 text-sm flex items-center h-8 p-2 font-semibold justify-center text-white gap-2 bg-[rgb(54,54,54)] hover:bg-[#333]"
+                className="rounded-lg w-20 text-sm flex items-center h-8 p-2 font-semibold justify-center text-white gap-2 bg-primary hover:bg-[#333]"
               >
                 Back
               </button>

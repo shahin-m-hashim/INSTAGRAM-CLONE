@@ -1,10 +1,8 @@
-import { cn } from "utils/cn";
-
-export default function ActivityIcon({ className }) {
+export default function ActivityIcon({ className = "" }) {
   return (
     <svg
       aria-label="Ads activity icon"
-      className={cn("text-white", className)}
+      className={className}
       fill="currentColor"
       height={96}
       role="img"

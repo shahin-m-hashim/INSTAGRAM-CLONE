@@ -5,7 +5,7 @@ import AccountsList from "components/lists/AccountsList";
 
 export default function AccountSuggestions() {
   return (
-    <div className="flex justify-center">
+    <div className="flex justify-center my-5">
       <div className="xs:p-5 lg:w-1/2">
         <div className="flex items-center w-full gap-2 px-5">
           <div className="hidden xs:block">
@@ -20,7 +20,7 @@ export default function AccountSuggestions() {
             </p>
           </div>
 
-          <Button className="w-12 h-7">Next</Button>
+          <Button className="w-14 h-7">Next</Button>
         </div>
 
         <div className="my-4">
@@ -28,9 +28,7 @@ export default function AccountSuggestions() {
         </div>
 
         <div className="flex flex-col w-full gap-5 px-5">
-          <div className="h-10">
-            <SearchField />
-          </div>
+          <SearchField />
 
           <AccountsList type="input" minCheckedInputs={5} />
         </div>

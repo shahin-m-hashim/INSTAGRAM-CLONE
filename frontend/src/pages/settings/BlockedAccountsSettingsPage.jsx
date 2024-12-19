@@ -8,11 +8,11 @@ export default function BlockedAccountsSettingsPage() {
           <h1 className="text-xl font-bold">Blocked accounts</h1>
         </div>
 
-        <h2 className="text-[rgb(168,168,168)]">
+        <h2 className=" text-secondary">
           You can block people anytime from their profiles.
         </h2>
         <div className="flex items-center justify-center size-full">
-          <span className="text-sm text-[rgb(168,168,168)]">
+          <span className="text-sm  text-secondary">
             You haven&apos;t blocked anyone.
           </span>
         </div>

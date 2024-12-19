@@ -1,10 +1,8 @@
-import { cn } from "utils/cn";
-
 export default function MegaPhoneIcon({ className = "" }) {
   return (
     <svg
       aria-label="Ads icon"
-      className={cn("text-white", className)}
+      className={className}
       fill="currentColor"
       height={24}
       role="img"

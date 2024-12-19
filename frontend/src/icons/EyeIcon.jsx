@@ -1,10 +1,8 @@
-import { cn } from "utils/cn";
-
-export default function EyeIcon({ className }) {
+export default function EyeIcon({ className = "" }) {
   return (
     <svg
       aria-label="Eye icon."
-      className={cn("text-white", className)}
+      className={className}
       fill="currentColor"
       height={24}
       role="img"

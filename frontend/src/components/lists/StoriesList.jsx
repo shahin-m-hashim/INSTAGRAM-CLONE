@@ -25,7 +25,12 @@ export default function StoriesList({ showOwnStory = false }) {
 
         {users.map((user) => (
           <li key={user.id}>
-            <div className="rounded-full p-[2px] active-story-gradient border-2 border-[rgb(54,54,54)]">
+            <div
+              className={cn(
+                "rounded-full p-[2px]",
+                !user.hasStory ? "active-story-gradient" : "bg-primary"
+              )}
+            >
               <Image
                 lazyLoad={true}
                 alt={user.username}

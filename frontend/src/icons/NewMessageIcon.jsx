@@ -1,9 +1,8 @@
-import { cn } from "utils/cn";
-export default function NewMessageIcon({ className }) {
+export default function NewMessageIcon({ className = "" }) {
   return (
     <svg
       aria-label="New message"
-      className={cn("text-white", className)}
+      className={className}
       fill="currentColor"
       height={24}
       role="img"

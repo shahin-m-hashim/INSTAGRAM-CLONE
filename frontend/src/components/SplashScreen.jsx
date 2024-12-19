@@ -1,7 +1,7 @@
 export default function SplashScreen() {
   return (
     <div className="fixed inset-0 min-w-[320px] h-screen z-[1000] pointer-events-none">
-      <div className="flex flex-col items-center justify-center text-white bg-black size-full">
+      <div className="flex flex-col items-center justify-center bg-primary text-primary size-full">
         <div className="flex flex-col items-center justify-end flex-1">
           <img
             width="60"

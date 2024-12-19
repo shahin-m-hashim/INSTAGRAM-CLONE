@@ -23,13 +23,9 @@ export default function SearchField({ className }) {
   const handleClear = () => setState({ value: "", isFocused: false });
 
   return (
-    <div
-      className={cn(
-        "bg-[rgb(54,54,54)] relative w-full h-10 rounded-md",
-        className
-      )}
-    >
+    <label htmlFor="search" className="relative">
       <input
+        id="search"
         type="text"
         name="search"
         autoComplete="off"
@@ -39,7 +35,7 @@ export default function SearchField({ className }) {
         onFocus={handleFocus}
         onChange={handleChange}
         className={cn(
-          "bg-[rgb(54,54,54)] text-xs text-[rgb(245,245,245)] focus:outline-none h-full px-10 focus:px-3.5 w-full rounded-md",
+          "bg-field text-sm focus:outline-none h-10 px-10 focus:px-3.5 w-full rounded-md",
           className
         )}
       />
@@ -50,7 +46,7 @@ export default function SearchField({ className }) {
         )}
       >
         <div className="flex flex-col items-center justify-center h-full">
-          <SearchIcon className="text-[rgb(168,168,168)] size-4" />
+          <SearchIcon className="text-primary size-4" />
         </div>
       </div>
       <button
@@ -65,6 +61,6 @@ export default function SearchField({ className }) {
           <CrossIcon className="size-4" />
         </div>
       </button>
-    </div>
+    </label>
   );
 }

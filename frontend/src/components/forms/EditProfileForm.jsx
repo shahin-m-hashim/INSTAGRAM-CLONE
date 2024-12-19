@@ -1,12 +1,12 @@
-import ProfilePicture from "components/ProfilePicture";
-import ToggleSwitch from "components/ToggleSwitch";
 import Button from "components/wrappers/Button";
+import ToggleSwitch from "components/ToggleSwitch";
+import ProfilePicture from "components/ProfilePicture";
 import DropDownArrowIcon from "icons/DropDownArrowIcon";
 
 export default function EditProfileForm() {
   return (
     <form className="flex flex-col gap-10 p-4">
-      <div className="flex gap-2 items-center justify-between rounded-xl p-4 bg-[rgb(38,38,38)]">
+      <div className="flex items-center justify-between gap-2 p-4 rounded-xl bg-widget">
         <div className="flex items-center flex-1 gap-2 md:gap-5">
           <ProfilePicture storyPadding="0px" />
           <span className="font-semibold">username</span>
@@ -25,9 +25,9 @@ export default function EditProfileForm() {
           id="website"
           name="website"
           placeholder="Website"
-          className="text-sm bg-[rgb(38,38,38)] px-4 py-3 rounded-lg"
+          className="px-4 py-3 text-sm rounded-lg bg-widget"
         />
-        <p className="text-xs text-[rgb(168,168,168)]">
+        <p className="text-xs text-secondary">
           Editing your links is only available on mobile. Visit the Instagram
           app and edit your profile to change the websites in your bio.
         </p>
@@ -42,10 +42,10 @@ export default function EditProfileForm() {
             id="bio"
             name="bio"
             placeholder="Bio"
-            className="text-sm w-full rounded-lg bg-transparent border border-[rgb(38,38,38)] p-3"
+            className="w-full p-3 text-sm bg-transparent border rounded-lg border-secondary"
           />
           <div className="absolute bottom-4 right-4">
-            <span className="text-xs text-[rgb(168,168,168)]">0/150</span>
+            <span className="text-xs text-secondary">0/150</span>
           </div>
         </div>
       </div>
@@ -58,14 +58,14 @@ export default function EditProfileForm() {
           <div
             id="gender"
             name="gender"
-            className="hover:bg-[rgb(18,18,18)] flex justify-between items-center hover:cursor-pointer rounded-lg bg-transparent border border-[rgb(38,38,38)] p-3"
+            className="flex items-center justify-between p-3 bg-transparent border rounded-lg hover:bg-widget-hover hover:cursor-pointer border-secondary"
           >
             Prefer not to say
             <DropDownArrowIcon />
           </div>
           {/* <GenderFormWidget /> */}
         </div>
-        <p className="text-xs text-[rgb(168,168,168)]">
+        <p className="text-xs text-secondary">
           This won’t be part of your public profile.
         </p>
       </div>
@@ -73,7 +73,7 @@ export default function EditProfileForm() {
       <div className="flex flex-col gap-3">
         <h2 className="font-bold">Show account suggestions on profiles</h2>
 
-        <div className="border rounded-xl border-[rgb(38,38,38)] p-4">
+        <div className="p-4 border rounded-xl border-secondary">
           <div className="flex justify-between">
             <div className="flex flex-col flex-1 gap-2">
               <div className="flex items-center justify-between gap-4">
@@ -81,7 +81,7 @@ export default function EditProfileForm() {
                 <ToggleSwitch id="suggestion" />
               </div>
 
-              <p className="text-xs text-[rgb(168,168,168)] pr-12">
+              <p className="pr-12 text-xs text-secondary">
                 Choose whether people can see similar account suggestions on
                 your profile, and whether your account can be suggested on other
                 profiles.

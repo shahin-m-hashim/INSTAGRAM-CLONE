@@ -52,17 +52,18 @@ export default function SignUpForm() {
       </div>
       <div className="flex flex-col gap-4 text-xs">
         <p>
-          <span className="text-[rgb(168,168,168)]">
+          <span className="text-secondary">
             People who use our service may have uploaded your contact
             information to Instagram.
           </span>{" "}
-          <a className="text-white">Learn More</a>
+          <a className="text-link hover:text-link-hover">Learn More</a>
         </p>
-        <p className="text-[rgb(168,168,168)]">
+        <p className="text-secondary">
           <span>By signing up, you agree to our</span>{" "}
-          <a className="text-white">Terms , </a>{" "}
-          <a className="text-white">Privacy Policy</a> <span>and</span>{" "}
-          <a className="text-white">Cookies Policy</a>
+          <a className="text-link hover:text-link-hover">Terms , </a>{" "}
+          <a className="text-link hover:text-link-hover">Privacy Policy</a>{" "}
+          <span>and</span>{" "}
+          <a className="text-link hover:text-link-hover">Cookies Policy</a>
           <span>.</span>
         </p>
         <Button

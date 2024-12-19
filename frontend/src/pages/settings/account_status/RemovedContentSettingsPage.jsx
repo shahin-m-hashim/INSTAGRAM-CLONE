@@ -28,7 +28,9 @@ export default function RemovedContentSettingsPage() {
             <p className="font-bold">Your account is not affected right now.</p>
             <p className="text-[rgb(138,138,138)]">
               Thank you for following our{" "}
-              <span className="text-[rgb(0,149,246)]">Community Standards</span>
+              <span className="text-link hover:text-link-hover">
+                Community Standards
+              </span>
               .
             </p>
           </div>
@@ -37,10 +39,10 @@ export default function RemovedContentSettingsPage() {
 
       <div className="flex flex-col gap-6">
         <h2 className="font-bold">What this means</h2>
-        <p className="text-sm text-[rgb(168,168,168)]">
+        <p className="text-sm  text-secondary">
           You are not at risk of losing access to your account right now.
         </p>
-        <p className="text-sm text-[rgb(168,168,168)]">
+        <p className="text-sm  text-secondary">
           We may still take down your account without warning if something you
           post is a risk to the Instagram community.
         </p>

@@ -9,7 +9,7 @@ export default function BirthdayContent() {
         <h1>Add Your Birthday</h1>
         <div className="flex flex-col gap-2 text-sm">
           <p>This won&apos;t be a part of your public profile.</p>
-          <a className="text-[rgb(0,149,246)] font-semibold">
+          <a className="text-link hover:text-link-hover font-semibold">
             Why do I need to provide my birthday?
           </a>
         </div>
@@ -18,7 +18,7 @@ export default function BirthdayContent() {
       <BDayForm />
 
       <div className="w-full">
-        <a className="text-[rgb(0,149,246)] font-semibold">Go Back</a>
+        <a className="text-link hover:text-link-hover font-semibold">Go Back</a>
       </div>
     </>
   );

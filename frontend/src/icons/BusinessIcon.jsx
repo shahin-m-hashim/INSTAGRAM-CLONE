@@ -1,10 +1,8 @@
-import { cn } from "utils/cn";
-
-export default function BusinessIcon({ className }) {
+export default function BusinessIcon({ className = "" }) {
   return (
     <svg
       aria-label="Business icon"
-      className={cn("text-white", className)}
+      className={className}
       fill="currentColor"
       height={24}
       role="img"

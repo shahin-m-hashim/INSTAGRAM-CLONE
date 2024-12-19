@@ -196,7 +196,7 @@ export default function PushNotificationSettingsPage() {
         </div>
         <GroupedOptions options={pushOptions} type="advanced" />
 
-        <p className="text-xs text-[rgb(168,168,168)]">
+        <p className="text-xs  text-secondary">
           We&apos;ll only notify you for people who choose to tell others about
           their birthdays on Instagram. You can change who to tell about your
           birthday any time in your profile Personal information settings.

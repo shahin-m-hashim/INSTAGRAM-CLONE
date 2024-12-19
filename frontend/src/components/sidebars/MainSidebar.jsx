@@ -32,16 +32,16 @@ export default function MainSidebar() {
       <div
         className={cn(
           isCollapsed || activeSidebar ? "w-[80px]" : "w-[80px] xl:w-[250px]",
-          "hidden md:block absolute inset-y-0 left-0 pointer-events-auto overflow-y-auto"
+          "bg-primary text-primary hidden md:block absolute inset-y-0 left-0 pointer-events-auto overflow-y-auto"
         )}
       >
-        <div className="size-full bg-black flex-col py-4 px-2 xl:px-4 flex border-r border-r-[rgb(38,38,38,0.7)] text-[rgb(245,245,245)]">
+        <div className="flex flex-col px-2 py-4 border-r-2 border-primary size-full xl:px-4 ">
           <div className="xl:my-4">
             <TransitionLink
               to="/"
               className={cn(
                 isCollapsed || activeSidebar ? "flex" : "flex xl:hidden",
-                "items-center justify-center px-2.5 py-3 transition-all duration-100 ease-in rounded-md hover:bg-[rgb(38,38,38,0.7)] gap-4 size-full"
+                "items-center justify-center px-2.5 py-3 rounded-md hover:bg-sidebar-hover gap-4 size-full"
               )}
             >
               <InstagramLogoIcon />
@@ -62,7 +62,7 @@ export default function MainSidebar() {
             <div className="flex flex-col items-center justify-between w-full gap-2">
               <TransitionLink
                 to="/"
-                className="flex items-center flex-col xl:flex-row px-2.5 py-3 transition-all duration-100 ease-in rounded-md hover:bg-[rgb(38,38,38,0.7)] justify-center xl:justify-start gap-4 size-full"
+                className="flex items-center flex-col xl:flex-row px-2.5 py-3 rounded-md hover:bg-sidebar-hover justify-center xl:justify-start gap-4 size-full"
               >
                 <HomeIcon isActive={!url[1] && !activeSidebar} />
                 {isCollapsed ||
@@ -80,7 +80,7 @@ export default function MainSidebar() {
                 }
                 className={cn(
                   activeSidebar === "search" && "outline-1 outline",
-                  "items-center flex-col xl:flex-row px-2.5 py-3 transition-all duration-300 ease-in rounded-md hover:bg-[rgb(38,38,38,0.7)] justify-center xl:justify-start gap-4 flex size-full"
+                  "items-center flex-col xl:flex-row px-2.5 py-3 rounded-md hover:bg-sidebar-hover justify-center xl:justify-start gap-4 flex size-full"
                 )}
               >
                 <SearchIcon />
@@ -92,7 +92,7 @@ export default function MainSidebar() {
 
               <TransitionLink
                 to="explore"
-                className="flex items-center justify-center flex-col xl:flex-row px-2.5 py-3 transition-all duration-100 ease-in rounded-md hover:bg-[rgb(38,38,38,0.7)] gap-4 xl:justify-start size-full"
+                className="flex items-center justify-center flex-col xl:flex-row px-2.5 py-3 rounded-md hover:bg-sidebar-hover gap-4 xl:justify-start size-full"
               >
                 <ExploreIcon
                   isActive={url[1] === "explore" && !activeSidebar}
@@ -106,7 +106,7 @@ export default function MainSidebar() {
 
               <TransitionLink
                 to="reels"
-                className="flex items-center justify-center flex-col xl:flex-row px-2.5 py-3 transition-all duration-100 ease-in rounded-md hover:bg-[rgb(38,38,38,0.7)] gap-4 xl:justify-start size-full"
+                className="flex items-center justify-center flex-col xl:flex-row px-2.5 py-3 rounded-md hover:bg-sidebar-hover gap-4 xl:justify-start size-full"
               >
                 <ReelsIcon isActive={url[1] === "reels" && !activeSidebar} />
                 {isCollapsed ||
@@ -119,7 +119,7 @@ export default function MainSidebar() {
                 to="direct/inbox"
                 className={cn(
                   activeSidebar === "messenger" && "outline-1 outline",
-                  "items-center flex-col xl:flex-row px-2.5 py-3 transition-all duration-300 ease-in rounded-md hover:bg-[rgb(38,38,38,0.7)] justify-center xl:justify-start gap-4 flex size-full"
+                  "items-center flex-col xl:flex-row px-2.5 py-3 rounded-md hover:bg-sidebar-hover justify-center xl:justify-start gap-4 flex size-full"
                 )}
               >
                 <MessengerIcon
@@ -141,7 +141,7 @@ export default function MainSidebar() {
                 }
                 className={cn(
                   activeSidebar === "notifications" && "outline-1 outline",
-                  "items-center flex-col xl:flex-row px-2.5 py-3 transition-all duration-300 ease-in rounded-md hover:bg-[rgb(38,38,38,0.7)] justify-center xl:justify-start gap-4 flex size-full"
+                  "items-center flex-col xl:flex-row px-2.5 py-3 rounded-md hover:bg-sidebar-hover justify-center xl:justify-start gap-4 flex size-full"
                 )}
               >
                 <NotificationsIcon
@@ -156,7 +156,7 @@ export default function MainSidebar() {
 
               <button
                 onClick={() => setActiveWidget("createNewPost")}
-                className="flex items-center justify-center flex-col xl:flex-row px-2.5 py-3 transition-all duration-100 ease-in rounded-md hover:bg-[rgb(38,38,38,0.7)] gap-4 xl:justify-start size-full"
+                className="flex items-center justify-center flex-col xl:flex-row px-2.5 py-3 rounded-md hover:bg-sidebar-hover gap-4 xl:justify-start size-full"
               >
                 <CreateIcon />
                 {isCollapsed ||
@@ -167,7 +167,7 @@ export default function MainSidebar() {
 
               <TransitionLink
                 to="username"
-                className="flex items-center justify-center flex-col xl:flex-row px-2.5 py-3 transition-all duration-100 ease-in rounded-md hover:bg-[rgb(38,38,38,0.7)] gap-4 xl:justify-start size-full"
+                className="flex items-center justify-center flex-col xl:flex-row px-2.5 py-3 rounded-md hover:bg-sidebar-hover gap-4 xl:justify-start size-full"
               >
                 <ProfilePicture className="size-7" />
                 {isCollapsed ||
@@ -183,7 +183,7 @@ export default function MainSidebar() {
               onClick={() =>
                 setActiveWidget((prev) => (prev === "more" ? null : "more"))
               }
-              className="flex items-center flex-col xl:flex-row px-2.5 py-3 transition-all duration-100 ease-in rounded-md hover:bg-[rgb(38,38,38,0.7)] justify-center xl:justify-start w-full gap-4"
+              className="flex items-center flex-col xl:flex-row px-2.5 py-3 rounded-md hover:bg-sidebar-hover justify-center xl:justify-start w-full gap-4"
             >
               <HamburgerIcon />
               {isCollapsed ||

@@ -1,9 +1,8 @@
-import { cn } from "utils/cn";
-export default function LikeIcon({ className }) {
+export default function LikeIcon({ className = "" }) {
   return (
     <svg
       aria-label="Like"
-      className={cn("text-white", className)}
+      className={className}
       fill="currentColor"
       height="24"
       role="img"

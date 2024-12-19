@@ -1,10 +1,8 @@
-import { cn } from "utils/cn";
-
-export default function PhotosAndVideosIcon({ className }) {
+export default function PhotosAndVideosIcon({ className = "" }) {
   return (
     <svg
       aria-label="Photos and videos, view, archive, or delete photos you've shared."
-      className={cn("text-white", className)}
+      className={className}
       fill="currentColor"
       height="24"
       role="img"

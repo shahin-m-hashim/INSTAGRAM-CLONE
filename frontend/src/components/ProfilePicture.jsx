@@ -73,11 +73,11 @@ export default function ProfilePicture({
         <div className={cn("absolute z-30 -top-6 left-11", noteInputClassName)}>
           <button
             type="button"
-            className="bg-[rgb(54,54,54)] text-[rgb(168,168,168)] text-xs p-2 rounded-lg"
+            className="p-2 text-xs border rounded-lg bg-primary border-primary shadow-primary text-secondary"
           >
             Note...
           </button>
-          <div className="absolute left-5 border-l-[5px] border-l-transparent border-r-[5px] border-r-transparent border-t-[5px] border-t-[rgb(54,54,54)]"></div>
+          <div className="absolute left-5 border-l-[5px] border-l-transparent border-r-[5px] border-r-transparent border-t-[5px] border-t-tertiary"></div>
         </div>
       )}
     </div>

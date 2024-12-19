@@ -21,7 +21,7 @@ export default function ManageCustomWordsSettingsPage() {
         <form className="flex flex-col gap-4">
           <textarea
             placeholder="Add keywords separated by commas"
-            className="h-36 rounded-md bg-transparent p-2 border border-[rgb(38,38,38)] placeholder:text-[rgb(168,168,168)]"
+            className="h-36 rounded-md bg-transparent p-2 border border-secondary placeholder: text-secondary"
           ></textarea>
 
           <Button className="w-20" type="submit" disabled={true}>
@@ -36,7 +36,7 @@ export default function ManageCustomWordsSettingsPage() {
           <ToggleSwitch />
         </div>
 
-        <p className="text-xs text-[rgb(168,168,168)]">
+        <p className="text-xs  text-secondary">
           Hide comments that contain commonly reported keywords from your posts.
         </p>
       </div>

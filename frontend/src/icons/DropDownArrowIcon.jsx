@@ -1,4 +1,3 @@
-import { cn } from "utils/cn";
 export default function DropDownArrowIcon({ className }) {
   return (
     <svg
@@ -6,7 +5,7 @@ export default function DropDownArrowIcon({ className }) {
       width={12}
       height={12}
       viewBox="0 0 24 24"
-      className={cn("text-white", className)}
+      className={className}
       aria-label="Down chevron icon"
     >
       <title>Down chevron icon</title>

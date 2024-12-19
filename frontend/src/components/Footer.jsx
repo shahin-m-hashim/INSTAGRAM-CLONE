@@ -1,6 +1,6 @@
 export default function Footer() {
   return (
-    <footer className="flex flex-col gap-4 text-xs text-gray-400">
+    <footer className="flex flex-col gap-4 text-xs text-secondary">
       <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2">
         <a className="hover:underline">Meta</a>
         <a className="hover:underline">About</a>

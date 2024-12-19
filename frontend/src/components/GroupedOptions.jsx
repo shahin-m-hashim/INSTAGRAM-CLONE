@@ -43,7 +43,7 @@ export default function GroupedOptions({
               )}
 
               {option.example && (
-                <span className="text-xs text-[rgb(168,168,168)]">
+                <span className="text-xs  text-secondary">
                   {option.example}
                 </span>
               )}
@@ -64,7 +64,7 @@ export default function GroupedOptions({
                     {option.title}
                   </label>
                   {option.description && (
-                    <p className="text-xs text-[rgb(168,168,168)]">
+                    <p className="text-xs  text-secondary">
                       {option.description}
                     </p>
                   )}
@@ -80,7 +80,7 @@ export default function GroupedOptions({
               <div className="flex flex-col gap-1">
                 <label>{option.title}</label>
                 {option.description && (
-                  <p className="text-xs text-[rgb(168,168,168)]">
+                  <p className="text-xs  text-secondary">
                     {option.description}
                   </p>
                 )}

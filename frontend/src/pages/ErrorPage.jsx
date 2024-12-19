@@ -3,7 +3,7 @@ import InstagramLogoIcon from "icons/InstagramLogoIcon";
 
 export default function ErrorPage() {
   return (
-    <section className="text-white bg-black scrollbar-dark">
+    <section className="bg-primary text-primary">
       <main className="min-w-[320px] h-screen overflow-auto">
         <div className="flex items-center justify-center size-full">
           <div className="flex flex-col items-center gap-5 text-center">

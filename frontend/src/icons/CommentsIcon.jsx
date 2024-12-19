@@ -1,12 +1,10 @@
-import { cn } from "utils/cn";
-
-export default function CommentsIcon({ className }) {
+export default function CommentsIcon({ className = "" }) {
   return (
     <svg
       aria-label="Comment"
       fill="currentColor"
       height={24}
-      className={cn("text-white", className)}
+      className={className}
       role="img"
       viewBox="0 0 24 24"
       width={24}

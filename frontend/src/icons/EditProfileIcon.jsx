@@ -1,10 +1,8 @@
-import { cn } from "utils/cn";
-
-export default function EditProfileIcon({ className }) {
+export default function EditProfileIcon({ className = "" }) {
   return (
     <svg
       aria-label
-      className={cn("text-white", className)}
+      className={className}
       fill="currentColor"
       height={24}
       role="img"

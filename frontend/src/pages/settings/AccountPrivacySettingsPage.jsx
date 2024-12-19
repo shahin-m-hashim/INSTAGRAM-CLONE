@@ -13,7 +13,7 @@ export default function AccountPrivacySettingsPage() {
           <div className="flex flex-col gap-2">
             <h1>Private Account</h1>
             <div className="flex items-center gap-4">
-              <div className="text-xs text-[rgb(168,168,168)]">
+              <div className="text-xs  text-secondary">
                 <p>
                   When your account is public, your profile and posts can be
                   seen by anyone, on or off Instagram, even if they don&apos;t

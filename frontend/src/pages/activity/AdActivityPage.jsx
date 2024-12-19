@@ -10,7 +10,7 @@ export default function AdActivityPage() {
         See the ads you&apos;ve recently interacted with and learn more about
         the brands behind them.
       </p>
-      <div className="border border-[rgb(54,54,54)] p-4 gap-4 flex items-center">
+      <div className="border  p-4 gap-4 flex items-center">
         <MobileAppIcon className="min-w-6" />
         <p className="text-sm">
           Use the mobile app for the full ad activity experience.

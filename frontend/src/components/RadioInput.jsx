@@ -1,15 +1,7 @@
-import { useState } from "react";
 import { cn } from "utils/cn";
+import { useState } from "react";
 
-export default function RadioInput({
-  id,
-  value,
-  className,
-  theme = "dark",
-  checked = false,
-}) {
-  const checkedBg = theme === "dark" ? "bg-white" : "bg-black";
-
+export default function RadioInput({ id, value, className, checked = false }) {
   const [isChecked, setIsChecked] = useState(checked);
 
   const handleChecked = () => setIsChecked(!isChecked);
@@ -18,8 +10,7 @@ export default function RadioInput({
     <label
       htmlFor={id}
       className={cn(
-        theme === "dark" ? "border-white" : "border-black",
-        "relative inline-block border rounded-full size-6 cursor-pointer",
+        "relative border-primary inline-block border rounded-full size-6 cursor-pointer",
         className
       )}
     >
@@ -37,7 +28,7 @@ export default function RadioInput({
         <div
           className={cn(
             "size-full rounded-full",
-            isChecked ? checkedBg : "bg-transparent"
+            isChecked ? "bg-secondary" : "bg-transparent"
           )}
         />
       </div>

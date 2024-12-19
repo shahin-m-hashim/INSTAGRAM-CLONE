@@ -34,14 +34,10 @@ export default function AccountsList({
                 )}
               </div>
 
-              <span className="text-sm text-[rgb(168,168,168)]">
-                {user.fullName}
-              </span>
+              <span className="text-sm  text-secondary">{user.fullName}</span>
 
               {type !== "following" && type !== "followers" && (
-                <span className="text-xs text-[rgb(168,168,168)]">
-                  {user.tag}
-                </span>
+                <span className="text-xs  text-secondary">{user.tag}</span>
               )}
             </div>
           </div>
@@ -56,7 +52,7 @@ export default function AccountsList({
             ) : type === "notifications" ? (
               <Button className="h-8 px-6">Follow</Button>
             ) : (
-              <a className="text-xs text-[rgb(0,149,246)] hover:text-white font-semibold">
+              <a className="text-xs text-link hover:text-link-hover hover:text-white font-semibold">
                 Follow
               </a>
             )}

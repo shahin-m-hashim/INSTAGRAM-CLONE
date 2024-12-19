@@ -26,7 +26,7 @@ export default function HomePage() {
                 <div className="flex flex-col gap-4">
                   <div className="flex items-center justify-between text-sm font-semibold">
                     <h1>Suggestions for you</h1>
-                    <a className="text-[rgb(0,149,246)]">See all</a>
+                    <a className="text-link">See all</a>
                   </div>
                   <SuggestionCards />
                 </div>
@@ -52,13 +52,15 @@ export default function HomePage() {
                   <span>username</span>
                 </div>
                 <div className="text-sm">
-                  <a className="text-[rgb(0,149,246)] font-semibold">Switch</a>
+                  <a className="text-link hover:text-link-hover font-semibold">
+                    Switch
+                  </a>
                 </div>
               </div>
 
               <div className="m-5 text-sm">
                 <div className="flex items-center justify-between mb-4 font-semibold">
-                  <h1 className="text-[rgb(168,168,168)]">Suggested for you</h1>
+                  <h1 className=" text-secondary">Suggested for you</h1>
                   <a>See all</a>
                 </div>
                 <AccountsList limit={5} />

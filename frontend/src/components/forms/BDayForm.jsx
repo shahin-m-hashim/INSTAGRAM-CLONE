@@ -30,7 +30,7 @@ export default function BDayForm() {
   return (
     <form
       onSubmit={handleSubmit}
-      className="flex flex-col w-full text-[rgb(168,168,168)]"
+      className="flex flex-col w-full text-secondary"
     >
       <DateField
         date={date}
@@ -45,11 +45,7 @@ export default function BDayForm() {
       </p>
 
       <div className="md:px-5">
-        <Button
-          type="submit"
-          disabled={!isValid}
-          className="text-[rgb(255,255,255)] mb-3 w-full"
-        >
+        <Button type="submit" disabled={!isValid} className="w-full mb-3">
           Next
         </Button>
       </div>

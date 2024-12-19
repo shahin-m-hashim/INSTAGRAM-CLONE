@@ -1,10 +1,8 @@
-import { cn } from "utils/cn";
-
 export default function RoundedSavedIcon({ className = "" }) {
   return (
     <svg
       aria-label="Save"
-      className={cn("text-white", className)}
+      className={className}
       fill="currentColor"
       height={62}
       role="img"

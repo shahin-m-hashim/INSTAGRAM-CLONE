@@ -1,10 +1,8 @@
-import { cn } from "utils/cn";
-
-export default function GrowthToolsIcon({ className }) {
+export default function GrowthToolsIcon({ className = "" }) {
   return (
     <svg
       aria-label="Insights icon"
-      className={cn("text-white", className)}
+      className={className}
       fill="currentColor"
       height={24}
       role="img"

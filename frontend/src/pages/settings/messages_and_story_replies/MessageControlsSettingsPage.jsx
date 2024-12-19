@@ -8,7 +8,7 @@ export default function MessageControlsSettingsPage() {
         <NavigateBackBtn />
         <h1 className="text-xl font-bold">Message controls</h1>
       </div>
-      <p className="text-xs text-[rgb(168,168,168)] md:w-9/12">
+      <p className="text-xs  text-secondary md:w-9/12">
         People you follow or have chatted with before can always message you
         unless you block them. When anyone else sends you a message, you can
         receive it as a message request that you can accept or delete.
@@ -19,7 +19,7 @@ export default function MessageControlsSettingsPage() {
 
       <div className="flex flex-col gap-2">
         <h1>Your followers on Instagram</h1>
-        <p className="text-xs text-[rgb(168,168,168)] ">
+        <p className="text-xs  text-secondary ">
           Message requests from people who follow you on Instagram will be
           delivered to your Message requests folder unless you choose not to
           receive them.
@@ -36,7 +36,7 @@ export default function MessageControlsSettingsPage() {
 
       <div className="flex flex-col gap-2">
         <h1>Others on Instagram</h1>
-        <p className="text-xs text-[rgb(168,168,168)]">
+        <p className="text-xs  text-secondary">
           Message requests from other accounts on Instagram will be delivered to
           your Message requests folder unless you choose not to receive them.
         </p>

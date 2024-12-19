@@ -1,8 +1,7 @@
-import { cn } from "utils/cn";
-export default function MessagesIcon({ className }) {
+export default function MessagesIcon({ className = "" }) {
   return (
     <svg
-      className={cn("text-white", className)}
+      className={className}
       fill="currentColor"
       height="96"
       role="img"

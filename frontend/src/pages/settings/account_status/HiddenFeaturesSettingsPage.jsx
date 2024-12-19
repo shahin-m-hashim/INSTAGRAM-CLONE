@@ -20,7 +20,9 @@ export default function HiddenFeaturesSettingsPage() {
             <p className="font-bold">You can use all the features right now.</p>
             <p className="text-[rgb(138,138,138)]">
               Thank you for following our{" "}
-              <span className="text-[rgb(0,149,246)]">Community Standards</span>
+              <span className="text-link hover:text-link-hover">
+                Community Standards
+              </span>
               .
             </p>
           </div>

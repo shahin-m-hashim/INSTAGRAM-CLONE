@@ -213,8 +213,8 @@ export default function TopNavbar() {
   const url = useLocation().pathname.split("/");
 
   return (
-    <nav className="block md:hidden absolute inset-x-0 top-0 h-[60px] pointer-events-auto overflow-x-auto">
-      <div className="size-full flex gap-2 justify-between items-center px-4 bg-black text-white border-b border-b-[rgb(38,38,38,0.7)]">
+    <nav className="bg-primary text-primary block md:hidden absolute inset-x-0 top-0 h-[60px] pointer-events-auto overflow-x-auto">
+      <div className="flex items-center justify-between gap-2 px-4 border-b size-full ">
         {url[1] === "settings" ? (
           <Settings page={url.slice(2)} />
         ) : url[1] === "direct" ? (

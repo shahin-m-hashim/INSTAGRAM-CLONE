@@ -1,12 +1,11 @@
-import { cn } from "utils/cn";
-export default function CreateIcon({ className }) {
+export default function CreateIcon({ className = "" }) {
   return (
     <svg
       role="img"
       width={24}
       height={24}
       viewBox="0 0 24 24"
-      className={cn("text-white", className)}
+      className={className}
       aria-label="New post"
       xmlns="http://www.w3.org/2000/svg"
     >

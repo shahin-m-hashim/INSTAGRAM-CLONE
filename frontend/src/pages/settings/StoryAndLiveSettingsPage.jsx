@@ -10,7 +10,7 @@ export default function StoryAndLiveSettingsPage() {
           <h1 className="text-xl font-bold">Hide story and live from</h1>
         </div>
 
-        <p className="text-sm text-[rgb(168,168,168)]">
+        <p className="text-sm  text-secondary">
           Hide all photos and videos you add to your story from specific people.
           This also hides your live videos.
         </p>

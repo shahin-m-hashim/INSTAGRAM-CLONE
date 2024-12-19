@@ -14,7 +14,7 @@ const InputField = memo(function InputField({
       <label htmlFor={name} className="relative w-full">
         <span
           className={cn(
-            "pointer-events-none absolute inline-block left-2 transform text-[rgb(168,168,168)] transition-all duration-150 ease-in-out",
+            "pointer-events-none absolute inline-block left-2 transform transition-all duration-150 ease-in-out",
             field.value
               ? "text-[0.6rem] top-[2px]"
               : "text-xs -translate-y-1/2 top-1/2"
@@ -36,8 +36,8 @@ const InputField = memo(function InputField({
           }
           className={cn(
             field.value ? "pt-2" : "py-2",
-            field.error ? "border-red-600" : "border-[rgb(85,85,85)]",
-            "text-xs h-10 px-2 w-full rounded-sm focus:outline-none flex-1 text-[rgb(245,245,245)] border bg-[rgb(18,18,18)]"
+            field.error ? "border-red-600" : "border-primary",
+            "text-xs h-10 px-2 bg-transparent w-full rounded-sm focus:outline-none flex-1 border"
           )}
         />
 

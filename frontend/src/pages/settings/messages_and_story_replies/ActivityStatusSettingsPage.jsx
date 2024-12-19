@@ -14,13 +14,13 @@ export default function ActivityStatusSettingsPage() {
         <ToggleSwitch checked={true} />
       </div>
 
-      <p className="text-xs text-[rgb(168,168,168)]">
+      <p className="text-xs  text-secondary">
         Allow accounts you follow and anyone you message to see when you were
         last active or are currently active on Instagram. When this is turned
         off, you won&apos;t be able to see the activity status of other
         accounts. <span>Learn more</span>
       </p>
-      <p className="text-xs text-[rgb(168,168,168)]">
+      <p className="text-xs  text-secondary">
         You can continue to use our services if active status is off.
       </p>
     </>

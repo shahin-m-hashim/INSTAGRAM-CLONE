@@ -16,7 +16,7 @@ export default function ProtectedLayout() {
   const { activeWidget, isPending } = useContext(GlobalContext);
 
   return isAuthenticated ? (
-    <section className="min-h-screen min-w-[320px] bg-black text-white scrollbar-dark pointer-events-none">
+    <section className="bg-primary text-primary min-h-screen min-w-[320px] pointer-events-none">
       <div className="fixed bg-transparent inset-0 z-50 h-screen min-w-[320px] overflow-hidden">
         <MainSidebar />
         <TopNavbar />

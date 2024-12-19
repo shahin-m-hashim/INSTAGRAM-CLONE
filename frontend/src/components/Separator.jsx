@@ -8,22 +8,18 @@ export default function Separator({ straight = false, className }) {
         "flex items-center justify-center w-full"
       )}
     >
-      <div
-        className={cn("flex-1 flex-grow bg-[rgb(38,38,38)] h-[2px]", className)}
-      />
+      <div className={cn("flex-1 flex-grow bg-separator h-[2px]", className)} />
 
       <span
         className={cn(
           straight ? "hidden" : "block",
-          "text-xs text-[rgb(168,168,168)] font-semibold"
+          "text-xs text-secondary font-semibold"
         )}
       >
         OR
       </span>
 
-      <div
-        className={cn("flex-1 flex-grow bg-[rgb(38,38,38)] h-[2px]", className)}
-      />
+      <div className={cn("flex-1 flex-grow bg-separator h-[2px]", className)} />
     </div>
   );
 }

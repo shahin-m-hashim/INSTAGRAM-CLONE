@@ -12,7 +12,7 @@ export default function ActivityContent() {
 
   return (
     <>
-      <div className="px-4 py-7 md:py-4 md:px-6 md:h-14 md:border-b md:border-b-[rgb(54,54,54)]">
+      <div className="px-4 py-7 md:py-4 md:px-6 md:h-14 md:border-b md:border-b-tertiary">
         <h1 className="hidden font-bold md:block">Your Activity</h1>
         <div className="block text-center md:hidden">
           <h1 className="mb-4 text-2xl font-bold">
@@ -40,7 +40,7 @@ export default function ActivityContent() {
             >
               Interactions
             </h1>
-            <p className="text-xs text-[rgb(168,168,168)]">
+            <p className="text-xs  text-secondary">
               Review and delete likes, comments and your other interactions.
             </p>
           </div>
@@ -60,7 +60,7 @@ export default function ActivityContent() {
             >
               Photos and videos
             </h1>
-            <p className="text-xs text-[rgb(168,168,168)]">
+            <p className="text-xs  text-secondary">
               View, archive or delete photos and videos you&apos;ve shared.
             </p>
           </div>
@@ -80,7 +80,7 @@ export default function ActivityContent() {
             >
               Account history
             </h1>
-            <p className="text-xs text-[rgb(168,168,168)]">
+            <p className="text-xs  text-secondary">
               Review changes you&apos;ve made to your account since you created
               it.
             </p>
@@ -101,7 +101,7 @@ export default function ActivityContent() {
             >
               Ad activity
             </h1>
-            <p className="text-xs text-[rgb(168,168,168)]">
+            <p className="text-xs  text-secondary">
               See which ads you&apos;ve interacted with recently.
             </p>
           </div>
@@ -123,7 +123,7 @@ export default function ActivityContent() {
             >
               Download your information
             </h1>
-            <p className="text-xs text-[rgb(168,168,168)]">
+            <p className="text-xs  text-secondary">
               Download a copy of the information you&apos;ve shared with
               instagram.
             </p>

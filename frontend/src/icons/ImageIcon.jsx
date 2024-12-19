@@ -1,10 +1,8 @@
-import { cn } from "utils/cn";
-
-export default function ImageIcon({ className }) {
+export default function ImageIcon({ className = "" }) {
   return (
     <svg
       aria-label="Photo icon."
-      className={cn("text-white", className)}
+      className={className}
       fill="currentColor"
       height={24}
       role="img"

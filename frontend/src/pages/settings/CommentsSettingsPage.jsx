@@ -37,7 +37,7 @@ export default function CommentsSettingsPage() {
           <div className="flex justify-between">
             <div className="flex flex-col gap-2">
               <span>Allow GIF comments</span>
-              <p className="text-xs text-[rgb(168,168,168)]">
+              <p className="text-xs  text-secondary">
                 People will be able to comment GIFs on your posts and reels.
               </p>
             </div>

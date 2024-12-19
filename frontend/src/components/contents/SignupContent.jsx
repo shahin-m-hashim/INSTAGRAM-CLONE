@@ -8,7 +8,7 @@ export default function SignupContent() {
     <>
       <InstagramTextIcon className="text-white scale-[1.5]" />
 
-      <p className="text-[rgb(168,168,168)] font-semibold text-base">
+      <p className=" text-secondary font-semibold text-base">
         Sign up to see photos and videos from your friends.
       </p>
 

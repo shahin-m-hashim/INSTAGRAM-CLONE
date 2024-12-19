@@ -1,13 +1,12 @@
-import { cn } from "utils/cn";
 export default function SelectedIcon({ className }) {
   return (
     <svg
       role="img"
       aria-hidden="true"
       viewBox="0 0 512 512"
+      className={className}
       data-icon="check-circle"
       xmlns="http://www.w3.org/2000/svg"
-      className={cn("text-white size-6", className)}
     >
       <path
         fill="currentColor"

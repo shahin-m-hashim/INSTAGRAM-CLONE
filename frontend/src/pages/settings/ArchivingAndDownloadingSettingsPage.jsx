@@ -15,7 +15,7 @@ export default function ArchivingAndDownloadingSettingsPage() {
           <div className="flex flex-col gap-2">
             <h1>Save story to archive</h1>
             <div className="flex items-center justify-between">
-              <p className="text-xs text-[rgb(168,168,168)]">
+              <p className="text-xs  text-secondary">
                 Automatically save photos and videos to your archive so you
                 don&apos;t have to save them to your phone. Only you can see
                 your archive.

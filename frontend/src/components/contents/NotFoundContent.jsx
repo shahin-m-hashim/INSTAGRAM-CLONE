@@ -7,11 +7,12 @@ export default function NotFoundContent() {
         Sorry, this page isn&apos;t available.
       </h1>
       <p>
-        <span>
+        <span className="text-secondary">
           The link you followed may be broken, or the page may have been
           removed.&nbsp;
         </span>
-        <Link to="/" className="text-[rgb(0,149,246)] hover:text-white">
+
+        <Link to="/" className="text-tertiary hover:text-secondary">
           Go back to Instagram.
         </Link>
       </p>

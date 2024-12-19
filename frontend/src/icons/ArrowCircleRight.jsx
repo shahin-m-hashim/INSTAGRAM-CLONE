@@ -1,9 +1,7 @@
-import { cn } from "utils/cn";
-
-export default function ArrowCircleRight({ className }) {
+export default function ArrowCircleRight({ className = "" }) {
   return (
     <svg
-      className={cn("text-white", className)}
+      className={className}
       viewBox="0 0 512 512"
       xmlns="http://www.w3.org/2000/svg"
     >

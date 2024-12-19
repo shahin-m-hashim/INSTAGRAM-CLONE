@@ -1,9 +1,8 @@
-import { cn } from "utils/cn";
-export default function PeoplesIcon({ className }) {
+export default function PeoplesIcon({ className = "" }) {
   return (
     <svg
       aria-label="Users pano icon"
-      className={cn("text-white", className)}
+      className={className}
       fill="currentColor"
       height={14}
       role="img"

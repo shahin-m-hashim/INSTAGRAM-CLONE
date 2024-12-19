@@ -1,8 +1,8 @@
 import useForm from "hooks/useForm";
+import { Link } from "react-router-dom";
 import Separator from "components/Separator";
 import Button from "components/wrappers/Button";
 import InputField from "components/fields/InputField";
-import { Link } from "react-router-dom";
 
 const initialFields = {
   identifier: {
@@ -57,7 +57,7 @@ export default function LoginForm() {
       <div className="flex flex-col items-center justify-center gap-4 mt-6 text-sm">
         <div className="flex gap-2">
           <img src="icons/facebook_round_blue.svg" alt="facebook" />
-          <a className=" text-[rgb(0,149,246)] hover:text-white font-semibold">
+          <a className="font-semibold text-link hover:text-link-hover">
             Log in with Facebook
           </a>
         </div>

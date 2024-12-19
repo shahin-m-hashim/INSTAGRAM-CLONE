@@ -9,19 +9,17 @@ export default function CloseFriendsSettingsPage() {
           <h1 className="text-xl font-bold">Close Friends</h1>
         </div>
 
-        <p className="text-sm text-[rgb(168,168,168)]">
+        <p className="text-sm  text-secondary">
           We don&apos;t send notifications when you edit your close friends
           list.&nbsp;
-          <a className="text-[rgb(0,149,246)] hover:text-white">
+          <a className="text-link hover:text-link-hover hover:text-white">
             How it works.
           </a>
         </p>
         <div className="h-10">
           <SearchField />
         </div>
-        <span className="font-bold text-[rgb(168,168,168)]">
-          No users found.
-        </span>
+        <span className="font-bold  text-secondary">No users found.</span>
       </div>
 
       <div className="hidden w-full px-5 my-5 md:flex md:my-10">

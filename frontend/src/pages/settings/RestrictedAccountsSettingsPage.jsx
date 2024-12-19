@@ -8,14 +8,14 @@ export default function RestrictedAccountsSettingsPage() {
           <h1 className="text-xl font-bold">Restricted accounts</h1>
         </div>
 
-        <p className="text-[rgb(168,168,168)]">
+        <p className=" text-secondary">
           Protect yourself from unwanted interactions without having to block or
           unfollow people you know. You can restrict them anytime from their
           profiles. <a className="text-white">Learn how it works</a>
         </p>
 
         <div className="flex flex-col items-center justify-center flex-1 w-full">
-          <span className="text-sm text-[rgb(168,168,168)]">
+          <span className="text-sm  text-secondary">
             You haven&apos;t restricted anyone.
           </span>
         </div>

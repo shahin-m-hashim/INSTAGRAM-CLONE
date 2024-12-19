@@ -5,7 +5,7 @@ export default function ActivityInteractionCommentsPage() {
       <h1 className="text-2xl font-bold">
         You haven&apos;t commented on anything
       </h1>
-      <p className="text-sm text-[rgb(168,168,168)]">
+      <p className="text-sm  text-secondary">
         When you comment on a photo or video, it&apos;ll show up here.
       </p>
     </div>

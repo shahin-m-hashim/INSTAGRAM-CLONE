@@ -5,7 +5,7 @@ export default function ActivityHighlightsPage() {
       <h1 className="text-2xl font-bold">
         You haven&apos;t made any highlights
       </h1>
-      <p className="text-sm text-[rgb(168,168,168)]">
+      <p className="text-sm  text-secondary">
         When you create a highlight, it&apos;ll show up here.
       </p>
     </div>

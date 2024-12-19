@@ -1,5 +1,4 @@
-import { cn } from "utils/cn";
-export default function MoreIcon({ className }) {
+export default function MoreIcon({ className = "" }) {
   return (
     <svg
       role="img"
@@ -7,7 +6,7 @@ export default function MoreIcon({ className }) {
       height="24"
       fill="currentColor"
       viewBox="0 0 24 24"
-      className={cn("text-white", className)}
+      className={className}
       aria-label="More options"
       xmlns="http://www.w3.org/2000/svg"
     >

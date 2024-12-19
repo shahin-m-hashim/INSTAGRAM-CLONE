@@ -1,10 +1,8 @@
-import { cn } from "utils/cn";
-
-export default function WebsitePermissionsIcon({ className }) {
+export default function WebsitePermissionsIcon({ className = "" }) {
   return (
     <svg
       aria-label
-      className={cn("text-white", className)}
+      className={className}
       fill="currentColor"
       height={24}
       role="img"

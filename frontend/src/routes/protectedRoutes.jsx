@@ -1,8 +1,7 @@
+import { lazy } from "react";
 import wait from "utils/wait";
-import { lazy, Suspense } from "react";
 import ErrorPage from "pages/ErrorPage";
 import SwitchAccountsPage from "pages/SwitchAccountsPage";
-import SplashScreen from "components/wrappers/SplashScreen";
 import settingsRoutes from "routes/protected/settingsRoutes";
 import activityRoutes from "routes/protected/activityRoutes";
 import messengerRoutes from "routes/protected/messengerRoutes";
@@ -16,11 +15,7 @@ const ProfilePage = lazy(() =>
 
 const protectedRoutes = {
   path: "/",
-  element: (
-    <Suspense fallback={<SplashScreen />}>
-      <ProtectedLayout />
-    </Suspense>
-  ),
+  element: <ProtectedLayout />,
   errorElement: <ErrorPage />,
   children: [
     {

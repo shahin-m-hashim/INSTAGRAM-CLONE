@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
-import DropDownArrowIcon from "icons/DropDownArrowIcon";
 import BackArrowIcon from "icons/BackArrowIcon";
+import DropDownArrowIcon from "icons/DropDownArrowIcon";
 
 export default function NavigateBackBtn({ type = "normal" }) {
   const navigate = useNavigate();
