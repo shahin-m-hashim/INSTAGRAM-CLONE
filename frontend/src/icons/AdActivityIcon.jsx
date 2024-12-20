@@ -1,8 +1,10 @@
+import { cn } from "utils/cn";
+
 export default function AdActivityIcon({ className = "" }) {
   return (
     <svg
       aria-label="Ad Activity, See which ads you've interacted with recently."
-      className={className}
+      className={cn("text-primary", className)}
       fill="currentColor"
       height="24"
       role="img"

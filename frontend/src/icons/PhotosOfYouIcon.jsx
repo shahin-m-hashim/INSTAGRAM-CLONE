@@ -1,8 +1,10 @@
+import { cn } from "utils/cn";
+
 export default function PhotosOfYouIcon({ className = "" }) {
   return (
     <svg
       aria-label="Photos of you"
-      className={className}
+      className={cn("text-primary", className)}
       fill="currentColor"
       height={62}
       role="img"

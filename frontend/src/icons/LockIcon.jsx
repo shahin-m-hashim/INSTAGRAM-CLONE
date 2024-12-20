@@ -1,3 +1,5 @@
+import { cn } from "utils/cn";
+
 export default function LockIcon({ className = "" }) {
   return (
     <svg
@@ -5,7 +7,7 @@ export default function LockIcon({ className = "" }) {
       width={96}
       height={96}
       viewBox="0 0 96 96"
-      className={className}
+      className={cn("text-primary", className)}
       aria-label="Trouble logging in?"
       xmlns="http://www.w3.org/2000/svg"
     >

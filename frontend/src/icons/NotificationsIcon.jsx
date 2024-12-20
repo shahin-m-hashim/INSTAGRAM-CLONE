@@ -1,3 +1,5 @@
+import { cn } from "utils/cn";
+
 export default function NotificationsIcon({ className, isActive = false }) {
   const hasNotifications = false;
 
@@ -10,7 +12,7 @@ export default function NotificationsIcon({ className, isActive = false }) {
         fill="currentColor"
         viewBox="0 0 24 24"
         aria-label="Notifications"
-        className={className}
+        className={cn("text-primary", className)}
       >
         <title>Notifications</title>
         {isActive ? (

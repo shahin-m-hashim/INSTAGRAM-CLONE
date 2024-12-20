@@ -1,3 +1,5 @@
+import { cn } from "utils/cn";
+
 export default function MessengerIcon({ isActive = false, className }) {
   return (
     <svg
@@ -7,7 +9,7 @@ export default function MessengerIcon({ isActive = false, className }) {
       fill="currentColor"
       viewBox="0 0 24 24"
       aria-label="Messenger"
-      className={className}
+      className={cn("text-primary", className)}
     >
       <title>Messenger</title>
       {isActive ? (

@@ -1,3 +1,5 @@
+import { cn } from "utils/cn";
+
 export default function SharePhotosIcon({ className = "" }) {
   return (
     <svg
@@ -6,7 +8,7 @@ export default function SharePhotosIcon({ className = "" }) {
       height={56}
       fill="currentColor"
       viewBox="0 0 96 96"
-      className={className}
+      className={cn("text-primary", className)}
       xmlns="http://www.w3.org/2000/svg"
       aria-label="When you share photos, they will appear on your profile."
     >

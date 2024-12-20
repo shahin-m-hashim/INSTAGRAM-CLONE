@@ -1,3 +1,5 @@
+import { cn } from "utils/cn";
+
 export default function HamburgerIcon({ className = "" }) {
   return (
     <svg
@@ -6,7 +8,7 @@ export default function HamburgerIcon({ className = "" }) {
       height={24}
       fill="white"
       viewBox="0 0 24 24"
-      className={className}
+      className={cn("text-primary", className)}
       aria-label="Settings"
       xmlns="http://www.w3.org/2000/svg"
     >

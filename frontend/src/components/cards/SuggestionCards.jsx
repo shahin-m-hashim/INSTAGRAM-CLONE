@@ -33,7 +33,7 @@ export default function SuggestionCards() {
             </div>
 
             <div className="py-2 text-center border-t border-t-primary">
-              <a className="font-semibold text-link hover:text-link-hover">
+              <a className="font-semibold text-link-primary hover:text-link-primary-hover">
                 Follow
               </a>
             </div>

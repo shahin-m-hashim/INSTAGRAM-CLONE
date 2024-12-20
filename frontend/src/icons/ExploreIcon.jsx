@@ -1,8 +1,10 @@
+import { cn } from "utils/cn";
+
 export default function ExploreIcon({ isActive = false, className }) {
   return (
     <svg
       aria-label="Explore"
-      className={className}
+      className={cn("text-primary", className)}
       fill="currentColor"
       height="24"
       role="img"

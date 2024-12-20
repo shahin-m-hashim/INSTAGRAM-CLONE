@@ -6,7 +6,7 @@ export default function LoginCard() {
       <p>Have an account?</p>
       <Link
         to="/accounts/login"
-        className="font-semibold text-link hover:text-link-hover"
+        className="font-semibold text-link-primary hover:text-link-primary-hover"
       >
         Log in
       </Link>

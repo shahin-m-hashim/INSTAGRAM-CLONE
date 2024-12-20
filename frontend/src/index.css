@@ -18,35 +18,62 @@ html {
 }
 
 .theme-light {
-  --text: rgb(38, 38, 38);
-  --bg: rgb(255, 255, 255);
+  /* background colors */
+  --bg-s: rgb(0, 0, 0);
+  --bg-p: rgb(255, 255, 255);
+  --bg-t: rgb(235, 235, 235);
   --pill-on: rgb(50, 50, 50);
-  --field: rgb(240, 240, 240);
-  --widget: rgb(235, 235, 235);
-  --button: rgb(230, 230, 230);
-  --border: rgb(200, 200, 200);
+  --widget: rgb(242, 242, 242);
   --pill-off: rgb(190, 190, 190);
-  --separator: rgb(200, 200, 200);
-  --bg-tertiary: rgb(180, 180, 180);
+  --button: rgb(215, 215, 215, 0.5);
+  --separator: rgb(210, 210, 210, 0.5);
+
+  /* text colors */
+  --text-p: rgb(0, 0, 0);
+  --text-s: rgb(255, 255, 255);
+  --text-t: rgb(115, 115, 115);
+  --text-link-s: rgb(0, 55, 107);
+  --text-link-s-hover: rgb(0, 75, 145);
+
+  /* border colors */
+  --border-p: rgb(210, 210, 210);
+  --border-s: rgb(255, 255, 255);
+
+  /* hover colors */
   --widget-hover: rgb(220, 220, 220);
   --button-hover: rgb(210, 210, 210);
   --sidebar-hover: rgb(235, 235, 235);
+
+  scrollbar-color: rgb(150, 150, 150) rgb(245, 245, 245);
 }
 
 .theme-dark {
-  --bg: rgb(0, 0, 0);
-  --field: rgb(54, 54, 54);
+  /* background colors */
+  --bg-p: rgb(0, 0, 0);
+  --bg-t: rgb(18, 18, 18);
   --button: rgb(85, 85, 85);
   --widget: rgb(38, 38, 38);
-  --border: rgb(54, 54, 54);
-  --bg-tertiary: rgb(18, 18, 18);
-  --text: rgb(255, 255, 255);
+  --bg-s: rgb(255, 255, 255);
   --pill-off: rgb(50, 53, 57);
   --pill-on: rgb(245, 245, 245);
+  --separator: rgb(85, 85, 85, 0.5);
+
+  /* text colors */
+  --text-s: rgb(0, 0, 0);
+  --text-p: rgb(245, 245, 245);
+  --text-t: rgb(168, 168, 168);
+  --link-s: rgb(224, 241, 255);
+  --link-s-hover: rgb(255, 255, 255);
+
+  /* border colors */
+  --border-p: rgb(54, 54, 54);
+  --border-s: rgb(255, 255, 255);
+
+  /* hover colors */
   --button-hover: rgb(54, 54, 54);
   --widget-hover: rgb(60, 60, 60);
   --sidebar-hover: rgb(26, 26, 26);
-  --separator: rgb(85, 85, 85, 0.5);
+
   scrollbar-color: rgb(100, 100, 100) rgb(45, 45, 45);
 }
 
@@ -71,7 +98,7 @@ input:-webkit-autofill:focus {
   display: none; /* Chrome, Safari, and Opera */
 }
 
-.active-story-gradient {
+.active-story {
   background-image: conic-gradient(
     #ffd600,
     #ff7a00,
@@ -80,6 +107,10 @@ input:-webkit-autofill:focus {
     #7638fa,
     #ffd600
   );
+}
+
+.inactive-story {
+  background-color: rgb(135, 135, 135);
 }
 
 .navigation-transition {

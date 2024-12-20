@@ -28,7 +28,7 @@ export default function ReportAProblemWidget() {
 
           <form className="flex flex-col flex-1 gap-4 p-4">
             <textarea
-              className="w-full h-full p-2 bg-transparent border-2 rounded-lg border-primary focus:outline-none placeholder:text-secondary"
+              className="w-full h-full p-2 bg-transparent border-2 rounded-lg border-primary focus:outline-none placeholder:text-tertiary"
               placeholder="Please include as much info as possible..."
             ></textarea>
             <div className="flex justify-between w-full">
@@ -50,7 +50,7 @@ export default function ReportAProblemWidget() {
                 onChange={handleFileChange}
               />
             </div>
-            <p className="text-xs text-secondary">
+            <p className="text-xs text-tertiary">
               Your Instagram username and browser information will be
               automatically included in your report.
             </p>

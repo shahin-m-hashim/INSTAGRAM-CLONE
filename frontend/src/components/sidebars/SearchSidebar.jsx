@@ -13,7 +13,7 @@ export default function SearchSidebar() {
         <div className="flex-1 p-4">
           <h2>Recent</h2>
           <div className="flex items-center justify-center h-full">
-            <p className="text-sm text-secondary">No recent searches.</p>
+            <p className="text-sm text-tertiary">No recent searches.</p>
           </div>
         </div>
       </div>

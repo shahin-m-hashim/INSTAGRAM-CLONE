@@ -1,3 +1,5 @@
+import { cn } from "utils/cn";
+
 export default function HomeIcon({ isActive = false, className = "" }) {
   return (
     <svg
@@ -7,7 +9,7 @@ export default function HomeIcon({ isActive = false, className = "" }) {
       role="img"
       viewBox="0 0 24 24"
       width={24}
-      className={className}
+      className={cn("text-primary", className)}
       xmlns="http://www.w3.org/2000/svg"
     >
       <title>Home</title>

@@ -7,59 +7,33 @@ export default function CheckboxInput({
   className,
   value = "",
   checked = false,
-  type = "rounded",
+  isRounded = true,
 }) {
   const [isChecked, setIsChecked] = useState(checked);
 
   const handleChange = () => setIsChecked(!isChecked);
 
   return (
-    <>
-      {type === "rounded" ? (
-        <>
-          <label
-            htmlFor={id}
-            className={cn(
-              "inline-block border size-6 cursor-pointer rounded-full",
-              className
-            )}
-          >
-            <input
-              id={id}
-              name={id}
-              value={value}
-              type="checkbox"
-              checked={isChecked}
-              className="sr-only"
-              onChange={handleChange}
-            />
-
-            {isChecked && <SelectedIcon />}
-          </label>
-        </>
-      ) : (
-        <>
-          <label
-            htmlFor={id}
-            className={cn(
-              "relative inline-block border size-6 cursor-pointer rounded-sm",
-              className
-            )}
-          >
-            <input
-              id={id}
-              name={id}
-              value={value}
-              type="checkbox"
-              checked={isChecked}
-              className="sr-only"
-              onChange={handleChange}
-            />
-
-            {isChecked && <SelectedIcon className="size-full p-[2px]" />}
-          </label>
-        </>
+    <label
+      htmlFor={id}
+      className={cn(
+        "inline-block size-6 cursor-pointer",
+        isChecked ? "border-none" : "border-2 border-primary",
+        isRounded ? "rounded-full" : "rounded-sm",
+        className
       )}
-    </>
+    >
+      <input
+        id={id}
+        name={id}
+        value={value}
+        type="checkbox"
+        checked={isChecked}
+        className="sr-only"
+        onChange={handleChange}
+      />
+
+      {isChecked && <SelectedIcon isRounded={isRounded} />}
+    </label>
   );
 }

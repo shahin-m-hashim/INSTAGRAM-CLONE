@@ -1,3 +1,5 @@
+import { cn } from "utils/cn";
+
 export default function InstagramTextIcon({ className }) {
   return (
     <svg
@@ -5,7 +7,7 @@ export default function InstagramTextIcon({ className }) {
       width={103}
       height={29}
       viewBox="32 4 113 32"
-      className={className}
+      className={cn("text-primary", className)}
       aria-label="Instagram"
       xmlns="http://www.w3.org/2000/svg"
     >

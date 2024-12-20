@@ -3,9 +3,9 @@ import Button from "components/wrappers/Button";
 import InputField from "components/fields/InputField";
 
 import {
-  validateIdentifier,
   validatePassword,
   validateUsername,
+  validateIdentifier,
 } from "utils/validator";
 
 export default function SignUpForm() {
@@ -52,18 +52,26 @@ export default function SignUpForm() {
       </div>
       <div className="flex flex-col gap-4 text-xs">
         <p>
-          <span className="text-secondary">
+          <span className="text-tertiary">
             People who use our service may have uploaded your contact
             information to Instagram.
           </span>{" "}
-          <a className="text-link hover:text-link-hover">Learn More</a>
+          <a className="text-link-secondary hover:text-link-secondary-hover hover:underline">
+            Learn More
+          </a>
         </p>
-        <p className="text-secondary">
+        <p className="text-tertiary">
           <span>By signing up, you agree to our</span>{" "}
-          <a className="text-link hover:text-link-hover">Terms , </a>{" "}
-          <a className="text-link hover:text-link-hover">Privacy Policy</a>{" "}
+          <a className="text-link-secondary hover:text-link-secondary-hover hover:underline">
+            Terms ,{" "}
+          </a>{" "}
+          <a className="text-link-secondary hover:text-link-secondary-hover hover:underline">
+            Privacy Policy
+          </a>{" "}
           <span>and</span>{" "}
-          <a className="text-link hover:text-link-hover">Cookies Policy</a>
+          <a className="text-link-secondary hover:text-link-secondary-hover hover:underline">
+            Cookies Policy
+          </a>
           <span>.</span>
         </p>
         <Button

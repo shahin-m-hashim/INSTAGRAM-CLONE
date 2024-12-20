@@ -1,12 +1,12 @@
 import ErrorPage from "pages/ErrorPage";
 import NotFoundPage from "pages/NotFoundPage";
 import publicRoutes from "routes/publicRoutes";
-import protectedRoutes from "routes/protectedRoutes";
+import privateRoutes from "routes/privateRoutes";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 
 const router = createBrowserRouter([
   publicRoutes,
-  protectedRoutes,
+  privateRoutes,
   {
     path: "*",
     element: <NotFoundPage />,

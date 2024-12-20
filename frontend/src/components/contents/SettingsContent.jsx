@@ -32,12 +32,12 @@ export default function SettingsContent() {
 
   return (
     <>
-      <div className="flex flex-col gap-3 p-5 mx-5 rounded-xl bg-widget">
+      <div className="flex flex-col gap-3 p-5 mx-5 shadow-sm rounded-xl bg-widget">
         <MetaIcon />
 
         <div className="flex flex-col gap-2">
           <h2 className="font-semibold">Accounts Center</h2>
-          <p className="text-xs text-secondary">
+          <p className="text-xs text-tertiary">
             Manage your connected experiences and account settings across Meta
             technologies.
           </p>
@@ -46,24 +46,22 @@ export default function SettingsContent() {
         <div className="flex flex-col gap-3">
           <div className="flex gap-3">
             <img src="icons/profile.svg" alt="profile" />
-            <span className="text-xs text-secondary">Personal details</span>
+            <span className="text-xs text-tertiary">Personal details</span>
           </div>
 
           <div className="flex gap-3">
             <img src="icons/security.svg" alt="security" />
-            <span className="text-xs text-secondary">
-              Password and security
-            </span>
+            <span className="text-xs text-tertiary">Password and security</span>
           </div>
 
           <div className="flex gap-3">
             <img src="icons/ads.svg" alt="ads" />
-            <span className="text-xs text-secondary">Ad preferences</span>
+            <span className="text-xs text-tertiary">Ad preferences</span>
           </div>
         </div>
 
         <div>
-          <span className="text-xs font-semibold text-link hover:text-link-hover">
+          <span className="text-xs font-semibold text-link-primary hover:text-link-primary-hover">
             See more in Accounts Center
           </span>
         </div>
@@ -71,7 +69,7 @@ export default function SettingsContent() {
 
       <div className="flex flex-col gap-5 py-5 mx-5">
         <div className="flex flex-col gap-3">
-          <h3 className="text-xs font-semibold text-secondary">
+          <h3 className="text-xs font-semibold text-tertiary">
             How you use Instagram
           </h3>
 
@@ -80,7 +78,7 @@ export default function SettingsContent() {
               to="edit_profile"
               className={cn(
                 activeTab === "edit_profile" && "bg-widget",
-                "flex items-center gap-3 p-3 hover:bg-widget-hover rounded-md"
+                "flex items-center gap-3 p-3 hover:bg-sidebar-hover rounded-md"
               )}
             >
               <EditProfileIcon />
@@ -91,10 +89,10 @@ export default function SettingsContent() {
               to="/your_activity"
               className={cn(
                 activeTab === "edit_profile" && "bg-widget",
-                "flex md:hidden items-center gap-3 p-3 hover:bg-widget-hover rounded-md"
+                "flex md:hidden items-center gap-3 p-3 hover:bg-sidebar-hover rounded-md"
               )}
             >
-              <YourActivityIcon />
+              <YourActivityIcon className="size-6" />
               <span className="text-sm">Your Activity</span>
             </TransitionLink>
 
@@ -102,7 +100,7 @@ export default function SettingsContent() {
               to="notifications"
               className={cn(
                 activeTab === "notifications" && "bg-widget",
-                "flex items-center gap-3 p-3 hover:bg-widget-hover rounded-md"
+                "flex items-center gap-3 p-3 hover:bg-sidebar-hover rounded-md"
               )}
             >
               <BellNotificationIcon />
@@ -112,7 +110,7 @@ export default function SettingsContent() {
         </div>
 
         <div className="flex flex-col gap-3">
-          <h3 className="text-xs font-semibold text-secondary">
+          <h3 className="text-xs font-semibold text-tertiary">
             Who can see your content
           </h3>
 
@@ -121,7 +119,7 @@ export default function SettingsContent() {
               to="account_privacy"
               className={cn(
                 activeTab === "account_privacy" && "bg-widget",
-                "flex items-center gap-3 p-3 hover:bg-widget-hover rounded-md"
+                "flex items-center gap-3 p-3 hover:bg-sidebar-hover rounded-md"
               )}
             >
               <PrivacyIcon />
@@ -132,7 +130,7 @@ export default function SettingsContent() {
               to="close_friends"
               className={cn(
                 activeTab === "close_friends" && "bg-widget",
-                "flex items-center gap-3 p-3 hover:bg-widget-hover rounded-md"
+                "flex items-center gap-3 p-3 hover:bg-sidebar-hover rounded-md"
               )}
             >
               <CloseFriendsIcon />
@@ -143,7 +141,7 @@ export default function SettingsContent() {
               to="blocked_accounts"
               className={cn(
                 activeTab === "blocked_accounts" && "bg-widget",
-                "flex items-center gap-3 p-3 hover:bg-widget-hover rounded-md"
+                "flex items-center gap-3 p-3 hover:bg-sidebar-hover rounded-md"
               )}
             >
               <BlockedIcon />
@@ -154,7 +152,7 @@ export default function SettingsContent() {
               to="story_and_live"
               className={cn(
                 activeTab === "story_and_live" && "bg-widget",
-                "flex items-center gap-3 p-3 hover:bg-widget-hover rounded-md"
+                "flex items-center gap-3 p-3 hover:bg-sidebar-hover rounded-md"
               )}
             >
               <HideStoryAndLiveIcon />
@@ -164,7 +162,7 @@ export default function SettingsContent() {
         </div>
 
         <div className="flex flex-col gap-3">
-          <h3 className="text-xs font-semibold text-secondary">
+          <h3 className="text-xs font-semibold text-tertiary">
             How others can interact with you
           </h3>
 
@@ -173,7 +171,7 @@ export default function SettingsContent() {
               to="messages_and_story_replies"
               className={cn(
                 activeTab === "messages_and_story_replies" && "bg-widget",
-                "flex items-center gap-3 p-3 hover:bg-widget-hover rounded-md"
+                "flex items-center gap-3 p-3 hover:bg-sidebar-hover rounded-md"
               )}
             >
               <MessengerIcon />
@@ -184,7 +182,7 @@ export default function SettingsContent() {
               to="tags_and_mentions"
               className={cn(
                 activeTab === "tags_and_mentions" && "bg-widget",
-                "flex items-center gap-3 p-3 hover:bg-widget-hover rounded-md"
+                "flex items-center gap-3 p-3 hover:bg-sidebar-hover rounded-md"
               )}
             >
               <TagsAndMentionsIcon />
@@ -195,7 +193,7 @@ export default function SettingsContent() {
               to="comments"
               className={cn(
                 activeTab === "comments" && "bg-widget",
-                "flex items-center gap-3 p-3 hover:bg-widget-hover rounded-md"
+                "flex items-center gap-3 p-3 hover:bg-sidebar-hover rounded-md"
               )}
             >
               <CommentsIcon />
@@ -206,7 +204,7 @@ export default function SettingsContent() {
               to="sharing_and_reuse"
               className={cn(
                 activeTab === "sharing_and_reuse" && "bg-widget",
-                "flex items-center gap-3 p-3 hover:bg-widget-hover rounded-md"
+                "flex items-center gap-3 p-3 hover:bg-sidebar-hover rounded-md"
               )}
             >
               <SharingAndReuseIcon />
@@ -217,7 +215,7 @@ export default function SettingsContent() {
               to="restricted_accounts"
               className={cn(
                 activeTab === "restricted_accounts" && "bg-widget",
-                "flex items-center gap-3 p-3 hover:bg-widget-hover rounded-md"
+                "flex items-center gap-3 p-3 hover:bg-sidebar-hover rounded-md"
               )}
             >
               <RestrictedAccountsIcon />
@@ -228,7 +226,7 @@ export default function SettingsContent() {
               to="hidden_words"
               className={cn(
                 activeTab === "hidden_words" && "bg-widget",
-                "flex items-center gap-3 p-3 hover:bg-widget-hover rounded-md"
+                "flex items-center gap-3 p-3 hover:bg-sidebar-hover rounded-md"
               )}
             >
               <HiddenWordsIcon />
@@ -238,14 +236,14 @@ export default function SettingsContent() {
         </div>
 
         <div className="flex flex-col gap-3">
-          <h3 className="text-xs font-semibold text-secondary">What you see</h3>
+          <h3 className="text-xs font-semibold text-tertiary">What you see</h3>
 
           <div className="flex flex-col gap-1">
             <TransitionLink
               to="muted_accounts"
               className={cn(
                 activeTab === "muted_accounts" && "bg-widget",
-                "flex items-center gap-3 p-3 hover:bg-widget-hover rounded-md"
+                "flex items-center gap-3 p-3 hover:bg-sidebar-hover rounded-md"
               )}
             >
               <MutedAccountsIcon />
@@ -256,7 +254,7 @@ export default function SettingsContent() {
               to="content_preferences"
               className={cn(
                 activeTab === "content_preferences" && "bg-widget",
-                "flex items-center gap-3 p-3 hover:bg-widget-hover rounded-md"
+                "flex items-center gap-3 p-3 hover:bg-sidebar-hover rounded-md"
               )}
             >
               <ContentPreferencesIcon />
@@ -267,7 +265,7 @@ export default function SettingsContent() {
               to="like_and_share_counts"
               className={cn(
                 activeTab === "like_and_share_counts" && "bg-widget",
-                "flex items-center gap-3 p-3 hover:bg-widget-hover rounded-md"
+                "flex items-center gap-3 p-3 hover:bg-sidebar-hover rounded-md"
               )}
             >
               <LikeAndShareCountsIcon />
@@ -277,7 +275,7 @@ export default function SettingsContent() {
         </div>
 
         <div className="flex flex-col gap-3">
-          <h3 className="text-xs font-semibold text-secondary">
+          <h3 className="text-xs font-semibold text-tertiary">
             Your app and media
           </h3>
 
@@ -286,7 +284,7 @@ export default function SettingsContent() {
               to="archiving_and_downloading"
               className={cn(
                 activeTab === "archiving_and_downloading" && "bg-widget",
-                "flex items-center gap-3 p-3 hover:bg-widget-hover rounded-md"
+                "flex items-center gap-3 p-3 hover:bg-sidebar-hover rounded-md"
               )}
             >
               <ArchivingAndDownloadingIcon />
@@ -297,7 +295,7 @@ export default function SettingsContent() {
               to="language"
               className={cn(
                 activeTab === "language" && "bg-widget",
-                "flex items-center gap-3 p-3 hover:bg-widget-hover rounded-md"
+                "flex items-center gap-3 p-3 hover:bg-sidebar-hover rounded-md"
               )}
             >
               <LanguageIcon />
@@ -308,7 +306,7 @@ export default function SettingsContent() {
               to="website_permissions"
               className={cn(
                 activeTab === "website_permissions" && "bg-widget",
-                "flex items-center gap-3 p-3 hover:bg-widget-hover rounded-md"
+                "flex items-center gap-3 p-3 hover:bg-sidebar-hover rounded-md"
               )}
             >
               <WebsitePermissionsIcon />
@@ -318,16 +316,16 @@ export default function SettingsContent() {
         </div>
 
         <div className="flex flex-col gap-3">
-          <h3 className="text-xs font-semibold text-secondary">For families</h3>
+          <h3 className="text-xs font-semibold text-tertiary">For families</h3>
 
-          <div className="flex items-center gap-3 p-3 rounded-md hover:bg-widget-hover">
+          <div className="flex items-center gap-3 p-3 rounded-md hover:bg-sidebar-hover">
             <FamilyCenterIcon />
             <span className="text-sm">Family Center</span>
           </div>
         </div>
 
         <div className="flex flex-col gap-3">
-          <h3 className="text-xs font-semibold text-secondary">
+          <h3 className="text-xs font-semibold text-tertiary">
             For professionals
           </h3>
 
@@ -335,7 +333,7 @@ export default function SettingsContent() {
             to="account_type_and_tools"
             className={cn(
               activeTab === "account_type_and_tools" && "bg-widget",
-              "flex items-center gap-3 p-3 hover:bg-widget-hover rounded-md"
+              "flex items-center gap-3 p-3 hover:bg-sidebar-hover rounded-md"
             )}
           >
             <AccountTypeAndToolsIcon />
@@ -344,7 +342,7 @@ export default function SettingsContent() {
         </div>
 
         <div className="flex flex-col gap-3">
-          <h3 className="text-xs font-semibold text-secondary">
+          <h3 className="text-xs font-semibold text-tertiary">
             More info and support
           </h3>
 
@@ -353,14 +351,14 @@ export default function SettingsContent() {
               to="help"
               className={cn(
                 activeTab === "help" && "bg-widget",
-                "flex items-center gap-3 p-3 hover:bg-widget-hover rounded-md"
+                "flex items-center gap-3 p-3 hover:bg-sidebar-hover rounded-md"
               )}
             >
               <HelpIcon />
               <span className="text-sm">Help</span>
             </TransitionLink>
 
-            <div className="flex items-center gap-3 p-3 rounded-md hover:bg-widget-hover">
+            <div className="flex items-center gap-3 p-3 rounded-md hover:bg-sidebar-hover">
               <PrivacyCenterIcon />
               <span className="text-sm">Privacy Center</span>
             </div>
@@ -369,7 +367,7 @@ export default function SettingsContent() {
               to="account_status"
               className={cn(
                 activeTab === "account_status" && "bg-widget",
-                "flex items-center gap-3 p-3 hover:bg-widget-hover rounded-md"
+                "flex items-center gap-3 p-3 hover:bg-sidebar-hover rounded-md"
               )}
             >
               <AccountStatusIcon />

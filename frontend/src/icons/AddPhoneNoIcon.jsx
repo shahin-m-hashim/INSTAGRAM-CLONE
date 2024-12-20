@@ -1,3 +1,5 @@
+import { cn } from "utils/cn";
+
 export default function AddPhoneNoIcon({ className = "" }) {
   return (
     <svg
@@ -7,7 +9,7 @@ export default function AddPhoneNoIcon({ className = "" }) {
       fill="currentColor"
       viewBox="0 0 96 96"
       xmlns="http://www.w3.org/2000/svg"
-      className={className}
+      className={cn("text-primary", className)}
       aria-label="Add your phone number so you can reset your password, find friends and more."
     >
       <title>

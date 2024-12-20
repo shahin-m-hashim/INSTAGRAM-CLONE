@@ -1,3 +1,5 @@
+import { cn } from "utils/cn";
+
 export default function ReelsIcon({ className = "" }) {
   return (
     <svg
@@ -6,7 +8,7 @@ export default function ReelsIcon({ className = "" }) {
       height={24}
       aria-label="Reels"
       viewBox="0 0 24 24"
-      className={className}
+      className={cn("text-primary", className)}
       xmlns="http://www.w3.org/2000/svg"
     >
       <title>Reels</title>

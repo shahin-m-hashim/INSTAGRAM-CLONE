@@ -13,14 +13,14 @@ export default function NotFoundNavbar() {
           <li className="flex items-center gap-4 w-[170px]">
             <TransitionLink
               to="/accounts/login"
-              className="flex-1 py-1 text-center rounded-lg bg-link hover:bg-link-hover"
+              className="flex-1 py-1 text-center rounded-lg bg-link-primary hover:bg-link-primary-hover"
             >
               Log In
             </TransitionLink>
 
             <Link
               to="/accounts/signup"
-              className="flex-1 font-semibold text-link hover:text-link-hover"
+              className="flex-1 font-semibold text-link-primary hover:text-link-primary-hover"
             >
               Sign Up
             </Link>

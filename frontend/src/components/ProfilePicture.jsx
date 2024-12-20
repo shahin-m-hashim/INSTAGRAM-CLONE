@@ -1,5 +1,6 @@
 import { cn } from "utils/cn";
 import { useRef } from "react";
+import CameraIcon from "icons/CameraIcon";
 
 export default function ProfilePicture({
   className = "",
@@ -8,7 +9,6 @@ export default function ProfilePicture({
   noteInputClassName = "",
   requireNoteInput = false,
   requireFileInput = false,
-  cameraIconClassName = "",
 }) {
   const hasStory = true;
   const fileInputRef = useRef();
@@ -29,7 +29,7 @@ export default function ProfilePicture({
           alt="profile pic"
           src="images/default_dp_dark.webp"
           style={{ padding: hasStory ? storyPadding : 0 }}
-          className="rounded-full size-full active-story-gradient"
+          className="rounded-full size-full active-story"
         />
       </div>
 
@@ -40,7 +40,7 @@ export default function ProfilePicture({
               style={{ padding: hasStory ? storyPadding : 0 }}
               className="flex items-center justify-center size-full"
             >
-              <div className="bg-[rgb(85,85,85)] rounded-full size-full opacity-70"></div>
+              <div className="rounded-full bg-tertiary size-full opacity-70"></div>
             </div>
           </div>
 
@@ -50,11 +50,7 @@ export default function ProfilePicture({
                 type="button"
                 onClick={() => fileInputRef.current.click()}
               >
-                <img
-                  alt="camera"
-                  src="icons/camera.svg"
-                  className={cn("size-6 md:size-10", cameraIconClassName)}
-                />
+                <CameraIcon className="size-10" />
               </button>
             </div>
           </div>
@@ -73,11 +69,11 @@ export default function ProfilePicture({
         <div className={cn("absolute z-30 -top-6 left-11", noteInputClassName)}>
           <button
             type="button"
-            className="p-2 text-xs border rounded-lg bg-primary border-primary shadow-primary text-secondary"
+            className="p-2 text-xs bg-gray-100 border rounded-lg hover:bg-button-hover shadow-primary text-tertiary"
           >
             Note...
           </button>
-          <div className="absolute left-5 border-l-[5px] border-l-transparent border-r-[5px] border-r-transparent border-t-[5px] border-t-tertiary"></div>
+          <div className="absolute left-5 border-l-[5px] border-l-transparent border-r-[5px] border-r-transparent border-t-[5px] border-t-gray-100"></div>
         </div>
       )}
     </div>

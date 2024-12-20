@@ -5,7 +5,8 @@
     "isVerified": true,
     "username": "virat.kohli",
     "fullName": "Virat Kohli",
-    "profilePic": "images/users/virat.kohli.webp"
+    "profilePic": "images/users/virat.kohli.webp",
+    "hasStory": false
   },
   {
     "id": 21,
@@ -13,7 +14,8 @@
     "isVerified": true,
     "username": "yoyohoneysingh",
     "fullName": "Yo Yo Honey Singh",
-    "profilePic": "images/users/yoyohoneysingh.webp"
+    "profilePic": "images/users/yoyohoneysingh.webp",
+    "hasStory": true
   },
   {
     "id": 41,
@@ -21,7 +23,8 @@
     "isVerified": true,
     "username": "amansharma_0000",
     "fullName": "Aman Sharma",
-    "profilePic": "images/users/amansharma_0000.webp"
+    "profilePic": "images/users/amansharma_0000.webp",
+    "hasStory": false
   },
   {
     "id": 61,
@@ -29,7 +32,8 @@
     "isVerified": true,
     "username": "instagram",
     "fullName": "Instagram",
-    "profilePic": "images/users/instagram.webp"
+    "profilePic": "images/users/instagram.webp",
+    "hasStory": false
   },
   {
     "id": 81,
@@ -37,7 +41,8 @@
     "isVerified": true,
     "username": "elvish_yadav",
     "fullName": "Elvish Raosahab",
-    "profilePic": "images/users/elvish_yadav.webp"
+    "profilePic": "images/users/elvish_yadav.webp",
+    "hasStory": false
   },
   {
     "id": 101,
@@ -45,7 +50,8 @@
     "isVerified": true,
     "username": "trolls_official",
     "fullName": "Trolls Official",
-    "profilePic": "images/users/trolls_official.webp"
+    "profilePic": "images/users/trolls_official.webp",
+    "hasStory": true
   },
   {
     "id": 121,
@@ -53,7 +59,8 @@
     "isVerified": true,
     "username": "joji_thampi",
     "fullName": "Joji yoohanon thampi",
-    "profilePic": "images/users/joji_thampi.webp"
+    "profilePic": "images/users/joji_thampi.webp",
+    "hasStory": false
   },
   {
     "id": 141,
@@ -61,7 +68,8 @@
     "isVerified": true,
     "username": "saketgokhale",
     "fullName": "Saket Gokhale",
-    "profilePic": "images/users/saketgokhale.webp"
+    "profilePic": "images/users/saketgokhale.webp",
+    "hasStory": false
   },
   {
     "id": 161,
@@ -69,7 +77,8 @@
     "isVerified": true,
     "username": "itsmezidaanmerijaan",
     "fullName": "Shahid Shaikh",
-    "profilePic": "images/users/itsmezidaanmerijaan.webp"
+    "profilePic": "images/users/itsmezidaanmerijaan.webp",
+    "hasStory": false
   },
   {
     "id": 181,
@@ -77,7 +86,8 @@
     "isVerified": true,
     "username": "mdshami.11",
     "fullName": "𝕸𝖔𝖍𝖆𝖒𝖒𝖆𝖉 𝖘𝖍𝖆𝖒𝖎",
-    "profilePic": "images/users/mdshami.11.webp"
+    "profilePic": "images/users/mdshami.11.webp",
+    "hasStory": true
   },
   {
     "id": 201,
@@ -85,7 +95,8 @@
     "isVerified": false,
     "username": "vikas__gupta___07",
     "fullName": "Vikas gupta",
-    "profilePic": "images/users/vikas__gupta___07.webp"
+    "profilePic": "images/users/vikas__gupta___07.webp",
+    "hasStory": false
   },
   {
     "id": 220,
@@ -93,7 +104,8 @@
     "isVerified": true,
     "username": "rvcjinsta",
     "fullName": "RVCJ Media",
-    "profilePic": "images/users/rvcjinsta.webp"
+    "profilePic": "images/users/rvcjinsta.webp",
+    "hasStory": false
   },
   {
     "id": 240,
@@ -101,7 +113,8 @@
     "isVerified": true,
     "username": "mrbeast",
     "fullName": "MrBeast",
-    "profilePic": "images/users/mrbeast.webp"
+    "profilePic": "images/users/mrbeast.webp",
+    "hasStory": true
   },
   {
     "id": 260,
@@ -109,7 +122,8 @@
     "isVerified": true,
     "username": "zayn.saifi2",
     "fullName": "Zayn Saifi",
-    "profilePic": "images/users/zayn.saifi2.webp"
+    "profilePic": "images/users/zayn.saifi2.webp",
+    "hasStory": true
   },
   {
     "id": 280,
@@ -117,7 +131,8 @@
     "isVerified": true,
     "username": "amitabhbachchan",
     "fullName": "Amitabh Bachchan",
-    "profilePic": "images/users/amitabhbachchan.webp"
+    "profilePic": "images/users/amitabhbachchan.webp",
+    "hasStory": false
   },
   {
     "id": 300,
@@ -125,7 +140,8 @@
     "isVerified": true,
     "username": "shahidkapoor",
     "fullName": "Shahid Kapoor",
-    "profilePic": "images/users/shahidkapoor.webp"
+    "profilePic": "images/users/shahidkapoor.webp",
+    "hasStory": false
   },
   {
     "id": 320,
@@ -133,7 +149,8 @@
     "isVerified": true,
     "username": "aishwaryaraibachchan_arb",
     "fullName": "AishwaryaRaiBachchan",
-    "profilePic": "images/users/aishwaryaraibachchan_arb.webp"
+    "profilePic": "images/users/aishwaryaraibachchan_arb.webp",
+    "hasStory": false
   },
   {
     "id": 340,
@@ -141,7 +158,8 @@
     "isVerified": true,
     "username": "viralbhayani",
     "fullName": "Viral Bhayani",
-    "profilePic": "images/users/viralbhayani.webp"
+    "profilePic": "images/users/viralbhayani.webp",
+    "hasStory": true
   },
   {
     "id": 360,
@@ -149,7 +167,8 @@
     "isVerified": true,
     "username": "ranveersingh",
     "fullName": "Ranveer Singh",
-    "profilePic": "images/users/ranveersingh.webp"
+    "profilePic": "images/users/ranveersingh.webp",
+    "hasStory": true
   },
   {
     "id": 380,
@@ -157,7 +176,8 @@
     "isVerified": true,
     "username": "myogi_adityanath",
     "fullName": "Shri Yogi Adityanath",
-    "profilePic": "images/users/myogi_adityanath.webp"
+    "profilePic": "images/users/myogi_adityanath.webp",
+    "hasStory": true
   },
   {
     "id": 400,
@@ -165,7 +185,8 @@
     "isVerified": true,
     "username": "srushtideshmukhias",
     "fullName": "Srushti Deshmukh Gowda",
-    "profilePic": "images/users/srushtideshmukhias.webp"
+    "profilePic": "images/users/srushtideshmukhias.webp",
+    "hasStory": false
   },
   {
     "id": 420,
@@ -173,7 +194,8 @@
     "isVerified": true,
     "username": "norafatehi",
     "fullName": "Nora Fatehi",
-    "profilePic": "images/users/norafatehi.webp"
+    "profilePic": "images/users/norafatehi.webp",
+    "hasStory": false
   },
   {
     "id": 440,
@@ -181,7 +203,8 @@
     "isVerified": true,
     "username": "mr_faisu_07",
     "fullName": "FAISAL SHAIKH",
-    "profilePic": "images/users/mr_faisu_07.webp"
+    "profilePic": "images/users/mr_faisu_07.webp",
+    "hasStory": true
   },
   {
     "id": 460,
@@ -189,7 +212,8 @@
     "isVerified": true,
     "username": "rohittt_09_",
     "fullName": "𝐑𝐨𝐡𝐢𝐭 𝐙𝐢𝐧𝐣𝐮𝐫𝐤𝐞 🇮🇳",
-    "profilePic": "images/users/rohittt_09_.webp"
+    "profilePic": "images/users/rohittt_09_.webp",
+    "hasStory": false
   },
   {
     "id": 480,
@@ -197,7 +221,8 @@
     "isVerified": true,
     "username": "dharmendra_bilotia_",
     "fullName": "Dharmendra Bilotia",
-    "profilePic": "images/users/dharmendra_bilotia_.webp"
+    "profilePic": "images/users/dharmendra_bilotia_.webp",
+    "hasStory": false
   },
   {
     "id": 500,
@@ -205,7 +230,8 @@
     "isVerified": true,
     "username": "anushkasharma",
     "fullName": "AnushkaSharma1588",
-    "profilePic": "images/users/anushkasharma.webp"
+    "profilePic": "images/users/anushkasharma.webp",
+    "hasStory": false
   },
   {
     "id": 520,
@@ -213,7 +239,8 @@
     "isVerified": true,
     "username": "theshubhankarmishra",
     "fullName": "Shubhankar Mishra",
-    "profilePic": "images/users/theshubhankarmishra.webp"
+    "profilePic": "images/users/theshubhankarmishra.webp",
+    "hasStory": false
   },
   {
     "id": 540,
@@ -221,7 +248,8 @@
     "isVerified": true,
     "username": "mohammedsirajofficial",
     "fullName": "Mohammed Siraj",
-    "profilePic": "images/users/mohammedsirajofficial.webp"
+    "profilePic": "images/users/mohammedsirajofficial.webp",
+    "hasStory": true
   },
   {
     "id": 560,
@@ -229,7 +257,8 @@
     "isVerified": true,
     "username": "bhajanmarg_official",
     "fullName": "Bhajan Marg Official",
-    "profilePic": "images/users/bhajanmarg_official.webp"
+    "profilePic": "images/users/bhajanmarg_official.webp",
+    "hasStory": false
   },
   {
     "id": 580,
@@ -237,6 +266,7 @@
     "isVerified": true,
     "username": "voompla",
     "fullName": "Voompla",
-    "profilePic": "images/users/voompla.webp"
+    "profilePic": "images/users/voompla.webp",
+    "hasStory": false
   }
 ]

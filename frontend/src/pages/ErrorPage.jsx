@@ -11,7 +11,7 @@ export default function ErrorPage() {
 
             <h1 className="text-2xl text-bold">Something went wrong</h1>
 
-            <p className="text-[rgb(138,138,138)] font-semibold">
+            <p className="text-tertiary font-semibold">
               There&apos;s an issue and the page could not be loaded.
             </p>
 

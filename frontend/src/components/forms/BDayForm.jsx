@@ -30,7 +30,7 @@ export default function BDayForm() {
   return (
     <form
       onSubmit={handleSubmit}
-      className="flex flex-col w-full text-secondary"
+      className="flex flex-col w-full text-tertiary"
     >
       <DateField
         date={date}

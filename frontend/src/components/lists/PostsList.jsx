@@ -13,7 +13,7 @@ export default function PostsList() {
       {posts.map((post, idx) => (
         <div className="flex flex-col flex-grow-0 xs:w-[468px]" key={idx}>
           <div className="hidden xs:block">
-            <Separator straight={true} height="1px" />
+            <Separator straight={true} />
           </div>
 
           <div className="px-4 xs:p-0 xs:my-4">
@@ -55,7 +55,7 @@ export default function PostsList() {
                     </div>
                     <div className="flex items-center gap-2">
                       <span className="pb-2 font-bold">.</span>
-                      <span className=" text-secondary">
+                      <span className=" text-tertiary">
                         {post.timeExtended}
                       </span>
                     </div>
@@ -102,13 +102,13 @@ export default function PostsList() {
                 <a className="text-[rgb(170,170,170)] text-sm">
                   View all {post.noOfComments} comments
                 </a>
-                <p className="text-sm  text-secondary">{post.postedAt}</p>
+                <p className="text-sm text-tertiary">{post.postedAt}</p>
               </div>
             </div>
           </div>
 
           <div className="hidden xs:block">
-            <Separator straight={true} height="1px" />
+            <Separator straight={true} />
           </div>
         </div>
       ))}

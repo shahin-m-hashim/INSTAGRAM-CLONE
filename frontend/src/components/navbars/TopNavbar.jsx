@@ -214,7 +214,7 @@ export default function TopNavbar() {
 
   return (
     <nav className="bg-primary text-primary block md:hidden absolute inset-x-0 top-0 h-[60px] pointer-events-auto overflow-x-auto">
-      <div className="flex items-center justify-between gap-2 px-4 border-b size-full ">
+      <div className="flex items-center justify-between gap-2 px-4 border-b border-primary size-full ">
         {url[1] === "settings" ? (
           <Settings page={url.slice(2)} />
         ) : url[1] === "direct" ? (

@@ -35,7 +35,7 @@ export default function SearchField({ className }) {
         onFocus={handleFocus}
         onChange={handleChange}
         className={cn(
-          "bg-field text-sm focus:outline-none h-10 px-10 focus:px-3.5 w-full rounded-md",
+          "bg-tertiary text-sm focus:outline-none h-10 px-10 focus:px-3.5 w-full rounded-md",
           className
         )}
       />

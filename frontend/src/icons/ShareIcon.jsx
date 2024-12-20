@@ -1,3 +1,5 @@
+import { cn } from "utils/cn";
+
 export default function ShareIcon({ className = "" }) {
   return (
     <svg
@@ -8,7 +10,7 @@ export default function ShareIcon({ className = "" }) {
       viewBox="0 0 24 24"
       width={24}
       xmlns="http://www.w3.org/2000/svg"
-      className={className}
+      className={cn("text-primary", className)}
     >
       <title>Share</title>
       <line

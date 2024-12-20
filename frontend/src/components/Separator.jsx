@@ -13,7 +13,7 @@ export default function Separator({ straight = false, className }) {
       <span
         className={cn(
           straight ? "hidden" : "block",
-          "text-xs text-secondary font-semibold"
+          "text-xs text-tertiary font-semibold"
         )}
       >
         OR

@@ -1,8 +1,10 @@
+import { cn } from "utils/cn";
+
 export default function SavedIcon({ className = "" }) {
   return (
     <svg
       aria-label
-      className={className}
+      className={cn("text-primary", className)}
       fill="currentColor"
       height={18}
       role="img"

@@ -10,7 +10,7 @@ export default function RadioInput({ id, value, className, checked = false }) {
     <label
       htmlFor={id}
       className={cn(
-        "relative border-primary inline-block border rounded-full size-6 cursor-pointer",
+        "relative border-primary inline-block border-2 rounded-full size-6 cursor-pointer",
         className
       )}
     >

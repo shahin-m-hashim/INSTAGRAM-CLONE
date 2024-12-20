@@ -1,8 +1,10 @@
+import { cn } from "utils/cn";
+
 export default function ReportIcon({ className = "" }) {
   return (
     <svg
       aria-label="Report a problem"
-      className={className}
+      className={cn("text-primary", className)}
       fill="currentColor"
       height="18"
       role="img"

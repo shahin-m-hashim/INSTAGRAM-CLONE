@@ -6,9 +6,9 @@ import InstagramTextIcon from "icons/InstagramTextIcon";
 export default function SignupContent() {
   return (
     <>
-      <InstagramTextIcon className="text-white scale-[1.5]" />
+      <InstagramTextIcon className="scale-[1.3]" />
 
-      <p className=" text-secondary font-semibold text-base">
+      <p className="text-base font-semibold text-tertiary">
         Sign up to see photos and videos from your friends.
       </p>
 

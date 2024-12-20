@@ -1,9 +1,13 @@
+import { cn } from "utils/cn";
+
 export default function ArrowCircleRight({ className = "" }) {
   return (
     <svg
-      className={className}
+      aria-hidden="true"
       viewBox="0 0 512 512"
+      data-icon="arrow-circle-right"
       xmlns="http://www.w3.org/2000/svg"
+      className={cn("text-primary bg-primary rounded-full", className)}
     >
       <path
         fill="currentColor"

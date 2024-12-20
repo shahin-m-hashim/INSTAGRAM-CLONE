@@ -35,7 +35,7 @@ export default function MainSidebar() {
           "bg-primary text-primary hidden md:block absolute inset-y-0 left-0 pointer-events-auto overflow-y-auto"
         )}
       >
-        <div className="flex flex-col px-2 py-4 border-r-2 border-primary size-full xl:px-4 ">
+        <div className="flex flex-col px-2 py-4 border-r border-primary size-full xl:px-4 ">
           <div className="xl:my-4">
             <TransitionLink
               to="/"

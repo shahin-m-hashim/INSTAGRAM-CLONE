@@ -28,7 +28,7 @@ export default function StoriesList({ showOwnStory = false }) {
             <div
               className={cn(
                 "rounded-full p-[2px]",
-                !user.hasStory ? "active-story-gradient" : "bg-primary"
+                user.hasStory ? "active-story" : "inactive-story"
               )}
             >
               <Image

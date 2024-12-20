@@ -7,7 +7,7 @@ import SplashScreen from "components/SplashScreen";
 import { GlobalProvider } from "providers/GlobalProvider";
 import ErrorBoundary from "components/wrappers/ErrorBoundary";
 
-const theme = localStorage.getItem("theme") || "dark";
+const theme = localStorage.getItem("theme") || "light";
 
 document.documentElement.classList.add(`theme-${theme}`);
 

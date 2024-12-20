@@ -1,8 +1,10 @@
+import { cn } from "utils/cn";
+
 export default function YourActivityIcon({ className = "" }) {
   return (
     <svg
       aria-label="Your activity"
-      className={className}
+      className={cn("text-primary", className)}
       fill="currentColor"
       height="18"
       role="img"

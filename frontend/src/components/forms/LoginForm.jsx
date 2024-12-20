@@ -57,7 +57,7 @@ export default function LoginForm() {
       <div className="flex flex-col items-center justify-center gap-4 mt-6 text-sm">
         <div className="flex gap-2">
           <img src="icons/facebook_round_blue.svg" alt="facebook" />
-          <a className="font-semibold text-link hover:text-link-hover">
+          <a className="font-semibold text-link-primary hover:text-link-primary-hover">
             Log in with Facebook
           </a>
         </div>

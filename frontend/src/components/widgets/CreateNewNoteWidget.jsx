@@ -27,18 +27,23 @@ export default function CreateNewNoteWidget({ setActiveWidget }) {
 
   return (
     <div className="absolute inset-0 z-10 backdrop-brightness-[0.4] pointer-events-auto">
-      <div className="flex items-center justify-center bg-widget size-full">
+      <div className="flex items-center justify-center size-full">
         <form
           onSubmit={handleSubmit}
-          className="relative flex flex-col rounded-lg w-[300px] md:w-[500px] h-[300px]"
+          className="relative flex flex-col shadow-primary rounded-lg bg-widget w-[300px] md:w-[500px] h-[300px]"
         >
-          <div className="flex justify-between w-full p-3">
-            <button type="button" onClick={() => setActiveWidget(null)}>
-              <CloseIcon />
+          <div className="relative flex justify-center w-full p-3">
+            <button
+              type="button"
+              className="absolute left-4 top-4"
+              onClick={() => setActiveWidget(null)}
+            >
+              <CloseIcon className="size-5" />
             </button>
 
             <h1 className="text-lg font-bold">New note</h1>
-            <Button className="w-16" type="submit">
+
+            <Button className="absolute w-16 right-4" type="submit">
               Share
             </Button>
           </div>
@@ -50,7 +55,7 @@ export default function CreateNewNoteWidget({ setActiveWidget }) {
               value={state.note}
               placeholder="Share a thought..."
               onChange={(e) => setState({ ...state, note: e.target.value })}
-              className="bg-[rgb(64,64,64)] p-3 rounded-md size-full focus:outline-none"
+              className="p-3 bg-transparent border rounded-md border-primary size-full focus:outline-none"
             />
           </div>
 
@@ -74,7 +79,7 @@ export default function CreateNewNoteWidget({ setActiveWidget }) {
           {state.showDropDown && (
             <div className="absolute inset-x-0 -bottom-20">
               <div className="flex items-center justify-center size-full">
-                <div className="flex flex-col bg-[rgb(38,38,38)] p-3 rounded-md gap-3 justify-center">
+                <div className="flex flex-col justify-center gap-3 p-3 rounded-md bg-widget">
                   <div className="flex items-center gap-2">
                     <RadioInput
                       value="followers"

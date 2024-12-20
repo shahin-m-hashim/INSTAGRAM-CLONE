@@ -6,7 +6,7 @@ export default function SignupCard() {
       <p>Don&apos;t have an account?</p>
       <Link
         to="/accounts/signup"
-        className="font-semibold text-link hover:text-link-hover"
+        className="font-semibold text-link-primary hover:text-link-primary-hover"
       >
         Sign up
       </Link>

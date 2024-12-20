@@ -1,8 +1,10 @@
+import { cn } from "utils/cn";
+
 export default function AccountHistoryIcon({ className = "" }) {
   return (
     <svg
       aria-label="Account history, review changes you've made to your account since you created it."
-      className={className}
+      className={cn("text-primary", className)}
       fill="currentColor"
       height={24}
       role="img"

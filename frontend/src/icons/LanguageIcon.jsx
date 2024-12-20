@@ -1,9 +1,11 @@
+import { cn } from "utils/cn";
+
 export default function LanguageIcon({ className = "" }) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       aria-label=""
-      className={className}
+      className={cn("text-primary", className)}
       fill="currentColor"
       height="24"
       role="img"

@@ -1,3 +1,5 @@
+import { cn } from "utils/cn";
+
 export default function SearchIcon({ className = "" }) {
   return (
     <svg
@@ -6,7 +8,7 @@ export default function SearchIcon({ className = "" }) {
       height={24}
       aria-label="Search"
       viewBox="0 0 24 24"
-      className={className}
+      className={cn("text-primary", className)}
       xmlns="http://www.w3.org/2000/svg"
     >
       <title>Search</title>

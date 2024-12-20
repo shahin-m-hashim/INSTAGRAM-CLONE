@@ -1,8 +1,10 @@
+import { cn } from "utils/cn";
+
 export default function ReviewsIcon({ className = "" }) {
   return (
     <svg
       aria-label=""
-      className={className}
+      className={cn("text-primary", className)}
       fill="currentColor"
       height="12"
       role="img"

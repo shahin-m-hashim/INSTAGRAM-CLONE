@@ -12,12 +12,12 @@ export default function MessengerContent() {
           <h1 className="font-bold">Messages</h1>
         </div>
         <div>
-          <a className=" text-secondary text-sm font-semibold">Requests</a>
+          <a className=" text-tertiary text-sm font-semibold">Requests</a>
         </div>
       </div>
 
       <div className="flex flex-col items-center justify-center flex-1 p-4">
-        <p className="text-sm font-semibold  text-secondary">
+        <p className="text-sm font-semibold  text-tertiary">
           No messages found.
         </p>
       </div>

@@ -13,7 +13,7 @@ export default function EmailConfirmationContent() {
             <span className="font-semibold">email@example.com</span>
             <span>.&nbsp;</span>
           </span>
-          <a className="font-semibold text-link hover:text-link-hover">
+          <a className="font-semibold text-link-primary hover:text-link-primary-hover">
             Resend Code?
           </a>
         </div>

@@ -43,9 +43,7 @@ export default function GroupedOptions({
               )}
 
               {option.example && (
-                <span className="text-xs  text-secondary">
-                  {option.example}
-                </span>
+                <span className="text-xs text-tertiary">{option.example}</span>
               )}
 
               {idx < options.length - 1 && <Separator straight={true} />}
@@ -64,7 +62,7 @@ export default function GroupedOptions({
                     {option.title}
                   </label>
                   {option.description && (
-                    <p className="text-xs  text-secondary">
+                    <p className="text-xs text-tertiary">
                       {option.description}
                     </p>
                   )}
@@ -74,15 +72,13 @@ export default function GroupedOptions({
           ))}
         </ul>
       ) : (
-        <ul className="flex flex-col gap-6 px-4 py-5 rounded-2xl border border-[rgb(54,54,54,0.7)]">
+        <ul className="flex flex-col gap-6 px-4 py-5 border rounded-2xl border-primary">
           {options.map((option, idx) => (
             <li key={idx} className="flex items-center justify-between gap-1">
               <div className="flex flex-col gap-1">
                 <label>{option.title}</label>
                 {option.description && (
-                  <p className="text-xs  text-secondary">
-                    {option.description}
-                  </p>
+                  <p className="text-xs text-tertiary">{option.description}</p>
                 )}
               </div>
               <RadioInput className="min-w-5 size-5" />

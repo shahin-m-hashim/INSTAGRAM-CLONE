@@ -1,8 +1,10 @@
+import { cn } from "utils/cn";
+
 export default function HumanIcon({ className = "" }) {
   return (
     <svg
       aria-label="User icon"
-      className={className}
+      className={cn("text-primary", className)}
       fill="currentColor"
       height={24}
       role="img"

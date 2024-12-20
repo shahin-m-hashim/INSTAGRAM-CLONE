@@ -21,13 +21,14 @@ export default function EditProfileForm() {
           Website
         </label>
         <input
+          disabled
           type="text"
           id="website"
           name="website"
           placeholder="Website"
-          className="px-4 py-3 text-sm rounded-lg bg-widget"
+          className="px-4 py-3 text-sm rounded-lg cursor-not-allowed bg-widget"
         />
-        <p className="text-xs text-secondary">
+        <p className="text-xs text-tertiary">
           Editing your links is only available on mobile. Visit the Instagram
           app and edit your profile to change the websites in your bio.
         </p>
@@ -42,10 +43,10 @@ export default function EditProfileForm() {
             id="bio"
             name="bio"
             placeholder="Bio"
-            className="w-full p-3 text-sm bg-transparent border rounded-lg border-secondary"
+            className="w-full p-3 text-sm bg-transparent border rounded-lg border-primary"
           />
           <div className="absolute bottom-4 right-4">
-            <span className="text-xs text-secondary">0/150</span>
+            <span className="text-xs text-tertiary">0/150</span>
           </div>
         </div>
       </div>
@@ -58,22 +59,22 @@ export default function EditProfileForm() {
           <div
             id="gender"
             name="gender"
-            className="flex items-center justify-between p-3 bg-transparent border rounded-lg hover:bg-widget-hover hover:cursor-pointer border-secondary"
+            className="flex items-center justify-between p-3 bg-transparent border rounded-lg hover:bg-sidebar-hover hover:cursor-pointer border-primary"
           >
             Prefer not to say
             <DropDownArrowIcon />
           </div>
           {/* <GenderFormWidget /> */}
         </div>
-        <p className="text-xs text-secondary">
-          This won’t be part of your public profile.
+        <p className="text-xs text-tertiary">
+          This won&apos;t be part of your public profile.
         </p>
       </div>
 
       <div className="flex flex-col gap-3">
         <h2 className="font-bold">Show account suggestions on profiles</h2>
 
-        <div className="p-4 border rounded-xl border-secondary">
+        <div className="p-4 border rounded-xl border-primary">
           <div className="flex justify-between">
             <div className="flex flex-col flex-1 gap-2">
               <div className="flex items-center justify-between gap-4">
@@ -81,7 +82,7 @@ export default function EditProfileForm() {
                 <ToggleSwitch id="suggestion" />
               </div>
 
-              <p className="pr-12 text-xs text-secondary">
+              <p className="pr-12 text-xs text-tertiary">
                 Choose whether people can see similar account suggestions on
                 your profile, and whether your account can be suggested on other
                 profiles.

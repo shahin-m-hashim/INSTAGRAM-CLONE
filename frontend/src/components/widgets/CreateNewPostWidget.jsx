@@ -9,9 +9,9 @@ export default function CreateNewPostWidget() {
 
   return (
     <div className="absolute inset-0 z-10 backdrop-brightness-[0.4] pointer-events-auto">
-      <div className="flex items-center justify-center size-full">
-        <div className="flex text-primary flex-col w-[500px] rounded-lg">
-          <div className="relative flex items-center justify-center p-3 border-b-2 rounded-t-lg bg-widget border-primary">
+      <div className="flex items-center justify-center text-primary size-full">
+        <div className="flex text-primary flex-col shadow-primary bg-widget w-[500px] rounded-lg">
+          <div className="relative flex items-center justify-center p-3 border-b-2 rounded-t-lg bg-tertiary border-primary">
             <h1 className="font-semibold">Create new post</h1>
 
             <div className="absolute -top-1 -right-2">
@@ -25,12 +25,10 @@ export default function CreateNewPostWidget() {
             </div>
           </div>
 
-          <div className="bg-widget h-[500px] flex items-center rounded-b-lg justify-center p-5">
+          <div className="h-[500px] flex items-center rounded-b-lg justify-center p-5">
             <div className="flex flex-col items-center gap-6">
               <NewPostIcon />
-              <h2 className="text-xl text-white">
-                Drag photos and videos here
-              </h2>
+              <h2 className="text-xl">Drag photos and videos here</h2>
               <Button className="p-3">Select from computer</Button>
             </div>
           </div>
