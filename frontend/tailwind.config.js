@@ -7,6 +7,7 @@ export default {
         xs: "486px",
       },
       colors: {
+        note: "var(--note)",
         success: "rgb(88,195,34)",
         "link-primary": "rgb(0, 149, 246)",
         "link-secondary": "var(--text-link-s)",

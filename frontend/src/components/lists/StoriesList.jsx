@@ -1,27 +1,30 @@
 import { cn } from "utils/cn";
 import users from "mocks/users.json";
 import Image from "components/Image";
+import { useLocation } from "react-router-dom";
 import ProfilePicture from "components/ProfilePicture";
 import HorizontalScroller from "components/wrappers/HorizontalScroller";
 
-export default function StoriesList({ showOwnStory = false }) {
+export default function StoriesList() {
+  const pathname = useLocation().pathname.split("/")[1];
+
   return (
     <HorizontalScroller>
       <ul
         className={cn(
           "flex items-center gap-4",
-          showOwnStory ? "h-[120px]" : "h-auto"
+          pathname === "direct" && "h-[120px]"
         )}
       >
-        {showOwnStory && (
-          <li>
-            <ProfilePicture
-              requireNoteInput={true}
-              className="size-16"
-              noteInputClassName="left-1 -top-7"
-            />
-          </li>
-        )}
+        <li>
+          <ProfilePicture
+            storyPadding="0px"
+            className="size-16"
+            noteInputClassName="left-1 -top-7"
+            showNote={pathname === "direct" ? true : false}
+            requireNoteInput={pathname === "direct" ? true : false}
+          />
+        </li>
 
         {users.map((user) => (
           <li key={user.id}>

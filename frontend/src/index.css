@@ -20,6 +20,7 @@ html {
 .theme-light {
   /* background colors */
   --bg-s: rgb(0, 0, 0);
+  --note: rgb(225, 225, 225);
   --bg-p: rgb(255, 255, 255);
   --bg-t: rgb(235, 235, 235);
   --pill-on: rgb(50, 50, 50);
@@ -50,6 +51,7 @@ html {
 .theme-dark {
   /* background colors */
   --bg-p: rgb(0, 0, 0);
+  --note: rgb(54, 54, 54);
   --bg-t: rgb(18, 18, 18);
   --button: rgb(85, 85, 85);
   --widget: rgb(38, 38, 38);

@@ -52,7 +52,7 @@ export default function HomePage() {
                   <span>username</span>
                 </div>
                 <div className="text-sm">
-                  <a className="text-link-primary hover:text-link-primary-hover font-semibold">
+                  <a className="font-semibold text-link-primary hover:text-link-primary-hover">
                     Switch
                   </a>
                 </div>

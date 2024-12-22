@@ -43,9 +43,9 @@ const Home = () => (
           <CreateIcon />
         </a>
 
-        <a className="items-center gap-4">
+        <TransitionLink to="direct/inbox" className="items-center gap-4">
           <MessengerIcon />
-        </a>
+        </TransitionLink>
       </div>
     </div>
   </>

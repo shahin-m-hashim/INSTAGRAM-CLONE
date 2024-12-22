@@ -3,8 +3,8 @@ import StoriesList from "components/lists/StoriesList";
 export default function MessengerContent() {
   return (
     <>
-      <div className="px-4 md:py-6">
-        <StoriesList showOwnStory={true} />
+      <div className="px-4 my-5">
+        <StoriesList />
       </div>
 
       <div className="flex items-center justify-between px-4">
@@ -12,12 +12,12 @@ export default function MessengerContent() {
           <h1 className="font-bold">Messages</h1>
         </div>
         <div>
-          <a className=" text-tertiary text-sm font-semibold">Requests</a>
+          <a className="text-sm font-semibold text-tertiary">Requests</a>
         </div>
       </div>
 
       <div className="flex flex-col items-center justify-center flex-1 p-4">
-        <p className="text-sm font-semibold  text-tertiary">
+        <p className="text-sm font-semibold text-tertiary">
           No messages found.
         </p>
       </div>

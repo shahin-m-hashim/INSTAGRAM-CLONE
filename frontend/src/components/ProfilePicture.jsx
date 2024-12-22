@@ -6,6 +6,7 @@ const theme = localStorage.getItem("theme") || "dark";
 
 export default function ProfilePicture({
   className = "",
+  showNote = false,
   fileType = "story",
   storyPadding = "3px",
   noteInputClassName = "",
@@ -33,6 +34,7 @@ export default function ProfilePicture({
           style={{ padding: hasStory ? storyPadding : 0 }}
           className="rounded-full size-full active-story"
         />
+        {showNote && <span className="w-full text-xs">Your note ...</span>}
       </div>
 
       {requireFileInput && (
@@ -71,11 +73,11 @@ export default function ProfilePicture({
         <div className={cn("absolute z-30 -top-6 left-11", noteInputClassName)}>
           <button
             type="button"
-            className="p-2 text-xs bg-gray-100 border rounded-lg hover:bg-button-hover shadow-primary text-tertiary"
+            className="p-2 text-xs rounded-lg bg-note text-tertiary"
           >
             Note...
           </button>
-          <div className="absolute left-5 border-l-[5px] border-l-transparent border-r-[5px] border-r-transparent border-t-[5px] border-t-gray-100"></div>
+          <div className="absolute left-5 border-l-[5px] border-l-transparent border-r-[5px] border-r-transparent border-t-[5px] border-t-note"></div>
         </div>
       )}
     </div>
