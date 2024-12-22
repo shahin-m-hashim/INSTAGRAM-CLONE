@@ -19,6 +19,8 @@ const ErrorPage = lazy(() => import("pages/ErrorPage"));
 
 const NotificationsPage = lazy(() => import("pages/private/NotificationsPage"));
 
+const ExplorePage = lazy(() => import("pages/private/ExplorePage"));
+
 const privateRoutes = {
   path: "/",
   element: <ProtectedLayout />,
@@ -43,7 +45,7 @@ const privateRoutes = {
     },
     {
       path: "explore",
-      element: <></>,
+      element: <ExplorePage />,
     },
     {
       path: "accounts/convert_to_professional_account",

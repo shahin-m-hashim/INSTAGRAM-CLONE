@@ -23,7 +23,7 @@ export default function SearchField({ className }) {
   const handleClear = () => setState({ value: "", isFocused: false });
 
   return (
-    <label htmlFor="search" className="relative">
+    <label htmlFor="search" className="relative w-full">
       <input
         id="search"
         type="text"

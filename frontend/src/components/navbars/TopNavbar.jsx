@@ -227,6 +227,14 @@ const Activity = ({ page }) => {
   );
 };
 
+const Explore = () => {
+  return (
+    <div className="relative flex items-center w-full">
+      <SearchField className="w-full h-8 border border-primary" />
+    </div>
+  );
+};
+
 const Notifications = () => {
   return (
     <div className="relative flex items-center justify-center w-full">
@@ -255,6 +263,8 @@ export default function TopNavbar() {
           <Activity page={url.slice(2)} />
         ) : url[1] === "notifications" ? (
           <Notifications />
+        ) : url[1] === "explore" ? (
+          <Explore />
         ) : (
           <Home />
         )}
