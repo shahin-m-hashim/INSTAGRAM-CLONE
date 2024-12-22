@@ -17,6 +17,8 @@ const SwitchAccountsPage = lazy(() =>
 
 const ErrorPage = lazy(() => import("pages/ErrorPage"));
 
+const NotificationsPage = lazy(() => import("pages/private/NotificationsPage"));
+
 const privateRoutes = {
   path: "/",
   element: <ProtectedLayout />,
@@ -25,6 +27,10 @@ const privateRoutes = {
     {
       path: "",
       element: <HomePage />,
+    },
+    {
+      path: "notifications",
+      element: <NotificationsPage />,
     },
     {
       path: "username",

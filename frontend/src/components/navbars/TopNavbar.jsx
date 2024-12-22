@@ -227,6 +227,18 @@ const Activity = ({ page }) => {
   );
 };
 
+const Notifications = () => {
+  return (
+    <div className="relative flex items-center justify-center w-full">
+      <div className="absolute left-0">
+        <NavigateBackBtn />
+      </div>
+
+      <h1 className="font-semibold">Notifications</h1>
+    </div>
+  );
+};
+
 export default function TopNavbar() {
   const url = useLocation().pathname.split("/");
 
@@ -241,6 +253,8 @@ export default function TopNavbar() {
           <Profile />
         ) : url[1] === "your_activity" ? (
           <Activity page={url.slice(2)} />
+        ) : url[1] === "notifications" ? (
+          <Notifications />
         ) : (
           <Home />
         )}

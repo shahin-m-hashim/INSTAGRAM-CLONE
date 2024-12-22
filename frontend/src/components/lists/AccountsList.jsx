@@ -10,7 +10,7 @@ export default function AccountsList({
   limit = users.length,
 }) {
   return (
-    <ul className="flex flex-col w-full gap-3">
+    <ul className="flex flex-col w-full gap-3 ">
       {users.slice(0, limit).map((user, idx) => (
         <li key={user.id} className="flex items-center gap-3">
           <div className="h-full">
@@ -34,10 +34,10 @@ export default function AccountsList({
                 )}
               </div>
 
-              <span className="text-sm  text-tertiary">{user.fullName}</span>
+              <span className="text-sm text-tertiary">{user.fullName}</span>
 
               {type !== "following" && type !== "followers" && (
-                <span className="text-xs  text-tertiary">{user.tag}</span>
+                <span className="text-xs text-tertiary">{user.tag}</span>
               )}
             </div>
           </div>
@@ -50,9 +50,9 @@ export default function AccountsList({
                 checked={idx < minCheckedInputs}
               />
             ) : type === "notifications" ? (
-              <Button className="h-8 px-6">Follow</Button>
+              <Button className="xs:px-6">Follow</Button>
             ) : (
-              <a className="text-xs text-link-primary hover:text-link-primary-hover hover:text-white font-semibold">
+              <a className="text-xs font-semibold text-link-primary hover:text-link-primary-hover">
                 Follow
               </a>
             )}

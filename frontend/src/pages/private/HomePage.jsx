@@ -8,7 +8,7 @@ import AccountSuggestions from "components/AccountSuggestions";
 import SuggestionCards from "components/cards/SuggestionCards";
 
 export default function HomePage() {
-  const following = 52;
+  const following = 5;
 
   return (
     <main className="h-screen overflow-auto min-w-[320px] md:pt-0 pb-[50px] md:pb-0 md:pl-[80px] xl:pl-[250px] pt-[60px]">

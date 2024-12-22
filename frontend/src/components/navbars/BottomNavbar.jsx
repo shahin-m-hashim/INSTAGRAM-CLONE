@@ -32,7 +32,7 @@ export default function BottomNavbar() {
           </TransitionLink>
 
           <TransitionLink
-            to="direct/inbox"
+            to="notifications"
             className="flex flex-1 items-center justify-center gap-4 px-2.5 py-3"
           >
             <NotificationsIcon />
