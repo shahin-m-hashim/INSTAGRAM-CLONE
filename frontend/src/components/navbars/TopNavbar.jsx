@@ -1,3 +1,4 @@
+import CreateIcon from "icons/CreateIcon";
 import SettingsIcon from "icons/SettingsIcon";
 import { useLocation } from "react-router-dom";
 import MessengerIcon from "icons/MessengerIcon";
@@ -8,7 +9,6 @@ import InstagramTextIcon from "icons/InstagramTextIcon";
 import NotificationsIcon from "icons/NotificationsIcon";
 import DropDownArrowIcon from "icons/DropDownArrowIcon";
 import NavigateBackBtn from "components/NavigateBackBtn";
-import CreateIcon from "icons/CreateIcon";
 
 const Profile = () => (
   <div className="relative flex items-center justify-center w-full">
@@ -235,6 +235,17 @@ const Explore = () => {
   );
 };
 
+const Reels = () => {
+  return (
+    <div className="flex items-center justify-between w-full">
+      <h1 className="font-semibold">Reels</h1>
+      <a className="items-center gap-4">
+        <CreateIcon />
+      </a>
+    </div>
+  );
+};
+
 const Notifications = () => {
   return (
     <div className="relative flex items-center justify-center w-full">
@@ -265,6 +276,8 @@ export default function TopNavbar() {
           <Notifications />
         ) : url[1] === "explore" ? (
           <Explore />
+        ) : url[1] === "reels" ? (
+          <Reels />
         ) : (
           <Home />
         )}

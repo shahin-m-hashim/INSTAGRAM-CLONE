@@ -105,7 +105,7 @@ export default function MainSidebar() {
               </TransitionLink>
 
               <TransitionLink
-                to="reels"
+                to="reels/id"
                 className="flex items-center justify-center flex-col xl:flex-row px-2.5 py-3 rounded-md hover:bg-sidebar-hover gap-4 xl:justify-start size-full"
               >
                 <ReelsIcon isActive={url[1] === "reels" && !activeSidebar} />

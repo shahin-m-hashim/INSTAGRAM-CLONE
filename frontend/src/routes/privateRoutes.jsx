@@ -21,6 +21,8 @@ const NotificationsPage = lazy(() => import("pages/private/NotificationsPage"));
 
 const ExplorePage = lazy(() => import("pages/private/ExplorePage"));
 
+const ReelsPage = lazy(() => import("pages/private/ReelsPage"));
+
 const privateRoutes = {
   path: "/",
   element: <ProtectedLayout />,
@@ -40,8 +42,8 @@ const privateRoutes = {
     },
     activityRoutes,
     {
-      path: "reels",
-      element: <></>,
+      path: "reels/:id",
+      element: <ReelsPage />,
     },
     {
       path: "explore",

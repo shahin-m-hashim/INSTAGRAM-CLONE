@@ -18,14 +18,14 @@ export default function BottomNavbar() {
           </TransitionLink>
 
           <TransitionLink
-            to="search"
+            to="explore"
             className="flex flex-1 items-center justify-center gap-4 px-2.5 py-3"
           >
             <SearchIcon />
           </TransitionLink>
 
           <TransitionLink
-            to="reels"
+            to="reels/12"
             className="flex flex-1 items-center justify-center gap-4 px-2.5 py-3"
           >
             <ReelsIcon />
