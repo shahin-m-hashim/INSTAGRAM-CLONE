@@ -1,34 +1,28 @@
 import { lazy } from "react";
-import wait from "utils/wait";
-import MessagesAndStoryRepliesSettingsLayout from "components/wrappers/MessagesAndStoryRepliesSettingsLayout";
+
+const MessagesAndStoryRepliesSettingsLayout = lazy(() =>
+  import("components/wrappers/MessagesAndStoryRepliesSettingsLayout")
+);
 
 const MessagesAndStoryRepliesSettingsPage = lazy(() =>
-  wait(300).then(() =>
-    import("pages/private/settings/MessagesAndStoryRepliesSettingsPage")
-  )
+  import("pages/private/settings/MessagesAndStoryRepliesSettingsPage")
 );
 
 const MessageControlsSettingsPage = lazy(() =>
-  wait(300).then(() =>
-    import(
-      "pages/private/settings/messages_and_story_replies/MessageControlsSettingsPage"
-    )
+  import(
+    "pages/private/settings/messages_and_story_replies/MessageControlsSettingsPage"
   )
 );
 
 const StoryRepliesSettingsPage = lazy(() =>
-  wait(300).then(() =>
-    import(
-      "pages/private/settings/messages_and_story_replies/StoryRepliesSettingsPage"
-    )
+  import(
+    "pages/private/settings/messages_and_story_replies/StoryRepliesSettingsPage"
   )
 );
 
 const ActivityStatusSettingsPage = lazy(() =>
-  wait(300).then(() =>
-    import(
-      "pages/private/settings/messages_and_story_replies/ActivityStatusSettingsPage"
-    )
+  import(
+    "pages/private/settings/messages_and_story_replies/ActivityStatusSettingsPage"
   )
 );
 

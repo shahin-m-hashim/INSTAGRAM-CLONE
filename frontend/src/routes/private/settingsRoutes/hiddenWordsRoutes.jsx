@@ -1,15 +1,15 @@
 import { lazy } from "react";
-import wait from "utils/wait";
-import HiddenWordSettingsLayout from "components/wrappers/HiddenWordSettingsLayout";
+
+const HiddenWordSettingsLayout = lazy(() =>
+  import("components/wrappers/HiddenWordSettingsLayout")
+);
 
 const HiddenWordsSettingsPage = lazy(() =>
-  wait(300).then(() => import("pages/private/settings/HiddenWordsSettingsPage"))
+  import("pages/private/settings/HiddenWordsSettingsPage")
 );
 
 const ManageCustomWordsSettingsPage = lazy(() =>
-  wait(300).then(() =>
-    import("pages/private/settings/hidden_words/ManageCustomWordsSettingsPage")
-  )
+  import("pages/private/settings/hidden_words/ManageCustomWordsSettingsPage")
 );
 
 const hiddenWordsRoute = {

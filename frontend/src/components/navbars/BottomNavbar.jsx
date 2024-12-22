@@ -3,6 +3,7 @@ import ReelsIcon from "icons/ReelsIcon";
 import SearchIcon from "icons/SearchIcon";
 import TransitionLink from "components/TransitionLink";
 import NotificationsIcon from "icons/NotificationsIcon";
+import ProfilePicture from "components/ProfilePicture";
 
 export default function BottomNavbar() {
   return (
@@ -41,10 +42,7 @@ export default function BottomNavbar() {
             to="username"
             className="flex flex-1 items-center justify-center gap-4 px-2.5 py-3"
           >
-            <img
-              className="size-[24px] rounded-full"
-              src="images/default_dp_dark.webp"
-            />
+            <ProfilePicture className="size-6" storyPadding="0px" />
           </TransitionLink>
         </div>
       </div>

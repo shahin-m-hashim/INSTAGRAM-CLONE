@@ -129,6 +129,9 @@ const Settings = ({ page }) => {
       case "archiving_and_downloading":
         return "Archiving And Downloading";
 
+      case "switch_appearance":
+        return "Switch Appearance";
+
       case "website_permissions":
         return "Website Permissions";
 
@@ -156,6 +159,9 @@ const Settings = ({ page }) => {
           : page[1] === "hidden_features"
           ? "Hidden Features"
           : "Account Status";
+
+      case "more":
+        return "More";
 
       default:
         return "Settings And Privacy";

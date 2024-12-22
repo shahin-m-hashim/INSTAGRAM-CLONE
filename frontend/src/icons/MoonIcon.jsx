@@ -4,7 +4,7 @@ export default function MoonIcon({ className }) {
   return (
     <svg
       aria-label="Theme icon"
-      className={cn("text-primary", className)}
+      className={cn("size-5 text-primary", className)}
       fill="currentColor"
       height="18"
       role="img"

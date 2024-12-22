@@ -1,29 +1,23 @@
 import { lazy } from "react";
-import wait from "utils/wait";
-import AccountStatusSettingsLayout from "components/wrappers/AccountStatusSettingsLayout";
+
+const AccountStatusSettingsLayout = lazy(() =>
+  import("components/wrappers/AccountStatusSettingsLayout")
+);
 
 const AccountStatusSettingsPage = lazy(() =>
-  wait(300).then(() =>
-    import("pages/private/settings/AccountStatusSettingsPage")
-  )
+  import("pages/private/settings/AccountStatusSettingsPage")
 );
 
 const RemovedContentSettingsPage = lazy(() =>
-  wait(300).then(() =>
-    import("pages/private/settings/account_status/RemovedContentSettingsPage")
-  )
+  import("pages/private/settings/account_status/RemovedContentSettingsPage")
 );
 
 const LoweredContentSettingsPage = lazy(() =>
-  wait(300).then(() =>
-    import("pages/private/settings/account_status/LoweredContentSettingsPage")
-  )
+  import("pages/private/settings/account_status/LoweredContentSettingsPage")
 );
 
 const HiddenFeaturesSettingsPage = lazy(() =>
-  wait(300).then(() =>
-    import("pages/private/settings/account_status/HiddenFeaturesSettingsPage")
-  )
+  import("pages/private/settings/account_status/HiddenFeaturesSettingsPage")
 );
 
 const accountStatusRoutes = {

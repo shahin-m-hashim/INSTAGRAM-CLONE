@@ -1,37 +1,29 @@
 import { lazy } from "react";
-import wait from "utils/wait";
-import InteractionsLayout from "components/wrappers/InteractionsLayout";
+
+const InteractionsLayout = lazy(() =>
+  import("components/wrappers/InteractionsLayout")
+);
 
 const InteractionsPage = lazy(() =>
-  wait(300).then(() => import("pages/private/activity/InteractionsPage"))
+  import("pages/private/activity/InteractionsPage")
 );
 
 const ActivityInteractionLikesPage = lazy(() =>
-  wait(300).then(() =>
-    import("pages/private/activity/interactions/ActivityInteractionLikesPage")
-  )
+  import("pages/private/activity/interactions/ActivityInteractionLikesPage")
 );
 
 const ActivityInteractionCommentsPage = lazy(() =>
-  wait(300).then(() =>
-    import(
-      "pages/private/activity/interactions/ActivityInteractionCommentsPage"
-    )
-  )
+  import("pages/private/activity/interactions/ActivityInteractionCommentsPage")
 );
 
 const ActivityInteractionStoryRepliesPage = lazy(() =>
-  wait(300).then(() =>
-    import(
-      "pages/private/activity/interactions/ActivityInteractionStoryRepliesPage"
-    )
+  import(
+    "pages/private/activity/interactions/ActivityInteractionStoryRepliesPage"
   )
 );
 
 const ActivityInteractionReviewsPage = lazy(() =>
-  wait(300).then(() =>
-    import("pages/private/activity/interactions/ActivityInteractionReviewsPage")
-  )
+  import("pages/private/activity/interactions/ActivityInteractionReviewsPage")
 );
 
 const interactionsRoutes = {

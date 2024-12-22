@@ -1,27 +1,23 @@
 import { lazy } from "react";
-import wait from "utils/wait";
-import PhotosAndVideosLayout from "components/wrappers/PhotosAndVideosLayout";
+
+const PhotosAndVideosLayout = lazy(() =>
+  import("components/wrappers/PhotosAndVideosLayout")
+);
 
 const PhotosAndVideosPage = lazy(() =>
-  wait(300).then(() => import("pages/private/activity/PhotosAndVideosPage"))
+  import("pages/private/activity/PhotosAndVideosPage")
 );
 
 const ActivityPostsPage = lazy(() =>
-  wait(300).then(() =>
-    import("pages/private/activity/photos_and_videos/ActivityPostsPage")
-  )
+  import("pages/private/activity/photos_and_videos/ActivityPostsPage")
 );
 
 const ActivityReelsPage = lazy(() =>
-  wait(300).then(() =>
-    import("pages/private/activity/photos_and_videos/ActivityReelsPage")
-  )
+  import("pages/private/activity/photos_and_videos/ActivityReelsPage")
 );
 
 const ActivityHighlightsPage = lazy(() =>
-  wait(300).then(() =>
-    import("pages/private/activity/photos_and_videos/ActivityHighlightsPage")
-  )
+  import("pages/private/activity/photos_and_videos/ActivityHighlightsPage")
 );
 
 const photosAndVideosRoutes = {

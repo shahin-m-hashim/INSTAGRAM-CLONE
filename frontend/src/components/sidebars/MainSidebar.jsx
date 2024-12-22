@@ -169,7 +169,10 @@ export default function MainSidebar() {
                 to="username"
                 className="flex items-center justify-center flex-col xl:flex-row px-2.5 py-3 rounded-md hover:bg-sidebar-hover gap-4 xl:justify-start size-full"
               >
-                <ProfilePicture className="size-7" />
+                <ProfilePicture
+                  storyPadding="0px"
+                  className="border border-primary size-7"
+                />
                 {isCollapsed ||
                   (!activeSidebar && (
                     <span className="hidden xl:block">Profile</span>

@@ -51,14 +51,18 @@ export default function MoreWidget() {
                 onClick={() => setShowTab(true)}
                 className="flex items-center gap-4 px-3 py-2 transition-all duration-100 ease-in rounded-md hover:bg-widget-hover"
               >
-                <ThemeImage />
+                <div className="w-8">
+                  <ThemeImage />
+                </div>
                 <span>Switch Appearance</span>
               </button>
               <button
                 onClick={() => setActiveWidget("report")}
                 className="flex items-center gap-4 px-1 py-2 transition-all duration-100 ease-in rounded-md hover:bg-widget-hover"
               >
-                <ReportIcon className="w-10" />
+                <div className="w-10">
+                  <ReportIcon className="ml-2 size-5" />
+                </div>
                 <span>Report a problem</span>
               </button>
             </div>

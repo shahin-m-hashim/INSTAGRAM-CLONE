@@ -1,104 +1,84 @@
 import { lazy } from "react";
-import wait from "utils/wait";
-import SettingsLayout from "components/wrappers/SettingsLayout";
 import helpRoutes from "routes/private/settingsRoutes/helpRoutes";
 import hiddenWordsRoutes from "routes/private/settingsRoutes/hiddenWordsRoutes";
 import notificationsRoutes from "routes/private/settingsRoutes/notificationsRoutes";
 import accountStatusRoutes from "routes/private/settingsRoutes/accountStatusRoutes";
 import messageAndStoryRepliesRoutes from "routes/private/settingsRoutes/messageAndStoryRepliesRoutes";
 
-const SettingsPage = lazy(() =>
-  wait(300).then(() => import("pages/private/SettingsPage"))
-);
+const SettingsLayout = lazy(() => import("components/wrappers/SettingsLayout"));
+
+const SettingsPage = lazy(() => import("pages/private/SettingsPage"));
 
 const EditProfilePage = lazy(() =>
-  wait(300).then(() => import("pages/private/settings/EditProfilePage"))
+  import("pages/private/settings/EditProfilePage")
 );
 
 const AccountPrivacySettingsPage = lazy(() =>
-  wait(300).then(() =>
-    import("pages/private/settings/AccountPrivacySettingsPage")
-  )
+  import("pages/private/settings/AccountPrivacySettingsPage")
 );
 
 const CloseFriendsSettingsPage = lazy(() =>
-  wait(300).then(() =>
-    import("pages/private/settings/CloseFriendsSettingsPage")
-  )
+  import("pages/private/settings/CloseFriendsSettingsPage")
 );
 
 const BlockedAccountsSettingsPage = lazy(() =>
-  wait(300).then(() =>
-    import("pages/private/settings/BlockedAccountsSettingsPage")
-  )
+  import("pages/private/settings/BlockedAccountsSettingsPage")
 );
 
 const StoryAndLiveSettingsPage = lazy(() =>
-  wait(300).then(() =>
-    import("pages/private/settings/StoryAndLiveSettingsPage")
-  )
+  import("pages/private/settings/StoryAndLiveSettingsPage")
 );
 
 const TagsAndMentionsSettingsPage = lazy(() =>
-  wait(300).then(() =>
-    import("pages/private/settings/TagsAndMentionsSettingsPage")
-  )
+  import("pages/private/settings/TagsAndMentionsSettingsPage")
 );
 
 const CommentsSettingsPage = lazy(() =>
-  wait(300).then(() => import("pages/private/settings/CommentsSettingsPage"))
+  import("pages/private/settings/CommentsSettingsPage")
 );
 
 const SharingAndReuseSettingsPage = lazy(() =>
-  wait(300).then(() =>
-    import("pages/private/settings/SharingAndReuseSettingsPage")
-  )
+  import("pages/private/settings/SharingAndReuseSettingsPage")
 );
 
 const RestrictedAccountsSettingsPage = lazy(() =>
-  wait(300).then(() =>
-    import("pages/private/settings/RestrictedAccountsSettingsPage")
-  )
+  import("pages/private/settings/RestrictedAccountsSettingsPage")
 );
 
 const LanguageSettingsPage = lazy(() =>
-  wait(300).then(() => import("pages/private/settings/LanguageSettingsPage"))
+  import("pages/private/settings/LanguageSettingsPage")
 );
 
 const MutedAccountsSettingsPage = lazy(() =>
-  wait(300).then(() =>
-    import("pages/private/settings/MutedAccountsSettingsPage")
-  )
+  import("pages/private/settings/MutedAccountsSettingsPage")
 );
 
 const ContentPreferencesSettingsPage = lazy(() =>
-  wait(300).then(() =>
-    import("pages/private/settings/ContentPreferencesSettingsPage")
-  )
+  import("pages/private/settings/ContentPreferencesSettingsPage")
 );
 
 const LikeAndShareCountsSettingsPage = lazy(() =>
-  wait(300).then(() =>
-    import("pages/private/settings/LikeAndShareCountsSettingsPage")
-  )
+  import("pages/private/settings/LikeAndShareCountsSettingsPage")
 );
 
 const ArchivingAndDownloadingSettingsPage = lazy(() =>
-  wait(300).then(() =>
-    import("pages/private/settings/ArchivingAndDownloadingSettingsPage")
-  )
+  import("pages/private/settings/ArchivingAndDownloadingSettingsPage")
 );
 
 const WebsitePermissionsSettingsPage = lazy(() =>
-  wait(300).then(() =>
-    import("pages/private/settings/WebsitePermissionsSettingsPage")
-  )
+  import("pages/private/settings/WebsitePermissionsSettingsPage")
 );
 
 const AccountTypeAndToolsSettingsPage = lazy(() =>
-  wait(300).then(() =>
-    import("pages/private/settings/AccountTypeAndToolsSettingsPage")
-  )
+  import("pages/private/settings/AccountTypeAndToolsSettingsPage")
+);
+
+const SwitchAppearancePage = lazy(() =>
+  import("pages/private/settings/SwitchAppearancePage")
+);
+
+const MoreSettingsPage = lazy(() =>
+  import("pages/private/settings/MoreSettingsPage")
 );
 
 const settingsRoutes = {
@@ -169,6 +149,10 @@ const settingsRoutes = {
       element: <ArchivingAndDownloadingSettingsPage />,
     },
     {
+      path: "switch_appearance",
+      element: <SwitchAppearancePage />,
+    },
+    {
       path: "website_permissions",
       element: <WebsitePermissionsSettingsPage />,
     },
@@ -178,6 +162,10 @@ const settingsRoutes = {
     },
     helpRoutes,
     accountStatusRoutes,
+    {
+      path: "more",
+      element: <MoreSettingsPage />,
+    },
   ],
 };
 

@@ -1,11 +1,15 @@
 import { cn } from "utils/cn";
 import MetaIcon from "icons/MetaIcon";
 import HelpIcon from "icons/HelpIcon";
+import MoreIcon from "icons/MoreIcon";
+import ReportIcon from "icons/ReportIcon";
+import QRCodeIcon from "icons/QRCodeIcon";
 import PrivacyIcon from "icons/PrivacyIcon";
 import BlockedIcon from "icons/BlockedIcon";
 import CommentsIcon from "icons/CommentsIcon";
 import LanguageIcon from "icons/LanguageIcon";
 import { useLocation } from "react-router-dom";
+import ThemeImage from "components/ThemeImage";
 import MessengerIcon from "icons/MessengerIcon";
 import EditProfileIcon from "icons/EditProfileIcon";
 import HiddenWordsIcon from "icons/HiddenWordsIcon";
@@ -292,6 +296,17 @@ export default function SettingsContent() {
             </TransitionLink>
 
             <TransitionLink
+              to="switch_appearance"
+              className={cn(
+                activeTab === "archiving_and_downloading" && "bg-widget",
+                "flex md:hidden items-center gap-3 p-3 hover:bg-sidebar-hover rounded-md"
+              )}
+            >
+              <ThemeImage />
+              <span className="text-sm">Switch Appearance</span>
+            </TransitionLink>
+
+            <TransitionLink
               to="language"
               className={cn(
                 activeTab === "language" && "bg-widget",
@@ -348,6 +363,17 @@ export default function SettingsContent() {
 
           <div className="flex flex-col gap-1">
             <TransitionLink
+              to="switch_appearance"
+              className={cn(
+                activeTab === "archiving_and_downloading" && "bg-widget",
+                "flex md:hidden items-center gap-3 p-3 hover:bg-sidebar-hover rounded-md"
+              )}
+            >
+              <QRCodeIcon />
+              <span className="text-sm">QR Code</span>
+            </TransitionLink>
+
+            <TransitionLink
               to="help"
               className={cn(
                 activeTab === "help" && "bg-widget",
@@ -358,7 +384,7 @@ export default function SettingsContent() {
               <span className="text-sm">Help</span>
             </TransitionLink>
 
-            <div className="flex items-center gap-3 p-3 rounded-md hover:bg-sidebar-hover">
+            <div className="items-center hidden gap-3 p-3 rounded-md md:flex hover:bg-sidebar-hover">
               <PrivacyCenterIcon />
               <span className="text-sm">Privacy Center</span>
             </div>
@@ -373,7 +399,30 @@ export default function SettingsContent() {
               <AccountStatusIcon />
               <span className="text-sm">Account Status</span>
             </TransitionLink>
+
+            <button
+              type="button"
+              className="flex items-center gap-3 p-3 rounded-md md:hidden hover:bg-sidebar-hover"
+            >
+              <ReportIcon className="size-6" />
+              <span className="text-sm">Report a problem</span>
+            </button>
+
+            <TransitionLink
+              to="more"
+              className={cn(
+                activeTab === "archiving_and_downloading" && "bg-widget",
+                "flex md:hidden items-center gap-3 p-3 hover:bg-sidebar-hover rounded-md"
+              )}
+            >
+              <MoreIcon />
+              <span className="text-sm">More</span>
+            </TransitionLink>
           </div>
+        </div>
+
+        <div className="px-2 md:hidden">
+          <span className="font-semibold text-red-500">Log Out</span>
         </div>
       </div>
     </>

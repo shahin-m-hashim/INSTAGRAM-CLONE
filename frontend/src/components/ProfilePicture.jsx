@@ -2,6 +2,8 @@ import { cn } from "utils/cn";
 import { useRef } from "react";
 import CameraIcon from "icons/CameraIcon";
 
+const theme = localStorage.getItem("theme") || "dark";
+
 export default function ProfilePicture({
   className = "",
   fileType = "story",
@@ -27,7 +29,7 @@ export default function ProfilePicture({
       <div className="absolute inset-0 z-10">
         <img
           alt="profile pic"
-          src="images/default_dp_dark.webp"
+          src={`images/default_dp_${theme}.webp`}
           style={{ padding: hasStory ? storyPadding : 0 }}
           className="rounded-full size-full active-story"
         />

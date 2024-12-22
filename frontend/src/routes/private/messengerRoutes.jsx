@@ -1,14 +1,12 @@
 import { lazy } from "react";
-import wait from "utils/wait";
-import MessengerLayout from "components/wrappers/MessengerLayout";
 
-const InboxPage = lazy(() =>
-  wait(300).then(() => import("pages/private/InboxPage"))
+const MessengerLayout = lazy(() =>
+  import("components/wrappers/MessengerLayout")
 );
 
-const MessengerPage = lazy(() =>
-  wait(300).then(() => import("pages/private/MessengerPage"))
-);
+const InboxPage = lazy(() => import("pages/private/InboxPage"));
+
+const MessengerPage = lazy(() => import("pages/private/MessengerPage"));
 
 const messengerRoutes = {
   path: "direct/inbox",
