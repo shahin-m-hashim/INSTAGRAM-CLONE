@@ -22,6 +22,9 @@ export default function ProtectedLayout() {
         <TopNavbar />
         <BottomNavbar />
 
+        {/* <InstagramTextDropDownWidget /> */}
+        {/* <CreateStoryOrPostWidget /> */}
+
         {activeWidget === "createNewPost" ? (
           <CreateNewPostWidget />
         ) : activeWidget === "more" ? (

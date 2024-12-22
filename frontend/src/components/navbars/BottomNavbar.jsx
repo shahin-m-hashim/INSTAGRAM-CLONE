@@ -1,8 +1,8 @@
 import HomeIcon from "icons/HomeIcon";
 import ReelsIcon from "icons/ReelsIcon";
-import ExploreIcon from "icons/ExploreIcon";
-import MessengerIcon from "icons/MessengerIcon";
+import SearchIcon from "icons/SearchIcon";
 import TransitionLink from "components/TransitionLink";
+import NotificationsIcon from "icons/NotificationsIcon";
 
 export default function BottomNavbar() {
   return (
@@ -17,10 +17,10 @@ export default function BottomNavbar() {
           </TransitionLink>
 
           <TransitionLink
-            to="explore"
+            to="search"
             className="flex flex-1 items-center justify-center gap-4 px-2.5 py-3"
           >
-            <ExploreIcon />
+            <SearchIcon />
           </TransitionLink>
 
           <TransitionLink
@@ -34,7 +34,7 @@ export default function BottomNavbar() {
             to="direct/inbox"
             className="flex flex-1 items-center justify-center gap-4 px-2.5 py-3"
           >
-            <MessengerIcon />
+            <NotificationsIcon />
           </TransitionLink>
 
           <TransitionLink

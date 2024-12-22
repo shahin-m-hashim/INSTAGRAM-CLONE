@@ -1,11 +1,14 @@
 import SettingsIcon from "icons/SettingsIcon";
 import { useLocation } from "react-router-dom";
+import MessengerIcon from "icons/MessengerIcon";
 import NewMessageIcon from "icons/NewMessageIcon";
 import TransitionLink from "components/TransitionLink";
 import SearchField from "components/fields/SearchField";
 import InstagramTextIcon from "icons/InstagramTextIcon";
 import NotificationsIcon from "icons/NotificationsIcon";
+import DropDownArrowIcon from "icons/DropDownArrowIcon";
 import NavigateBackBtn from "components/NavigateBackBtn";
+import CreateIcon from "icons/CreateIcon";
 
 const Profile = () => (
   <div className="relative flex items-center justify-center w-full">
@@ -25,14 +28,23 @@ const Profile = () => (
 
 const Home = () => (
   <>
-    <InstagramTextIcon />
+    <div className="relative flex items-center gap-2">
+      <InstagramTextIcon />
+      <DropDownArrowIcon />
+    </div>
 
     <div className="flex justify-end flex-1 h-full">
-      <div className="flex items-center gap-3">
-        <SearchField className="h-8" />
+      <div className="flex items-center gap-4">
+        <div className="hidden md:block">
+          <SearchField className="h-8" />
+        </div>
 
         <a className="items-center gap-4">
-          <NotificationsIcon />
+          <CreateIcon />
+        </a>
+
+        <a className="items-center gap-4">
+          <MessengerIcon />
         </a>
       </div>
     </div>
