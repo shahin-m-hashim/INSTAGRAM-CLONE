@@ -4,9 +4,9 @@ import ProfilePicture from "components/ProfilePicture";
 import NavigateBackBtn from "components/NavigateBackBtn";
 import TransitionLink from "components/TransitionLink";
 
-export default function MessengerHeader({ page }) {
-  console.log(page);
+const showDetails = false; // special case
 
+export default function MessengerHeader({ page }) {
   return (
     <div className="relative flex items-center w-full">
       <div className="absolute left-0">
@@ -15,8 +15,8 @@ export default function MessengerHeader({ page }) {
         </div>
       </div>
 
-      {page[1] === "details" ? (
-        <h1 className="ml-10 font-semibold">Details</h1>
+      {showDetails ? (
+        <h1 className="mx-auto text-lg font-semibold">Details</h1>
       ) : page[1] === "new" ? (
         <h1 className="mx-auto font-semibold">New Message</h1>
       ) : (

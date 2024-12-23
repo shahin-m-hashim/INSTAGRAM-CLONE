@@ -12,7 +12,9 @@ export default function MessengerContent() {
           <h1 className="font-bold">Messages</h1>
         </div>
         <div>
-          <a className="text-sm font-semibold text-tertiary">Requests</a>
+          <a className="text-sm font-semibold text-link-primary hover:text-link-primary-hover">
+            Requests
+          </a>
         </div>
       </div>
 
