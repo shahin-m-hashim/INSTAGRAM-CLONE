@@ -8,11 +8,16 @@ const InboxPage = lazy(() => import("pages/private/InboxPage"));
 
 const MessengerPage = lazy(() => import("pages/private/MessengerPage"));
 
+const NewMessagePage = lazy(() =>
+  import("pages/private/messenger/NewMessagePage")
+);
+
 const messengerRoutes = {
   path: "direct/inbox",
   element: <MessengerLayout />,
   children: [
     { path: "", element: <MessengerPage /> },
+    { path: "new", element: <NewMessagePage /> },
     { path: ":username", element: <InboxPage /> },
   ],
 };

@@ -8,7 +8,7 @@ export default function InboxPage() {
         <MessagesIcon className="size-24" />
         <div>
           <h1>Your Messages</h1>
-          <p className="text-sm  text-tertiary">
+          <p className="text-sm text-tertiary">
             Send a message to start a chat.
           </p>
         </div>

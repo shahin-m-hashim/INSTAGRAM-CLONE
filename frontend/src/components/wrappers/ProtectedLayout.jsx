@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { Navigate, Outlet } from "react-router-dom";
+import { Navigate, Outlet, useLocation } from "react-router-dom";
 import TopNavbar from "components/navbars/TopNavbar";
 import GlobalContext from "providers/GlobalProvider";
 import MoreWidget from "components/widgets/MoreWidget";
@@ -13,6 +13,7 @@ import ReportAProblemWidget from "components/widgets/ReportAProblemWidget";
 const isAuthenticated = true;
 
 export default function ProtectedLayout() {
+  const { pathname } = useLocation();
   const { activeWidget, isPending } = useContext(GlobalContext);
 
   return isAuthenticated ? (
@@ -20,10 +21,11 @@ export default function ProtectedLayout() {
       <div className="fixed bg-transparent inset-0 z-50 h-screen min-w-[320px] overflow-hidden">
         <MainSidebar />
         <TopNavbar />
-        <BottomNavbar />
+        {pathname.split("/")[1] !== "direct" && <BottomNavbar />}
 
         {/* <InstagramTextDropDownWidget /> */}
         {/* <CreateStoryOrPostWidget /> */}
+        {/* <NewMessageWidget /> */}
 
         {activeWidget === "createNewPost" ? (
           <CreateNewPostWidget />

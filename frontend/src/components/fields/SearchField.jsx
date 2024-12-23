@@ -1,66 +1,68 @@
 import { cn } from "utils/cn";
+import { useState } from "react";
 import CrossIcon from "icons/CrossIcon";
 import SearchIcon from "icons/SearchIcon";
-import { useEffect, useState } from "react";
 
-export default function SearchField({ className }) {
-  const [state, setState] = useState({
+export default function SearchField({ showIcon = true, className }) {
+  const [field, setField] = useState({
     value: "",
-    isFocused: false,
+    showInput: false,
   });
 
-  useEffect(() => {
-    // Simulate search query request to backend
-  }, [state.value]);
-
-  const handleFocus = () => setState((prev) => ({ ...prev, isFocused: true }));
-
-  const handleBlur = () => setState((prev) => ({ ...prev, isFocused: false }));
-
   const handleChange = (e) =>
-    setState((prev) => ({ ...prev, value: e.target.value }));
+    setField((prev) => ({ ...prev, value: e.target.value }));
 
-  const handleClear = () => setState({ value: "", isFocused: false });
+  const handleClear = () =>
+    setField({
+      value: "",
+    });
 
   return (
     <label htmlFor="search" className="relative w-full">
-      <input
-        id="search"
-        type="text"
-        name="search"
-        autoComplete="off"
-        value={state.value}
-        onBlur={handleBlur}
-        placeholder="Search"
-        onFocus={handleFocus}
-        onChange={handleChange}
-        className={cn(
-          "bg-tertiary text-sm focus:outline-none h-10 px-10 focus:px-3.5 w-full rounded-md",
-          className
-        )}
-      />
-      <div
-        className={cn(
-          state.isFocused ? "hidden" : "flex",
-          "absolute inset-y-0 items-center left-3"
-        )}
-      >
-        <div className="flex flex-col items-center justify-center h-full">
-          <SearchIcon className="text-primary size-4" />
+      {field.showInput ? (
+        <>
+          <input
+            id="search"
+            type="text"
+            name="search"
+            autoComplete="off"
+            value={field.value}
+            placeholder="Search"
+            onChange={handleChange}
+            className={cn(
+              "flex items-center gap-2 w-full h-10 px-4 text-sm rounded-md outline-none bg-tertiary",
+              className
+            )}
+          />
+
+          {field.value && (
+            <button
+              type="button"
+              onClick={handleClear}
+              className="absolute inset-y-0 flex items-center right-3"
+            >
+              <div className="flex flex-col items-center justify-center h-full">
+                <CrossIcon className="size-4" />
+              </div>
+            </button>
+          )}
+        </>
+      ) : (
+        <div
+          onClick={() => setField((prev) => ({ ...prev, showInput: true }))}
+          className={cn(
+            "flex items-center gap-2 w-full h-10 px-4 text-sm rounded-md outline-none bg-tertiary",
+            className
+          )}
+        >
+          {showIcon && (
+            <div className="flex flex-col items-center justify-center h-full">
+              <SearchIcon className="text-primary size-4" />
+            </div>
+          )}
+          <span>Search</span>
         </div>
-      </div>
-      <button
-        type="button"
-        onClick={handleClear}
-        className={cn(
-          state.value ? "flex" : "hidden",
-          "absolute inset-y-0 items-center right-3"
-        )}
-      >
-        <div className="flex flex-col items-center justify-center h-full">
-          <CrossIcon className="size-4" />
-        </div>
-      </button>
+      )}
     </label>
   );
 }

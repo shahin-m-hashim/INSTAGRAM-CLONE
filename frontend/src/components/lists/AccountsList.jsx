@@ -6,11 +6,12 @@ import CheckboxInput from "components/CheckboxInput";
 
 export default function AccountsList({
   type = "normal",
+  className = "",
   minCheckedInputs = 0,
   limit = users.length,
 }) {
   return (
-    <ul className="flex flex-col w-full gap-3 ">
+    <ul className={cn("flex flex-col w-full gap-3", className)}>
       {users.slice(0, limit).map((user, idx) => (
         <li key={user.id} className="flex items-center gap-3">
           <div className="h-full">
