@@ -1,17 +1,16 @@
 import { cn } from "utils/cn";
-import { useState } from "react";
 import SaveIcon from "icons/SaveIcon";
 import Footer from "components/Footer";
 import PostsIcon from "icons/PostsIcon";
 import TaggedIcon from "icons/TaggedIcon";
-import { Outlet } from "react-router-dom";
 import Separator from "components/Separator";
 import SettingsIcon from "icons/SettingsIcon";
+import { Outlet, useLocation } from "react-router-dom";
 import ProfilePicture from "components/ProfilePicture";
 import TransitionLink from "components/TransitionLink";
 
 export default function ProfileLayout() {
-  const [activeTab, setActiveTab] = useState("postsTab");
+  const activeTab = useLocation().pathname.split("/")[2];
 
   return (
     <main className="bg-primary text-primary h-screen overflow-auto min-w-[320px] md:pt-0 pb-[50px] md:pb-0 md:pl-[80px] xl:pl-[250px] pt-[60px]">
@@ -86,71 +85,67 @@ export default function ProfileLayout() {
 
           <div className="mt-10 md:hidden">
             <Separator straight={true} />
-            <div className="flex my-2.5 text-sm justify-evenly size-full">
-              <div className="flex flex-col items-center justify-center">
+
+            <div className="flex w-full">
+              <div className="flex flex-col items-center flex-1 py-2.5">
                 <span>0</span>
                 <span className="text-sm text-tertiary">posts</span>
               </div>
 
-              <div className="flex flex-col items-center justify-center">
+              <div className="flex flex-col items-center flex-1 py-2.5">
                 <span>0</span>
                 <span className="text-sm text-tertiary">followers</span>
               </div>
 
-              <div className="flex flex-col items-center justify-center">
+              <div className="flex flex-col items-center flex-1 py-2.5">
                 <span>0</span>
                 <span className="text-sm text-tertiary">following</span>
               </div>
             </div>
-            <div className="md:hidden">
-              <Separator straight={true} />
-            </div>
           </div>
 
-          <div className="mb-10 md:mt-10">
-            <div className="md:mx-4">
-              <Separator straight={true} />
-            </div>
-            <div className="flex my-5 text-sm font-semibold md:px-6 justify-evenly md:justify-center md:gap-14 size-full">
-              <a
-                onClick={() => setActiveTab("postsTab")}
-                className="relative flex items-center justify-center flex-1 gap-2 md:flex-initial"
+          <div className="flex flex-col mb-5 md:items-center md:my-10">
+            <Separator straight={true} />
+
+            <div className="flex text-sm font-semibold md:gap-14">
+              <TransitionLink
+                to="/username"
+                className="relative flex items-center justify-center flex-1 gap-2 py-2.5"
               >
-                {activeTab === "postsTab" && (
-                  <div className="absolute inset-x-0 md:-inset-x-2 bottom-[2.8rem] md:bottom-10">
+                {!activeTab && (
+                  <div className="absolute inset-x-0 top-0 md:-inset-x-2">
                     <Separator straight={true} className="bg-secondary" />
                   </div>
                 )}
+
                 <PostsIcon
                   className={cn(
-                    activeTab === "postsTab"
-                      ? "text-link-primary"
-                      : "text-primary",
+                    !activeTab ? "text-link-primary" : "text-primary",
                     "size-6 md:size-3"
                   )}
                 />
                 <span
                   className={cn(
-                    activeTab === "postsTab" ? "text-primary" : "text-tertiary",
+                    !activeTab ? "text-primary" : "text-tertiary",
                     "hidden md:block"
                   )}
                 >
                   POSTS
                 </span>
-              </a>
+              </TransitionLink>
 
-              <a
-                onClick={() => setActiveTab("savedTab")}
-                className="relative flex items-center justify-center flex-1 gap-2 md:flex-initial"
+              <TransitionLink
+                to="saved"
+                className="relative flex items-center justify-center flex-1 gap-2 py-2.5"
               >
-                {activeTab === "savedTab" && (
+                {activeTab === "saved" && (
                   <div className="absolute inset-x-0 md:-inset-x-2 bottom-[2.8rem] md:bottom-10">
                     <Separator straight={true} className="bg-secondary" />
                   </div>
                 )}
                 <SaveIcon
                   className={cn(
-                    activeTab === "savedTab"
+                    activeTab === "saved"
                       ? "text-link-primary hover:text-link-primary-hover md:"
                       : "text-tertiary",
                     "size-6 md:size-3"
@@ -158,19 +153,19 @@ export default function ProfileLayout() {
                 />
                 <span
                   className={cn(
-                    activeTab === "savedTab" ? "text-primary" : "text-tertiary",
+                    activeTab === "saved" ? "text-primary" : "text-tertiary",
                     "hidden md:block"
                   )}
                 >
                   SAVED
                 </span>
-              </a>
+              </TransitionLink>
 
-              <a
-                onClick={() => setActiveTab("taggedTab")}
-                className="relative flex items-center justify-center flex-1 gap-2 md:flex-initial"
+              <TransitionLink
+                to="tagged"
+                className="relative flex items-center justify-center flex-1 gap-2 py-2.5"
               >
-                {activeTab === "taggedTab" && (
+                {activeTab === "tagged" && (
                   <div className="absolute inset-x-0 md:-inset-x-2 bottom-[2.8rem] md:bottom-10">
                     <Separator straight={true} className="bg-secondary" />
                   </div>
@@ -178,7 +173,7 @@ export default function ProfileLayout() {
 
                 <TaggedIcon
                   className={cn(
-                    activeTab === "taggedTab"
+                    activeTab === "tagged"
                       ? "text-link-primary hover:text-link-primary-hover md:"
                       : "text-tertiary",
                     "size-6 md:size-3"
@@ -186,22 +181,23 @@ export default function ProfileLayout() {
                 />
                 <span
                   className={cn(
-                    activeTab === "taggedTab"
-                      ? "text-primary"
-                      : "text-tertiary",
+                    activeTab === "tagged" ? "text-primary" : "text-tertiary",
                     "hidden md:block"
                   )}
                 >
                   TAGGED
                 </span>
-              </a>
+              </TransitionLink>
             </div>
+
             <div className="md:hidden">
               <Separator straight={true} />
             </div>
           </div>
 
-          <Outlet />
+          <div className="flex flex-col min-h-[280px]">
+            <Outlet />
+          </div>
         </div>
       </div>
 

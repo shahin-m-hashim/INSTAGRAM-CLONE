@@ -1,4 +1,5 @@
 import { lazy } from "react";
+import profileRoutes from "routes/private/profileRoutes";
 import settingsRoutes from "routes/private/settingsRoutes";
 import activityRoutes from "routes/private/activityRoutes";
 import messengerRoutes from "routes/private/messengerRoutes";
@@ -8,8 +9,6 @@ const ProtectedLayout = lazy(() =>
 );
 
 const HomePage = lazy(() => import("pages/private/HomePage"));
-
-const ProfilePage = lazy(() => import("pages/private/ProfilePage"));
 
 const SwitchAccountsPage = lazy(() =>
   import("pages/private/SwitchAccountsPage")
@@ -36,10 +35,7 @@ const privateRoutes = {
       path: "notifications",
       element: <NotificationsPage />,
     },
-    {
-      path: "username",
-      element: <ProfilePage />,
-    },
+    profileRoutes,
     activityRoutes,
     {
       path: "reels/:id",
