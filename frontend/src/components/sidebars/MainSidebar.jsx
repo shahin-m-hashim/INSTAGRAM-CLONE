@@ -17,14 +17,10 @@ import NotificationsIcon from "icons/NotificationsIcon";
 import SearchSidebar from "components/sidebars/SearchSidebar";
 import NotificationsSidebar from "components/sidebars/NotificationsSidebar";
 
-const messages = [];
-
 export default function MainSidebar() {
   const url = useLocation().pathname.split("/");
   const { setActiveWidget } = useContext(GlobalContext);
   const [activeSidebar, setActiveSidebar] = useState(null);
-
-  const destination = messages.length > 0 ? messages[0].id : "new";
 
   const isCollapsed = url[1] === "direct";
 
@@ -120,7 +116,7 @@ export default function MainSidebar() {
               </TransitionLink>
 
               <TransitionLink
-                to={`direct/inbox/${destination}`}
+                to="direct/inbox"
                 className={cn(
                   activeSidebar === "messenger" && "outline-1 outline",
                   "items-center flex-col xl:flex-row px-2.5 py-3 rounded-md hover:bg-sidebar-hover justify-center xl:justify-start gap-4 flex size-full"

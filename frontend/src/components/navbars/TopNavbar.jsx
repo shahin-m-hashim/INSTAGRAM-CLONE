@@ -17,7 +17,7 @@ export default function TopNavbar() {
         {url[1] === "settings" ? (
           <SettingsHeader page={url.slice(2)} />
         ) : url[1] === "direct" ? (
-          <MessengerHeader page={url.slice(2)} />
+          <MessengerHeader page={url.slice(1)} />
         ) : url[1] === "username" ? (
           <ProfileHeader />
         ) : url[1] === "your_activity" ? (

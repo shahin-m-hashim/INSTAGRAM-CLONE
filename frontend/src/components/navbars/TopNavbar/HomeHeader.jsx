@@ -23,7 +23,7 @@ export default function HomeHeader() {
             <CreateIcon />
           </a>
 
-          <TransitionLink to="direct/inbox" className="items-center gap-4">
+          <TransitionLink to="direct" className="items-center gap-4">
             <MessengerIcon />
           </TransitionLink>
         </div>
