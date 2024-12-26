@@ -3,45 +3,29 @@ import Footer from "components/Footer";
 export default function ExplorePage() {
   return (
     <main className="bg-primary flex flex-col text-primary h-screen overflow-auto min-w-[320px] md:pt-0 pb-[50px] md:pb-0 md:pl-[80px] xl:pl-[250px] pt-[60px]">
-      <div className="flex flex-col flex-1 gap-1 md:gap-2 md:my-10 md:px-6 xl:px-36">
-        <div className="w-full h-[calc(100vh/3)] xs:h-[calc(100vh/2)] md:h-[calc(100vh-5rem)]">
-          <div className="float-right bg-gray-400 explore-box-reel">
-            Full-height box
+      <div className="text-red-500 font-semibold flex flex-col gap-[2px] md:gap-1 md:my-10 md:px-6 xl:px-36">
+        <div className="relative grid flex-1 w-full grid-cols-3 grid-rows-2 gap-[2px] md:gap-1">
+          <div className="bg-gray-300 aspect-square">Box 1</div>
+          <div className="bg-gray-300 aspect-square">Box 2</div>
+          <div className="bg-gray-300 aspect-square">Box dummy</div>
+          <div className="bg-gray-300 aspect-square">Box 3</div>
+          <div className="bg-gray-300 aspect-square">Box 4</div>
+          <div className="bg-gray-300 aspect-square">Box dummy</div>
+          <div className="absolute z-10 right-0 w-[calc((100%/3)-2px)] inset-y-0 bg-slate-300">
+            full Height Video
           </div>
-          <div className="float-left bg-gray-400 explore-box">Box 1</div>
-          <div className="float-left bg-gray-400 explore-box">Box 2</div>
-          <div className="float-left bg-gray-400 explore-box">Box 3</div>
-          <div className="float-left bg-gray-400 explore-box">Box 4</div>
         </div>
 
-        <div className="w-full h-[calc(100vh/3)] xs:h-[calc(100vh/2)] md:h-[calc(100vh-5rem)]">
-          <div className="float-left bg-gray-400 explore-box-reel">
-            Full-height box
+        <div className="relative grid flex-1 w-full grid-cols-3 grid-rows-2 gap-[2px] md:gap-1">
+          <div className="bg-gray-300 aspect-square">Box dummy</div>
+          <div className="bg-gray-300 aspect-square">Box 1</div>
+          <div className="bg-gray-300 aspect-square">Box 2</div>
+          <div className="bg-gray-300 aspect-square">Box dummy</div>
+          <div className="bg-gray-300 aspect-square">Box 3</div>
+          <div className="bg-gray-300 aspect-square">Box 4</div>
+          <div className="absolute z-10 left-0 w-[calc((100%/3)-2px)] inset-y-0 bg-slate-300">
+            full Height Video
           </div>
-          <div className="float-right bg-gray-400 explore-box">Box 1</div>
-          <div className="float-right bg-gray-400 explore-box">Box 2</div>
-          <div className="float-right bg-gray-400 explore-box">Box 3</div>
-          <div className="float-right bg-gray-400 explore-box">Box 4</div>
-        </div>
-
-        <div className="w-full h-[calc(100vh/3)] xs:h-[calc(100vh/2)] md:h-[calc(100vh-5rem)]">
-          <div className="float-right bg-gray-400 explore-box-reel">
-            Full-height box
-          </div>
-          <div className="float-left bg-gray-400 explore-box">Box 1</div>
-          <div className="float-left bg-gray-400 explore-box">Box 2</div>
-          <div className="float-left bg-gray-400 explore-box">Box 3</div>
-          <div className="float-left bg-gray-400 explore-box">Box 4</div>
-        </div>
-
-        <div className="w-full h-[calc(100vh/3)] xs:h-[calc(100vh/2)] md:h-[calc(100vh-5rem)]">
-          <div className="float-left bg-gray-400 explore-box-reel">
-            Full-height box
-          </div>
-          <div className="float-right bg-gray-400 explore-box">Box 1</div>
-          <div className="float-right bg-gray-400 explore-box">Box 2</div>
-          <div className="float-right bg-gray-400 explore-box">Box 3</div>
-          <div className="float-right bg-gray-400 explore-box">Box 4</div>
         </div>
       </div>
 

@@ -137,33 +137,9 @@ input:-webkit-autofill:focus {
   animation: navigation 500ms linear 1;
 }
 
-.explore-box {
-  height: 50%;
-  margin: 0 2px 2px 0;
-  width: calc(33.3333% - 2px);
-}
-
-.explore-box-reel {
-  margin: 0 2px 2px 0;
-  height: calc(100% + 2px);
-  width: calc(33.3333% - 2px);
-}
-
 @media screen and (min-width: 768px) {
   .navigation-transition {
     height: 4px;
-  }
-
-  .explore-box {
-    height: 50%;
-    margin: 0 4px 4px 0;
-    width: calc(33.3333% - 4px);
-  }
-
-  .explore-box-reel {
-    margin: 0 4px 4px 0;
-    height: calc(100% + 4px);
-    width: calc(33.3333% - 4px);
   }
 }
 
