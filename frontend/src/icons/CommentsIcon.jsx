@@ -1,6 +1,6 @@
 import { cn } from "utils/cn";
 
-export default function CommentsIcon({ className = "" }) {
+export default function CommentsIcon({ isActive = false, className = "" }) {
   return (
     <svg
       aria-label="Comment"
@@ -15,7 +15,7 @@ export default function CommentsIcon({ className = "" }) {
       <title>Comment</title>
       <path
         d="M20.656 17.008a9.993 9.993 0 1 0-3.59 3.615L22 22Z"
-        fill="none"
+        fill={isActive ? "currentColor" : "none"}
         stroke="currentColor"
         strokeLinejoin="round"
         strokeWidth={2}

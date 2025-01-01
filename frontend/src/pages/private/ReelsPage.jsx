@@ -9,29 +9,37 @@ export default function ReelsPage() {
   return (
     <main className="bg-primary flex flex-col text-primary h-screen overflow-auto min-w-[320px] md:pt-0 pb-[50px] md:pb-0 md:pl-[80px] xl:pl-[250px] pt-[60px]">
       <div className="flex flex-col flex-1 gap-4 md:my-10 md:px-6 xl:px-36">
-        <div className="flex flex-col items-center flex-1 w-full gap-2">
+        <div className="flex flex-col items-center flex-1 w-full gap-2 text-white">
           <div className="relative w-full h-[calc(100vh-110px)] md:h-[calc(100vh-2.5rem)] text-xs xs:w-1/2 xl:w-2/5">
-            <div className="absolute inset-0 z-0 bg-gray-400"></div>
+            <div className="absolute inset-0 z-0">
+              <video
+                loop
+                muted
+                autoPlay
+                src="public/videos/1.mp4"
+                className="object-cover object-center size-full"
+              />
+            </div>
 
             <div className="absolute z-10 bg-transparent bottom-4 right-4">
               <div className="flex flex-col gap-4">
                 <div className="flex flex-col items-center gap-2">
-                  <LikeIcon />
+                  <LikeIcon className="text-white" />
                   <span>120K</span>
                 </div>
 
                 <div className="flex flex-col items-center gap-2">
-                  <CommentsIcon />
+                  <CommentsIcon className="text-white" />
                   <span>120K</span>
                 </div>
 
                 <div className="flex flex-col items-center gap-2">
-                  <ShareIcon />
+                  <ShareIcon className="text-white" />
                   <span>120K</span>
                 </div>
 
                 <div className="flex flex-col items-center">
-                  <MoreIcon className="rotate-90" />
+                  <MoreIcon className="text-white rotate-90" />
                 </div>
               </div>
             </div>
@@ -59,27 +67,35 @@ export default function ReelsPage() {
           </div>
 
           <div className="relative w-full h-[calc(100vh-110px)] md:h-[calc(100vh-2.5rem)] text-xs xs:w-1/2 xl:w-2/5">
-            <div className="absolute inset-0 z-0 bg-gray-400"></div>
+            <div className="absolute inset-0 z-0">
+              <video
+                loop
+                muted
+                autoPlay
+                src="public/videos/2.mp4"
+                className="object-cover object-center size-full"
+              />
+            </div>
 
             <div className="absolute z-10 bg-transparent bottom-4 right-4">
               <div className="flex flex-col gap-4">
                 <div className="flex flex-col items-center gap-2">
-                  <LikeIcon />
+                  <LikeIcon className="text-white" />
                   <span>120K</span>
                 </div>
 
                 <div className="flex flex-col items-center gap-2">
-                  <CommentsIcon />
+                  <CommentsIcon className="text-white" />
                   <span>120K</span>
                 </div>
 
                 <div className="flex flex-col items-center gap-2">
-                  <ShareIcon />
+                  <ShareIcon className="text-white" />
                   <span>120K</span>
                 </div>
 
                 <div className="flex flex-col items-center">
-                  <MoreIcon className="rotate-90" />
+                  <MoreIcon className="text-white rotate-90" />
                 </div>
               </div>
             </div>
