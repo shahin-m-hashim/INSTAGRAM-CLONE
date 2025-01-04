@@ -7,13 +7,14 @@ const theme = localStorage.getItem("theme") || "dark";
 export default function ProfilePicture({
   className = "",
   showNote = false,
+  hasStory = false,
   fileType = "story",
   storyPadding = "3px",
   noteInputClassName = "",
   requireNoteInput = false,
   requireFileInput = false,
+  src = `images/default_dp_${theme}.webp`,
 }) {
-  const hasStory = true;
   const fileInputRef = useRef();
 
   const handleFileChange = (e) => {
@@ -21,7 +22,6 @@ export default function ProfilePicture({
 
     if (file) {
       console.log("Selected file:", file);
-      // Add logic for handling the selected file (e.g., preview or upload)
     }
   };
 
@@ -29,8 +29,8 @@ export default function ProfilePicture({
     <div className={cn("relative size-14 rounded-full", className)}>
       <div className="absolute inset-0 z-10">
         <img
+          src={src}
           alt="profile pic"
-          src={`images/default_dp_${theme}.webp`}
           style={{ padding: hasStory ? storyPadding : 0 }}
           className="rounded-full size-full active-story"
         />

@@ -1,4 +1,4 @@
-import StoriesList from "components/lists/StoriesList";
+import StoriesList from "components/lists/Stories";
 
 export default function MessengerContent() {
   return (

@@ -137,18 +137,25 @@ input:-webkit-autofill:focus {
   animation: navigation 500ms linear 1;
 }
 
-@media screen and (min-width: 768px) {
-  .navigation-transition {
-    height: 4px;
-  }
-}
-
 @keyframes navigation {
   0% {
     width: 0%;
   }
   100% {
     width: 100%;
+  }
+}
+
+.mute-button {
+  animation: fade 0.5s linear;
+}
+
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0.5;
   }
 }
 

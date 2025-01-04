@@ -1,4 +1,4 @@
-import AccountsList from "components/lists/AccountsList";
+import Accounts from "components/lists/Accounts";
 import CircledNotificationsIcon from "icons/CircledNotificationsIcon";
 
 export default function NotificationsContent() {
@@ -24,7 +24,7 @@ export default function NotificationsContent() {
       <div className="flex flex-col w-full gap-5 my-5">
         <h1>Suggested For you</h1>
 
-        <AccountsList type="notifications" />
+        <Accounts type="notifications" />
       </div>
     </>
   );

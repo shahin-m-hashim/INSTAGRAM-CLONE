@@ -5,7 +5,7 @@ import { useLocation } from "react-router-dom";
 import ProfilePicture from "components/ProfilePicture";
 import HorizontalScroller from "components/wrappers/HorizontalScroller";
 
-export default function StoriesList() {
+export default function Stories() {
   const pathname = useLocation().pathname.split("/")[1];
 
   return (
@@ -36,8 +36,8 @@ export default function StoriesList() {
             >
               <Image
                 lazyLoad={true}
+                iconStyles="w-5"
                 alt={user.username}
-                iconClassName="w-5"
                 className="rounded-full min-w-14 size-14"
                 src={user.profilePic || "images/default_dp.webp"}
               />

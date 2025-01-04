@@ -1,4 +1,4 @@
-import AccountsList from "components/lists/AccountsList";
+import Accounts from "components/lists/Accounts";
 
 export default function ChatDetailsContent() {
   return (
@@ -17,7 +17,7 @@ export default function ChatDetailsContent() {
                 <span className="text-tertiary">Full Name</span>
               </div>
             </div> */}
-          <AccountsList />
+          <Accounts />
         </div>
       </div>
 

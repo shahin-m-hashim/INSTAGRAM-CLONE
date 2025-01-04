@@ -6,23 +6,26 @@ import Footer from "components/Footer";
 import ReelsIcon from "icons/ReelsIcon";
 import CommentsIcon from "icons/CommentsIcon";
 import GroupedPostsIcon from "icons/GroupedPostsIcon";
+import Image from "components/Image";
 
 const Post = ({ post }) => {
   return (
     <>
       {post.type === "group" ? (
-        <img
+        <Image
+          loading="lazy"
           src={post.media[0].url}
           className="absolute z-0 object-cover object-center size-full"
         />
       ) : post.type === "video" ? (
         <video
+          muted
           loading="lazy"
           src={post.media}
           className="absolute z-0 object-cover object-center size-full"
         />
       ) : (
-        <img
+        <Image
           loading="lazy"
           src={post.media}
           className="absolute z-0 object-cover object-center size-full"

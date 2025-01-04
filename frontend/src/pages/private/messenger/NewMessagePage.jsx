@@ -15,7 +15,7 @@ export default function NewMessagePage() {
 
       <div className="h-[calc(100vh-110px)] w-full p-4 overflow-auto">
         <span className="text-sm text-tertiary">No account found.</span>
-        {/* <AccountsList type="input" /> */}
+        {/* <Accounts type="input" /> */}
       </div>
     </div>
   );

@@ -4,7 +4,7 @@ import Image from "components/Image";
 import Button from "components/wrappers/Button";
 import CheckboxInput from "components/CheckboxInput";
 
-export default function AccountsList({
+export default function Accounts({
   type = "normal",
   className = "",
   minCheckedInputs = 0,
@@ -20,7 +20,7 @@ export default function AccountsList({
                 "rounded-full",
                 type === "follow" ? "size-14" : "size-12"
               )}
-              iconClassName="w-5"
+              iconStyles="w-5"
               alt={`${user.username}`}
               src={user.profilePic || "images/default_dp_dark.webp"}
             />

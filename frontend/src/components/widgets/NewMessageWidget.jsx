@@ -1,8 +1,8 @@
 import CloseIcon from "icons/CloseIcon";
 import Separator from "components/Separator";
 import Button from "components/wrappers/Button";
+import Accounts from "components/lists/Accounts";
 import SearchField from "components/fields/SearchField";
-import AccountsList from "components/lists/AccountsList";
 
 export default function NewMessageWidget() {
   return (
@@ -32,7 +32,7 @@ export default function NewMessageWidget() {
             <Separator straight={true} />
 
             <div className="flex-1 w-full p-4 overflow-auto">
-              <AccountsList type="input" />
+              <Accounts type="input" />
             </div>
 
             <div className="w-full p-4">

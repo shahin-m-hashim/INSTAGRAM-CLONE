@@ -5,10 +5,9 @@ export default function Image({
   src = "",
   alt = "image",
   className = "",
+  iconStyles = "",
   lazyLoad = false,
   showSkeleton = true,
-  iconClassName = "size-10",
-  skeletonClassName = "bg-slate-700",
 }) {
   const imgRef = useRef(null);
   const [status, setStatus] = useState("loading");
@@ -40,29 +39,19 @@ export default function Image({
   }, []);
 
   return (
-    <div
-      className={className}
-      style={{ overflow: "hidden", position: "relative" }}
-    >
+    <div className={cn("overflow-hidden relative", className)}>
       {showSkeleton && status === "loading" && (
-        <div
-          className={cn(
-            skeletonClassName,
-            "absolute inset-0 flex items-center justify-center size-full animate-pulse z-20"
-          )}
-        >
-          <img className={iconClassName} src="icons/image.svg" />
+        <div className="absolute inset-0 z-20 flex items-center justify-center bg-slate-700 size-full animate-pulse">
+          <img className={cn("size-10", iconStyles)} src="icons/image.svg" />
         </div>
       )}
 
       {status === "error" && (
-        <div
-          className={cn(
-            skeletonClassName,
-            "absolute inset-0 flex items-center justify-center size-full z-20"
-          )}
-        >
-          <img src="icons/file_error.svg" className={iconClassName} />
+        <div className="absolute inset-0 z-20 flex items-center justify-center bg-slate-700 size-full">
+          <img
+            src="icons/file_error.svg"
+            className={cn("size-10", iconStyles)}
+          />
         </div>
       )}
 

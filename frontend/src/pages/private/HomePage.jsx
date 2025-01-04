@@ -1,14 +1,15 @@
+import Post from "components/Post";
 import Links from "components/Links";
+import posts from "mocks/posts.json";
 import Footer from "components/Footer";
-import PostsList from "components/lists/PostsList";
-import StoriesList from "components/lists/StoriesList";
+import Stories from "components/lists/Stories";
+import Accounts from "components/lists/Accounts";
 import ProfilePicture from "components/ProfilePicture";
-import AccountsList from "components/lists/AccountsList";
 import AccountSuggestions from "components/AccountSuggestions";
 import SuggestionCards from "components/cards/SuggestionCards";
 
 export default function HomePage() {
-  const following = 5;
+  const following = 52;
 
   return (
     <main className="h-screen overflow-auto min-w-[320px] md:pt-0 pb-[50px] md:pb-0 md:pl-[80px] xl:pl-[250px] pt-[60px]">
@@ -19,7 +20,7 @@ export default function HomePage() {
           <div className="flex justify-center w-full xl:w-[65%]">
             <div className="flex flex-col size-full">
               <div className="p-4">
-                <StoriesList />
+                <Stories />
               </div>
 
               <div className="px-4 py-4">
@@ -36,7 +37,9 @@ export default function HomePage() {
                 <div className="flex items-center sm:justify-center">
                   <div className="w-full">
                     <div className="flex flex-col items-center">
-                      <PostsList />
+                      {posts.map((post) => (
+                        <Post post={post} key={post.id} />
+                      ))}
                     </div>
                   </div>
                 </div>
@@ -63,7 +66,7 @@ export default function HomePage() {
                   <h1 className=" text-tertiary">Suggested for you</h1>
                   <a>See all</a>
                 </div>
-                <AccountsList limit={5} />
+                <Accounts limit={5} />
               </div>
 
               <div className="m-5">

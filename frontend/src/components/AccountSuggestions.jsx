@@ -1,7 +1,7 @@
 import Separator from "components/Separator";
 import Button from "components/wrappers/Button";
+import Accounts from "components/lists/Accounts";
 import SearchField from "components/fields/SearchField";
-import AccountsList from "components/lists/AccountsList";
 
 export default function AccountSuggestions() {
   return (
@@ -30,7 +30,7 @@ export default function AccountSuggestions() {
         <div className="flex flex-col w-full gap-5 px-5">
           <SearchField />
 
-          <AccountsList type="input" minCheckedInputs={5} />
+          <Accounts type="input" minCheckedInputs={5} />
         </div>
       </div>
     </div>
