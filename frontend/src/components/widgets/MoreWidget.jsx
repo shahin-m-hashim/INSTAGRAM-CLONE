@@ -4,12 +4,12 @@ import ReportIcon from "icons/ReportIcon";
 import { useContext, useState } from "react";
 import Separator from "components/Separator";
 import SettingsIcon from "icons/SettingsIcon";
-import ThemeImage from "components/ThemeImage";
 import GlobalContext from "providers/GlobalProvider";
 import ThemeSwitcher from "components/ThemeSwitcher";
 import YourActivityIcon from "icons/YourActivityIcon";
 import TransitionLink from "components/TransitionLink";
 import DropDownArrowIcon from "icons/DropDownArrowIcon";
+import CurrentThemeImage from "components/CurrentThemeImage";
 
 export default function MoreWidget() {
   const [showTab, setShowTab] = useState(false);
@@ -52,7 +52,7 @@ export default function MoreWidget() {
                 className="flex items-center gap-4 px-3 py-2 transition-all duration-100 ease-in rounded-md hover:bg-widget-hover"
               >
                 <div className="w-8">
-                  <ThemeImage />
+                  <CurrentThemeImage />
                 </div>
                 <span>Switch Appearance</span>
               </button>
@@ -103,7 +103,7 @@ export default function MoreWidget() {
               </button>
               <h1>Switch Appearance</h1>
             </div>
-            <ThemeImage />
+            <CurrentThemeImage />
           </div>
 
           <Separator straight={true} />

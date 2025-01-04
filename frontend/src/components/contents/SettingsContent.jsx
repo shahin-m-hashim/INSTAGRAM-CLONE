@@ -9,7 +9,6 @@ import BlockedIcon from "icons/BlockedIcon";
 import CommentsIcon from "icons/CommentsIcon";
 import LanguageIcon from "icons/LanguageIcon";
 import { useLocation } from "react-router-dom";
-import ThemeImage from "components/ThemeImage";
 import MessengerIcon from "icons/MessengerIcon";
 import EditProfileIcon from "icons/EditProfileIcon";
 import HiddenWordsIcon from "icons/HiddenWordsIcon";
@@ -22,6 +21,7 @@ import PrivacyCenterIcon from "icons/PrivacyCenterIcon";
 import AccountStatusIcon from "icons/AccountStatusIcon";
 import TagsAndMentionsIcon from "icons/TagsAndMentionsIcon";
 import SharingAndReuseIcon from "icons/SharingAndReuseIcon";
+import CurrentThemeImage from "components/CurrentThemeImage";
 import BellNotificationIcon from "icons/BellNotificationIcon";
 import HideStoryAndLiveIcon from "icons/HideStoryAndLiveIcon";
 import RestrictedAccountsIcon from "icons/RestrictedAccountsIcon";
@@ -302,7 +302,7 @@ export default function SettingsContent() {
                 "flex md:hidden items-center gap-3 p-3 hover:bg-sidebar-hover rounded-md"
               )}
             >
-              <ThemeImage />
+              <CurrentThemeImage />
               <span className="text-sm">Switch Appearance</span>
             </TransitionLink>
 

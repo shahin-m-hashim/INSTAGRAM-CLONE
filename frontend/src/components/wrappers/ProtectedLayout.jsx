@@ -1,11 +1,11 @@
 import { useContext } from "react";
-import { Navigate, Outlet, useLocation } from "react-router-dom";
 import TopNavbar from "components/navbars/TopNavbar";
 import GlobalContext from "providers/GlobalProvider";
 import MoreWidget from "components/widgets/MoreWidget";
 import MainSidebar from "components/sidebars/MainSidebar";
 import BottomNavbar from "components/navbars/BottomNavbar";
 import SettingsWidget from "components/widgets/SettingsWidget";
+import { Navigate, Outlet, useLocation } from "react-router-dom";
 import CreateNewPostWidget from "components/widgets/CreateNewPostWidget";
 import CreateNewNoteWidget from "components/widgets/CreateNewNoteWidget";
 import ReportAProblemWidget from "components/widgets/ReportAProblemWidget";

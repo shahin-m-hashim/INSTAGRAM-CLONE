@@ -9,6 +9,7 @@ export default defineConfig({
       hooks: "/src/hooks",
       utils: "/src/utils",
       icons: "/src/Icons",
+      store: "/src/store",
       pages: "/src/pages",
       mocks: "/src/mocks",
       routes: "/src/routes",

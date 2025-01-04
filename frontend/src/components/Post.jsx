@@ -100,11 +100,12 @@ export default function Post({ post }) {
 
           {post.type === "video" ? (
             <div className="relative min-h-[400px] md:h-[585px]">
-              <button type="button" onClick={togglePlay} className="size-full">
+              <button type="button" className="size-full">
                 <video
                   ref={videoRef}
-                  src={post.media121}
+                  src={post.media}
                   muted={video.isMuted}
+                  onClick={togglePlay}
                   className="object-center xs:rounded-md size-full"
                 />
               </button>
