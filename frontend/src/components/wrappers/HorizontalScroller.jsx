@@ -11,6 +11,7 @@ export default function HorizontalScroller({
   leftArrowStyle = "",
   rightArrowStyle = "",
   iconType = "extended",
+  overrideTouchScreenBehavior = false,
   scrollAmount: manualScrollAmount = 0,
 }) {
   const scrollContainerRef = useRef(null);
@@ -56,7 +57,10 @@ export default function HorizontalScroller({
   };
 
   useEffect(() => {
-    if (!window.matchMedia("(pointer: coarse)").matches) {
+    if (
+      overrideTouchScreenBehavior ||
+      !window.matchMedia("(pointer: coarse)").matches
+    ) {
       const scrollContainer = scrollContainerRef.current;
 
       if (scrollContainer) {
@@ -74,7 +78,8 @@ export default function HorizontalScroller({
     <div className="relative overflow-hidden">
       <div
         className={cn(
-          "absolute inset-y-0 left-0 z-10 hide-onts",
+          "absolute inset-y-0 left-0 z-10",
+          !overrideTouchScreenBehavior && "hide-onts",
           leftArrowStyle
         )}
       >
@@ -100,13 +105,16 @@ export default function HorizontalScroller({
           transition: `transform ${duration}ms`,
           transform: `translateX(-${state.scrollLeft}px)`,
         }}
-        className="scrollbar-hidden overflow-x-auto-onts"
+        className={cn(
+          "scrollbar-hidden",
+          !overrideTouchScreenBehavior && "overflow-x-auto-onts"
+        )}
       >
         {children}
       </div>
 
-      {dots > 0 && (
-        <div className="absolute inset-x-0 z-10 flex items-center justify-center gap-2 px-10 hide-onts bottom-2">
+      {overrideTouchScreenBehavior && dots > 0 && (
+        <div className="absolute inset-x-0 z-10 flex items-center justify-center gap-2 px-10 bottom-2">
           {Array.from({ length: dots }).map((_, idx) => (
             <div
               key={idx}
@@ -123,7 +131,8 @@ export default function HorizontalScroller({
 
       <div
         className={cn(
-          "absolute inset-y-0 right-0 z-10 hide-onts",
+          "absolute inset-y-0 right-0 z-10",
+          !overrideTouchScreenBehavior && "hide-onts",
           rightArrowStyle
         )}
       >

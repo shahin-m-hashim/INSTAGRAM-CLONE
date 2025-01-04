@@ -13,6 +13,8 @@ dist
 dist-ssr
 *.local
 
+frontend/public/posts
+
 # Editor directories and files
 .vscode
 !.vscode/extensions.json

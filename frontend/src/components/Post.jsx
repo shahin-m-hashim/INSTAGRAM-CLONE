@@ -138,6 +138,7 @@ export default function Post({ post }) {
               leftArrowStyle="left-2"
               rightArrowStyle="right-2"
               dots={post.media.length}
+              overrideTouchScreenBehavior={true}
             >
               <ul className="flex items-center min-h-[400px] md:h-[585px]">
                 {post.media.map((post, idx) => (
