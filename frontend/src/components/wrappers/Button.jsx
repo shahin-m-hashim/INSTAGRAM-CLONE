@@ -15,7 +15,7 @@ export default function Button({
       onClick={onClick}
       disabled={disabled}
       className={cn(
-        disabled ? "opacity-70 pointer-events-none" : "pointer-events-auto",
+        disabled ? "opacity-70" : "opacity-100",
         "rounded-lg text-button w-full text-sm flex items-center h-8 p-2 font-semibold justify-center gap-2 bg-link-primary hover:bg-link-primary-hover",
         className
       )}

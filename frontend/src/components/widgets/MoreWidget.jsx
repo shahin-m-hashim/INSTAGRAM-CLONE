@@ -1,10 +1,9 @@
 import { cn } from "utils/cn";
+import useStore from "store/_store";
 import SaveIcon from "icons/SaveIcon";
 import ReportIcon from "icons/ReportIcon";
-import { useContext, useState } from "react";
 import Separator from "components/Separator";
 import SettingsIcon from "icons/SettingsIcon";
-import GlobalContext from "providers/GlobalProvider";
 import ThemeSwitcher from "components/ThemeSwitcher";
 import YourActivityIcon from "icons/YourActivityIcon";
 import TransitionLink from "components/TransitionLink";
@@ -12,15 +11,15 @@ import DropDownArrowIcon from "icons/DropDownArrowIcon";
 import CurrentThemeImage from "components/CurrentThemeImage";
 
 export default function MoreWidget() {
-  const [showTab, setShowTab] = useState(false);
-  const { setActiveWidget } = useContext(GlobalContext);
+  const { showThemeSwitcher, setSecondaryWidget, setShowThemeSwitcher } =
+    useStore();
 
   return (
-    <div className="absolute w-[250px] z-10 left-4 bottom-20 pointer-events-auto rounded-2xl">
-      <div className="flex overflow-hidden size-full rounded-2xl">
+    <div className="absolute z-10 pointer-events-auto left-4 bottom-20 rounded-2xl">
+      <div className="flex w-[250px] overflow-hidden size-full rounded-2xl">
         <div
           className={cn(
-            showTab ? "-translate-x-[255px]" : "translate-x-0",
+            showThemeSwitcher ? "-translate-x-[255px]" : "translate-x-0",
             "transition-all duration-200 ease-in-out"
           )}
         >
@@ -48,7 +47,7 @@ export default function MoreWidget() {
               </a>
 
               <button
-                onClick={() => setShowTab(true)}
+                onClick={() => setShowThemeSwitcher(true)}
                 className="flex items-center gap-4 px-3 py-2 transition-all duration-100 ease-in rounded-md hover:bg-widget-hover"
               >
                 <div className="w-8">
@@ -56,8 +55,9 @@ export default function MoreWidget() {
                 </div>
                 <span>Switch Appearance</span>
               </button>
+
               <button
-                onClick={() => setActiveWidget("report")}
+                onClick={() => setSecondaryWidget("report")}
                 className="flex items-center gap-4 px-1 py-2 transition-all duration-100 ease-in rounded-md hover:bg-widget-hover"
               >
                 <div className="w-10">
@@ -87,7 +87,7 @@ export default function MoreWidget() {
 
         <div
           className={cn(
-            showTab
+            showThemeSwitcher
               ? "-translate-x-[250px] translate-y-[245px]"
               : "translate-x-2",
             "flex w-[250px] rounded-2xl h-fit flex-shrink-0 bg-widget shadow-primary flex-col transition-all duration-200 ease-in-out"
@@ -96,8 +96,8 @@ export default function MoreWidget() {
           <div className="flex items-center justify-between gap-4 p-4">
             <div className="flex items-center gap-2">
               <button
-                onClick={() => setShowTab(false)}
                 className="transform rotate-90"
+                onClick={() => setShowThemeSwitcher(false)}
               >
                 <DropDownArrowIcon className="size-3" />
               </button>

@@ -1,19 +1,23 @@
 import { useContext } from "react";
+import useStore from "store/_store";
 import { useNavigate } from "react-router-dom";
 import GlobalContext from "providers/GlobalProvider";
 
 export default function TransitionLink({ to = "", children, className = "" }) {
+  const { resetUiSlice } = useStore();
+
   const navigate = useNavigate();
-  const { isPending, setActiveWidget, startTransition } =
-    useContext(GlobalContext);
+  const { isPending, startTransition } = useContext(GlobalContext);
 
   const handleNavigation = (e) => {
     e.preventDefault();
 
     if (isPending) return;
 
-    setActiveWidget(null);
-    startTransition(() => navigate(e.currentTarget.getAttribute("href")));
+    startTransition(() => {
+      resetUiSlice();
+      navigate(e.currentTarget.getAttribute("href"));
+    });
   };
 
   return (

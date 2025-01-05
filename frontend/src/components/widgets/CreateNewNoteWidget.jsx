@@ -1,4 +1,5 @@
 import { useState } from "react";
+import useStore from "store/_store";
 import CloseIcon from "icons/CloseIcon";
 import PeoplesIcon from "icons/PeoplesIcon";
 import Separator from "components/Separator";
@@ -6,7 +7,9 @@ import RadioInput from "components/RadioInput";
 import Button from "components/wrappers/Button";
 import DropDownArrowIcon from "icons/DropDownArrowIcon";
 
-export default function CreateNewNoteWidget({ setActiveWidget }) {
+export default function CreateNewNoteWidget() {
+  const { setSecondaryWidget } = useStore();
+
   const [state, setState] = useState({
     note: "",
     showDropDown: false,
@@ -16,7 +19,6 @@ export default function CreateNewNoteWidget({ setActiveWidget }) {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log({ note: state.note, sharedWith: state.sharedWith });
-    setActiveWidget(null);
   };
 
   const toggleDropDown = () =>
@@ -26,7 +28,7 @@ export default function CreateNewNoteWidget({ setActiveWidget }) {
     setState({ ...state, showDropDown: false, sharedWith: e.target.value });
 
   return (
-    <div className="absolute inset-0 z-10 backdrop-brightness-[0.4] pointer-events-auto">
+    <div className="absolute inset-0 z-20 backdrop-brightness-[0.4] pointer-events-auto">
       <div className="flex items-center justify-center size-full">
         <form
           onSubmit={handleSubmit}
@@ -36,7 +38,7 @@ export default function CreateNewNoteWidget({ setActiveWidget }) {
             <button
               type="button"
               className="absolute left-4 top-4"
-              onClick={() => setActiveWidget(null)}
+              onClick={() => setSecondaryWidget(null)}
             >
               <CloseIcon className="size-5" />
             </button>

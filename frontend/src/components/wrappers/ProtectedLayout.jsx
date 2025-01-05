@@ -1,43 +1,67 @@
 import { useContext } from "react";
+import useStore from "store/_store";
 import TopNavbar from "components/navbars/TopNavbar";
 import GlobalContext from "providers/GlobalProvider";
 import MoreWidget from "components/widgets/MoreWidget";
 import MainSidebar from "components/sidebars/MainSidebar";
 import BottomNavbar from "components/navbars/BottomNavbar";
+import SearchSidebar from "components/sidebars/SearchSidebar";
 import SettingsWidget from "components/widgets/SettingsWidget";
 import { Navigate, Outlet, useLocation } from "react-router-dom";
+import NewMessageWidget from "components/widgets/NewMessageWidget";
 import CreateNewPostWidget from "components/widgets/CreateNewPostWidget";
 import CreateNewNoteWidget from "components/widgets/CreateNewNoteWidget";
 import ReportAProblemWidget from "components/widgets/ReportAProblemWidget";
-
-const isAuthenticated = true;
+import NotificationsSidebar from "components/sidebars/NotificationsSidebar";
+import CreateStoryOrPostWidget from "components/widgets/CreateStoryOrPostWidget";
+import InstagramTextDropDownWidget from "components/widgets/InstagramTextDropDownWidget";
 
 export default function ProtectedLayout() {
   const { pathname } = useLocation();
-  const { activeWidget, isPending } = useContext(GlobalContext);
+  const { isPending } = useContext(GlobalContext);
+  const { activeSidebar, primaryWidget, secondaryWidget, isAuthenticated } =
+    useStore();
 
   return isAuthenticated ? (
     <section className="bg-primary text-primary min-h-screen min-w-[320px] pointer-events-none">
       <div className="fixed bg-transparent inset-0 z-50 h-screen min-w-[320px] overflow-hidden">
         <MainSidebar />
+
+        {activeSidebar === "notifications" ? (
+          <NotificationsSidebar />
+        ) : activeSidebar === "search" ? (
+          <SearchSidebar />
+        ) : (
+          <></>
+        )}
+
         <TopNavbar />
+
         {pathname.split("/")[1] !== "direct" && <BottomNavbar />}
 
-        {/* <InstagramTextDropDownWidget /> */}
-        {/* <CreateStoryOrPostWidget /> */}
-        {/* <NewMessageWidget /> */}
-
-        {activeWidget === "createNewPost" ? (
+        {secondaryWidget === "createNewPost" ? (
           <CreateNewPostWidget />
-        ) : activeWidget === "more" ? (
-          <MoreWidget />
-        ) : activeWidget === "settings" ? (
-          <SettingsWidget />
-        ) : activeWidget === "createNewNote" ? (
-          <CreateNewNoteWidget />
-        ) : activeWidget === "report" ? (
+        ) : secondaryWidget === "report" ? (
           <ReportAProblemWidget />
-        ) : null}
+        ) : secondaryWidget === "createNewNote" ? (
+          <CreateNewNoteWidget />
+        ) : secondaryWidget === "newMessage" ? (
+          <NewMessageWidget />
+        ) : secondaryWidget === "create" ? (
+          <CreateStoryOrPostWidget />
+        ) : secondaryWidget === "instagramTextDropdown" ? (
+          <InstagramTextDropDownWidget />
+        ) : (
+          <></>
+        )}
+
+        {primaryWidget === "more" ? (
+          <MoreWidget />
+        ) : primaryWidget === "settings" ? (
+          <SettingsWidget />
+        ) : (
+          <></>
+        )}
       </div>
 
       {isPending && <div className="navigation-transition" />}

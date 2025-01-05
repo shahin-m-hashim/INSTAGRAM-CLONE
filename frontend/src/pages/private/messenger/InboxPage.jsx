@@ -1,7 +1,10 @@
+import useStore from "store/_store";
 import MessagesIcon from "icons/MessagesIcon";
 import Button from "components/wrappers/Button";
 
 export default function InboxPage() {
+  const { setSecondaryWidget } = useStore();
+
   return (
     <div className="items-center justify-center hidden md:flex size-full">
       <div className="flex flex-col items-center gap-4 text-center w-[200px]">
@@ -12,8 +15,13 @@ export default function InboxPage() {
             Send a message to start a chat.
           </p>
         </div>
-        {/* TODO: Open New Message Popup on click */}
-        <Button className="w-28">Send message</Button>
+
+        <Button
+          onClick={() => setSecondaryWidget("newMessage")}
+          className="w-28"
+        >
+          Send message
+        </Button>
       </div>
     </div>
   );

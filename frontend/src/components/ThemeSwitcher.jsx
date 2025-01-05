@@ -1,8 +1,8 @@
-import useThemeStore from "store/themeStore";
+import useStore from "store/_store";
 import ToggleSwitch from "components/ToggleSwitch";
 
 export default function ThemeSwitcher() {
-  const { theme, toggleTheme } = useThemeStore();
+  const { theme, toggleTheme } = useStore();
 
   return (
     <ToggleSwitch

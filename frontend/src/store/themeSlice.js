@@ -1,6 +1,4 @@
-import { create } from "zustand";
-
-const useThemeStore = create((set, get) => {
+const createThemeSlice = (set, get) => {
   const theme = localStorage.getItem("theme") || "dark";
   document.documentElement.classList.add(`theme-${theme}`);
 
@@ -22,6 +20,6 @@ const useThemeStore = create((set, get) => {
     theme,
     toggleTheme,
   };
-});
+};
 
-export default useThemeStore;
+export default createThemeSlice;

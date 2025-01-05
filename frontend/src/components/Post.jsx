@@ -134,7 +134,7 @@ export default function Post({ post }) {
             </div>
           ) : post.type === "group" ? (
             <HorizontalScroller
-              duration={70}
+              duration={300}
               iconType="rounded"
               leftArrowStyle="left-2"
               rightArrowStyle="right-2"

@@ -1,13 +1,12 @@
+import { useRef } from "react";
+import useStore from "store/_store";
 import CloseIcon from "icons/CloseIcon";
-import { useContext, useRef } from "react";
 import Separator from "components/Separator";
 import Button from "components/wrappers/Button";
-import GlobalContext from "providers/GlobalProvider";
 
 export default function ReportAProblemWidget() {
   const fileInputRef = useRef();
-
-  const { setActiveWidget } = useContext(GlobalContext);
+  const { setSecondaryWidget } = useStore();
 
   const handleAddFileClick = () => fileInputRef.current.click();
 
@@ -17,9 +16,9 @@ export default function ReportAProblemWidget() {
   };
 
   return (
-    <div className="absolute inset-0 z-10 backdrop-brightness-[0.4] pointer-events-auto">
+    <div className="absolute inset-0 z-20 backdrop-brightness-[0.4] pointer-events-none">
       <div className="flex items-center justify-center size-full">
-        <div className="relative flex flex-col rounded-lg w-[400px] h-[300px] bg-widget">
+        <div className="relative flex flex-col rounded-lg w-[400px] h-[300px] bg-widget pointer-events-auto">
           <div className="flex justify-center w-full p-3">
             <h1 className="font-semibold ">Report A Problem</h1>
           </div>
@@ -59,7 +58,7 @@ export default function ReportAProblemWidget() {
           <button
             type="button"
             className="absolute top-3 right-3"
-            onClick={() => setActiveWidget(false)}
+            onClick={() => setSecondaryWidget(null)}
           >
             <CloseIcon className="size-5" />
           </button>

@@ -1,23 +1,22 @@
-import { useContext } from "react";
+import useStore from "store/_store";
 import CloseIcon from "icons/CloseIcon";
 import NewPostIcon from "icons/NewPostIcon";
 import Button from "components/wrappers/Button";
-import GlobalContext from "providers/GlobalProvider";
 
 export default function CreateNewPostWidget() {
-  const { setActiveWidget } = useContext(GlobalContext);
+  const { setSecondaryWidget } = useStore();
 
   return (
-    <div className="absolute inset-0 z-10 backdrop-brightness-[0.4] pointer-events-auto">
+    <div className="absolute inset-0 z-20 backdrop-brightness-[0.4] pointer-events-none">
       <div className="flex items-center justify-center text-primary size-full">
-        <div className="flex text-primary flex-col shadow-primary bg-widget w-[500px] rounded-lg">
+        <div className="flex text-primary flex-col shadow-primary bg-widget w-[500px] pointer-events-auto rounded-lg">
           <div className="relative flex items-center justify-center p-3 border-b-2 rounded-t-lg bg-tertiary border-primary">
             <h1 className="font-semibold">Create new post</h1>
 
             <div className="absolute -top-1 -right-2">
               <button
                 type="button"
-                onClick={() => setActiveWidget(null)}
+                onClick={() => setSecondaryWidget(null)}
                 className="flex items-center justify-end p-5"
               >
                 <CloseIcon className="text-primary size-5" />

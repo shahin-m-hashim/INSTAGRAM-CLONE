@@ -1,4 +1,5 @@
 import { cn } from "utils/cn";
+import useStore from "store/_store";
 import SaveIcon from "icons/SaveIcon";
 import Footer from "components/Footer";
 import PostsIcon from "icons/PostsIcon";
@@ -10,6 +11,7 @@ import ProfilePicture from "components/ProfilePicture";
 import TransitionLink from "components/TransitionLink";
 
 export default function ProfileLayout() {
+  const { setPrimaryWidget } = useStore();
   const activeTab = useLocation().pathname.split("/")[2];
 
   return (
@@ -43,9 +45,13 @@ export default function ProfileLayout() {
                       View Archive
                     </button>
 
-                    <div className="items-center justify-center hidden h-full md:flex">
+                    <button
+                      type="button"
+                      onClick={() => setPrimaryWidget("settings")}
+                      className="items-center justify-center hidden h-full md:flex"
+                    >
                       <SettingsIcon />
-                    </div>
+                    </button>
                   </div>
 
                   <div className="items-center hidden w-full gap-10 md:flex">

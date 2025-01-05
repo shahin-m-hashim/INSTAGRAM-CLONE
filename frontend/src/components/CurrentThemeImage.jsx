@@ -1,9 +1,9 @@
+import useStore from "store/_store";
 import SunIcon from "icons/SunIcon";
 import MoonIcon from "icons/MoonIcon";
-import useThemeStore from "store/themeStore";
 
 export default function CurrentThemeImage() {
-  const { theme } = useThemeStore();
+  const { theme } = useStore();
 
   return <>{theme === "dark" ? <MoonIcon /> : <SunIcon />}</>;
 }

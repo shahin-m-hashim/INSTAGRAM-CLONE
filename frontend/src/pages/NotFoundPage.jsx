@@ -1,10 +1,11 @@
+import useStore from "store/_store";
 import Footer from "components/Footer";
 import NotFoundNavbar from "components/navbars/NotFoundNavbar";
 import NotFoundContent from "components/contents/NotFoundContent";
 
-const isAuthenticated = true;
-
 export default function NotFoundPage() {
+  const { isAuthenticated } = useStore();
+
   return (
     <section className="bg-primary text-primary">
       <main className="min-w-[320px] h-screen overflow-auto">
