@@ -38,7 +38,7 @@ const privateRoutes = {
     profileRoutes,
     activityRoutes,
     {
-      path: "reels/:id",
+      path: "reels",
       element: <ReelsPage />,
     },
     {

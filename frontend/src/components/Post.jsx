@@ -1,60 +1,18 @@
+import { useState } from "react";
 import Image from "components/Image";
+import Video from "components/Video";
 import LikeIcon from "icons/LikeIcon";
 import MoreIcon from "icons/MoreIcon";
 import SaveIcon from "icons/SaveIcon";
 import ShareIcon from "icons/ShareIcon";
-import MutedIcon from "icons/MutedIcon";
 import { commaNumber } from "utils/number";
-import UnmutedIcon from "icons/UnmutedIcon";
 import Separator from "components/Separator";
 import CommentsIcon from "icons/CommentsIcon";
-import { useEffect, useRef, useState } from "react";
 import ProfilePicture from "components/ProfilePicture";
 import HorizontalScroller from "components/wrappers/HorizontalScroller";
 
 export default function Post({ post }) {
-  const videoRef = useRef();
   const [showLess, setShowLess] = useState(post.caption.length > 70);
-
-  const [video, setVideo] = useState({
-    isMuted: true,
-    isPlaying: true,
-  });
-
-  useEffect(() => {
-    const videoElement = videoRef.current;
-
-    const handleIntersection = (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting && video.isPlaying) {
-          videoElement.play().catch(() => {});
-        } else {
-          videoElement.pause();
-        }
-      });
-    };
-
-    const observer = new IntersectionObserver(handleIntersection, {
-      threshold: 0.75,
-    });
-
-    if (videoElement) observer.observe(videoElement);
-
-    return () => {
-      if (videoElement) observer.unobserve(videoElement);
-    };
-  }, [video.isPlaying]);
-
-  const toggleMute = () =>
-    setVideo((prev) => ({ ...prev, isMuted: !prev.isMuted }));
-
-  const togglePlay = () => {
-    if (video.isPlaying) {
-      setVideo((prev) => ({ ...prev, isPlaying: false }));
-    } else {
-      setVideo((prev) => ({ ...prev, isPlaying: true }));
-    }
-  };
 
   return (
     <div className="flex flex-col flex-grow-0 xs:w-[468px]">
@@ -99,39 +57,12 @@ export default function Post({ post }) {
           </div>
 
           {post.type === "video" ? (
-            <div className="relative min-h-[400px] md:h-[585px]">
-              <button type="button" className="size-full">
-                <video
-                  ref={videoRef}
-                  src={post.media}
-                  muted={video.isMuted}
-                  onClick={togglePlay}
-                  className="object-center xs:rounded-md size-full"
-                />
-              </button>
-
-              <button
-                type="button"
-                onClick={toggleMute}
-                className="absolute z-10 right-3 bottom-3"
-              >
-                <div className="p-2 rounded-full bg-[rgb(38,38,38)]">
-                  {video.isMuted ? (
-                    <MutedIcon className="text-white size-3" />
-                  ) : (
-                    <UnmutedIcon className="text-white size-3" />
-                  )}
-                </div>
-              </button>
-
-              {!video.isPlaying && (
-                <img
-                  alt="paused"
-                  src="images/paused.png"
-                  className="absolute -translate-x-1/2 -translate-y-1/2 pointer-events-none top-1/2 left-1/2 size-20"
-                />
-              )}
-            </div>
+            <Video
+              type="post"
+              src={post.src}
+              rootStyles="min-h-[400px] md:h-[585px]"
+              videoSTyles="object-center xs:rounded-md size-full"
+            />
           ) : post.type === "group" ? (
             <HorizontalScroller
               duration={300}
@@ -145,7 +76,7 @@ export default function Post({ post }) {
                 {post.media.map((post, idx) => (
                   <li key={idx} className="flex-shrink-0 size-full">
                     <Image
-                      src={post.url}
+                      src={post.src}
                       lazyLoad={true}
                       alt={`post-${post.id}`}
                       className="xs:rounded-md min-h-[400px] size-full"
@@ -157,7 +88,7 @@ export default function Post({ post }) {
           ) : (
             <Image
               lazyLoad={true}
-              src={post.media}
+              src={post.src}
               alt={`post-${post.id}`}
               className="rounded-md w-full min-h-[400px] md:h-[585px]"
             />

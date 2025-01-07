@@ -5,36 +5,34 @@ const initial = {
   showThemeSwitcher: false,
 };
 
-const createUiSlice = (set) => {
-  return {
-    ...initial,
+const createUiSlice = (set) => ({
+  ...initial,
 
-    resetUiSlice: () => set(initial),
+  resetUiSlice: () => set(initial),
 
-    setPrimaryWidget: (widget) => set({ primaryWidget: widget }),
+  setPrimaryWidget: (widget) => set({ primaryWidget: widget }),
 
-    togglePrimaryWidget: (widget) =>
-      set((prev) => ({
-        showThemeSwitcher: false,
-        primaryWidget: prev.primaryWidget === widget ? null : widget,
-      })),
+  togglePrimaryWidget: (widget) =>
+    set((prev) => ({
+      showThemeSwitcher: false,
+      primaryWidget: prev.primaryWidget === widget ? null : widget,
+    })),
 
-    setSecondaryWidget: (widget) => set({ secondaryWidget: widget }),
+  setSecondaryWidget: (widget) => set({ secondaryWidget: widget }),
 
-    toggleSecondaryWidget: (widget) =>
-      set((prev) => ({
-        secondaryWidget: prev.secondaryWidget === widget ? null : widget,
-      })),
+  toggleSecondaryWidget: (widget) =>
+    set((prev) => ({
+      secondaryWidget: prev.secondaryWidget === widget ? null : widget,
+    })),
 
-    toggleActiveSidebar: (sidebar) =>
-      set((prev) => ({
-        activeSidebar: prev.activeSidebar === sidebar ? null : sidebar,
-      })),
+  toggleActiveSidebar: (sidebar) =>
+    set((prev) => ({
+      activeSidebar: prev.activeSidebar === sidebar ? null : sidebar,
+    })),
 
-    setActiveSidebar: (sidebar) => set({ activeSidebar: sidebar }),
+  setActiveSidebar: (sidebar) => set({ activeSidebar: sidebar }),
 
-    setShowThemeSwitcher: (value) => set({ showThemeSwitcher: value }),
-  };
-};
+  setShowThemeSwitcher: (value) => set({ showThemeSwitcher: value }),
+});
 
 export default createUiSlice;

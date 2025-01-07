@@ -5,31 +5,31 @@
     "media": [
       {
         "type": "image",
-        "url": "posts/aliaabhatt/471729159_18489544951021763_6881877652189726724_n.webp"
+        "src": "posts/aliaabhatt/471729159_18489544951021763_6881877652189726724_n.webp"
       },
       {
         "type": "image",
-        "url": "posts/aliaabhatt/471427014_18489544963021763_7212827502763757602_n.webp"
+        "src": "posts/aliaabhatt/471427014_18489544963021763_7212827502763757602_n.webp"
       },
       {
         "type": "image",
-        "url": "posts/aliaabhatt/471647096_18489545002021763_6479421581892027903_n.webp"
+        "src": "posts/aliaabhatt/471647096_18489545002021763_6479421581892027903_n.webp"
       },
       {
         "type": "image",
-        "url": "posts/aliaabhatt/471664670_18489544975021763_8482464772221825257_n.webp"
+        "src": "posts/aliaabhatt/471664670_18489544975021763_8482464772221825257_n.webp"
       },
       {
         "type": "image",
-        "url": "posts/aliaabhatt/471695005_18489545020021763_3608472190085668541_n.webp"
+        "src": "posts/aliaabhatt/471695005_18489545020021763_3608472190085668541_n.webp"
       },
       {
         "type": "image",
-        "url": "posts/aliaabhatt/471821184_18489545032021763_1485212923755856633_n.webp"
+        "src": "posts/aliaabhatt/471821184_18489545032021763_1485212923755856633_n.webp"
       },
       {
         "type": "image",
-        "url": "posts/aliaabhatt/471826336_18489545047021763_8050126857856352498_n.webp"
+        "src": "posts/aliaabhatt/471826336_18489545047021763_8050126857856352498_n.webp"
       }
     ],
     "user": {
@@ -67,7 +67,7 @@
   {
     "id": 2,
     "type": "video",
-    "media": "posts/aashimehra29/3527222689209273430_51805839355.mp4",
+    "src": "posts/aashimehra29/3527222689209273430_51805839355.mp4",
     "user": {
       "hasStory": false,
       "isVerified": true,
@@ -111,6 +111,6 @@
     "likes": 873112,
     "type": "image",
     "comments": 1221,
-    "media": "posts/1sometrics/471823487_17914957251047598_8684370611641246659_n.webp"
+    "src": "posts/1sometrics/471823487_17914957251047598_8684370611641246659_n.webp"
   }
 ]
