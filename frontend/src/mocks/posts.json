@@ -1,6 +1,6 @@
 [
   {
-    "id": 1,
+    "id": "1bda183a-719f-401b-acc3-fbf1550cc978",
     "type": "group",
     "media": [
       {
@@ -41,10 +41,7 @@
     "location": "India",
     "caption": "Under the twinkling lights, surrounded by love.. lorem Ut modi quia enim itaque debitis culpa cum. Esse cum culpa at odio deleniti unde officia occaecati. Aperiam quidem tempore deleniti nulla iusto placeat. Ut nisi neque numquam aut veritatis non sint. Veniam nam porro. this is what Christmas feels like ✨♥️🎄",
     "hashtags": ["#christmas", "#twinklingLights", "#love"],
-    "interactions": {
-      "liked": false,
-      "saved": false
-    },
+    "interactions": { "liked": false, "saved": false },
     "noOfLikes": 42576559,
     "comments": [
       {
@@ -59,13 +56,10 @@
       }
     ],
     "mentions": [],
-    "time": {
-      "timeExtended": "6d",
-      "postedAt": "2025-01-01T10:00:00Z"
-    }
+    "time": { "timeExtended": "6d", "postedAt": "2025-01-01T10:00:00Z" }
   },
   {
-    "id": 2,
+    "id": "f46c848f-df11-4fc9-8a8d-1b9842fa0cd3",
     "type": "video",
     "src": "posts/aashimehra29/3527222689209273430_51805839355.mp4",
     "user": {
@@ -76,21 +70,15 @@
     },
     "caption": "What a great time!",
     "hashtags": ["#instagood", "#beautiful", "#photography", "#foodie"],
-    "interactions": {
-      "liked": true,
-      "saved": true
-    },
+    "interactions": { "liked": true, "saved": true },
     "noOfLikes": 3766893,
     "noOfComments": 4664,
-    "time": {
-      "timeExtended": "1w",
-      "postedAt": "2024-12-07T08:11:09.623Z"
-    },
+    "time": { "timeExtended": "1w", "postedAt": "2024-12-07T08:11:09.623Z" },
     "location": "",
     "mentions": []
   },
   {
-    "id": 3,
+    "id": "ad47c399-2e36-443f-ac08-f15da1585925",
     "user": {
       "hasStory": false,
       "isVerified": true,
@@ -98,15 +86,8 @@
       "profilePic": "images/users/1sometrics.webp"
     },
     "noOfLikes": 76559,
-
-    "interactions": {
-      "liked": false,
-      "saved": false
-    },
-    "time": {
-      "timeExtended": "1d",
-      "postedAt": "2023-12-07T08:11:09.623Z"
-    },
+    "interactions": { "liked": false, "saved": false },
+    "time": { "timeExtended": "1d", "postedAt": "2023-12-07T08:11:09.623Z" },
     "caption": "",
     "likes": 873112,
     "type": "image",

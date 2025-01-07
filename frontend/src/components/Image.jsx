@@ -1,8 +1,10 @@
 import { cn } from "utils/cn";
-import { useEffect, useRef, useState } from "react";
+import useStore from "store/_store";
+import { useEffect, useRef } from "react";
 
 export default function Image({
   src = "",
+  imageId = "",
   alt = "image",
   className = "",
   iconStyles = "",
@@ -10,20 +12,23 @@ export default function Image({
   showSkeleton = true,
 }) {
   const imgRef = useRef(null);
-  const [status, setStatus] = useState("loading");
+  const { images, initializeImage, setStatus } = useStore();
+
+  const image = images.find((img) => img.id === imageId);
 
   useEffect(() => {
+    initializeImage(imageId);
     const img = imgRef.current;
 
     const handleLoad = () => {
       if (img.naturalWidth && img.naturalHeight) {
-        setStatus("loaded");
+        setStatus(imageId, "loaded");
       } else {
         handleError();
       }
     };
 
-    const handleError = () => setStatus("error");
+    const handleError = () => setStatus(imageId, "error");
 
     if (img.complete) {
       handleLoad();
@@ -40,13 +45,13 @@ export default function Image({
 
   return (
     <div className={cn("overflow-hidden relative", className)}>
-      {showSkeleton && status === "loading" && (
+      {showSkeleton && image?.status === "loading" && (
         <div className="absolute inset-0 z-20 flex items-center justify-center bg-slate-700 size-full animate-pulse">
           <img className={cn("size-10", iconStyles)} src="icons/image.svg" />
         </div>
       )}
 
-      {status === "error" && (
+      {image?.status === "error" && (
         <div className="absolute inset-0 z-20 flex items-center justify-center bg-slate-700 size-full">
           <img
             src="icons/file_error.svg"
@@ -62,7 +67,7 @@ export default function Image({
         loading={lazyLoad ? "lazy" : "eager"}
         className={cn(
           "size-full",
-          status === "loaded" ? "opacity-100" : "opacity-0"
+          image?.status === "loaded" ? "opacity-100" : "opacity-0"
         )}
       />
     </div>

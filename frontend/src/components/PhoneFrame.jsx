@@ -1,6 +1,6 @@
 import { cn } from "utils/cn";
-import { useEffect, useState } from "react";
 import Image from "components/Image";
+import { useEffect, useState } from "react";
 
 const images = [
   "images/home/screenshot1.webp",
@@ -22,17 +22,21 @@ export default function PhoneFrame() {
   return (
     <div className="relative hidden lg:flex">
       <Image
+        lazyLoad={true}
         alt="phone-frame"
         showSkeleton={false}
+        imageId="phone-frame"
         className="w-[465px] h-[635px]"
         src="images/home/phone_frame.webp"
       />
 
       {images.map((src, idx) => (
-        <img
+        <Image
           src={src}
           key={idx}
+          lazyLoad={true}
           alt={`screenshot-${idx}`}
+          imageId={`screenshot-${idx}`}
           className={cn(
             "absolute top-7 left-[156px] transition-opacity duration-[2s] ease-in",
             idx === currentIdx ? "opacity-100" : "opacity-0"

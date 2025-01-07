@@ -36,8 +36,9 @@ export default function Stories() {
             >
               <Image
                 lazyLoad={true}
-                iconStyles="w-5"
+                iconStyles="w-4"
                 alt={user.username}
+                imageId={`s-${user.id}`}
                 className="rounded-full min-w-14 size-14"
                 src={user.profilePic || "images/default_dp.webp"}
               />

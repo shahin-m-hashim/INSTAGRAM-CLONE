@@ -60,6 +60,7 @@ export default function Post({ post }) {
             <Video
               type="post"
               src={post.src}
+              videoId={`p-${post.id}`}
               rootStyles="min-h-[400px] md:h-[585px]"
               videoSTyles="object-center xs:rounded-md size-full"
             />
@@ -79,6 +80,7 @@ export default function Post({ post }) {
                       src={post.src}
                       lazyLoad={true}
                       alt={`post-${post.id}`}
+                      imageId={`p-${post.id}`}
                       className="xs:rounded-md min-h-[400px] size-full"
                     />
                   </li>
@@ -87,9 +89,10 @@ export default function Post({ post }) {
             </HorizontalScroller>
           ) : (
             <Image
-              lazyLoad={true}
               src={post.src}
+              lazyLoad={true}
               alt={`post-${post.id}`}
+              imageId={`p-${post.id}`}
               className="rounded-md w-full min-h-[400px] md:h-[585px]"
             />
           )}

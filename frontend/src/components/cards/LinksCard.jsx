@@ -11,6 +11,7 @@ export default function LinksCard() {
         >
           <Image
             alt="playstore"
+            imageId="playstore"
             className="h-full w-28"
             src="images/playstore.webp"
           />
@@ -21,6 +22,7 @@ export default function LinksCard() {
         >
           <Image
             alt="microsoft"
+            imageId="microsoft"
             className="h-full w-28"
             src="images/microsoft.webp"
           />

@@ -1,6 +1,7 @@
 import { cn } from "utils/cn";
 import { useRef } from "react";
 import CameraIcon from "icons/CameraIcon";
+import Image from "components/Image";
 
 const theme = localStorage.getItem("theme") || "dark";
 
@@ -28,11 +29,12 @@ export default function ProfilePicture({
   return (
     <div className={cn("relative size-14 rounded-full", className)}>
       <div className="absolute inset-0 z-10">
-        <img
+        <Image
           src={src}
           alt="profile pic"
-          style={{ padding: hasStory ? storyPadding : 0 }}
+          imageId="profile-pic"
           className="rounded-full size-full active-story"
+          style={{ padding: hasStory ? storyPadding : 0 }}
         />
         {showNote && <span className="w-full text-xs">Your note ...</span>}
       </div>

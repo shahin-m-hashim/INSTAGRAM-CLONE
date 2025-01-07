@@ -1,12 +1,13 @@
 import { Fragment } from "react";
 import { v4 as uuidv4 } from "uuid";
+import Image from "components/Image";
+import Video from "components/Video";
 import LikeIcon from "icons/LikeIcon";
 import rows from "mocks/explore.json";
 import Footer from "components/Footer";
 import ReelsIcon from "icons/ReelsIcon";
 import CommentsIcon from "icons/CommentsIcon";
 import GroupedPostsIcon from "icons/GroupedPostsIcon";
-import Image from "components/Image";
 
 const Post = ({ post }) => {
   return (
@@ -14,20 +15,16 @@ const Post = ({ post }) => {
       {post.type === "group" ? (
         <Image
           loading="lazy"
-          src={post.media[0].url}
+          src={post.media[0].src}
+          imageId={`gp-${post.media[0].id}`}
           className="absolute z-0 object-cover object-center size-full"
         />
       ) : post.type === "video" ? (
-        <video
-          muted
-          loading="lazy"
-          src={post.media}
-          className="absolute z-0 object-cover object-center size-full"
-        />
+        <Video type="explore" src={post.src} videoId={`pv-${post.id}`} />
       ) : (
         <Image
           loading="lazy"
-          src={post.media}
+          src={post.src}
           className="absolute z-0 object-cover object-center size-full"
         />
       )}
@@ -43,7 +40,7 @@ const Post = ({ post }) => {
         ) : null}
       </div>
 
-      <div className="absolute size-full bg-[rgba(0,0,0,0.3)] opacity-0 group-hover:opacity-100 z-10">
+      <div className="cursor-pointer absolute size-full bg-[rgba(0,0,0,0.3)] opacity-0 group-hover:opacity-100 z-10">
         <div className="flex items-center justify-center w-full h-full">
           <div className="flex items-center gap-6 font-bold text-white">
             <div className="flex items-center gap-2">
@@ -83,17 +80,17 @@ export default function ExplorePage() {
                   <Fragment key={uuidv4()}>
                     {idx === 1 || idx === 3 ? (
                       <>
-                        <div className="relative cursor-pointer group aspect-square">
+                        <div className="relative group aspect-square">
                           <Post post={post} />
                         </div>
                         {row.length === 5 && <div className="aspect-square" />}
                       </>
                     ) : idx === 4 ? (
-                      <div className="absolute cursor-pointer group z-10 right-0 w-[calc((100%/3)-2px)] inset-y-0">
+                      <div className="absolute group z-10 right-0 w-[calc((100%/3)-2px)] inset-y-0">
                         <Post post={post} />
                       </div>
                     ) : (
-                      <div className="relative cursor-pointer group aspect-square">
+                      <div className="relative group aspect-square">
                         <Post post={post} />
                       </div>
                     )}
@@ -107,16 +104,16 @@ export default function ExplorePage() {
                     {idx === 0 || idx === 2 ? (
                       <>
                         {row.length === 5 && <div className="aspect-square" />}
-                        <div className="relative cursor-pointer group aspect-square">
+                        <div className="relative group aspect-square">
                           <Post post={post} />
                         </div>
                       </>
                     ) : idx === 4 ? (
-                      <div className="absolute cursor-pointer group z-10 left-0 w-[calc((100%/3)-2px)] inset-y-0">
+                      <div className="absolute group z-10 left-0 w-[calc((100%/3)-2px)] inset-y-0">
                         <Post post={post} />
                       </div>
                     ) : (
-                      <div className="relative cursor-pointer group aspect-square">
+                      <div className="relative group aspect-square">
                         <Post post={post} />
                       </div>
                     )}

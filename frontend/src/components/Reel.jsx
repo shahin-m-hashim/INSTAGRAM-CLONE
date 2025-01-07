@@ -10,8 +10,8 @@ const Reel = ({ reel }) => {
     <div className="relative w-full h-[calc(100vh-50px)] md:h-screen text-xs xs:w-1/2 xl:w-2/5">
       <Video
         src={reel.src}
-        videoId={reel.id}
         rootStyles="size-full"
+        videoId={`r-${reel.id}`}
         videoStyles="object-cover object-center size-full"
       />
 

@@ -17,10 +17,11 @@ export default function RemovedContentSettingsPage() {
         <IIcon className="size-6" />
       </div>
 
-      <div className="flex gap-2 items-center justify-between rounded-xl p-4 bg-tertiary">
+      <div className="flex items-center justify-between gap-2 p-4 rounded-xl bg-tertiary">
         <div className="flex items-center flex-1 gap-2 md:gap-5">
           <Image
             alt="tick"
+            imageId="tick-rcsp"
             src="images/tick.webp"
             className="hidden xs:block size-14"
           />
@@ -39,10 +40,10 @@ export default function RemovedContentSettingsPage() {
 
       <div className="flex flex-col gap-6">
         <h2 className="font-bold">What this means</h2>
-        <p className="text-sm  text-tertiary">
+        <p className="text-sm text-tertiary">
           You are not at risk of losing access to your account right now.
         </p>
-        <p className="text-sm  text-tertiary">
+        <p className="text-sm text-tertiary">
           We may still take down your account without warning if something you
           post is a risk to the Instagram community.
         </p>

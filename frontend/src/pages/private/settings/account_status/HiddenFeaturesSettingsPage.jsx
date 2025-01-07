@@ -13,6 +13,7 @@ export default function HiddenFeaturesSettingsPage() {
         <div className="flex items-center flex-1 gap-2 md:gap-5">
           <Image
             alt="tick"
+            imageId="tick-hfsp"
             src="images/tick.webp"
             className="hidden xs:block size-14"
           />

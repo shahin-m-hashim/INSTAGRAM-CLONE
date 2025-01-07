@@ -21,6 +21,7 @@ export default function Accounts({
                 type === "follow" ? "size-14" : "size-12"
               )}
               iconStyles="w-5"
+              imageId={`u-${user.id}`}
               alt={`${user.username}`}
               src={user.profilePic || "images/default_dp_dark.webp"}
             />

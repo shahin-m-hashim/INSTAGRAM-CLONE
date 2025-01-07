@@ -3,14 +3,16 @@ import createUiSlice from "./uiSlice";
 import createAuthSlice from "./authSlice";
 import createThemeSlice from "./themeSlice";
 import { devtools } from "zustand/middleware";
-import createVideoSlice from "store/videoSlice";
+import createVideosSlice from "store/videosSlice";
+import createImagesSlice from "store/imagesSlice";
 
 const useStore = create(
   devtools((set, get) => ({
-    ...createUiSlice(set),
-    ...createAuthSlice(set),
-    ...createVideoSlice(set),
+    ...createUiSlice(set, get),
+    ...createAuthSlice(set, get),
     ...createThemeSlice(set, get),
+    ...createVideosSlice(set, get),
+    ...createImagesSlice(set, get),
   }))
 );
 

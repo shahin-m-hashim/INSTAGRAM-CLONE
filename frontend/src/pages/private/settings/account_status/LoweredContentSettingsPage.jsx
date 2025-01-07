@@ -9,10 +9,11 @@ export default function LoweredContentSettingsPage() {
         <h1 className="text-lg font-bold">Content lowered in feed</h1>
       </div>
 
-      <div className="flex gap-2 items-center justify-between rounded-xl p-4 bg-tertiary">
+      <div className="flex items-center justify-between gap-2 p-4 rounded-xl bg-tertiary">
         <div className="flex items-center flex-1 gap-2 md:gap-5">
           <Image
             alt="tick"
+            imageId="tick-lcsp"
             src="images/tick.webp"
             className="hidden xs:block size-14"
           />
@@ -31,7 +32,7 @@ export default function LoweredContentSettingsPage() {
 
       <div className="flex flex-col gap-6">
         <h2 className="font-bold">What this means</h2>
-        <p className="text-sm  text-tertiary">
+        <p className="text-sm text-tertiary">
           Followers do not need to scroll lower in feed to find your posts.
         </p>
       </div>

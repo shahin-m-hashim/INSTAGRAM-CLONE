@@ -17,6 +17,7 @@ export default function SuggestionCards() {
                 <Image
                   lazyLoad="true"
                   alt={`${user.username}`}
+                  imageId={`u-${user.id}`}
                   className="rounded-full size-24"
                   src={user.profilePic || "images/default_dp.webp"}
                 />
