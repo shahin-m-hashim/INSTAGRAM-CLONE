@@ -3,29 +3,29 @@ const createImagesSlice = (set) => ({
   totalImages: 0,
 
   initializeImage: (id) =>
-    set((state) => {
-      if (!state.images.some((img) => img.id === id)) {
-        return {
-          images: [
-            ...state.images,
-            {
-              id,
-              status: "loading",
-            },
-          ],
-          totalImages: state.totalImages + 1,
-        };
-      }
-
-      return state;
-    }),
+    set(
+      (state) => {
+        if (!state.images.some((img) => img.id === id)) {
+          state.images.push({
+            id,
+            status: "loading",
+          });
+          state.totalImages++;
+        }
+      },
+      undefined,
+      "images/initializeImage"
+    ),
 
   setStatus: (id, status) =>
-    set((state) => ({
-      images: state.images.map((img) =>
-        img.id === id ? { ...img, status } : img
-      ),
-    })),
+    set(
+      (state) => {
+        const image = state.images.find((img) => img.id === id);
+        if (image) image.status = status;
+      },
+      undefined,
+      "images/setStatus"
+    ),
 });
 
 export default createImagesSlice;

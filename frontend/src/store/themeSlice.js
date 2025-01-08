@@ -13,7 +13,7 @@ const createThemeSlice = (set, get) => {
       `theme-${newTheme}`
     );
 
-    set({ theme: newTheme });
+    set({ theme: newTheme }, undefined, "theme/toggleTheme");
   };
 
   return {

@@ -3,45 +3,51 @@ const createVideosSlice = (set) => ({
   totalVideos: 0,
 
   initializeVideo: (id, isMuted) =>
-    set((state) => {
-      if (!state.videos.some((video) => video.id === id)) {
-        return {
-          videos: [
-            ...state.videos,
-            {
-              id,
-              isMuted,
-              hasError: false,
-              isPlaying: false,
-            },
-          ],
-          totalVideos: state.totalVideos + 1,
-        };
-      }
-
-      return state;
-    }),
+    set(
+      (state) => {
+        if (!state.videos.some((video) => video.id === id)) {
+          state.videos.push({
+            id,
+            isMuted,
+            hasError: false,
+            isPlaying: false,
+          });
+          state.totalVideos++;
+        }
+      },
+      undefined,
+      "videos/initializeVideo"
+    ),
 
   setIsPlaying: (id, isPlaying) =>
-    set((state) => ({
-      videos: state.videos.map((video) =>
-        video.id === id ? { ...video, isPlaying } : video
-      ),
-    })),
+    set(
+      (state) => {
+        const video = state.videos.find((video) => video.id === id);
+        if (video) video.isPlaying = isPlaying;
+      },
+      undefined,
+      "videos/setIsPlaying"
+    ),
 
   toggleIsMuted: (id) =>
-    set((state) => ({
-      videos: state.videos.map((video) =>
-        video.id === id ? { ...video, isMuted: !video.isMuted } : video
-      ),
-    })),
+    set(
+      (state) => {
+        const video = state.videos.find((video) => video.id === id);
+        if (video) video.isMuted = !video.isMuted;
+      },
+      undefined,
+      "videos/toggleIsMuted"
+    ),
 
   handleError: (id) =>
-    set((state) => ({
-      videos: state.videos.map((video) =>
-        video.id === id ? { ...video, hasError: true } : video
-      ),
-    })),
+    set(
+      (state) => {
+        const video = state.videos.find((video) => video.id === id);
+        if (video) video.hasError = true;
+      },
+      undefined,
+      "videos/handleError"
+    ),
 });
 
 export default createVideosSlice;

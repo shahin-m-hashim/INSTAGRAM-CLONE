@@ -8,31 +8,47 @@ const initial = {
 const createUiSlice = (set) => ({
   ...initial,
 
-  resetUiSlice: () => set(initial),
+  resetUiSlice: () => set(initial, undefined, "ui/resetUiSlice"),
 
-  setPrimaryWidget: (widget) => set({ primaryWidget: widget }),
+  setPrimaryWidget: (widget) =>
+    set({ primaryWidget: widget }, undefined, "ui/setPrimaryWidget"),
 
   togglePrimaryWidget: (widget) =>
-    set((prev) => ({
-      showThemeSwitcher: false,
-      primaryWidget: prev.primaryWidget === widget ? null : widget,
-    })),
+    set(
+      (state) => ({
+        showThemeSwitcher: false,
+        primaryWidget: state.primaryWidget === widget ? null : widget,
+      }),
+      false,
+      "ui/togglePrimaryWidget"
+    ),
 
-  setSecondaryWidget: (widget) => set({ secondaryWidget: widget }),
+  setSecondaryWidget: (widget) =>
+    set({ secondaryWidget: widget }, undefined, "ui/setSecondaryWidget"),
 
   toggleSecondaryWidget: (widget) =>
-    set((prev) => ({
-      secondaryWidget: prev.secondaryWidget === widget ? null : widget,
-    })),
+    set(
+      (state) => ({
+        secondaryWidget: state.secondaryWidget === widget ? null : widget,
+      }),
+      undefined,
+      "ui/toggleSecondaryWidget"
+    ),
 
   toggleActiveSidebar: (sidebar) =>
-    set((prev) => ({
-      activeSidebar: prev.activeSidebar === sidebar ? null : sidebar,
-    })),
+    set(
+      (state) => ({
+        activeSidebar: state.activeSidebar === sidebar ? null : sidebar,
+      }),
+      undefined,
+      "ui/toggleActiveSidebar"
+    ),
 
-  setActiveSidebar: (sidebar) => set({ activeSidebar: sidebar }),
+  setActiveSidebar: (sidebar) =>
+    set({ activeSidebar: sidebar }, undefined, "ui/setActiveSidebar"),
 
-  setShowThemeSwitcher: (value) => set({ showThemeSwitcher: value }),
+  setShowThemeSwitcher: (value) =>
+    set({ showThemeSwitcher: value }, undefined, "ui/setShowThemeSwitcher"),
 });
 
 export default createUiSlice;
