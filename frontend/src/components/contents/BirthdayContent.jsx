@@ -5,11 +5,7 @@ export default function BirthdayContent() {
   return (
     <>
       <div className="flex flex-col items-center justify-center gap-3 mb-5">
-        <Image
-          imageId="cake"
-          src="images/cake_dark.webp"
-          className="h-24 w-36"
-        />
+        <Image id="cake" src="images/cake_dark.webp" className="h-24 w-36" />
 
         <h1>Add Your Birthday</h1>
         <div className="flex flex-col gap-2 text-sm">

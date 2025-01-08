@@ -3,8 +3,8 @@ import useStore from "store/_store";
 import { useEffect, useRef } from "react";
 
 export default function Image({
+  id = "",
   src = "",
-  imageId = "",
   alt = "image",
   className = "",
   iconStyles = "",
@@ -14,21 +14,21 @@ export default function Image({
   const imgRef = useRef(null);
   const { images, initializeImage, setStatus } = useStore();
 
-  const image = images.find((img) => img.id === imageId);
+  const image = images.find((img) => img.id === id);
 
   useEffect(() => {
-    initializeImage(imageId);
+    initializeImage(id);
     const img = imgRef.current;
 
     const handleLoad = () => {
       if (img.naturalWidth && img.naturalHeight) {
-        setStatus(imageId, "loaded");
+        setStatus(id, "loaded");
       } else {
         handleError();
       }
     };
 
-    const handleError = () => setStatus(imageId, "error");
+    const handleError = () => setStatus(id, "error");
 
     if (img.complete) {
       handleLoad();

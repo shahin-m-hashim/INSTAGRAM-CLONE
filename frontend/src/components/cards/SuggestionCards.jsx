@@ -15,9 +15,9 @@ export default function SuggestionCards() {
             <div className="flex flex-col items-center justify-center flex-1 gap-2 my-4">
               <div className="flex justify-center w-full">
                 <Image
-                  lazyLoad="true"
+                  id={user.id}
+                  lazyLoad={true}
                   alt={`${user.username}`}
-                  imageId={`u-${user.id}`}
                   className="rounded-full size-24"
                   src={user.profilePic || "images/default_dp.webp"}
                 />

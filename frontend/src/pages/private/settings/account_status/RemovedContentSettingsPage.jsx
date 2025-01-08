@@ -21,7 +21,7 @@ export default function RemovedContentSettingsPage() {
         <div className="flex items-center flex-1 gap-2 md:gap-5">
           <Image
             alt="tick"
-            imageId="tick-rcsp"
+            id="tick-rcsp"
             src="images/tick.webp"
             className="hidden xs:block size-14"
           />

@@ -11,9 +11,30 @@ import CommentsIcon from "icons/CommentsIcon";
 import ProfilePicture from "components/ProfilePicture";
 import HorizontalScroller from "components/wrappers/HorizontalScroller";
 
-export default function Post({ post }) {
-  const [showLess, setShowLess] = useState(post.caption.length > 70);
+const Caption = ({ caption }) => {
+  const [showLess, setShowLess] = useState(caption.length > 70);
 
+  return (
+    <p className="text-sm">
+      {showLess ? (
+        <>
+          {caption.slice(0, 70)}
+          <button
+            type="button"
+            className="text-tertiary"
+            onClick={() => setShowLess(false)}
+          >
+            ... more
+          </button>
+        </>
+      ) : (
+        <>{caption}</>
+      )}
+    </p>
+  );
+};
+
+export default function Post({ post }) {
   return (
     <div className="flex flex-col flex-grow-0 xs:w-[468px]">
       <div className="hidden xs:block">
@@ -59,10 +80,9 @@ export default function Post({ post }) {
           {post.type === "video" ? (
             <Video
               type="post"
+              id={post.id}
               src={post.src}
-              videoId={`p-${post.id}`}
-              rootStyles="min-h-[400px] md:h-[585px]"
-              videoSTyles="object-center xs:rounded-md size-full"
+              rootStyles="xs:rounded-md min-h-[400px] md:h-[585px]"
             />
           ) : post.type === "group" ? (
             <HorizontalScroller
@@ -77,10 +97,10 @@ export default function Post({ post }) {
                 {post.media.map((post, idx) => (
                   <li key={idx} className="flex-shrink-0 size-full">
                     <Image
+                      alt="post"
+                      id={post.id}
                       src={post.src}
                       lazyLoad={true}
-                      alt={`post-${post.id}`}
-                      imageId={`p-${post.id}`}
                       className="xs:rounded-md min-h-[400px] size-full"
                     />
                   </li>
@@ -89,10 +109,10 @@ export default function Post({ post }) {
             </HorizontalScroller>
           ) : (
             <Image
+              alt="post"
+              id={post.id}
               src={post.src}
               lazyLoad={true}
-              alt={`post-${post.id}`}
-              imageId={`p-${post.id}`}
               className="rounded-md w-full min-h-[400px] md:h-[585px]"
             />
           )}
@@ -117,26 +137,13 @@ export default function Post({ post }) {
                 <span className="pb-1 font-semibold">{post.user.username}</span>
                 {post.user.isVerified && (
                   <img
-                    src="icons/verified.svg"
-                    className="h-3"
                     alt="verified"
+                    className="h-3"
+                    src="icons/verified.svg"
                   />
                 )}
               </div>
-              {showLess ? (
-                <p className="text-sm">
-                  {post.caption.slice(0, 70) + "... "}
-                  <button
-                    type="button"
-                    className="text-tertiary"
-                    onClick={() => setShowLess(false)}
-                  >
-                    more
-                  </button>
-                </p>
-              ) : (
-                <p className="text-sm">{post.caption}</p>
-              )}
+              <Caption caption={post.caption} />
             </div>
 
             <a className="text-[rgb(170,170,170)] text-sm">

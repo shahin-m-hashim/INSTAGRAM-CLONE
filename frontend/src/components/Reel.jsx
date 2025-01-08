@@ -8,12 +8,7 @@ import ProfilePicture from "components/ProfilePicture";
 const Reel = ({ reel }) => {
   return (
     <div className="relative w-full h-[calc(100vh-50px)] md:h-screen text-xs xs:w-1/2 xl:w-2/5">
-      <Video
-        src={reel.src}
-        rootStyles="size-full"
-        videoId={`r-${reel.id}`}
-        videoStyles="object-cover object-center size-full"
-      />
+      <Video id={reel.id} src={reel.src} rootStyles="size-full" />
 
       <div className="absolute z-10 bg-transparent bottom-4 right-4">
         <div className="flex flex-col gap-4">

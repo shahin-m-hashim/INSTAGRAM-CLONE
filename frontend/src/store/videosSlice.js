@@ -1,43 +1,45 @@
 const createVideosSlice = (set) => ({
   videos: [],
+  totalVideos: 0,
 
-  initializeVideo: (videoId, isMuted) =>
+  initializeVideo: (id, isMuted) =>
     set((state) => {
-      if (state.videos.some((video) => video.id === videoId)) {
-        return state;
+      if (!state.videos.some((video) => video.id === id)) {
+        return {
+          videos: [
+            ...state.videos,
+            {
+              id,
+              isMuted,
+              hasError: false,
+              isPlaying: false,
+            },
+          ],
+          totalVideos: state.totalVideos + 1,
+        };
       }
 
-      return {
-        videos: [
-          ...state.videos,
-          {
-            id: videoId,
-            hasError: false,
-            isPlaying: false,
-            isMuted,
-          },
-        ],
-      };
+      return state;
     }),
 
-  setIsPlaying: (videoId, isPlaying) =>
+  setIsPlaying: (id, isPlaying) =>
     set((state) => ({
       videos: state.videos.map((video) =>
-        video.id === videoId ? { ...video, isPlaying } : video
+        video.id === id ? { ...video, isPlaying } : video
       ),
     })),
 
-  toggleIsMuted: (videoId) =>
+  toggleIsMuted: (id) =>
     set((state) => ({
       videos: state.videos.map((video) =>
-        video.id === videoId ? { ...video, isMuted: !video.isMuted } : video
+        video.id === id ? { ...video, isMuted: !video.isMuted } : video
       ),
     })),
 
-  handleError: (videoId) =>
+  handleError: (id) =>
     set((state) => ({
       videos: state.videos.map((video) =>
-        video.id === videoId ? { ...video, hasError: true } : video
+        video.id === id ? { ...video, hasError: true } : video
       ),
     })),
 });

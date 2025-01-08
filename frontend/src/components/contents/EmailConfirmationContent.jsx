@@ -5,11 +5,7 @@ export default function EmailConfirmationContent() {
   return (
     <>
       <div className="flex flex-col items-center justify-center gap-3">
-        <Image
-          imageId="email"
-          className="w-24 h-20"
-          src="images/email_dark.webp"
-        />
+        <Image id="email" className="w-24 h-20" src="images/email_dark.webp" />
         <h1 className="text-sm font-semibold">Enter Confirmation Code</h1>
         <div className="text-sm">
           <span>

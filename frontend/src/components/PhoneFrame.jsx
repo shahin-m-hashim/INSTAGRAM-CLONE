@@ -24,7 +24,6 @@ export default function PhoneFrame() {
       <Image
         lazyLoad={true}
         alt="phone-frame"
-        showSkeleton={false}
         imageId="phone-frame"
         className="w-[465px] h-[635px]"
         src="images/home/phone_frame.webp"
@@ -35,8 +34,8 @@ export default function PhoneFrame() {
           src={src}
           key={idx}
           lazyLoad={true}
-          alt={`screenshot-${idx}`}
-          imageId={`screenshot-${idx}`}
+          alt={`ss-${idx}`}
+          imageId={`ss-${idx}`}
           className={cn(
             "absolute top-7 left-[156px] transition-opacity duration-[2s] ease-in",
             idx === currentIdx ? "opacity-100" : "opacity-0"

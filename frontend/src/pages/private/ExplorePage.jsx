@@ -14,17 +14,20 @@ const Post = ({ post }) => {
     <>
       {post.type === "group" ? (
         <Image
-          loading="lazy"
+          alt="group"
+          lazyLoad={true}
+          id={post.media[0].id}
           src={post.media[0].src}
-          imageId={`gp-${post.media[0].id}`}
           className="absolute z-0 object-cover object-center size-full"
         />
       ) : post.type === "video" ? (
-        <Video type="explore" src={post.src} videoId={`pv-${post.id}`} />
+        <Video type="explore" src={post.src} id={post.id} />
       ) : (
         <Image
-          loading="lazy"
+          alt="post"
+          id={post.id}
           src={post.src}
+          lazyLoad={true}
           className="absolute z-0 object-cover object-center size-full"
         />
       )}

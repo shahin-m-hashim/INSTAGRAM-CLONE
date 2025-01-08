@@ -13,12 +13,11 @@ const VideoError = ({ iconStyles }) => (
 );
 
 export default function Video({
+  id = "",
   src = "",
-  videoId = "",
   type = "reel",
   rootStyles = "",
   iconStyles = "",
-  videoStyles = "",
 }) {
   const videoRef = useRef();
   const timerRef = useRef();
@@ -27,10 +26,10 @@ export default function Video({
   const { videos, handleError, setIsPlaying, toggleIsMuted, initializeVideo } =
     useStore();
 
-  const video = videos.find((video) => video.id === videoId);
+  const video = videos.find((video) => video.id === id);
 
   const handleMute = () => {
-    toggleIsMuted(videoId);
+    toggleIsMuted(id);
 
     const muteIcon = muteIconRef.current;
     if (muteIcon) {
@@ -42,22 +41,22 @@ export default function Video({
   };
 
   const toggleIsPlaying = () => {
-    if (!video?.isPlaying) {
-      videoRef.current.play().catch(() => {});
-      setIsPlaying(videoId, true);
-    } else {
+    if (video?.isPlaying) {
       videoRef.current.pause();
-      setIsPlaying(videoId, false);
+      setIsPlaying(id, false);
+    } else {
+      videoRef.current.play().catch(() => {});
+      setIsPlaying(id, true);
     }
   };
 
   useEffect(() => {
-    initializeVideo(videoId, type !== "reel");
+    initializeVideo(id, type !== "reel");
 
     const videoElement = videoRef.current;
     if (!videoElement) return;
 
-    if (videoElement.error) handleError(videoId);
+    if (videoElement.error) handleError(id);
 
     if (type === "explore") return;
 
@@ -65,10 +64,10 @@ export default function Video({
       entries.forEach((entry) => {
         if (entry.isIntersecting && !video?.isPlaying) {
           videoElement.play().catch(() => {});
-          setIsPlaying(videoId, true);
+          setIsPlaying(id, true);
         } else {
           videoElement.pause();
-          setIsPlaying(videoId, false);
+          setIsPlaying(id, false);
         }
       });
     };
@@ -95,7 +94,7 @@ export default function Video({
             muted
             src={src}
             ref={videoRef}
-            onError={() => handleError(videoId)}
+            onError={() => handleError(id)}
             className="absolute z-0 object-cover object-center size-full"
           />
         </>
@@ -166,8 +165,11 @@ export default function Video({
               src={src}
               ref={videoRef}
               muted={video?.isMuted}
-              onError={() => handleError(videoId)}
-              className={cn("size-full", videoStyles)}
+              onError={() => handleError(id)}
+              className={cn(
+                "size-full object-center",
+                type === "reel" ? "object-cover" : "xs:rounded-md size-full"
+              )}
             />
           </div>
         </div>

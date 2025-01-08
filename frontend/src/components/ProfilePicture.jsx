@@ -31,8 +31,8 @@ export default function ProfilePicture({
       <div className="absolute inset-0 z-10">
         <Image
           src={src}
+          id="profile-pic"
           alt="profile pic"
-          imageId="profile-pic"
           className="rounded-full size-full active-story"
           style={{ padding: hasStory ? storyPadding : 0 }}
         />

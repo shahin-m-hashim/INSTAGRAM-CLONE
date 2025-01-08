@@ -1,4 +1,5 @@
 import { cn } from "utils/cn";
+import useStore from "store/_store";
 import users from "mocks/users.json";
 import Image from "components/Image";
 import Button from "components/wrappers/Button";
@@ -10,6 +11,8 @@ export default function Accounts({
   minCheckedInputs = 0,
   limit = users.length,
 }) {
+  const { theme } = useStore();
+
   return (
     <ul className={cn("flex flex-col w-full gap-3", className)}>
       {users.slice(0, limit).map((user, idx) => (
@@ -20,10 +23,10 @@ export default function Accounts({
                 "rounded-full",
                 type === "follow" ? "size-14" : "size-12"
               )}
+              id={user.id}
               iconStyles="w-5"
-              imageId={`u-${user.id}`}
               alt={`${user.username}`}
-              src={user.profilePic || "images/default_dp_dark.webp"}
+              src={user.profilePic || `images/default_dp_${theme}.webp`}
             />
           </div>
 
