@@ -15,15 +15,10 @@ const validateIdentifier = (identifier) => {
   } else {
     return "Enter a valid email address.";
   }
-
-  // Backend Validation
-  // Another account is using the same email.
 };
 
 const validatePassword = (password) => {
-  if (!password) {
-    return "Create a password at least 6 characters long.";
-  } else if (password.length < 6) {
+  if (password.length < 6) {
     return "Create a password at least 6 characters long.";
   }
 

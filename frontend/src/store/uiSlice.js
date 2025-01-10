@@ -3,6 +3,7 @@ const initial = {
   activeSidebar: null,
   secondaryWidget: null,
   showThemeSwitcher: false,
+  loginPagePhoneFrameIdx: 0,
 };
 
 const createUiSlice = (set) => ({
@@ -49,6 +50,11 @@ const createUiSlice = (set) => ({
 
   setShowThemeSwitcher: (value) =>
     set({ showThemeSwitcher: value }, undefined, "ui/setShowThemeSwitcher"),
+
+  cycleLoginPageFrameImages: () =>
+    set((state) => {
+      state.loginPagePhoneFrameIdx = (state.loginPagePhoneFrameIdx + 1) % 4;
+    }),
 });
 
 export default createUiSlice;

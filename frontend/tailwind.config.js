@@ -9,6 +9,7 @@ export default {
       colors: {
         note: "var(--note)",
         success: "rgb(88,195,34)",
+        error: "rgb(237, 73, 86)",
         "link-primary": "rgb(0, 149, 246)",
         "link-secondary": "var(--text-link-s)",
         "link-primary-hover": "rgb(24, 119, 242)",

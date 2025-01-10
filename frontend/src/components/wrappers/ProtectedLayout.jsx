@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import useStore from "store/_store";
+import { useShallow } from "zustand/shallow";
 import TopNavbar from "components/navbars/TopNavbar";
 import GlobalContext from "providers/GlobalProvider";
 import MoreWidget from "components/widgets/MoreWidget";
@@ -19,8 +20,16 @@ import InstagramTextDropDownWidget from "components/widgets/InstagramTextDropDow
 export default function ProtectedLayout() {
   const { pathname } = useLocation();
   const { isPending } = useContext(GlobalContext);
-  const { activeSidebar, primaryWidget, secondaryWidget, isAuthenticated } =
-    useStore();
+
+  const [isAuthenticated, activeSidebar, primaryWidget, secondaryWidget] =
+    useStore(
+      useShallow((state) => [
+        state.auth.isAuthenticated,
+        state.activeSidebar,
+        state.primaryWidget,
+        state.secondaryWidget,
+      ])
+    );
 
   return isAuthenticated ? (
     <section className="bg-primary text-primary min-h-screen min-w-[320px] pointer-events-none">

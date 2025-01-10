@@ -1,7 +1,12 @@
 const createAuthSlice = (set) => ({
-  isAuthenticated: true,
-  login: () => set({ isAuthenticated: true }, undefined, "auth/login"),
-  logout: () => set({ isAuthenticated: false }, undefined, "auth/logout"),
+  auth: {
+    isAuthenticated: false,
+  },
+
+  setIsAuthenticated: (value) =>
+    set((state) => {
+      state.auth.isAuthenticated = value;
+    }),
 });
 
 export default createAuthSlice;

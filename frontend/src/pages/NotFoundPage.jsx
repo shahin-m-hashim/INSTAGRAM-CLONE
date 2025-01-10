@@ -4,7 +4,7 @@ import NotFoundNavbar from "components/navbars/NotFoundNavbar";
 import NotFoundContent from "components/contents/NotFoundContent";
 
 export default function NotFoundPage() {
-  const { isAuthenticated } = useStore();
+  const isAuthenticated = useStore((state) => state.auth.isAuthenticated);
 
   return (
     <section className="bg-primary text-primary">

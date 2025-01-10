@@ -1,55 +1,75 @@
-import useForm from "hooks/useForm";
+import useStore from "store/_store";
 import { Link } from "react-router-dom";
+import { useShallow } from "zustand/shallow";
 import Separator from "components/Separator";
 import Button from "components/wrappers/Button";
 import InputField from "components/fields/InputField";
 
-const initialFields = {
-  identifier: {
-    value: "",
-    label: "Phone number, username, or email",
-  },
-  password: {
-    value: "",
-    type: "password",
-    label: "Password",
-  },
+const mockBackendLogin = async (data) => {
+  return await new Promise((resolve) =>
+    setTimeout(() => {
+      console.log(data);
+      resolve({ success: true });
+    }, 3000)
+  );
 };
 
 export default function LoginForm() {
-  // console.log("Rendering form");
-
-  const { reset, fields, handleBlur, getFormData, handleChange, submitBtnRef } =
-    useForm(initialFields);
+  const [
+    error,
+    isValid,
+    getFormData,
+    isSubmitting,
+    resetFormSlice,
+    setFormIsSubmitting,
+  ] = useStore(
+    useShallow((state) => [
+      state.forms.login.error,
+      state.forms.login.isValid,
+      state.getFormData,
+      state.forms.login.isSubmitting,
+      state.resetFormSlice,
+      state.setFormIsSubmitting,
+    ])
+  );
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const formData = getFormData();
-    console.log(formData);
-    reset();
+    if (isValid) {
+      setFormIsSubmitting("login", true);
+      const data = getFormData("login");
+      mockBackendLogin(data).then((res) => {
+        if (res.success) {
+          resetFormSlice("login");
+        } else {
+          setFormIsSubmitting("login", false);
+        }
+      });
+    }
   };
 
   return (
     <form onSubmit={handleSubmit} className="flex flex-col">
       <div className="flex flex-col gap-1.5 mb-3">
-        {Object.keys(fields).map((field) => (
-          <InputField
-            key={field}
-            name={field}
-            field={fields[field]}
-            handleBlur={handleBlur}
-            handleChange={handleChange}
-          />
-        ))}
+        <InputField
+          id="identifier"
+          fieldFor="login"
+          label="Phone number, username, or email"
+        />
+        <InputField
+          id="password"
+          type="password"
+          fieldFor="login"
+          label="Password"
+        />
       </div>
 
       <Button
         type="submit"
-        disabled={true}
         className="mb-4"
-        reference={submitBtnRef}
+        disabled={!isValid && !isSubmitting}
       >
-        Log In
+        {isSubmitting ? "Submitting..." : "Log in"}
       </Button>
 
       <Separator />
@@ -61,12 +81,15 @@ export default function LoginForm() {
             Log in with Facebook
           </a>
         </div>
-        {/* <div className="text-center">
-          <span className="text-red-500 ">
-            Sorry, your password was incorrect. Please double-check your
-            password.
-          </span>
-        </div> */}
+
+        {error && (
+          <div className="text-center">
+            <span className="text-error">
+              Sorry, your password was incorrect. Please double-check your
+              password.
+            </span>
+          </div>
+        )}
         <Link to="/accounts/password/reset">Forgot password?</Link>
       </div>
     </form>

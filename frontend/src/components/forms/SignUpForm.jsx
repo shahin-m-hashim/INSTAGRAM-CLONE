@@ -1,54 +1,82 @@
-import useForm from "hooks/useForm";
+import useStore from "store/_store";
+import { useShallow } from "zustand/shallow";
 import Button from "components/wrappers/Button";
 import InputField from "components/fields/InputField";
 
-import {
-  validatePassword,
-  validateUsername,
-  validateIdentifier,
-} from "utils/validator";
+const mockBackendSignup = async (data) => {
+  return await new Promise((resolve) =>
+    setTimeout(() => {
+      console.log(data);
+      resolve({
+        success: true,
+        data: {
+          jwt: "secret_token",
+        },
+      });
+    }, 3000)
+  );
+};
 
 export default function SignUpForm() {
-  const { reset, fields, handleBlur, getFormData, handleChange, submitBtnRef } =
-    useForm({
-      identifier: {
-        validator: validateIdentifier,
-        label: "Mobile Number or Email",
-      },
-      password: {
-        type: "password",
-        label: "Password",
-        validator: validatePassword,
-      },
-      fName: {
-        required: false,
-        label: "First name",
-      },
-      username: {
-        label: "Username",
-        validator: validateUsername,
-      },
-    });
+  const [
+    error,
+    isValid,
+    getFormData,
+    isSubmitting,
+    resetFormSlice,
+    setFormIsSubmitting,
+  ] = useStore(
+    useShallow((state) => [
+      state.forms.signup.error,
+      state.forms.signup.isValid,
+      state.getFormData,
+      state.forms.signup.isSubmitting,
+      state.resetFormSlice,
+      state.setFormIsSubmitting,
+    ])
+  );
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const formData = getFormData();
-    console.log(formData);
-    reset();
+    if (isValid) {
+      setFormIsSubmitting("signup", true);
+      const data = getFormData("signup");
+      mockBackendSignup(data).then((res) => {
+        if (res.success) {
+          resetFormSlice("signup");
+        } else {
+          setFormIsSubmitting("signup", false);
+        }
+      });
+    }
   };
 
   return (
     <form onSubmit={handleSubmit} className="flex flex-col gap-4">
       <div className="flex flex-col gap-1.5">
-        {Object.keys(fields).map((field) => (
-          <InputField
-            key={field}
-            name={field}
-            field={fields[field]}
-            handleBlur={handleBlur}
-            handleChange={handleChange}
-          />
-        ))}
+        <InputField
+          id="identifier"
+          required={true}
+          fieldFor="signup"
+          label="Mobile Number or Email"
+        />
+
+        <InputField
+          id="password"
+          type="password"
+          required={true}
+          label="Password"
+          fieldFor="signup"
+        />
+
+        <InputField id="fullName" fieldFor="signup" label="Full Name" />
+
+        <InputField
+          id="username"
+          required={true}
+          label="Username"
+          fieldFor="signup"
+        />
       </div>
       <div className="flex flex-col gap-4 text-xs">
         <p>
@@ -74,15 +102,23 @@ export default function SignUpForm() {
           </a>
           <span>.</span>
         </p>
+
         <Button
           type="submit"
-          disabled={true}
           className="w-full"
-          reference={submitBtnRef}
+          disabled={!isValid && !isSubmitting}
         >
-          Sign up
+          {isSubmitting ? "Submitting..." : "Sign up"}
         </Button>
       </div>
+
+      {error && (
+        <div className="text-center">
+          <span className="text-error">
+            Something went wrong. Please try again after some time.
+          </span>
+        </div>
+      )}
     </form>
   );
 }

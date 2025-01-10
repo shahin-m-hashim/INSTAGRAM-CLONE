@@ -10,8 +10,8 @@ export default function LinksCard() {
           href="https://play.google.com/store/apps/details?id=com.instagram.android&hl=en_IN"
         >
           <Image
+            id="playstore"
             alt="playstore"
-            imageId="playstore"
             className="h-full w-28"
             src="images/playstore.webp"
           />
@@ -21,8 +21,8 @@ export default function LinksCard() {
           href="https://apps.microsoft.com/detail/9nblggh5l9xt?hl=en-US&gl=US"
         >
           <Image
+            id="microsoft"
             alt="microsoft"
-            imageId="microsoft"
             className="h-full w-28"
             src="images/microsoft.webp"
           />
