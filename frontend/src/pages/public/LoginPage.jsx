@@ -11,7 +11,7 @@ export default function LoginPage() {
       <div className="flex items-center justify-center px-8 my-5 md:my-10">
         <PhoneFrame />
         <div className="flex flex-col gap-14 xs:gap-2 w-[300px] md:w-[350px]">
-          <div className="flex flex-col justify-center w-full xs:p-8 xs:border border-primary">
+          <div className="flex flex-col justify-center w-full xs:p-8 xs:border border-tertiary">
             <div className="flex flex-col items-center justify-center mt-6 mb-12">
               <InstagramTextIcon className="transform scale-[1.6]" />
             </div>

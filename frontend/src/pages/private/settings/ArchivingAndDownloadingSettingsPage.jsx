@@ -11,7 +11,7 @@ export default function ArchivingAndDownloadingSettingsPage() {
 
         <h2 className="my-2 font-bold">Saving to archive</h2>
 
-        <div className="rounded-2xl border border-primary px-5 py-6">
+        <div className="rounded-2xl border border-tertiary px-5 py-6">
           <div className="flex flex-col gap-2">
             <h1>Save story to archive</h1>
             <div className="flex items-center justify-between">

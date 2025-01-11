@@ -72,7 +72,7 @@ export default function GroupedOptions({
           ))}
         </ul>
       ) : (
-        <ul className="flex flex-col gap-6 px-4 py-5 border rounded-2xl border-primary">
+        <ul className="flex flex-col gap-6 px-4 py-5 border rounded-2xl border-tertiary">
           {options.map((option, idx) => (
             <li key={idx} className="flex items-center justify-between gap-1">
               <div className="flex flex-col gap-1">

@@ -17,7 +17,7 @@ export default function SignUpPage() {
           <div
             className={cn(
               activeContent !== "signup" ? "px-4" : "px-10",
-              "items-center text-center gap-4 xs:py-8 xs:border border-primary flex flex-col justify-center "
+              "items-center text-center gap-4 xs:py-8 xs:border border-tertiary flex flex-col justify-center "
             )}
           >
             {activeContent === "birthday" ? (

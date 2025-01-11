@@ -57,7 +57,7 @@ export default function CreateNewNoteWidget() {
               value={state.note}
               placeholder="Share a thought..."
               onChange={(e) => setState({ ...state, note: e.target.value })}
-              className="p-3 bg-transparent border rounded-md border-primary size-full focus:outline-none"
+              className="p-3 bg-transparent border rounded-md border-tertiary size-full focus:outline-none"
             />
           </div>
 

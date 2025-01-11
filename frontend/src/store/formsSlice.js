@@ -18,10 +18,11 @@ const initial = {
         },
       },
       error: null,
-      isValid: false,
+      isChanged: false,
       isSubmitting: false,
       showPassword: false,
     },
+
     signup: {
       fields: {
         identifier: {
@@ -48,6 +49,20 @@ const initial = {
       isValid: false,
       isSubmitting: false,
       showPassword: false,
+    },
+
+    editProfile: {
+      fields: {
+        bio: "",
+        customGender: "",
+        gender: "prefer not to say",
+      },
+      error: null,
+      profilePic: null,
+      isChanged: false,
+      isSubmitting: false,
+      showAccountSuggestions: false,
+      showGenderSelectionMenu: false,
     },
   },
 };
@@ -142,6 +157,47 @@ const createFormsSlice = (set, get) => ({
 
     return JSON.stringify(formData);
   },
+
+  setEditProfileFormFieldValue: (field, value) =>
+    set(
+      (state) => {
+        state.forms.editProfile.fields[field] = value;
+        state.forms.editProfile.isChanged = value ? true : false;
+      },
+      undefined,
+      "setEditProfileFormFieldValue"
+    ),
+
+  setNewProfilePic: (profilePic) =>
+    set(
+      (state) => {
+        state.forms.editProfile.isChanged = true;
+        state.forms.editProfile.profilePic = profilePic;
+      },
+      undefined,
+      "setNewProfilePic"
+    ),
+
+  toggleGenderSelectionMenu: () =>
+    set(
+      (state) => {
+        state.forms.editProfile.showGenderSelectionMenu =
+          !state.forms.editProfile.showGenderSelectionMenu;
+      },
+      undefined,
+      "toggleGenderSelectionMenu"
+    ),
+
+  toggleShowAccountSuggestions: () =>
+    set(
+      (state) => {
+        state.forms.editProfile.isChanged = true;
+        state.forms.editProfile.showAccountSuggestions =
+          !state.forms.editProfile.showAccountSuggestions;
+      },
+      undefined,
+      "toggleShowAccountSuggestions"
+    ),
 
   resetFormSlice: (form) =>
     set(

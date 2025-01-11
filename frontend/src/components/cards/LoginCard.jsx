@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 export default function LoginCard() {
   return (
-    <div className="flex justify-center gap-1 text-sm xs:p-5 xs:border border-primary">
+    <div className="flex justify-center gap-1 text-sm xs:p-5 xs:border border-tertiary">
       <p>Have an account?</p>
       <Link
         to="/accounts/login"

@@ -1,7 +1,8 @@
 import { cn } from "utils/cn";
 import { useRef } from "react";
-import CameraIcon from "icons/CameraIcon";
+import useStore from "store/_store";
 import Image from "components/Image";
+import CameraIcon from "icons/CameraIcon";
 
 const theme = localStorage.getItem("theme") || "dark";
 
@@ -10,13 +11,15 @@ export default function ProfilePicture({
   showNote = false,
   hasStory = false,
   fileType = "story",
-  storyPadding = "3px",
+  storyPadding = "2px",
   noteInputClassName = "",
   requireNoteInput = false,
   requireFileInput = false,
   src = `images/default_dp_${theme}.webp`,
 }) {
   const fileInputRef = useRef();
+
+  const setSecondaryWidget = useStore((state) => state.setSecondaryWidget);
 
   const handleFileChange = (e) => {
     const file = e.target.files[0];
@@ -29,13 +32,17 @@ export default function ProfilePicture({
   return (
     <div className={cn("relative size-14 rounded-full", className)}>
       <div className="absolute inset-0 z-10">
-        <Image
-          src={src}
-          id="profile-pic"
-          alt="profile pic"
-          className="rounded-full size-full active-story"
+        <div
           style={{ padding: hasStory ? storyPadding : 0 }}
-        />
+          className="rounded-full active-story size-full"
+        >
+          <Image
+            src={src}
+            id="profile-pic"
+            alt="profile pic"
+            className="rounded-full size-full"
+          />
+        </div>
         {showNote && <span className="w-full text-xs">Your note ...</span>}
       </div>
 
@@ -75,6 +82,7 @@ export default function ProfilePicture({
         <div className={cn("absolute z-30 -top-6 left-11", noteInputClassName)}>
           <button
             type="button"
+            onClick={() => setSecondaryWidget("note")}
             className="p-2 text-xs rounded-lg bg-note text-tertiary"
           >
             Note...

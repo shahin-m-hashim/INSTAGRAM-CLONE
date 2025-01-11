@@ -18,7 +18,7 @@ export default function CheckboxInput({
       htmlFor={id}
       className={cn(
         "inline-block size-6 cursor-pointer",
-        isChecked ? "border-none" : "border-2 border-primary",
+        isChecked ? "border-none" : "border-2 border-tertiary",
         isRounded ? "rounded-full" : "rounded-sm",
         className
       )}

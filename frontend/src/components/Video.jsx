@@ -20,8 +20,6 @@ export default function Video({
   rootStyles = "",
   iconStyles = "",
 }) {
-  // console.log(`rendering video ${id}`);
-
   const videoRef = useRef();
   const timerRef = useRef();
   const muteIconRef = useRef();
@@ -65,6 +63,8 @@ export default function Video({
   };
 
   useEffect(() => {
+    if (video) return;
+
     initializeVideo(id, type !== "reel");
 
     const videoElement = videoRef.current;

@@ -57,7 +57,7 @@ export default function HiddenWordsSettingsPage() {
 
       <div className="flex flex-col gap-6">
         <h1 className="font-bold">Custom words and phrases</h1>
-        <div className="flex flex-col gap-6 px-4 py-5 rounded-2xl border border-primary">
+        <div className="flex flex-col gap-6 px-4 py-5 rounded-2xl border border-tertiary">
           <TransitionLink
             to="manage_custom_words"
             className="flex items-center justify-between gap-4"

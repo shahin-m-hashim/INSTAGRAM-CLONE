@@ -8,7 +8,7 @@ import ProfilePicture from "components/ProfilePicture";
 export default function BottomNavbar() {
   return (
     <nav className="absolute bg-primary text-primary block md:hidden inset-x-0 bottom-0 h-[50px] pointer-events-auto overflow-x-auto">
-      <div className="flex border-t border-primary bg-navbar size-full xs:px-4">
+      <div className="flex border-t border-tertiary bg-navbar size-full xs:px-4">
         <div className="flex items-center justify-between w-full">
           <TransitionLink
             to="/"

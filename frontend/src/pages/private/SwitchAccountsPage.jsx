@@ -158,7 +158,7 @@ export default function SwitchAccountsPage() {
   return (
     <main className="h-screen flex flex-col justify-between overflow-auto min-w-[320px] md:pt-0 pb-[50px] md:pb-0 md:pl-[80px] xl:pl-[250px] pt-[60px]">
       <div className="flex items-center justify-center flex-1 px-4 my-5">
-        <div className="flex  flex-col border border-primary w-full max-w-[600px] rounded-lg">
+        <div className="flex  flex-col border border-tertiary w-full max-w-[600px] rounded-lg">
           <div className="flex flex-col gap-4 p-6">
             {!formData.showChooseCategory &&
             formData.preferredAccountType === "creator" ? (
@@ -182,10 +182,10 @@ export default function SwitchAccountsPage() {
                       preferredAccountType: "creator",
                     }))
                   }
-                  className="p-4 border rounded-xl border-primary"
+                  className="p-4 border rounded-xl border-tertiary"
                 >
                   <div className="flex flex-col items-center gap-4">
-                    <div className="flex items-center justify-center p-4 border rounded-full border-primary">
+                    <div className="flex items-center justify-center p-4 border rounded-full border-tertiary">
                       <CreatorIcon />
                     </div>
                     <h1 className="text-lg font-bold">Creator</h1>
@@ -204,10 +204,10 @@ export default function SwitchAccountsPage() {
                       preferredAccountType: "business",
                     }))
                   }
-                  className="p-4 border border-primary rounded-xl"
+                  className="p-4 border border-tertiary rounded-xl"
                 >
                   <div className="flex flex-col items-center gap-4">
-                    <div className="flex items-center justify-center p-4 border rounded-full border-primary">
+                    <div className="flex items-center justify-center p-4 border rounded-full border-tertiary">
                       <BusinessIcon />
                     </div>
                     <h1 className="text-lg font-bold">Business</h1>
@@ -223,7 +223,7 @@ export default function SwitchAccountsPage() {
 
           <div
             className={cn(
-              "flex items-center p-4 border-t border-primary",
+              "flex items-center p-4 border-t border-tertiary",
               !formData.preferredAccountType && "hidden"
             )}
           >

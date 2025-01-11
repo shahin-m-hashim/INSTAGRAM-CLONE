@@ -64,7 +64,7 @@ export default function WebsitePermissionsSettingsPage() {
             <h1 className="text-xl font-bold">Website Permissions</h1>
           </div>
 
-          <div className="flex items-center w-full border-b-2 border-b-primary">
+          <div className="flex items-center w-full border-b-2 border-b-tertiary">
             {["active", "expired", "removed"].map((tab) => (
               <button
                 key={tab}

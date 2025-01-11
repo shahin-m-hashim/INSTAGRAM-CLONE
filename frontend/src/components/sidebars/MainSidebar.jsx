@@ -41,7 +41,7 @@ export default function MainSidebar() {
         "bg-primary text-primary hidden md:block absolute inset-y-0 left-0 pointer-events-auto overflow-y-auto"
       )}
     >
-      <div className="flex flex-col px-2 py-4 border-r border-primary size-full xl:px-4 ">
+      <div className="flex flex-col px-2 py-4 border-r border-tertiary size-full xl:px-4 ">
         <div className="xl:my-4">
           <TransitionLink
             to="/"
@@ -162,7 +162,7 @@ export default function MainSidebar() {
             >
               <ProfilePicture
                 storyPadding="0px"
-                className="border border-primary size-7"
+                className="border border-tertiary size-7"
               />
               {isCollapsed ||
                 (!activeSidebar && (

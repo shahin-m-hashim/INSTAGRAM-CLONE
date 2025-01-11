@@ -12,8 +12,6 @@ export default function Image({
   lazyLoad = false,
   showSkeleton = true,
 }) {
-  console.log(id);
-
   const imgRef = useRef(null);
 
   const [image, initializeImage, setImageStatus] = useStore(
@@ -25,6 +23,8 @@ export default function Image({
   );
 
   useEffect(() => {
+    if (image) return;
+
     initializeImage(id);
     const img = imgRef.current;
 
@@ -46,8 +46,10 @@ export default function Image({
     }
 
     return () => {
-      img.removeEventListener("load", handleLoad);
-      img.removeEventListener("error", handleError);
+      if (img) {
+        img.removeEventListener("load", handleLoad);
+        img.removeEventListener("error", handleError);
+      }
     };
   }, []);
 

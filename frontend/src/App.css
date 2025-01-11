@@ -84,6 +84,11 @@ a {
   text-decoration: none;
 }
 
+textarea {
+  outline: none;
+  resize: none !important;
+}
+
 input:-webkit-autofill,
 input:-webkit-autofill:hover,
 input:-webkit-autofill:focus {
@@ -144,10 +149,6 @@ input:-webkit-autofill:focus {
   100% {
     width: 100%;
   }
-}
-
-textarea {
-  resize: none !important;
 }
 
 /* Touch screen media query */

@@ -9,7 +9,7 @@ export default function AccountPrivacySettingsPage() {
           <h1 className="text-xl font-bold">Account Privacy</h1>
         </div>
 
-        <div className="rounded-2xl border border-primary px-5 py-6">
+        <div className="rounded-2xl border border-tertiary px-5 py-6">
           <div className="flex flex-col gap-2">
             <h1>Private Account</h1>
             <div className="flex items-center gap-4">

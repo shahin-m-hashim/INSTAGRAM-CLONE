@@ -9,7 +9,7 @@ export default function MessagesAndStoryRepliesSettingsPage() {
       </div>
 
       <h2 className="my-2 font-bold">How people can reach you</h2>
-      <div className="flex flex-col gap-6 px-4 py-5 rounded-2xl border border-primary">
+      <div className="flex flex-col gap-6 px-4 py-5 rounded-2xl border border-tertiary">
         <TransitionLink
           to="message_controls"
           className="flex items-center justify-between gap-4"
@@ -31,7 +31,7 @@ export default function MessagesAndStoryRepliesSettingsPage() {
       </div>
 
       <h2 className="my-2 font-bold">Who can see you&apos;re online</h2>
-      <div className="flex flex-col gap-6 px-4 py-5 rounded-2xl border border-primary">
+      <div className="flex flex-col gap-6 px-4 py-5 rounded-2xl border border-tertiary">
         <TransitionLink
           to="show_activity_status"
           className="flex items-center justify-between gap-4"

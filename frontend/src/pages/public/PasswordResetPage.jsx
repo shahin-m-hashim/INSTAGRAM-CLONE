@@ -8,7 +8,7 @@ export default function PasswordResetPage() {
   return (
     <main className="flex flex-col overflow-auto h-screen min-w-[320px]">
       <div className="flex justify-center flex-1 xs:items-center md:mt-10 xs:px-8">
-        <div className="flex w-full max-w-[400px] flex-col items-center justify-between rounded-md xs:border border-primary">
+        <div className="flex w-full max-w-[400px] flex-col items-center justify-between rounded-md xs:border border-tertiary">
           <div className="flex flex-col items-center justify-center flex-1 px-8 py-6">
             <LockIcon />
 
@@ -37,7 +37,7 @@ export default function PasswordResetPage() {
             </div>
           </div>
 
-          <div className="flex items-center justify-center w-full border-t text-primary border-primary rounded-b-md bg-tertiary h-11">
+          <div className="flex items-center justify-center w-full border-t text-primary border-tertiary rounded-b-md bg-tertiary h-11">
             <Link to="/accounts/login" className="font-semibold">
               Back to Login
             </Link>

@@ -1,27 +1,28 @@
 import { cn } from "utils/cn";
-import { useState } from "react";
 
-export default function RadioInput({ id, value, className, checked = false }) {
-  const [isChecked, setIsChecked] = useState(checked);
-
-  const handleChecked = () => setIsChecked(!isChecked);
-
+export default function RadioInput({
+  id,
+  name,
+  value,
+  className,
+  handleChange,
+  isChecked = false,
+}) {
   return (
-    <label
-      htmlFor={id}
+    <div
       className={cn(
-        "relative border-primary inline-block border-2 rounded-full size-6 cursor-pointer",
+        "relative border-secondary inline-block border rounded-full size-6 cursor-pointer",
         className
       )}
     >
       <input
         id={id}
-        name={id}
+        name={name}
         type="radio"
         value={value}
         checked={isChecked}
-        className="sr-only"
-        onChange={handleChecked}
+        onChange={handleChange}
+        className="absolute inset-0 z-10 opacity-0"
       />
 
       <div className="absolute inset-0 p-1">
@@ -32,6 +33,6 @@ export default function RadioInput({ id, value, className, checked = false }) {
           )}
         />
       </div>
-    </label>
+    </div>
   );
 }

@@ -8,7 +8,7 @@ export default function NotificationSettingsPage() {
         <h1 className="text-xl font-bold">Notifications</h1>
       </div>
 
-      <div className="flex flex-col gap-6 px-4 py-5 rounded-2xl border border-primary">
+      <div className="flex flex-col gap-6 px-4 py-5 rounded-2xl border border-tertiary">
         <TransitionLink
           to="push"
           className="flex items-center justify-between gap-4"

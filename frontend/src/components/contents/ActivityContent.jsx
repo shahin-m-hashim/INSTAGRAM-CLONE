@@ -4,16 +4,16 @@ import { useLocation } from "react-router-dom";
 import AdActivityIcon from "icons/AdActivityIcon";
 import InteractionsIcon from "icons/InteractionsIcon";
 import TransitionLink from "components/TransitionLink";
+import DropDownArrowIcon from "icons/DropDownArrowIcon";
 import AccountHistoryIcon from "icons/AccountHistoryIcon";
 import PhotosAndVideosIcon from "icons/PhotosAndVideosIcon";
-import DropDownArrowIcon from "icons/DropDownArrowIcon";
 
 export default function ActivityContent() {
   const activePage = useLocation().pathname.split("/")[2];
 
   return (
     <>
-      <div className="px-4 py-7 md:py-4 md:px-6 md:h-14 md:border-b md:border-b-primary">
+      <div className="px-4 py-7 md:py-4 md:px-6 md:h-14 md:border-b md:border-b-tertiary">
         <h1 className="hidden font-bold md:block">Your Activity</h1>
         <div className="block text-center md:hidden">
           <h1 className="mb-4 text-2xl font-bold">
@@ -29,7 +29,7 @@ export default function ActivityContent() {
       <div className="flex flex-col justify-between flex-1">
         <TransitionLink
           to="interactions"
-          className="flex items-center gap-8 p-3 hover:bg-sidebar-hover md:border-none border-y border-primary"
+          className="flex items-center gap-8 p-3 hover:bg-sidebar-hover md:border-none border-y border-tertiary"
         >
           <InteractionsIcon className="min-w-6 md:size-12" />
           <div className="flex flex-col">
@@ -51,7 +51,7 @@ export default function ActivityContent() {
 
         <TransitionLink
           to="photos_and_videos"
-          className="flex items-center gap-8 p-3 hover:bg-sidebar-hover md:border-none border-y border-primary"
+          className="flex items-center gap-8 p-3 hover:bg-sidebar-hover md:border-none border-y border-tertiary"
         >
           <PhotosAndVideosIcon className="min-w-6 md:size-12" />
           <div className="flex flex-col">
@@ -72,7 +72,7 @@ export default function ActivityContent() {
 
         <TransitionLink
           to="account_history"
-          className="flex items-center gap-8 p-3 hover:bg-sidebar-hover md:border-none border-y border-primary"
+          className="flex items-center gap-8 p-3 hover:bg-sidebar-hover md:border-none border-y border-tertiary"
         >
           <AccountHistoryIcon className="min-w-6 md:size-12" />
           <div className="flex flex-col">
@@ -94,7 +94,7 @@ export default function ActivityContent() {
 
         <TransitionLink
           to="ad_activity"
-          className="flex items-center gap-8 p-3 hover:bg-sidebar-hover md:border-none border-y border-primary"
+          className="flex items-center gap-8 p-3 hover:bg-sidebar-hover md:border-none border-y border-tertiary"
         >
           <AdActivityIcon className="min-w-6 md:size-12" />
           <div className="flex flex-col">
@@ -115,7 +115,7 @@ export default function ActivityContent() {
 
         <TransitionLink
           to="download_your_info"
-          className="flex items-center gap-8 p-3 hover:bg-sidebar-hover md:border-none border-y border-primary"
+          className="flex items-center gap-8 p-3 hover:bg-sidebar-hover md:border-none border-y border-tertiary"
         >
           <DownloadIcon className="min-w-6 md:size-12" />
           <div className="flex flex-col">

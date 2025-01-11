@@ -44,7 +44,7 @@ export default function PostsPage() {
             return (
               <li
                 key={idx}
-                className="flex flex-col items-center flex-shrink-0 w-64 gap-4 p-4 border rounded-md border-primary h-60"
+                className="flex flex-col items-center flex-shrink-0 w-64 gap-4 p-4 border rounded-md border-tertiary h-60"
               >
                 <Icon />
                 <p className="text-sm font-semibold">{item.heading}</p>

@@ -13,7 +13,7 @@ export default function ChatPage() {
   return (
     <div className="relative flex w-full">
       <div className="flex flex-1 flex-col items-center justify-center md:h-screen h-[calc(100vh-60px)]">
-        <div className="items-center justify-between hidden w-full h-20 px-6 border-b md:flex border-b-primary">
+        <div className="items-center justify-between hidden w-full h-20 px-6 border-b md:flex border-b-tertiary">
           <div className="flex items-center gap-4">
             <ProfilePicture storyPadding="0px" className="size-12" />
             <span>Username</span>
@@ -45,7 +45,7 @@ export default function ChatPage() {
           </div>
         </div>
 
-        <div className="flex flex-col w-full gap-4 p-4 text-center border-t border-t-primary">
+        <div className="flex flex-col w-full gap-4 p-4 text-center border-t border-t-tertiary">
           <div className="flex flex-col w-full gap-1">
             <p className="font-semibold ">
               Invite Full Name {"("}username{")"} to chat
@@ -67,7 +67,7 @@ export default function ChatPage() {
       </div>
 
       {showDetails && (
-        <div className="flex items-end flex-col bg-primary lg:w-[320px] w-full md:h-screen h-[calc(100vh-60px)] border-l border-l-primary">
+        <div className="flex items-end flex-col bg-primary lg:w-[320px] w-full md:h-screen h-[calc(100vh-60px)] border-l border-l-tertiary">
           <ChatDetailsContent />
         </div>
       )}

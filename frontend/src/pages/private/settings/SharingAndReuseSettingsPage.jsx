@@ -13,7 +13,7 @@ export default function SharingAndReuseSettingsPage() {
         <div className="flex flex-col gap-4">
           <h1 className="font-semibold">Allow people to share your content</h1>
 
-          <div className="flex flex-col gap-6 px-4 py-5 rounded-2xl border border-primary">
+          <div className="flex flex-col gap-6 px-4 py-5 rounded-2xl border border-tertiary">
             <div className="flex items-center justify-between">
               <span>Posts and reels to stories</span>
               <ToggleSwitch checked={true} />
@@ -78,7 +78,7 @@ export default function SharingAndReuseSettingsPage() {
             Allow businesses to interact with you
           </h1>
 
-          <div className="flex flex-col gap-2 px-4 py-5 rounded-2xl border border-primary">
+          <div className="flex flex-col gap-2 px-4 py-5 rounded-2xl border border-tertiary">
             <h1>Featured content requests in shops</h1>
             <div className="flex items-center justify-between">
               <p className="text-xs  text-tertiary ">

@@ -26,8 +26,8 @@ export default function ProtectedLayout() {
       useShallow((state) => [
         state.auth.isAuthenticated,
         state.activeSidebar,
-        state.primaryWidget,
-        state.secondaryWidget,
+        state.widgets.primary,
+        state.widgets.secondary,
       ])
     );
 
@@ -52,7 +52,7 @@ export default function ProtectedLayout() {
           <CreateNewPostWidget />
         ) : secondaryWidget === "report" ? (
           <ReportAProblemWidget />
-        ) : secondaryWidget === "createNewNote" ? (
+        ) : secondaryWidget === "note" ? (
           <CreateNewNoteWidget />
         ) : secondaryWidget === "newMessage" ? (
           <NewMessageWidget />

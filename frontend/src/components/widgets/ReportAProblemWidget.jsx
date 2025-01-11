@@ -27,7 +27,7 @@ export default function ReportAProblemWidget() {
 
           <form className="flex flex-col flex-1 gap-4 p-4">
             <textarea
-              className="w-full h-full p-2 bg-transparent border-2 rounded-lg border-primary focus:outline-none placeholder:text-tertiary"
+              className="w-full h-full p-2 bg-transparent border-2 rounded-lg border-tertiary focus:outline-none placeholder:text-tertiary"
               placeholder="Please include as much info as possible..."
             ></textarea>
             <div className="flex justify-between w-full">

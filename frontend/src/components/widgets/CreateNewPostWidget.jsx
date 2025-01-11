@@ -10,7 +10,7 @@ export default function CreateNewPostWidget() {
     <div className="absolute inset-0 z-20 backdrop-brightness-[0.4] pointer-events-none">
       <div className="flex items-center justify-center text-primary size-full">
         <div className="flex text-primary flex-col shadow-primary bg-widget w-[500px] pointer-events-auto rounded-lg">
-          <div className="relative flex items-center justify-center p-3 border-b-2 rounded-t-lg bg-tertiary border-primary">
+          <div className="relative flex items-center justify-center p-3 border-b-2 rounded-t-lg bg-tertiary border-tertiary">
             <h1 className="font-semibold">Create new post</h1>
 
             <div className="absolute -top-1 -right-2">

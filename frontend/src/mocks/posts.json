@@ -64,7 +64,7 @@
     "src": "posts/aashimehra29/3527222689209273430_51805839355.mp4",
     "user": {
       "hasStory": false,
-      "isVerified": true,
+      "isVerified": false,
       "username": "aashimehra29",
       "profilePic": "images/users/aashimehra29.webp"
     },
@@ -80,8 +80,8 @@
   {
     "id": "ad47c399-2e36-443f-ac08-f15da1585925",
     "user": {
-      "hasStory": false,
-      "isVerified": true,
+      "hasStory": true,
+      "isVerified": false,
       "username": "1sometrics",
       "profilePic": "images/users/1sometrics.webp"
     },

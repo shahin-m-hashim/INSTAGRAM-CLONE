@@ -18,7 +18,7 @@ export default function TopNavbar() {
         "bg-primary text-primary h-[60px] md:hidden absolute inset-x-0 top-0 pointer-events-auto overflow-x-auto"
       )}
     >
-      <div className="flex items-center justify-between gap-2 px-4 border-b border-primary size-full ">
+      <div className="flex items-center justify-between gap-2 px-4 border-b border-tertiary size-full ">
         {url[1] === "settings" ? (
           <SettingsHeader page={url.slice(2)} />
         ) : url[1] === "direct" ? (

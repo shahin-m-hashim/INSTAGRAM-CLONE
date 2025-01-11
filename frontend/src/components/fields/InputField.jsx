@@ -70,7 +70,7 @@ export default function InputField({
           type={showPassword ? "text" : type}
           className={cn(
             value ? "pt-2" : "py-2",
-            error ? "border-error" : "border-primary",
+            error ? "border-error" : "border-tertiary",
             "text-xs h-10 px-2 bg-transparent w-full rounded-sm focus:outline-none flex-1 border"
           )}
         />

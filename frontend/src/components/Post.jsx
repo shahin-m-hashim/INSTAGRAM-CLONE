@@ -36,7 +36,7 @@ const Caption = ({ caption }) => {
 
 export default function Post({ post }) {
   return (
-    <div className="flex flex-col flex-grow-0 xs:w-[468px]">
+    <div className="flex flex-col flex-grow-0 w-full xs:w-[468px]">
       <div className="hidden xs:block">
         <Separator straight={true} />
       </div>

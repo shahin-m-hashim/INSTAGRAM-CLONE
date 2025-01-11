@@ -73,7 +73,7 @@ export default function ProfileLayout() {
 
             <div className="flex flex-1 gap-2 mx-5 md:mx-10">
               <div className="flex flex-col items-center gap-2">
-                <div className="relative rounded-full size-16 md:size-[5.5rem] border-2 border-primary">
+                <div className="relative rounded-full size-16 md:size-[5.5rem] border-2 border-tertiary">
                   <div className="absolute inset-[3px]">
                     <div className="flex items-center justify-center rounded-full bg-widget size-full">
                       <img

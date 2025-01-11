@@ -7,7 +7,7 @@ export default function MessageField() {
   return (
     <label
       htmlFor="message"
-      className="flex items-center w-full px-4 border rounded-full h-11 border-primary"
+      className="flex items-center w-full px-4 border rounded-full h-11 border-tertiary"
     >
       <div className="hidden pr-2 md:block">
         <EmojiIcon />

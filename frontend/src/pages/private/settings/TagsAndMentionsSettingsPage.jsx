@@ -33,7 +33,7 @@ export default function TagsAndMentionsSettingsPage() {
             ]}
           />
 
-          <div className="flex justify-between px-4 py-5 rounded-2xl border border-primary">
+          <div className="flex justify-between px-4 py-5 rounded-2xl border border-tertiary">
             <div className="flex flex-col gap-2">
               <span>Tag options</span>
               <p className="text-xs  text-tertiary">Manually approve tags</p>

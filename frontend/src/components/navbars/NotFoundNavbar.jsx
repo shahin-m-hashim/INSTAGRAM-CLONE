@@ -4,7 +4,7 @@ import InstagramTextIcon from "icons/InstagramTextIcon";
 
 export default function NotFoundNavbar() {
   return (
-    <nav className="fixed inset-x-0 top-0 p-4 border-b border-b-primary">
+    <nav className="fixed inset-x-0 top-0 p-4 border-b border-b-tertiary">
       <div className="flex justify-center">
         <ul className="md:w-[600px] lg:w-[800px] xl:w-[1200px] flex items-center gap-5 justify-between">
           <li>

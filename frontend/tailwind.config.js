@@ -35,7 +35,9 @@ export default {
         "sidebar-hover": "var(--sidebar-hover)",
       },
       borderColor: {
-        primary: "var(--border-p)",
+        primary: "var(--text-s)",
+        secondary: "var(--text-p)",
+        tertiary: "var(--border-p)",
       },
       boxShadow: {
         primary: "rgba(0, 0, 0, 0.15) 0px 4px 12px 0px",

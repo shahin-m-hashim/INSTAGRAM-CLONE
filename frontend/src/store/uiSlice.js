@@ -1,7 +1,9 @@
 const initial = {
-  primaryWidget: null,
+  widgets: {
+    primary: null,
+    secondary: null,
+  },
   activeSidebar: null,
-  secondaryWidget: null,
   showThemeSwitcher: false,
   loginPagePhoneFrameIdx: 0,
 };
@@ -12,26 +14,40 @@ const createUiSlice = (set) => ({
   resetUiSlice: () => set(initial, undefined, "ui/resetUiSlice"),
 
   setPrimaryWidget: (widget) =>
-    set({ primaryWidget: widget }, undefined, "ui/setPrimaryWidget"),
+    set(
+      (state) => {
+        state.widgets.primary = widget;
+      },
+      undefined,
+      "ui/setPrimaryWidget"
+    ),
 
   togglePrimaryWidget: (widget) =>
     set(
-      (state) => ({
-        showThemeSwitcher: false,
-        primaryWidget: state.primaryWidget === widget ? null : widget,
-      }),
+      (state) => {
+        state.showThemeSwitcher = false;
+        state.widgets.primary =
+          state.widgets.primary === widget ? null : widget;
+      },
       false,
       "ui/togglePrimaryWidget"
     ),
 
   setSecondaryWidget: (widget) =>
-    set({ secondaryWidget: widget }, undefined, "ui/setSecondaryWidget"),
+    set(
+      (state) => {
+        state.widgets.secondary = widget;
+      },
+      undefined,
+      "ui/setSecondaryWidget"
+    ),
 
   toggleSecondaryWidget: (widget) =>
     set(
-      (state) => ({
-        secondaryWidget: state.secondaryWidget === widget ? null : widget,
-      }),
+      (state) => {
+        state.widgets.secondary =
+          state.widgets.secondary === widget ? null : widget;
+      },
       undefined,
       "ui/toggleSecondaryWidget"
     ),
