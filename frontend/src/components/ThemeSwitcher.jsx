@@ -1,8 +1,11 @@
 import useStore from "store/_store";
 import ToggleSwitch from "components/ToggleSwitch";
+import { useShallow } from "zustand/shallow";
 
 export default function ThemeSwitcher() {
-  const { theme, toggleTheme } = useStore();
+  const [theme, toggleTheme] = useStore(
+    useShallow((state) => [state.theme, state.toggleTheme])
+  );
 
   return (
     <ToggleSwitch

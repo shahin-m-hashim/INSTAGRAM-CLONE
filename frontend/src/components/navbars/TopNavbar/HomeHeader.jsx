@@ -7,7 +7,9 @@ import DropDownArrowIcon from "icons/DropDownArrowIcon";
 import InstagramTextIcon from "icons/InstagramTextIcon";
 
 export default function HomeHeader() {
-  const { toggleSecondaryWidget } = useStore();
+  const toggleSecondaryWidget = useStore(
+    (state) => state.toggleSecondaryWidget
+  );
 
   return (
     <>

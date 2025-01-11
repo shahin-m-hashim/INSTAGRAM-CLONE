@@ -6,7 +6,7 @@ import Accounts from "components/lists/Accounts";
 import SearchField from "components/fields/SearchField";
 
 export default function NewMessageWidget() {
-  const { setSecondaryWidget } = useStore();
+  const setSecondaryWidget = useStore((state) => state.setSecondaryWidget);
 
   return (
     <div className="absolute inset-0 z-10 backdrop-brightness-[0.4] pointer-events-auto">

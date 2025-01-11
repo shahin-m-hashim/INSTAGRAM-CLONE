@@ -11,8 +11,8 @@ import ProfilePicture from "components/ProfilePicture";
 import TransitionLink from "components/TransitionLink";
 
 export default function ProfileLayout() {
-  const { setPrimaryWidget } = useStore();
   const activeTab = useLocation().pathname.split("/")[2];
+  const setPrimaryWidget = useStore((state) => state.setPrimaryWidget);
 
   return (
     <main className="bg-primary text-primary h-screen overflow-auto min-w-[320px] md:pt-0 pb-[50px] md:pb-0 md:pl-[80px] xl:pl-[250px] pt-[60px]">

@@ -11,7 +11,7 @@ export default function Accounts({
   minCheckedInputs = 0,
   limit = users.length,
 }) {
-  const { theme } = useStore();
+  const theme = useStore((state) => state.theme);
 
   return (
     <ul className={cn("flex flex-col w-full gap-3", className)}>

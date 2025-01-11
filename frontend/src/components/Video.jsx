@@ -3,6 +3,7 @@ import useStore from "store/_store";
 import MutedIcon from "icons/MutedIcon";
 import { useEffect, useRef } from "react";
 import UnmutedIcon from "icons/UnmutedIcon";
+import { useShallow } from "zustand/shallow";
 
 const VideoError = ({ iconStyles }) => (
   <div className="absolute inset-0 z-50 pointer-events-none">
@@ -19,17 +20,30 @@ export default function Video({
   rootStyles = "",
   iconStyles = "",
 }) {
+  // console.log(`rendering video ${id}`);
+
   const videoRef = useRef();
   const timerRef = useRef();
   const muteIconRef = useRef();
 
-  const { videos, handleError, setIsPlaying, toggleIsMuted, initializeVideo } =
-    useStore();
-
-  const video = videos.find((video) => video.id === id);
+  const [
+    video,
+    initializeVideo,
+    handleVideoError,
+    setIsVideoPlaying,
+    toggleIsVideoMuted,
+  ] = useStore(
+    useShallow((state) => [
+      state.videos[id],
+      state.initializeVideo,
+      state.handleVideoError,
+      state.setIsVideoPlaying,
+      state.toggleIsVideoMuted,
+    ])
+  );
 
   const handleMute = () => {
-    toggleIsMuted(id);
+    toggleIsVideoMuted(id);
 
     const muteIcon = muteIconRef.current;
     if (muteIcon) {
@@ -43,10 +57,10 @@ export default function Video({
   const toggleIsPlaying = () => {
     if (video?.isPlaying) {
       videoRef.current.pause();
-      setIsPlaying(id, false);
+      setIsVideoPlaying(id, false);
     } else {
       videoRef.current.play().catch(() => {});
-      setIsPlaying(id, true);
+      setIsVideoPlaying(id, true);
     }
   };
 
@@ -56,7 +70,7 @@ export default function Video({
     const videoElement = videoRef.current;
     if (!videoElement) return;
 
-    if (videoElement.error) handleError(id);
+    if (videoElement.error) handleVideoError(id);
 
     if (type === "explore") return;
 
@@ -64,10 +78,10 @@ export default function Video({
       entries.forEach((entry) => {
         if (entry.isIntersecting && !video?.isPlaying) {
           videoElement.play().catch(() => {});
-          setIsPlaying(id, true);
+          setIsVideoPlaying(id, true);
         } else {
           videoElement.pause();
-          setIsPlaying(id, false);
+          setIsVideoPlaying(id, false);
         }
       });
     };
@@ -94,7 +108,7 @@ export default function Video({
             muted
             src={src}
             ref={videoRef}
-            onError={() => handleError(id)}
+            onError={() => handleVideoError(id)}
             className="absolute z-0 object-cover object-center size-full"
           />
         </>
@@ -165,7 +179,7 @@ export default function Video({
               src={src}
               ref={videoRef}
               muted={video?.isMuted}
-              onError={() => handleError(id)}
+              onError={() => handleVideoError(id)}
               className={cn(
                 "size-full object-center",
                 type === "reel" ? "object-cover" : "xs:rounded-md size-full"

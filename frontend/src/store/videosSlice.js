@@ -1,17 +1,16 @@
 const createVideosSlice = (set) => ({
-  videos: [],
+  videos: {},
   totalVideos: 0,
 
   initializeVideo: (id, isMuted) =>
     set(
       (state) => {
-        if (!state.videos.some((video) => video.id === id)) {
-          state.videos.push({
-            id,
+        if (!(id in state.videos)) {
+          state.videos[id] = {
             isMuted,
             hasError: false,
             isPlaying: false,
-          });
+          };
           state.totalVideos++;
         }
       },
@@ -19,34 +18,37 @@ const createVideosSlice = (set) => ({
       "videos/initializeVideo"
     ),
 
-  setIsPlaying: (id, isPlaying) =>
+  setIsVideoPlaying: (id, isPlaying) =>
     set(
       (state) => {
-        const video = state.videos.find((video) => video.id === id);
-        if (video) video.isPlaying = isPlaying;
+        if (id in state.videos) {
+          state.videos[id].isPlaying = isPlaying;
+        }
       },
       undefined,
-      "videos/setIsPlaying"
+      "videos/setIsVideoPlaying"
     ),
 
-  toggleIsMuted: (id) =>
+  toggleIsVideoMuted: (id) =>
     set(
       (state) => {
-        const video = state.videos.find((video) => video.id === id);
-        if (video) video.isMuted = !video.isMuted;
+        if (id in state.videos) {
+          state.videos[id].isMuted = !state.videos[id].isMuted;
+        }
       },
       undefined,
-      "videos/toggleIsMuted"
+      "videos/toggleIsVideoMuted"
     ),
 
-  handleError: (id) =>
+  handleVideoError: (id) =>
     set(
       (state) => {
-        const video = state.videos.find((video) => video.id === id);
-        if (video) video.hasError = true;
+        if (id in state.videos) {
+          state.videos[id].hasError = true;
+        }
       },
       undefined,
-      "videos/handleError"
+      "videos/handleVideoError"
     ),
 });
 

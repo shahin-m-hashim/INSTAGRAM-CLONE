@@ -5,6 +5,7 @@ import ReelsIcon from "icons/ReelsIcon";
 import SearchIcon from "icons/SearchIcon";
 import CreateIcon from "icons/CreateIcon";
 import ExploreIcon from "icons/ExploreIcon";
+import { useShallow } from "zustand/shallow";
 import { useLocation } from "react-router-dom";
 import HamburgerIcon from "icons/HamburgerIcon";
 import MessengerIcon from "icons/MessengerIcon";
@@ -17,12 +18,19 @@ import NotificationsIcon from "icons/NotificationsIcon";
 export default function MainSidebar() {
   const url = useLocation().pathname.split("/");
 
-  const {
+  const [
     activeSidebar,
     setSecondaryWidget,
     toggleActiveSidebar,
     togglePrimaryWidget,
-  } = useStore();
+  ] = useStore(
+    useShallow((state) => [
+      state.activeSidebar,
+      state.setSecondaryWidget,
+      state.toggleActiveSidebar,
+      state.togglePrimaryWidget,
+    ])
+  );
 
   const isCollapsed = url[1] === "direct";
 

@@ -3,7 +3,7 @@ import MessagesIcon from "icons/MessagesIcon";
 import Button from "components/wrappers/Button";
 
 export default function InboxPage() {
-  const { setSecondaryWidget } = useStore();
+  const setSecondaryWidget = useStore((state) => state.setSecondaryWidget);
 
   return (
     <div className="items-center justify-center hidden md:flex size-full">

@@ -3,6 +3,7 @@ import useStore from "store/_store";
 import SaveIcon from "icons/SaveIcon";
 import ReportIcon from "icons/ReportIcon";
 import Separator from "components/Separator";
+import { useShallow } from "zustand/shallow";
 import SettingsIcon from "icons/SettingsIcon";
 import ThemeSwitcher from "components/ThemeSwitcher";
 import YourActivityIcon from "icons/YourActivityIcon";
@@ -11,8 +12,14 @@ import DropDownArrowIcon from "icons/DropDownArrowIcon";
 import CurrentThemeImage from "components/CurrentThemeImage";
 
 export default function MoreWidget() {
-  const { showThemeSwitcher, setSecondaryWidget, setShowThemeSwitcher } =
-    useStore();
+  const [showThemeSwitcher, setSecondaryWidget, setShowThemeSwitcher] =
+    useStore(
+      useShallow((state) => [
+        state.showThemeSwitcher,
+        state.setSecondaryWidget,
+        state.setShowThemeSwitcher,
+      ])
+    );
 
   return (
     <div className="absolute z-10 pointer-events-auto left-4 bottom-20 rounded-2xl">

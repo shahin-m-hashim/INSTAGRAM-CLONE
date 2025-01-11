@@ -6,7 +6,7 @@ import Button from "components/wrappers/Button";
 
 export default function ReportAProblemWidget() {
   const fileInputRef = useRef();
-  const { setSecondaryWidget } = useStore();
+  const setSecondaryWidget = useStore((state) => state.setSecondaryWidget);
 
   const handleAddFileClick = () => fileInputRef.current.click();
 

@@ -3,7 +3,7 @@ import Separator from "components/Separator";
 import TransitionLink from "components/TransitionLink";
 
 export default function SettingsWidget() {
-  const { setPrimaryWidget } = useStore();
+  const setPrimaryWidget = useStore((state) => state.setPrimaryWidget);
 
   return (
     <div className="absolute inset-0 z-20 backdrop-brightness-[0.4] pointer-events-none">

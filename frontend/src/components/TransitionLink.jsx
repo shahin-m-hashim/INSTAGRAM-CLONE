@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import GlobalContext from "providers/GlobalProvider";
 
 export default function TransitionLink({ to = "", children, className = "" }) {
-  const { resetUiSlice } = useStore();
+  const resetUiSlice = useStore((state) => state.resetUiSlice);
 
   const navigate = useNavigate();
   const { isPending, startTransition } = useContext(GlobalContext);

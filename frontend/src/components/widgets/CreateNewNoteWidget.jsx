@@ -8,7 +8,7 @@ import Button from "components/wrappers/Button";
 import DropDownArrowIcon from "icons/DropDownArrowIcon";
 
 export default function CreateNewNoteWidget() {
-  const { setSecondaryWidget } = useStore();
+  const setSecondaryWidget = useStore((state) => state.setSecondaryWidget);
 
   const [state, setState] = useState({
     note: "",

@@ -1,6 +1,6 @@
 const createAuthSlice = (set) => ({
   auth: {
-    isAuthenticated: false,
+    isAuthenticated: true,
   },
 
   setIsAuthenticated: (value) =>

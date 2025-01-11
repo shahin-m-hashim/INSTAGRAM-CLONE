@@ -4,7 +4,7 @@ import NewPostIcon from "icons/NewPostIcon";
 import Button from "components/wrappers/Button";
 
 export default function CreateNewPostWidget() {
-  const { setSecondaryWidget } = useStore();
+  const setSecondaryWidget = useStore((state) => state.setSecondaryWidget);
 
   return (
     <div className="absolute inset-0 z-20 backdrop-brightness-[0.4] pointer-events-none">
