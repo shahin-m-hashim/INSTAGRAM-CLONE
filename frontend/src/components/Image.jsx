@@ -1,6 +1,7 @@
 import { cn } from "utils/cn";
 import useStore from "store/_store";
 import { useEffect, useRef } from "react";
+import { useShallow } from "zustand/shallow";
 
 export default function Image({
   id = "",
@@ -11,10 +12,17 @@ export default function Image({
   lazyLoad = false,
   showSkeleton = true,
 }) {
-  const imgRef = useRef(null);
-  const { images, initializeImage, setStatus } = useStore();
+  console.log(id);
 
-  const image = images.find((img) => img.id === id);
+  const imgRef = useRef(null);
+
+  const [image, initializeImage, setImageStatus] = useStore(
+    useShallow((state) => [
+      state.images[id],
+      state.initializeImage,
+      state.setImageStatus,
+    ])
+  );
 
   useEffect(() => {
     initializeImage(id);
@@ -22,13 +30,13 @@ export default function Image({
 
     const handleLoad = () => {
       if (img.naturalWidth && img.naturalHeight) {
-        setStatus(id, "loaded");
+        setImageStatus(id, "loaded");
       } else {
         handleError();
       }
     };
 
-    const handleError = () => setStatus(id, "error");
+    const handleError = () => setImageStatus(id, "error");
 
     if (img.complete) {
       handleLoad();

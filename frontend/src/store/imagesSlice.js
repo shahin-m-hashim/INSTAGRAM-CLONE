@@ -1,15 +1,12 @@
 const createImagesSlice = (set) => ({
-  images: [],
+  images: {},
   totalImages: 0,
 
   initializeImage: (id) =>
     set(
       (state) => {
-        if (!state.images.some((img) => img.id === id)) {
-          state.images.push({
-            id,
-            status: "loading",
-          });
+        if (!(id in state.images)) {
+          state.images[id] = { status: "loading" };
           state.totalImages++;
         }
       },
@@ -17,14 +14,15 @@ const createImagesSlice = (set) => ({
       "images/initializeImage"
     ),
 
-  setStatus: (id, status) =>
+  setImageStatus: (id, status) =>
     set(
       (state) => {
-        const image = state.images.find((img) => img.id === id);
-        if (image) image.status = status;
+        if (id in state.images) {
+          state.images[id].status = status;
+        }
       },
       undefined,
-      "images/setStatus"
+      "images/setImageStatus"
     ),
 });
 
