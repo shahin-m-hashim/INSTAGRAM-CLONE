@@ -1,9 +1,10 @@
 import useStore from "store/_store";
-import { Link } from "react-router-dom";
 import { useShallow } from "zustand/shallow";
 import Separator from "components/Separator";
 import Button from "components/wrappers/Button";
+import { Link, useNavigate } from "react-router-dom";
 import InputField from "components/fields/InputField";
+import { useEffect } from "react";
 
 const mockBackendLogin = async (data) => {
   return await new Promise((resolve) =>
@@ -15,12 +16,15 @@ const mockBackendLogin = async (data) => {
 };
 
 export default function LoginForm() {
+  const navigate = useNavigate();
+
   const [
     error,
     isValid,
     getFormData,
     isSubmitting,
     resetFormSlice,
+    setIsAuthenticated,
     setFormIsSubmitting,
   ] = useStore(
     useShallow((state) => [
@@ -29,6 +33,7 @@ export default function LoginForm() {
       state.getFormData,
       state.forms.login.isSubmitting,
       state.resetFormSlice,
+      state.setIsAuthenticated,
       state.setFormIsSubmitting,
     ])
   );
@@ -41,12 +46,18 @@ export default function LoginForm() {
       mockBackendLogin(data).then((res) => {
         if (res.success) {
           resetFormSlice("login");
+          setIsAuthenticated(true);
+          navigate("/", { replace: true });
         } else {
           setFormIsSubmitting("login", false);
         }
       });
     }
   };
+
+  useEffect(() => {
+    return () => resetFormSlice("login");
+  }, []);
 
   return (
     <form onSubmit={handleSubmit} className="flex flex-col">

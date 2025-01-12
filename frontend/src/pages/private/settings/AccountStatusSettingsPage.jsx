@@ -15,7 +15,7 @@ export default function AccountStatusSettingsPage() {
 
       <div className="flex items-center justify-between gap-2 p-4 rounded-xl bg-tertiary">
         <div className="flex items-center flex-1 gap-5">
-          <ProfilePicture storyPadding="0px" />
+          <ProfilePicture id="account-status-profile-pic" storyPadding="0px" />
           <span className="font-semibold">username</span>
         </div>
       </div>

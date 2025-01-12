@@ -2,6 +2,7 @@ import useStore from "store/_store";
 import { useShallow } from "zustand/shallow";
 import Button from "components/wrappers/Button";
 import InputField from "components/fields/InputField";
+import { useEffect } from "react";
 
 const mockBackendSignup = async (data) => {
   return await new Promise((resolve) =>
@@ -50,6 +51,10 @@ export default function SignUpForm() {
       });
     }
   };
+
+  useEffect(() => {
+    return () => resetFormSlice("signup");
+  }, []);
 
   return (
     <form onSubmit={handleSubmit} className="flex flex-col gap-4">

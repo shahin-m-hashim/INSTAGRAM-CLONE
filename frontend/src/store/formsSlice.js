@@ -73,7 +73,10 @@ const createFormsSlice = (set, get) => ({
   setSignupFormFieldValue: (field, value) =>
     set(
       (state) => {
+        state.forms.signup.isValid = false;
+        state.forms.signup.fields[field].error = null;
         state.forms.signup.fields[field].value = value;
+        state.forms.signup.fields[field].validationCompleted = false;
       },
       undefined,
       "setSignupFormFieldValue"

@@ -1,12 +1,22 @@
 const createAuthSlice = (set) => ({
   auth: {
-    isAuthenticated: true,
+    isAuthenticated:
+      JSON.parse(localStorage.getItem("user"))?.isAuthenticated || false,
   },
 
   setIsAuthenticated: (value) =>
-    set((state) => {
-      state.auth.isAuthenticated = value;
-    }),
+    set(
+      (state) => {
+        localStorage.setItem(
+          "user",
+          JSON.stringify({ isAuthenticated: value })
+        );
+
+        state.auth.isAuthenticated = value;
+      },
+      undefined,
+      "setIsAuthenticated"
+    ),
 });
 
 export default createAuthSlice;

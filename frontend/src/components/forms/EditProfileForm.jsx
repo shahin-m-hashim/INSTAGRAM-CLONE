@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import useStore from "store/_store";
 import { useShallow } from "zustand/shallow";
 import Button from "components/wrappers/Button";
@@ -15,6 +15,7 @@ export default function EditProfileForm() {
     fields,
     isChanged,
     isSubmitting,
+    resetFormSlice,
     setNewProfilePic,
     showAccountSuggestions,
     showGenderSelectionMenu,
@@ -27,6 +28,7 @@ export default function EditProfileForm() {
       state.forms.editProfile.fields,
       state.forms.editProfile.isChanged,
       state.forms.editProfile.isSubmitting,
+      state.resetFormSlice,
       state.setNewProfilePic,
       state.forms.editProfile.showAccountSuggestions,
       state.forms.editProfile.showGenderSelectionMenu,
@@ -41,11 +43,15 @@ export default function EditProfileForm() {
     if (file) setNewProfilePic(file);
   };
 
+  useEffect(() => {
+    return () => resetFormSlice("editProfile");
+  }, []);
+
   return (
     <form className="flex flex-col gap-10 p-4">
       <div className="flex items-center justify-between gap-2 p-4 rounded-xl bg-widget">
         <div className="flex items-center flex-1 gap-2 md:gap-5">
-          <ProfilePicture storyPadding="0px" />
+          <ProfilePicture id="edit-profile-pic" storyPadding="0px" />
           <span className="font-semibold">username</span>
         </div>
 

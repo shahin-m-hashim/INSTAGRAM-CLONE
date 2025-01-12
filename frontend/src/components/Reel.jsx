@@ -36,7 +36,11 @@ const Reel = ({ reel }) => {
             {reel.user.profilePic ? (
               <img src={reel.user.profilePic} className="rounded-full size-8" />
             ) : (
-              <ProfilePicture storyPadding="0px" className="size-8" />
+              <ProfilePicture
+                storyPadding="0px"
+                className="size-8"
+                id={reel.user.id || "reel-profile-pic"}
+              />
             )}
             <span className="font-bold">{reel.user.username}</span>
             <button className="px-3 py-[2px] border border-white rounded-md">

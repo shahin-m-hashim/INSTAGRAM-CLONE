@@ -12,7 +12,7 @@ export default function ChatDetailsContent() {
         <h1 className="p-4 pb-0 font-semibold">Members</h1>
         <div className="p-4 md:overflow-auto">
           <div className="flex items-center gap-4">
-            <ProfilePicture storyPadding="0px" />
+            <ProfilePicture id="chat-profile-pic" storyPadding="0px" />
             <div className="flex flex-col">
               <span className="font-semibold">username</span>
               <span className="text-tertiary">Full Name</span>

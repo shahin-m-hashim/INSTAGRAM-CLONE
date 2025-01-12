@@ -42,7 +42,11 @@ export default function BottomNavbar() {
             to="username"
             className="flex flex-1 items-center justify-center gap-4 px-2.5 py-3"
           >
-            <ProfilePicture className="size-6" storyPadding="0px" />
+            <ProfilePicture
+              className="size-6"
+              storyPadding="0px"
+              id="bottom-nav-profile-pic"
+            />
           </TransitionLink>
         </div>
       </div>

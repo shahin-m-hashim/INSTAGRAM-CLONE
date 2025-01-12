@@ -21,7 +21,11 @@ export default function MessengerHeader({ page }) {
         <>
           <div className="flex items-center gap-4 mx-auto">
             {page.length === 2 && (
-              <ProfilePicture storyPadding="0px" className="size-6" />
+              <ProfilePicture
+                storyPadding="0px"
+                className="size-6"
+                id="messenger-profile-pic"
+              />
             )}
             <span className="font-bold">Username</span>
           </div>

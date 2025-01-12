@@ -54,6 +54,7 @@ export default function MoreWidget() {
               </a>
 
               <button
+                type="button"
                 onClick={() => setShowThemeSwitcher(true)}
                 className="flex items-center gap-4 px-3 py-2 transition-all duration-100 ease-in rounded-md hover:bg-widget-hover"
               >
@@ -64,6 +65,7 @@ export default function MoreWidget() {
               </button>
 
               <button
+                type="button"
                 onClick={() => setSecondaryWidget("report")}
                 className="flex items-center gap-4 px-1 py-2 transition-all duration-100 ease-in rounded-md hover:bg-widget-hover"
               >
@@ -84,11 +86,15 @@ export default function MoreWidget() {
 
             <Separator straight={true} />
 
-            <div className="p-2">
-              <div className="b-t b-t-[rgb(38,38,38)] px-3 py-2 transition-all duration-100 ease-in rounded-md hover:bg-widget-hover">
-                <button>Log Out</button>
+            <button
+              type="button"
+              className="p-2"
+              onClick={() => setSecondaryWidget("logout")}
+            >
+              <div className="text-left b-t b-t-[rgb(38,38,38)] px-3 py-2 transition-all duration-100 ease-in rounded-md hover:bg-widget-hover">
+                Log Out
               </div>
-            </div>
+            </button>
           </div>
         </div>
 

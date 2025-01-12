@@ -16,6 +16,7 @@ import ReportAProblemWidget from "components/widgets/ReportAProblemWidget";
 import NotificationsSidebar from "components/sidebars/NotificationsSidebar";
 import CreateStoryOrPostWidget from "components/widgets/CreateStoryOrPostWidget";
 import InstagramTextDropDownWidget from "components/widgets/InstagramTextDropDownWidget";
+import LogOutPopUp from "components/widgets/LogOutPopUp";
 
 export default function ProtectedLayout() {
   const { pathname } = useLocation();
@@ -60,6 +61,8 @@ export default function ProtectedLayout() {
           <CreateStoryOrPostWidget />
         ) : secondaryWidget === "instagramTextDropdown" ? (
           <InstagramTextDropDownWidget />
+        ) : secondaryWidget === "logout" ? (
+          <LogOutPopUp />
         ) : (
           <></>
         )}

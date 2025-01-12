@@ -15,7 +15,11 @@ export default function ChatPage() {
       <div className="flex flex-1 flex-col items-center justify-center md:h-screen h-[calc(100vh-60px)]">
         <div className="items-center justify-between hidden w-full h-20 px-6 border-b md:flex border-b-tertiary">
           <div className="flex items-center gap-4">
-            <ProfilePicture storyPadding="0px" className="size-12" />
+            <ProfilePicture
+              storyPadding="0px"
+              className="size-12"
+              id="chat-profile-pic-1"
+            />
             <span>Username</span>
           </div>
 
@@ -37,7 +41,11 @@ export default function ChatPage() {
 
         <div className="flex justify-center flex-1 w-full">
           <div className="flex flex-col items-center gap-4 py-10">
-            <ProfilePicture className="size-24" storyPadding="0px" />
+            <ProfilePicture
+              storyPadding="0px"
+              className="size-24"
+              id="chat-profile-pic-2"
+            />
             <div className="flex flex-col text-center">
               <span>Full Name</span>
               <span>username . Instagram</span>

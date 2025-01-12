@@ -51,7 +51,11 @@ export default function HomePage() {
             <div className="flex flex-col justify-start flex-1 py-6">
               <div className="flex items-center justify-between m-5">
                 <div className="flex items-center flex-1 gap-4">
-                  <ProfilePicture className="size-12" storyPadding="2px" />
+                  <ProfilePicture
+                    storyPadding="2px"
+                    className="size-12"
+                    id="home-profile-pic"
+                  />
                   <span>username</span>
                 </div>
                 <div className="text-sm">

@@ -10,6 +10,7 @@ export default function ProfilePicture({
   className = "",
   showNote = false,
   hasStory = false,
+  id = "profile-pic",
   fileType = "story",
   storyPadding = "2px",
   noteInputClassName = "",
@@ -37,8 +38,8 @@ export default function ProfilePicture({
           className="rounded-full active-story size-full"
         >
           <Image
+            id={id}
             src={src}
-            id="profile-pic"
             alt="profile pic"
             className="rounded-full size-full"
           />

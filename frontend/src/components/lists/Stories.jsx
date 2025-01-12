@@ -20,6 +20,7 @@ export default function Stories() {
           <ProfilePicture
             storyPadding="0px"
             className="size-16"
+            id="story-profile-pic"
             noteInputClassName="left-1 -top-7"
             showNote={pathname === "direct" ? true : false}
             requireNoteInput={pathname === "direct" ? true : false}

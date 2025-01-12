@@ -162,6 +162,7 @@ export default function MainSidebar() {
             >
               <ProfilePicture
                 storyPadding="0px"
+                id="sidebar-profile-pic"
                 className="border border-tertiary size-7"
               />
               {isCollapsed ||

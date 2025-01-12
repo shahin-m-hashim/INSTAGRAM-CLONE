@@ -4,6 +4,7 @@ import TransitionLink from "components/TransitionLink";
 
 export default function SettingsWidget() {
   const setPrimaryWidget = useStore((state) => state.setPrimaryWidget);
+  const setSecondaryWidget = useStore((state) => state.setSecondaryWidget);
 
   return (
     <div className="absolute inset-0 z-20 backdrop-brightness-[0.4] pointer-events-none">
@@ -53,9 +54,17 @@ export default function SettingsWidget() {
           </a>
           <Separator straight={true} />
 
-          <a className="flex justify-center p-3 text-sm hover:bg-widget-hover">
+          <button
+            type="button"
+            className="p-3 text-sm hover:bg-widget-hover"
+            onClick={() => {
+              setPrimaryWidget(null);
+              setSecondaryWidget("logout");
+            }}
+          >
             Log Out
-          </a>
+          </button>
+
           <Separator straight={true} />
 
           <button

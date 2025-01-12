@@ -50,6 +50,7 @@ export default function Post({ post }) {
                 storyPadding="2px"
                 src={post.user.profilePic}
                 hasStory={post.user.hasStory}
+                id={post.user.id || "post-profile-pic"}
               />
 
               <div className="flex gap-2">

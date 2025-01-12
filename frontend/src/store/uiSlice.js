@@ -68,9 +68,13 @@ const createUiSlice = (set) => ({
     set({ showThemeSwitcher: value }, undefined, "ui/setShowThemeSwitcher"),
 
   cycleLoginPageFrameImages: () =>
-    set((state) => {
-      state.loginPagePhoneFrameIdx = (state.loginPagePhoneFrameIdx + 1) % 4;
-    }),
+    set(
+      (state) => {
+        state.loginPagePhoneFrameIdx = (state.loginPagePhoneFrameIdx + 1) % 4;
+      },
+      undefined,
+      "ui/cycleLoginPageFrameImages"
+    ),
 });
 
 export default createUiSlice;

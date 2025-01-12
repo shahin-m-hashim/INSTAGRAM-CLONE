@@ -22,6 +22,7 @@ export default function ProfileLayout() {
             <div className="flex items-center justify-center flex-1 mx-8 md:mx-16 md:gap-10 md:items-start lg:gap-20">
               <div className="flex flex-1 md:flex-initial">
                 <ProfilePicture
+                  id="layout-profile-pic"
                   fileType="newProfilePic"
                   requireNoteInput={true}
                   requireFileInput={true}
