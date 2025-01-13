@@ -1,10 +1,11 @@
+import { useEffect } from "react";
 import useStore from "store/_store";
 import { useShallow } from "zustand/shallow";
 import Separator from "components/Separator";
 import Button from "components/wrappers/Button";
 import { Link, useNavigate } from "react-router-dom";
+import { RotatingLines } from "react-loader-spinner";
 import InputField from "components/fields/InputField";
-import { useEffect } from "react";
 
 const mockBackendLogin = async (data) => {
   return await new Promise((resolve) =>
@@ -78,9 +79,13 @@ export default function LoginForm() {
       <Button
         type="submit"
         className="mb-4"
-        disabled={!isValid && !isSubmitting}
+        disabled={!isValid || isSubmitting}
       >
-        {isSubmitting ? "Submitting..." : "Log in"}
+        {isSubmitting ? (
+          <RotatingLines strokeColor="white" strokeWidth="4" width="20" />
+        ) : (
+          "Log in"
+        )}
       </Button>
 
       <Separator />

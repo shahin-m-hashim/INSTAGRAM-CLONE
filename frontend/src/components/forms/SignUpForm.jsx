@@ -1,8 +1,9 @@
+import { useEffect } from "react";
 import useStore from "store/_store";
 import { useShallow } from "zustand/shallow";
 import Button from "components/wrappers/Button";
+import { RotatingLines } from "react-loader-spinner";
 import InputField from "components/fields/InputField";
-import { useEffect } from "react";
 
 const mockBackendSignup = async (data) => {
   return await new Promise((resolve) =>
@@ -110,10 +111,14 @@ export default function SignUpForm() {
 
         <Button
           type="submit"
-          className="w-full"
-          disabled={!isValid && !isSubmitting}
+          className="mb-4"
+          disabled={!isValid || isSubmitting}
         >
-          {isSubmitting ? "Submitting..." : "Sign up"}
+          {isSubmitting ? (
+            <RotatingLines strokeColor="white" strokeWidth="4" width="20" />
+          ) : (
+            "Sign up"
+          )}
         </Button>
       </div>
 

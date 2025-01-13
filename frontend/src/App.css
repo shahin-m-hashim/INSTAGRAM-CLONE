@@ -154,10 +154,10 @@ input:-webkit-autofill:focus {
 /* Touch screen media query */
 @media (hover: none) and (pointer: coarse) {
   .hide-onts {
-    display: none;
+    display: none !important;
   }
 
   .overflow-x-auto-onts {
-    overflow-x: auto;
+    overflow-x: auto !important;
   }
 }

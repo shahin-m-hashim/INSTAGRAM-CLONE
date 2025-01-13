@@ -1,9 +1,9 @@
 import Button from "components/wrappers/Button";
 import AddPhoneNoIcon from "icons/AddPhoneNoIcon";
 import SharePhotosIcon from "icons/SharePhotosIcon";
+import Carousal from "components/wrappers/Carousal";
 import AddProfilePhotoIcon from "icons/AddProfilePhotoIcon";
 import CompleteProfileIcon from "icons/CompleteProfileIcon";
-import HorizontalScroller from "components/wrappers/HorizontalScroller";
 
 const items = [
   {
@@ -37,26 +37,24 @@ export default function PostsPage() {
   return (
     <div className="flex flex-col flex-1 w-full gap-4 px-5">
       <h1>Getting Started</h1>
-      <HorizontalScroller duration={300}>
-        <ul className="flex items-center gap-2">
-          {items.map((item, idx) => {
-            const Icon = item.icon;
-            return (
-              <li
-                key={idx}
-                className="flex flex-col items-center flex-shrink-0 w-64 gap-4 p-4 border rounded-md border-tertiary h-60"
-              >
-                <Icon />
-                <p className="text-sm font-semibold">{item.heading}</p>
-                <p className="text-xs text-tertiary">{item.caption}</p>
-                <div className="flex justify-center w-full mt-auto">
-                  <Button className="min-w-[152px]">{item.button}</Button>
-                </div>
-              </li>
-            );
-          })}
-        </ul>
-      </HorizontalScroller>
+      <Carousal duration={300} gap="0.5rem">
+        {items.map((item, idx) => {
+          const Icon = item.icon;
+          return (
+            <div
+              key={idx}
+              className="flex flex-col items-center flex-shrink-0 w-64 gap-4 p-4 border rounded-md border-tertiary h-60"
+            >
+              <Icon />
+              <p className="text-sm font-semibold">{item.heading}</p>
+              <p className="text-xs text-tertiary">{item.caption}</p>
+              <div className="flex justify-center w-full mt-auto">
+                <Button className="min-w-[152px]">{item.button}</Button>
+              </div>
+            </div>
+          );
+        })}
+      </Carousal>
     </div>
   );
 }

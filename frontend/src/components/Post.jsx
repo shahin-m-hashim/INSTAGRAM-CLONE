@@ -8,8 +8,8 @@ import ShareIcon from "icons/ShareIcon";
 import { commaNumber } from "utils/number";
 import Separator from "components/Separator";
 import CommentsIcon from "icons/CommentsIcon";
+import Carousal from "components/wrappers/Carousal";
 import ProfilePicture from "components/ProfilePicture";
-import HorizontalScroller from "components/wrappers/HorizontalScroller";
 
 const Caption = ({ caption }) => {
   const [showLess, setShowLess] = useState(caption.length > 70);
@@ -86,28 +86,28 @@ export default function Post({ post }) {
               rootStyles="xs:rounded-md min-h-[400px] md:h-[585px]"
             />
           ) : post.type === "group" ? (
-            <HorizontalScroller
+            <Carousal
+              gap="0"
               duration={300}
+              showDots={true}
               iconType="rounded"
               leftArrowStyle="left-2"
               rightArrowStyle="right-2"
-              dots={post.media.length}
+              carousalStyles="min-h-[400px]"
               overrideTouchScreenBehavior={true}
             >
-              <ul className="flex items-center min-h-[400px] md:h-[585px]">
-                {post.media.map((post, idx) => (
-                  <li key={idx} className="flex-shrink-0 size-full">
-                    <Image
-                      alt="post"
-                      id={post.id}
-                      src={post.src}
-                      lazyLoad={true}
-                      className="xs:rounded-md min-h-[400px] size-full"
-                    />
-                  </li>
-                ))}
-              </ul>
-            </HorizontalScroller>
+              {post.media.map((post, idx) => (
+                <div key={idx} className="flex-shrink-0 size-full">
+                  <Image
+                    alt="post"
+                    id={post.id}
+                    src={post.src}
+                    lazyLoad={true}
+                    className="xs:rounded-md size-full"
+                  />
+                </div>
+              ))}
+            </Carousal>
           ) : (
             <Image
               alt="post"

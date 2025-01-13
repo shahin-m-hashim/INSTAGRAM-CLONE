@@ -1,9 +1,11 @@
+import { cn } from "utils/cn";
 import { useContext } from "react";
 import useStore from "store/_store";
 import { useShallow } from "zustand/shallow";
 import TopNavbar from "components/navbars/TopNavbar";
 import GlobalContext from "providers/GlobalProvider";
 import MoreWidget from "components/widgets/MoreWidget";
+import LogOutPopUp from "components/widgets/LogOutPopUp";
 import MainSidebar from "components/sidebars/MainSidebar";
 import BottomNavbar from "components/navbars/BottomNavbar";
 import SearchSidebar from "components/sidebars/SearchSidebar";
@@ -16,7 +18,6 @@ import ReportAProblemWidget from "components/widgets/ReportAProblemWidget";
 import NotificationsSidebar from "components/sidebars/NotificationsSidebar";
 import CreateStoryOrPostWidget from "components/widgets/CreateStoryOrPostWidget";
 import InstagramTextDropDownWidget from "components/widgets/InstagramTextDropDownWidget";
-import LogOutPopUp from "components/widgets/LogOutPopUp";
 
 export default function ProtectedLayout() {
   const { pathname } = useLocation();
@@ -78,7 +79,14 @@ export default function ProtectedLayout() {
 
       {isPending && <div className="navigation-transition" />}
 
-      <div className="absolute inset-0 z-0 pointer-events-auto">
+      <div
+        className={cn(
+          "absolute inset-0 z-0",
+          primaryWidget || secondaryWidget
+            ? "pointer-events-none"
+            : "pointer-events-auto"
+        )}
+      >
         <Outlet />
       </div>
     </section>
