@@ -5,7 +5,11 @@ import Carousal from "components/wrappers/Carousal";
 
 export default function SuggestionCards() {
   return (
-    <Carousal carousalStyles="h-[15.5rem]">
+    <Carousal
+      scrollAmount={370}
+      carousalStyles="h-[15.5rem]"
+      id="suggestion-cards-carousal"
+    >
       {users.map((user) => (
         <div
           key={user.id}

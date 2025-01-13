@@ -7,9 +7,9 @@ export default function SettingsWidget() {
   const setSecondaryWidget = useStore((state) => state.setSecondaryWidget);
 
   return (
-    <div className="absolute inset-0 z-20 backdrop-brightness-[0.4] pointer-events-none">
+    <div className="absolute inset-0 z-[100] pointer-events-auto backdrop-brightness-50">
       <div className="flex items-center justify-center size-full">
-        <div className="flex flex-col rounded-lg bg-widget shadow-primary w-[400px] pointer-events-auto">
+        <div className="flex flex-col rounded-lg bg-widget shadow-primary w-[400px]">
           <TransitionLink
             to="/settings/website_permissions"
             className="flex justify-center p-3 text-sm rounded-t-lg hover:bg-widget-hover"

@@ -28,7 +28,7 @@ export default function CreateNewNoteWidget() {
     setState({ ...state, showDropDown: false, sharedWith: e.target.value });
 
   return (
-    <div className="absolute inset-0 z-20 backdrop-brightness-[0.4] pointer-events-auto">
+    <div className="absolute inset-0 z-[100] pointer-events-auto backdrop-brightness-50">
       <div className="flex items-center justify-center size-full">
         <form
           onSubmit={handleSubmit}

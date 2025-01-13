@@ -9,7 +9,11 @@ export default function Stories() {
   const pathname = useLocation().pathname.split("/")[1];
 
   return (
-    <Carousal carousalStyles={pathname === "direct" && "h-[120px]"}>
+    <Carousal
+      scrollAmount={300}
+      id="stories-carousal"
+      carousalStyles={pathname === "direct" && "h-[120px]"}
+    >
       <ProfilePicture
         id="story-profile-pic"
         className="min-w-16 size-16"

@@ -91,6 +91,7 @@ export default function Post({ post }) {
               duration={300}
               showDots={true}
               iconType="rounded"
+              id="posts-carousal"
               leftArrowStyle="left-2"
               rightArrowStyle="right-2"
               carousalStyles="min-h-[400px]"

@@ -1,21 +1,15 @@
 import { cn } from "utils/cn";
+import useStore from "store/_store";
+import { useShallow } from "zustand/shallow";
 import ArrowCircleLeft from "icons/ArrowCircleLeft";
 import ArrowCircleRight from "icons/ArrowCircleRight";
 import DropDownArrowIcon from "icons/DropDownArrowIcon";
-import { Children, useCallback, useEffect, useRef, useState } from "react";
+import { Children, useCallback, useEffect, useRef } from "react";
 
-const initial = {
-  activeDot: 0,
-  scrollLeft: 0,
-  overflowingTo: {
-    left: false,
-    right: false,
-  },
-};
-
-export default function Carousel({
+export default function Carousal({
   children,
   gap = "1rem",
+  id = "carousal",
   duration = 1000,
   showDots = false,
   iconSize = "size-6",
@@ -28,7 +22,22 @@ export default function Carousel({
 }) {
   const scrollContainerRef = useRef(null);
   const length = Children.count(children);
-  const [carousel, setCarousel] = useState(initial);
+
+  const [
+    carousal,
+    handleScroll,
+    updateCarousal,
+    removeCarousal,
+    initializeCarousal,
+  ] = useStore(
+    useShallow((state) => [
+      state.carousals[id],
+      state.handleScroll,
+      state.updateCarousal,
+      state.removeCarousal,
+      state.initializeCarousal,
+    ])
+  );
 
   const scrollTo = useCallback(
     (direction) => {
@@ -36,28 +45,24 @@ export default function Carousel({
 
       if (scrollContainer) {
         const scrollAmount = manualScrollAmount || scrollContainer.clientWidth;
-        let newScrollLeft = carousel.scrollLeft;
+        let newScrollLeft = carousal?.scrollLeft;
 
         if (direction === "right") {
           newScrollLeft = Math.min(
-            carousel.scrollLeft + scrollAmount,
+            carousal?.scrollLeft + scrollAmount,
             scrollContainer.scrollWidth - scrollContainer.clientWidth
           );
         } else if (direction === "left") {
-          newScrollLeft = Math.max(carousel.scrollLeft - scrollAmount, 0);
+          newScrollLeft = Math.max(carousal?.scrollLeft - scrollAmount, 0);
         }
 
-        setCarousel((prev) => ({
-          ...prev,
-          scrollLeft: newScrollLeft,
-          activeDot: Math.round(newScrollLeft / scrollAmount),
-          overflowingTo: {
-            left: newScrollLeft > 0,
-            right:
-              newScrollLeft <
-              scrollContainer.scrollWidth - scrollContainer.clientWidth,
-          },
-        }));
+        handleScroll(
+          id,
+          scrollAmount,
+          newScrollLeft,
+          scrollContainer.clientWidth,
+          scrollContainer.scrollWidth
+        );
 
         scrollContainer.scrollTo({
           left: newScrollLeft,
@@ -65,10 +70,12 @@ export default function Carousel({
         });
       }
     },
-    [carousel.scrollLeft]
+    [carousal?.scrollLeft]
   );
 
   useEffect(() => {
+    initializeCarousal(id);
+
     if (
       overrideTouchScreenBehavior ||
       !window.matchMedia("(pointer: coarse)").matches
@@ -77,16 +84,20 @@ export default function Carousel({
 
       if (scrollContainer) {
         requestAnimationFrame(() => {
-          setCarousel((prev) => ({
-            ...prev,
-            overflowingTo: {
-              left: prev.scrollLeft > 0,
-              right: scrollContainer.scrollWidth > scrollContainer.clientWidth,
-            },
-          }));
+          console.log(scrollContainer.clientWidth, scrollContainer.scrollWidth);
+
+          updateCarousal(
+            id,
+            scrollContainer.clientWidth,
+            scrollContainer.scrollWidth
+          );
         });
       }
     }
+
+    return () => {
+      removeCarousal(id);
+    };
   }, [length]);
 
   return (
@@ -96,7 +107,7 @@ export default function Carousel({
         onClick={() => scrollTo("left")}
         className={cn(
           "absolute top-1/2 -translate-y-1/2 left-0 z-10",
-          carousel.overflowingTo.left ? "block" : "hidden",
+          carousal?.overflowingTo.left ? "block" : "hidden",
           !overrideTouchScreenBehavior && "hide-onts",
           leftArrowStyle
         )}
@@ -112,12 +123,11 @@ export default function Carousel({
 
       {/* Scrollable Container */}
       <div
-        id="test"
         ref={scrollContainerRef}
         style={{
           gap,
           transition: `transform ${duration}ms`,
-          transform: `translateX(-${carousel.scrollLeft}px)`,
+          transform: `translateX(-${carousal?.scrollLeft}px)`,
         }}
         className={cn(
           "scrollbar-hidden flex items-center size-full",
@@ -135,7 +145,7 @@ export default function Carousel({
               key={idx}
               className={cn(
                 "size-2 flex-shrink-0 rounded-full",
-                idx === carousel.activeDot
+                idx === carousal?.activeDot
                   ? "bg-[rgb(245,245,245)]"
                   : "bg-[rgba(245,245,245,0.5)]"
               )}
@@ -145,12 +155,11 @@ export default function Carousel({
       )}
 
       {/* Right Control */}
-
       <button
         onClick={() => scrollTo("right")}
         className={cn(
           "absolute top-1/2 -translate-y-1/2 right-0 z-10",
-          carousel.overflowingTo.right ? "block" : "hidden",
+          carousal?.overflowingTo.right ? "block" : "hidden",
           !overrideTouchScreenBehavior && "hide-onts",
           rightArrowStyle
         )}

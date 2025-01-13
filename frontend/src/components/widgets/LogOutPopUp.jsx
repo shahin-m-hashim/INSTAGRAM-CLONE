@@ -5,7 +5,7 @@ export default function LogOutPopUp() {
   const setSecondaryWidget = useStore((state) => state.setSecondaryWidget);
 
   return (
-    <div className="absolute inset-0 z-20 backdrop-brightness-[0.4] pointer-events-auto">
+    <div className="absolute inset-0 backdrop-brightness-50 z-[100] pointer-events-auto">
       <div className="flex items-center justify-center text-primary size-full">
         <div className="flex text-primary flex-col bg-widget w-[300px] xs:w-[400px] rounded-lg">
           <div className="flex flex-col">

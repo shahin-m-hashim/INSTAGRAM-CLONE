@@ -8,6 +8,8 @@ import createThemeSlice from "./themeSlice";
 import createFormsSlice from "store/formsSlice";
 import createVideosSlice from "store/videosSlice";
 import createImagesSlice from "store/imagesSlice";
+import createNewPostSlice from "store/newPostSlice";
+import createCarousalsSlice from "store/carousalSlice";
 
 const useStore = create(
   devtools(
@@ -18,6 +20,8 @@ const useStore = create(
       ...createThemeSlice(set, get),
       ...createVideosSlice(set, get),
       ...createImagesSlice(set, get),
+      ...createNewPostSlice(set, get),
+      ...createCarousalsSlice(set, get),
     }))
   )
 );

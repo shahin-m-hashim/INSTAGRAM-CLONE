@@ -16,9 +16,9 @@ export default function ReportAProblemWidget() {
   };
 
   return (
-    <div className="absolute inset-0 z-20 backdrop-brightness-[0.4] pointer-events-none">
+    <div className="absolute inset-0 z-[100] backdrop-brightness-50 pointer-events-auto">
       <div className="flex items-center justify-center size-full">
-        <div className="relative flex flex-col rounded-lg w-[400px] h-[300px] bg-widget pointer-events-auto">
+        <div className="relative flex flex-col rounded-lg w-[400px] h-[300px] bg-widget">
           <div className="flex justify-center w-full p-3">
             <h1 className="font-semibold ">Report A Problem</h1>
           </div>

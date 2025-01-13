@@ -1,4 +1,3 @@
-import { cn } from "utils/cn";
 import { useContext } from "react";
 import useStore from "store/_store";
 import { useShallow } from "zustand/shallow";
@@ -79,14 +78,7 @@ export default function ProtectedLayout() {
 
       {isPending && <div className="navigation-transition" />}
 
-      <div
-        className={cn(
-          "absolute inset-0 z-0",
-          primaryWidget || secondaryWidget
-            ? "pointer-events-none"
-            : "pointer-events-auto"
-        )}
-      >
+      <div className="absolute inset-0 z-0 pointer-events-auto">
         <Outlet />
       </div>
     </section>

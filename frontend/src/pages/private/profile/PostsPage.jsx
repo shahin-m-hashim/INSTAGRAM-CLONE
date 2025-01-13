@@ -37,7 +37,7 @@ export default function PostsPage() {
   return (
     <div className="flex flex-col flex-1 w-full gap-4 px-5">
       <h1>Getting Started</h1>
-      <Carousal duration={300} gap="0.5rem">
+      <Carousal id="profile-posts-carousal" duration={300} gap="0.5rem">
         {items.map((item, idx) => {
           const Icon = item.icon;
           return (

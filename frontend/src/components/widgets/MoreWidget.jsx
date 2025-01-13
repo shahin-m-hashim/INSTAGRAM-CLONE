@@ -22,7 +22,7 @@ export default function MoreWidget() {
     );
 
   return (
-    <div className="absolute z-10 pointer-events-auto left-4 bottom-20 rounded-2xl">
+    <div className="absolute z-50 pointer-events-auto left-4 bottom-20 rounded-2xl">
       <div className="flex w-[250px] overflow-hidden size-full rounded-2xl">
         <div
           className={cn(
