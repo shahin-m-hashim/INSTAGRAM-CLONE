@@ -17,6 +17,7 @@ export default function Carousal({
   rightArrowStyle = "",
   iconType = "extended",
   carousalStyles = "size-full",
+  extendScrollBehaviorFn = () => {},
   overrideTouchScreenBehavior = false,
   scrollAmount: manualScrollAmount = 0,
 }) {
@@ -41,6 +42,8 @@ export default function Carousal({
 
   const scrollTo = useCallback(
     (direction) => {
+      extendScrollBehaviorFn();
+
       const scrollContainer = scrollContainerRef.current;
 
       if (scrollContainer) {
@@ -84,8 +87,6 @@ export default function Carousal({
 
       if (scrollContainer) {
         requestAnimationFrame(() => {
-          console.log(scrollContainer.clientWidth, scrollContainer.scrollWidth);
-
           updateCarousal(
             id,
             scrollContainer.clientWidth,
@@ -104,6 +105,7 @@ export default function Carousal({
     <div className={cn("relative overflow-hidden", carousalStyles)}>
       {/* Left Control */}
       <button
+        type="button"
         onClick={() => scrollTo("left")}
         className={cn(
           "absolute top-1/2 -translate-y-1/2 left-0 z-10",
@@ -156,6 +158,7 @@ export default function Carousal({
 
       {/* Right Control */}
       <button
+        type="button"
         onClick={() => scrollTo("right")}
         className={cn(
           "absolute top-1/2 -translate-y-1/2 right-0 z-10",

@@ -1,4 +1,4 @@
-import "./App.css";
+import "./app.css";
 import App from "./App";
 import { Suspense } from "react";
 import ErrorPage from "pages/ErrorPage";

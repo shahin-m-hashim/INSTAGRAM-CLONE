@@ -1,37 +1,44 @@
 import useStore from "store/_store";
-import CloseIcon from "icons/CloseIcon";
-import NewPostIcon from "icons/NewPostIcon";
-import Button from "components/wrappers/Button";
+import EditNewPostsTab from "components/widgets/createNewPost/tabs/EditNewPostsTab";
+import CropNewPostsTab from "components/widgets/createNewPost/tabs/CropNewPostsTab";
+import SelectNewPostsTab from "components/widgets/createNewPost/tabs/SelectNewPostsTab";
+import DiscardNewPostModal from "components/widgets/createNewPost/modals/DiscardNewPostModal";
+import EditNewPostDetailsTab from "components/widgets/createNewPost/tabs/EditNewPostDetailsTab";
+import CreateNewPostModalHeader from "components/widgets/createNewPost/CreateNewPostModalHeader";
+import CloseCreateNewPostWidgetButton from "components/widgets/createNewPost/CloseCreateNewPostWidgetButton";
 
 export default function CreateNewPostWidget() {
-  const setSecondaryWidget = useStore((state) => state.setSecondaryWidget);
+  const resetNewPostSlice = useStore((state) => state.resetNewPostSlice);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(useStore.getState().newPost);
+    resetNewPostSlice();
+  };
 
   return (
-    <div className="absolute inset-0 z-20 backdrop-brightness-[0.4] pointer-events-none">
-      <div className="flex items-center justify-center text-primary size-full">
-        <div className="flex text-primary flex-col shadow-primary bg-widget w-[500px] pointer-events-auto rounded-lg">
-          <div className="relative flex items-center justify-center p-3 border-b-2 rounded-t-lg bg-tertiary border-tertiary">
-            <h1 className="font-semibold">Create new post</h1>
+    <div className="absolute inset-0 z-[100] pointer-events-auto backdrop-brightness-50">
+      <div className="relative flex items-center justify-center text-primary size-full">
+        <form
+          onSubmit={handleSubmit}
+          className="relative flex flex-col h-[480px] shadow-primary bg-widget rounded-lg "
+        >
+          <CreateNewPostModalHeader />
 
-            <div className="absolute -top-1 -right-2">
-              <button
-                type="button"
-                onClick={() => setSecondaryWidget(null)}
-                className="flex items-center justify-end p-5"
-              >
-                <CloseIcon className="text-primary size-5" />
-              </button>
+          <div className="flex flex-1">
+            <div className="h-full flex items-center justify-center rounded-lg w-[480px]">
+              <SelectNewPostsTab />
+              <CropNewPostsTab />
             </div>
-          </div>
 
-          <div className="h-[500px] flex items-center rounded-b-lg justify-center p-5">
-            <div className="flex flex-col items-center gap-6">
-              <NewPostIcon />
-              <h2 className="text-xl">Drag photos and videos here</h2>
-              <Button className="p-3">Select from computer</Button>
-            </div>
+            <EditNewPostsTab />
+            <EditNewPostDetailsTab />
           </div>
-        </div>
+        </form>
+
+        <DiscardNewPostModal />
+
+        <CloseCreateNewPostWidgetButton />
       </div>
     </div>
   );

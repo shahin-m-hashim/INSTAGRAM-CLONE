@@ -1,6 +1,6 @@
 import { cn } from "utils/cn";
 
-export default function DropDownArrowIcon({ className }) {
+export default function DropDownArrowIcon({ className = "" }) {
   return (
     <svg
       role="img"

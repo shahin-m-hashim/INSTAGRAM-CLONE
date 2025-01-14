@@ -50,11 +50,15 @@ const createCarousalsSlice = (set) => ({
   },
 
   removeCarousal: (id) =>
-    set((state) => {
-      if (id in state.carousals) {
-        delete state.carousals[id], undefined, "removeCarousal";
-      }
-    }),
+    set(
+      (state) => {
+        if (id in state.carousals) {
+          delete state.carousals[id];
+        }
+      },
+      undefined,
+      "removeCarousal"
+    ),
 });
 
 export default createCarousalsSlice;
