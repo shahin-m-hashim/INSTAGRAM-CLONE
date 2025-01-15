@@ -94,19 +94,18 @@ export default function Post({ post }) {
               id="posts-carousal"
               leftArrowStyle="left-2"
               rightArrowStyle="right-2"
-              carousalStyles="min-h-[400px]"
+              carousalStyles="min-h-[400px] md:h-[585px]"
               overrideTouchScreenBehavior={true}
             >
               {post.media.map((post, idx) => (
-                <div key={idx} className="flex-shrink-0 size-full">
-                  <Image
-                    alt="post"
-                    id={post.id}
-                    src={post.src}
-                    lazyLoad={true}
-                    className="xs:rounded-md size-full"
-                  />
-                </div>
+                <Image
+                  key={idx}
+                  alt="post"
+                  id={post.id}
+                  src={post.src}
+                  lazyLoad={true}
+                  className="flex-shrink-0 xs:rounded-md size-full"
+                />
               ))}
             </Carousal>
           ) : (

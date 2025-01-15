@@ -3,17 +3,19 @@ import { useShallow } from "zustand/shallow";
 import BackArrowIcon from "icons/BackArrowIcon";
 
 export default function CreateNewPostModalHeader() {
-  const [status, setNewPostStatus, setShowDiscardNewPostModal] = useStore(
-    useShallow((state) => [
-      state.newPost.status,
-      state.setNewPostStatus,
-      state.setShowDiscardNewPostModal,
-    ])
-  );
+  const [error, status, setNewPostStatus, setShowDiscardNewPostModal] =
+    useStore(
+      useShallow((state) => [
+        state.newPost.error,
+        state.newPost.status,
+        state.setNewPostStatus,
+        state.setShowDiscardNewPostModal,
+      ])
+    );
 
   return (
     <div className="relative flex items-center justify-center h-10 p-3 text-sm rounded-t-lg bg-tertiary">
-      {status !== "selecting" && (
+      {status !== "selecting" && !error && (
         <div className="absolute inset-y-0 flex items-center left-3">
           <button
             type="button"
@@ -30,37 +32,49 @@ export default function CreateNewPostModalHeader() {
       )}
 
       <h1 className="font-semibold">
-        {status === "cropping"
-          ? "Crop"
-          : status === "editing"
-          ? "Edit"
-          : "Create new post"}
+        {error ? (
+          <>
+            {error === "fileSizeError"
+              ? "File couldn't be uploaded"
+              : error === "videoLengthError"
+              ? "Video couldn't be uploaded"
+              : "Something went wrong"}
+          </>
+        ) : status === "cropping" ? (
+          "Crop"
+        ) : status === "editing" ? (
+          "Edit"
+        ) : (
+          "Create new post"
+        )}
       </h1>
 
-      <div className="absolute inset-y-0 flex items-center right-3">
-        {status === "finishing" ? (
-          <button
-            type="submit"
-            className="font-semibold text-link-primary hover:text-link-primary-hover"
-          >
-            Share
-          </button>
-        ) : status === "cropping" || status === "editing" ? (
-          <button
-            type="button"
-            onClick={(e) => {
-              e.preventDefault();
-              if (status === "cropping") setNewPostStatus("editing");
-              if (status === "editing") setNewPostStatus("finishing");
-            }}
-            className="font-semibold text-link-primary hover:text-link-primary-hover"
-          >
-            Next
-          </button>
-        ) : (
-          <></>
-        )}
-      </div>
+      {!error && (
+        <div className="absolute inset-y-0 flex items-center right-3">
+          {status === "finishing" ? (
+            <button
+              type="submit"
+              className="font-semibold text-link-primary hover:text-link-primary-hover"
+            >
+              Share
+            </button>
+          ) : status === "cropping" || status === "editing" ? (
+            <button
+              type="button"
+              onClick={(e) => {
+                e.preventDefault();
+                if (status === "cropping") setNewPostStatus("editing");
+                if (status === "editing") setNewPostStatus("finishing");
+              }}
+              className="font-semibold text-link-primary hover:text-link-primary-hover"
+            >
+              Next
+            </button>
+          ) : (
+            <></>
+          )}
+        </div>
+      )}
     </div>
   );
 }

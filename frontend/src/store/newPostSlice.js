@@ -8,6 +8,7 @@ const initial = {
     showDiscardModal: false,
     activeEditMenu: "filter",
     activeCropModal: null,
+    isAdjusting: false,
     showAdvancedSettingsTab: false,
     details: {
       caption: "",
@@ -28,27 +29,43 @@ const initial = {
   },
 };
 
-const createNewPostSlice = (set, get) => ({
+const initialAdjustments = {
+  brightness: 100,
+  contrast: 100,
+  fade: 0,
+  saturation: 100,
+  temperature: 0,
+};
+
+const createNewPostSlice = (set) => ({
   ...initial,
 
   addNewPosts: (files) => {
     set(
       (state) => {
+        const totalSize = files.reduce((sum, file) => sum + file.size, 0);
+        if (totalSize > 1 * 1024 * 1024 * 1024) {
+          state.newPost.error = "fileSizeError";
+          return;
+        }
+
+        const videos = files.filter((file) => file.type.startsWith("video"));
+        if (videos.length > 1) {
+          state.newPost.error = "videoLengthError";
+          return;
+        }
+
         const formattedFiles = files.map((file) => ({
           id: uuidv4(),
           src: URL.createObjectURL(file),
           zoom: 1,
           filter: "original",
           type: file.type.split("/")[0],
-          adjustments: {
-            fade: 0,
-            contrast: 0,
-            vignette: 0,
-            brightness: 0,
-            saturation: 0,
-            temperature: 0,
-          },
+          isMuted: file.type.startsWith("video") ? true : null,
+          adjustments: initialAdjustments,
         }));
+
+        state.newPost.error = null;
         state.newPost.status = "cropping";
         state.newPost.files = [...state.newPost.files, ...formattedFiles];
       },
@@ -89,10 +106,11 @@ const createNewPostSlice = (set, get) => ({
     );
   },
 
-  setNewPostFilter: (id, filter) => {
+  setNewPostFilter: (filter) => {
     set(
       (state) => {
-        const file = state.newPost.files.find((f) => f.id === id);
+        const { currentlyInView } = state.newPost;
+        const file = state.newPost.files.find((f) => f.id === currentlyInView);
         if (file) file.filter = filter;
       },
       undefined,
@@ -100,11 +118,13 @@ const createNewPostSlice = (set, get) => ({
     );
   },
 
-  setNewPostAdjustments: (id, adjustment, value) => {
+  setNewPostAdjustments: (adjustment, value) => {
     set(
       (state) => {
-        const file = state.newPost.files.find((f) => f.id === id);
-        if (file) file.zoom.adjustments[adjustment] = value;
+        const { currentlyInView } = state.newPost;
+        const file = state.newPost.files.find((f) => f.id === currentlyInView);
+        if (file) file.adjustments[adjustment] = value;
+        state.newPost.isAdjusting = true;
       },
       undefined,
       "setNewPostAdjustments"
@@ -205,6 +225,17 @@ const createNewPostSlice = (set, get) => ({
     );
   },
 
+  toggleVideoSound: (id) => {
+    set(
+      (state) => {
+        const file = state.newPost.files.find((f) => f.id === id);
+        if (file) file.isMuted = !file.isMuted;
+      },
+      undefined,
+      "toggleVideoSound"
+    );
+  },
+
   toggleShowNewPostAdvancedSettingsTab: () => {
     set(
       (state) => {
@@ -216,7 +247,18 @@ const createNewPostSlice = (set, get) => ({
     );
   },
 
-  getPostFile: (id) => get().newPost.files.find((f) => f.id === id),
+  resetAllAdjustments: () => {
+    set(
+      (state) => {
+        const { currentlyInView } = state.newPost;
+        const file = state.newPost.files.find((f) => f.id === currentlyInView);
+        if (file) file.adjustments = initialAdjustments;
+        state.newPost.isAdjusting = false;
+      },
+      undefined,
+      "resetAllAdjustments"
+    );
+  },
 
   resetNewPostSlice: () => set(initial, undefined, "resetNewPostSlice"),
 });

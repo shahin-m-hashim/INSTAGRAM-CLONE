@@ -16,11 +16,13 @@ export default function Carousal({
   leftArrowStyle = "",
   rightArrowStyle = "",
   iconType = "extended",
+  trackItemInView = false,
   carousalStyles = "size-full",
   extendScrollBehaviorFn = () => {},
   overrideTouchScreenBehavior = false,
   scrollAmount: manualScrollAmount = 0,
 }) {
+  const carousalRef = useRef(null);
   const scrollContainerRef = useRef(null);
   const length = Children.count(children);
 
@@ -30,6 +32,7 @@ export default function Carousal({
     updateCarousal,
     removeCarousal,
     initializeCarousal,
+    setCurrentlyInView,
   ] = useStore(
     useShallow((state) => [
       state.carousals[id],
@@ -37,6 +40,7 @@ export default function Carousal({
       state.updateCarousal,
       state.removeCarousal,
       state.initializeCarousal,
+      state.setCurrentlyInView,
     ])
   );
 
@@ -79,12 +83,12 @@ export default function Carousal({
   useEffect(() => {
     initializeCarousal(id);
 
+    const scrollContainer = scrollContainerRef.current;
+
     if (
       overrideTouchScreenBehavior ||
       !window.matchMedia("(pointer: coarse)").matches
     ) {
-      const scrollContainer = scrollContainerRef.current;
-
       if (scrollContainer) {
         requestAnimationFrame(() => {
           updateCarousal(
@@ -96,13 +100,41 @@ export default function Carousal({
       }
     }
 
+    if (trackItemInView) {
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              setCurrentlyInView(entry.target.id);
+            }
+          });
+        },
+        {
+          threshold: 0.3,
+          root: carousalRef.current,
+        }
+      );
+
+      Array.from(scrollContainer.children).forEach((child) => {
+        observer.observe(child);
+      });
+
+      return () => {
+        observer.disconnect();
+        removeCarousal(id);
+      };
+    }
+
     return () => {
       removeCarousal(id);
     };
   }, [length]);
 
   return (
-    <div className={cn("relative overflow-hidden", carousalStyles)}>
+    <div
+      ref={carousalRef}
+      className={cn("relative overflow-hidden", carousalStyles)}
+    >
       {/* Left Control */}
       <button
         type="button"

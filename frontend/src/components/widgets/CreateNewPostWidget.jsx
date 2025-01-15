@@ -12,7 +12,7 @@ export default function CreateNewPostWidget() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(useStore.getState().newPost);
+    console.log(JSON.stringify(useStore.getState().newPost));
     resetNewPostSlice();
   };
 

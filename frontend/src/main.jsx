@@ -1,4 +1,5 @@
 import "./app.css";
+import "./filters.css";
 import App from "./App";
 import { Suspense } from "react";
 import ErrorPage from "pages/ErrorPage";

@@ -5,18 +5,19 @@ import Carousal from "components/wrappers/Carousal";
 import NewPostPreview from "components/widgets/createNewPost/NewPostPreview";
 
 export default function CropNewPostsTab() {
-  const [files, crop, status, setActiveCropModal] = useStore(
+  const [files, crop, status, error, setActiveCropModal] = useStore(
     useShallow((state) => [
       state.newPost.files,
       state.newPost.crop,
       state.newPost.status,
+      state.newPost.error,
       state.setActiveCropModal,
     ])
   );
 
   return (
     <>
-      {status !== "selecting" && (
+      {!error && status !== "selecting" && (
         <Carousal
           gap="0"
           duration={500}
@@ -25,8 +26,8 @@ export default function CropNewPostsTab() {
           leftArrowStyle="left-3"
           rightArrowStyle="right-3"
           id="preview-new-posts-carousal"
-          extendScrollBehaviorFn={() => setActiveCropModal(null)}
           overrideTouchScreenBehavior={true}
+          extendScrollBehaviorFn={() => setActiveCropModal(null)}
           carousalStyles={cn(
             "size-full",
             status === "cropping" ? "rounded-b-lg" : "rounded-bl-lg"
@@ -40,6 +41,7 @@ export default function CropNewPostsTab() {
               src={file.src}
               zoom={file.zoom}
               filter={file.filter}
+              isMuted={file.isMuted}
               adjustments={file.adjustments}
               type={file.type.split("/")[0]}
             />

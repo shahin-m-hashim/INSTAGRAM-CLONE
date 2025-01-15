@@ -9,6 +9,7 @@ export default function ThemeSwitcher() {
 
   return (
     <ToggleSwitch
+      id="theme-switcher"
       ballClassName="size-4"
       pillClassName="h-5 w-10"
       handleChange={toggleTheme}

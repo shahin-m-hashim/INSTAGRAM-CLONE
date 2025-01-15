@@ -44,8 +44,8 @@ export default function AddOrRemoveNewPostsModal({ id }) {
               iconSize="size-4"
               leftArrowStyle="left-2"
               rightArrowStyle="right-2"
-              id="new-group-posts-carousal"
               carousalStyles="max-w-[188px]"
+              id="add-remove-new-posts-carousal"
             >
               {files.map((file) => (
                 <div key={file.id} className="relative min-w-[90px]">
@@ -82,9 +82,9 @@ export default function AddOrRemoveNewPostsModal({ id }) {
 
             <input
               type="file"
-              ref={fileInputRef}
               multiple={true}
-              id="file-input-1"
+              id="file-input-2"
+              ref={fileInputRef}
               className="sr-only"
               accept="image/*,video/*"
               onChange={handleFileInputChange}

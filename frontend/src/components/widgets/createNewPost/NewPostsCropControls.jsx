@@ -1,5 +1,7 @@
 import { cn } from "utils/cn";
 import useStore from "store/_store";
+import MutedIcon from "icons/MutedIcon";
+import UnmutedIcon from "icons/UnmutedIcon";
 import { useShallow } from "zustand/shallow";
 import SelectCropIcon from "icons/SelectCropIcon";
 import AdjustZoomIcon from "icons/AdjustZoomIcon";
@@ -8,21 +10,23 @@ import SelectNewPostCropModal from "components/widgets/createNewPost/modals/Sele
 import SelectNewPostZoomModal from "components/widgets/createNewPost/modals/SelectNewPostZoomModal";
 import AddOrRemoveNewPostsModal from "components/widgets/createNewPost/modals/AddOrRemoveNewPostsModal";
 
-export default function NewPostsCropControls({ id }) {
-  const [status, toggleNewPostActiveCropModal, activeCropModal] = useStore(
+export default function NewPostsCropControls({ id = "", type = "", isMuted }) {
+  const [
+    status,
+    activeCropModal,
+    toggleVideoSound,
+    toggleNewPostActiveCropModal,
+  ] = useStore(
     useShallow((state) => [
       state.newPost.status,
-      state.toggleNewPostActiveCropModal,
       state.newPost.activeCropModal,
+      state.toggleVideoSound,
+      state.toggleNewPostActiveCropModal,
     ])
   );
 
   return (
     <>
-      <button
-        type="button"
-        className="absolute inset-x-0 bottom-0 z-20 flex items-center justify-between h-2/3"
-      />
       {status === "cropping" && (
         <div className="absolute inset-x-0 z-20 flex items-center justify-between px-3 bottom-3">
           <div className="flex items-center gap-2">
@@ -82,31 +86,43 @@ export default function NewPostsCropControls({ id }) {
           </div>
 
           <div className="relative">
-            <button
-              type="button"
-              onClick={() => toggleNewPostActiveCropModal("group")}
-              disabled={activeCropModal && activeCropModal !== "group"}
-              className={cn(
-                "p-2 rounded-full bg-widget",
-                activeCropModal
-                  ? activeCropModal === "group"
-                    ? "opacity-100"
-                    : "opacity-60"
-                  : "opacity-100"
-              )}
-            >
-              <GroupedPostsIcon
-                type="hollow"
-                className={cn(
-                  "size-4",
-                  activeCropModal === "group"
-                    ? "text-link-primary"
-                    : "text-primary"
-                )}
-              />
-            </button>
+            {type === "image" ? (
+              <>
+                <button
+                  type="button"
+                  onClick={() => toggleNewPostActiveCropModal("group")}
+                  disabled={activeCropModal && activeCropModal !== "group"}
+                  className={cn(
+                    "p-2 rounded-full bg-widget",
+                    activeCropModal
+                      ? activeCropModal === "group"
+                        ? "opacity-100"
+                        : "opacity-60"
+                      : "opacity-100"
+                  )}
+                >
+                  <GroupedPostsIcon
+                    type="hollow"
+                    className={cn(
+                      "size-4",
+                      activeCropModal === "group"
+                        ? "text-link-primary"
+                        : "text-primary"
+                    )}
+                  />
+                </button>
 
-            <AddOrRemoveNewPostsModal id={id} />
+                <AddOrRemoveNewPostsModal id={id} />
+              </>
+            ) : (
+              <button
+                type="button"
+                onClick={() => toggleVideoSound(id)}
+                className="p-2 rounded-full bg-widget"
+              >
+                {isMuted ? <MutedIcon /> : <UnmutedIcon />}
+              </button>
+            )}
           </div>
         </div>
       )}

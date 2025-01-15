@@ -2,15 +2,13 @@ import useStore from "store/_store";
 import { useShallow } from "zustand/shallow";
 
 export default function SelectNewPostZoomModal({ id }) {
-  const [getPostFile, setNewPostZoom, activeCropModal] = useStore(
-    useShallow((state) => [
-      state.getPostFile,
-      state.setNewPostZoom,
-      state.newPost.activeCropModal,
-    ])
+  const [setNewPostZoom, activeCropModal] = useStore(
+    useShallow((state) => [state.setNewPostZoom, state.newPost.activeCropModal])
   );
 
-  const zoom = getPostFile(id).zoom;
+  const zoom = useStore(
+    (state) => state.newPost.files.find((f) => f.id === id).zoom
+  );
 
   return (
     <>
