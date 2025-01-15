@@ -18,18 +18,16 @@ export default function CreateNewPostWidget() {
 
   return (
     <div className="absolute inset-0 z-[100] pointer-events-auto backdrop-brightness-50">
-      <div className="relative flex items-center justify-center text-primary size-full">
+      <div className="relative items-center justify-center md:flex text-primary size-full">
         <form
           onSubmit={handleSubmit}
-          className="relative flex flex-col h-[480px] shadow-primary bg-widget rounded-lg "
+          className="relative flex flex-col md:h-[480px] shadow-primary bg-widget rounded-lg "
         >
           <CreateNewPostModalHeader />
 
-          <div className="flex flex-1">
-            <div className="h-full flex items-center justify-center rounded-lg w-[480px]">
-              <SelectNewPostsTab />
-              <CropNewPostsTab />
-            </div>
+          <div className="flex flex-col h-[calc(100vh-40px)] md:h-full md:flex-row overflow-y-auto">
+            <SelectNewPostsTab />
+            <CropNewPostsTab />
 
             <EditNewPostsTab />
             <EditNewPostDetailsTab />

@@ -14,7 +14,7 @@ export default function CreateNewPostModalHeader() {
     );
 
   return (
-    <div className="relative flex items-center justify-center h-10 p-3 text-sm rounded-t-lg bg-tertiary">
+    <div className="relative flex items-center justify-center h-[40px] p-3 text-sm rounded-t-lg bg-tertiary">
       {status !== "selecting" && !error && (
         <div className="absolute inset-y-0 flex items-center left-3">
           <button
@@ -35,10 +35,12 @@ export default function CreateNewPostModalHeader() {
         {error ? (
           <>
             {error === "fileSizeError"
-              ? "File couldn't be uploaded"
+              ? "File Too Large"
               : error === "videoLengthError"
-              ? "Video couldn't be uploaded"
-              : "Something went wrong"}
+              ? "Too Many Videos"
+              : error === "invalidFileError"
+              ? "Invalid File Uploaded"
+              : "Something Went Wrong"}
           </>
         ) : status === "cropping" ? (
           "Crop"

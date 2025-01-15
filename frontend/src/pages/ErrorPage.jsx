@@ -11,11 +11,14 @@ export default function ErrorPage() {
 
             <h1 className="text-2xl text-bold">Something went wrong</h1>
 
-            <p className="text-tertiary font-semibold">
+            <p className="font-semibold text-tertiary">
               There&apos;s an issue and the page could not be loaded.
             </p>
 
-            <Button onClick={() => window.location.reload()}>
+            <Button
+              className="w-[160px] xs:w-full"
+              onClick={() => window.location.reload()}
+            >
               Reload Page
             </Button>
           </div>

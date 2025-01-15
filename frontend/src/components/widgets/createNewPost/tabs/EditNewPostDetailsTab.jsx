@@ -27,7 +27,7 @@ export default function EditNewPostDetailsTab() {
   return (
     <>
       {status === "finishing" && (
-        <div className="w-[320px] flex flex-col gap-5 p-3 h-[440px] overflow-y-auto rounded-r-lg">
+        <div className="w-full h-full md:w-[320px] flex flex-col gap-6 p-3 md:h-[440px] border-l border-l-primary overflow-y-auto rounded-r-lg">
           <div className="flex items-center gap-2">
             <img
               src="images/users/ludacris.webp"
@@ -36,7 +36,7 @@ export default function EditNewPostDetailsTab() {
             <span>ludacris</span>
           </div>
 
-          <div className="relative h-[230px] flex-shrink-0">
+          <div className="relative h-[30vh] md:h-[135px] flex-shrink-0">
             <textarea
               id="caption"
               maxLength={2200}
@@ -53,7 +53,7 @@ export default function EditNewPostDetailsTab() {
             </div>
           </div>
 
-          <div className="flex items-center justify-between">
+          <div className="flex items-center justify-between mt-3">
             <input
               type="text"
               id="location"

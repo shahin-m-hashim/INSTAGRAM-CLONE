@@ -43,6 +43,16 @@ const createNewPostSlice = (set) => ({
   addNewPosts: (files) => {
     set(
       (state) => {
+        if (
+          !files.some(
+            (file) =>
+              file.type.startsWith("video") || file.type.startsWith("image")
+          )
+        ) {
+          state.newPost.error = "invalidFileError";
+          return;
+        }
+
         const totalSize = files.reduce((sum, file) => sum + file.size, 0);
         if (totalSize > 1 * 1024 * 1024 * 1024) {
           state.newPost.error = "fileSizeError";

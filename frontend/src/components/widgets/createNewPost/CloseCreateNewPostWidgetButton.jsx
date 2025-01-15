@@ -1,3 +1,4 @@
+import { cn } from "utils/cn";
 import useStore from "store/_store";
 import CloseIcon from "icons/CloseIcon";
 import { useShallow } from "zustand/shallow";
@@ -12,7 +13,12 @@ export default function CloseCreateNewPostWidgetButton() {
   );
 
   return (
-    <div className="absolute top-5 right-8">
+    <div
+      className={cn(
+        status !== "selecting" && "hidden md:flex",
+        "absolute top-2 right-2 md:top-5 md:right-8"
+      )}
+    >
       <button
         type="button"
         onClick={() => {

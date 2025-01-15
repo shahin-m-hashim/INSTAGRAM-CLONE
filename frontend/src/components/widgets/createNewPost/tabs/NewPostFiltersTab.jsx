@@ -30,7 +30,7 @@ export default function NewPostFiltersTab() {
   const currentFilter = files.find((f) => f.id === currentlyInView).filter;
 
   return (
-    <div className="grid grid-cols-3 gap-3">
+    <div className="grid grid-cols-3 gap-1 xs:grid-cols-5 md:grid-cols-3">
       {filters.map((filter) => (
         <button
           key={filter}
@@ -41,7 +41,7 @@ export default function NewPostFiltersTab() {
           <img
             alt="filter_example"
             className={cn(
-              `filter-${filter} size-[85px]`,
+              `filter-${filter} size-full min-h-[100px]`,
               currentFilter === filter && "border-2 border-link-primary"
             )}
             src="images/filter_example.jpg"

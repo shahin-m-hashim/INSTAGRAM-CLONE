@@ -16,7 +16,7 @@ export default function EditNewPostsTab() {
   return (
     <>
       {status === "editing" && (
-        <div className="w-[320px] flex flex-col h-[440px] rounded-r-lg">
+        <div className="w-full md:w-[320px] flex flex-col h-1/2 md:h-[440px] rounded-r-lg border-l border-l-primary">
           <div className="flex items-center gap-4 text-sm font-semibold border-b-2 border-b-tertiary">
             <button
               type="button"
@@ -44,7 +44,7 @@ export default function EditNewPostsTab() {
             </button>
           </div>
 
-          <div className="flex-col flex-1 p-3 overflow-y-auto">
+          <div className="flex-1 p-3 overflow-y-auto">
             {activeEditMenu === "filter" ? (
               <NewPostFiltersTab />
             ) : (

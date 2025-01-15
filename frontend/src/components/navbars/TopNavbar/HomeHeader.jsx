@@ -2,7 +2,6 @@ import useStore from "store/_store";
 import CreateIcon from "icons/CreateIcon";
 import MessengerIcon from "icons/MessengerIcon";
 import TransitionLink from "components/TransitionLink";
-import SearchField from "components/fields/SearchField";
 import DropDownArrowIcon from "icons/DropDownArrowIcon";
 import InstagramTextIcon from "icons/InstagramTextIcon";
 
@@ -25,10 +24,6 @@ export default function HomeHeader() {
 
       <div className="flex justify-end flex-1 h-full">
         <div className="flex items-center gap-4">
-          <div className="hidden md:block">
-            <SearchField className="h-8" />
-          </div>
-
           <button
             type="button"
             onClick={() => toggleSecondaryWidget("create")}

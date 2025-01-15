@@ -35,7 +35,7 @@ export default function NewPostAdjustmentsTab() {
         <button
           type="button"
           onClick={resetAllAdjustments}
-          className="absolute inset-x-0 text-xs font-semibold -top-1"
+          className="absolute inset-x-0 font-semibold md:text-xs -top-1"
         >
           Reset All
         </button>

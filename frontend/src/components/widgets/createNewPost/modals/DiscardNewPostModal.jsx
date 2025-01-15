@@ -15,7 +15,7 @@ export default function DiscardNewPostModal() {
     <>
       {showDiscardModal && (
         <div className="absolute z-20 pointer-events-auto inset-0 flex items-center justify-center size-full backdrop-brightness-[0.4]">
-          <div className="flex text-primary flex-col bg-widget w-[300px] xs:w-[400px] rounded-lg">
+          <div className="flex text-primary flex-col bg-widget w-[300px] xs:w-[320px] lg:w-[400px] rounded-lg">
             <div className="flex flex-col">
               <div className="px-10 py-5 text-center">
                 <h1 className="mb-2.5 text-xl">Discard post?</h1>

@@ -8,19 +8,15 @@ const ProtectedLayout = lazy(() =>
   import("components/wrappers/ProtectedLayout")
 );
 
-const HomePage = lazy(() => import("pages/private/HomePage"));
-
 const SwitchAccountsPage = lazy(() =>
   import("pages/private/SwitchAccountsPage")
 );
 
 const ErrorPage = lazy(() => import("pages/ErrorPage"));
-
-const NotificationsPage = lazy(() => import("pages/private/NotificationsPage"));
-
-const ExplorePage = lazy(() => import("pages/private/ExplorePage"));
-
+const HomePage = lazy(() => import("pages/private/HomePage"));
 const ReelsPage = lazy(() => import("pages/private/ReelsPage"));
+const ExplorePage = lazy(() => import("pages/private/ExplorePage"));
+const NotificationsPage = lazy(() => import("pages/private/NotificationsPage"));
 
 const privateRoutes = {
   path: "/",

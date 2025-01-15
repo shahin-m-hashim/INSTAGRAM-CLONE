@@ -4,7 +4,7 @@ import CloseIcon from "icons/CloseIcon";
 import { useShallow } from "zustand/shallow";
 import Carousal from "components/wrappers/Carousal";
 
-export default function AddOrRemoveNewPostsModal({ id }) {
+export default function AddOrRemoveNewPostsModal() {
   const fileInputRef = useRef(null);
 
   const [
@@ -23,7 +23,7 @@ export default function AddOrRemoveNewPostsModal({ id }) {
     ])
   );
 
-  const handleRemove = () => {
+  const handleRemove = (id) => {
     if (files.length > 1) {
       removeNewPost(id);
     } else {
@@ -63,10 +63,10 @@ export default function AddOrRemoveNewPostsModal({ id }) {
 
                   <button
                     type="button"
-                    onClick={handleRemove}
                     className="absolute top-1 right-1"
+                    onClick={() => handleRemove(file.id)}
                   >
-                    <CloseIcon className="size-4" />
+                    <CloseIcon className="p-1 rounded-full bg-button-hover opacity-90 size-5" />
                   </button>
                 </div>
               ))}
