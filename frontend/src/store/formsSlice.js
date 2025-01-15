@@ -51,6 +51,17 @@ const initial = {
       showPassword: false,
     },
 
+    passwordReset: {
+      fields: {
+        identifier: {
+          value: "",
+          error: null,
+        },
+      },
+      error: null,
+      isSubmitting: false,
+    },
+
     editProfile: {
       fields: {
         bio: "",
@@ -148,6 +159,15 @@ const createFormsSlice = (set, get) => ({
       },
       undefined,
       "setFormIsSubmitting"
+    ),
+
+  setResetPasswordFormFieldValue: (field, value) =>
+    set(
+      (state) => {
+        state.forms.passwordReset.fields[field].value = value;
+      },
+      undefined,
+      "setResetPasswordFormFieldValue"
     ),
 
   getFormData: (form) => {

@@ -1,8 +1,18 @@
 import useStore from "store/_store";
+import { useNavigate } from "react-router-dom";
+
+const wait = () => new Promise((resolve) => setTimeout(resolve, 300));
 
 export default function LogOutPopUp() {
+  const navigate = useNavigate();
   const setIsAuthenticated = useStore((state) => state.setIsAuthenticated);
   const setSecondaryWidget = useStore((state) => state.setSecondaryWidget);
+
+  const handleLogout = async () => {
+    await wait();
+    setIsAuthenticated(false);
+    navigate("/accounts/login", { replace: true });
+  };
 
   return (
     <div className="absolute inset-0 backdrop-brightness-50 z-[100] pointer-events-auto">
@@ -18,7 +28,7 @@ export default function LogOutPopUp() {
 
             <button
               type="button"
-              onClick={() => setIsAuthenticated(false)}
+              onClick={handleLogout}
               className="p-2.5 font-semibold border-y-2 border-y-tertiary hover:bg-widget-hover"
             >
               Log Out

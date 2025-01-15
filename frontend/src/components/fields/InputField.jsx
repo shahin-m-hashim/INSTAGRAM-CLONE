@@ -19,6 +19,7 @@ export default function InputField({
     validateSignupFormField,
     setSignupFormFieldValue,
     togglePasswordVisibility,
+    setResetPasswordFormFieldValue,
   ] = useStore(
     useShallow((state) => [
       state.forms[fieldFor].fields[id].value,
@@ -29,6 +30,7 @@ export default function InputField({
       state.validateSignupFormField,
       state.setSignupFormFieldValue,
       state.togglePasswordVisibility,
+      state.setResetPasswordFormFieldValue,
     ])
   );
 
@@ -37,6 +39,8 @@ export default function InputField({
       setLoginFormFieldValue(id, e.target.value);
     } else if (fieldFor === "signup") {
       setSignupFormFieldValue(id, e.target.value);
+    } else if (fieldFor === "passwordReset") {
+      setResetPasswordFormFieldValue(id, e.target.value);
     }
   };
 

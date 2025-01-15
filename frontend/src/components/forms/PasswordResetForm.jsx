@@ -1,45 +1,21 @@
-import useForm from "hooks/useForm";
+import useStore from "store/_store";
 import Button from "components/wrappers/Button";
 import InputField from "components/fields/InputField";
 
-const initialField = {
-  identifier: {
-    value: "",
-    label: "Email, Phone, or Username",
-  },
-};
-
 export default function PasswordResetForm() {
-  const { reset, fields, handleBlur, getFormData, handleChange, submitBtnRef } =
-    useForm(initialField, false);
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-
-    const formData = getFormData();
-    console.log(formData);
-    reset();
-  };
+  const identifier = useStore(
+    (state) => state.forms.passwordReset.fields.identifier.value
+  );
 
   return (
-    <form
-      onSubmit={handleSubmit}
-      className="flex flex-col items-center justify-between w-full"
-    >
+    <form className="flex flex-col items-center justify-between w-full">
       <InputField
-        key={"identifier"}
-        name={"identifier"}
-        handleBlur={handleBlur}
-        handleChange={handleChange}
-        field={fields["identifier"]}
+        id="identifier"
+        fieldFor="passwordReset"
+        label="Email, Phone, or Username"
       />
 
-      <Button
-        type="submit"
-        disabled={true}
-        className="my-4"
-        reference={submitBtnRef}
-      >
+      <Button disabled={!identifier} type="submit" className="my-4">
         Send login link
       </Button>
     </form>

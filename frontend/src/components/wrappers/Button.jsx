@@ -3,7 +3,6 @@ import { cn } from "../../utils/cn";
 export default function Button({
   onClick,
   children,
-  reference,
   className,
   type = "button",
   disabled = false,
@@ -11,7 +10,6 @@ export default function Button({
   return (
     <button
       type={type}
-      ref={reference}
       onClick={onClick}
       disabled={disabled}
       className={cn(
