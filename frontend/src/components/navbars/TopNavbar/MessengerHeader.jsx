@@ -32,7 +32,9 @@ export default function MessengerHeader({ page }) {
 
           <div className="absolute right-0">
             {page.length === 2 ? (
-              <IIcon className="size-6" />
+              <TransitionLink to="direct/virat.kohli/details">
+                <IIcon className="size-6" />
+              </TransitionLink>
             ) : (
               <TransitionLink to="direct/new">
                 <NewMessageIcon />

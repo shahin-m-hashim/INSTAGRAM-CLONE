@@ -4,14 +4,29 @@ import users from "mocks/users.json";
 import Image from "components/Image";
 import Button from "components/wrappers/Button";
 import CheckboxInput from "components/CheckboxInput";
+import { useNavigate } from "react-router-dom";
 
 export default function Accounts({
-  type = "normal",
   className = "",
+  type = "normal",
+  specialCase = false,
   minCheckedInputs = 0,
   limit = users.length,
 }) {
+  const navigate = useNavigate();
+
   const theme = useStore((state) => state.theme);
+  const setShowMessage = useStore((state) => state.setShowMessage);
+  const showMessage = useStore((state) => state.messenger.showMessage);
+  const setSecondaryWidget = useStore((state) => state.setSecondaryWidget);
+
+  const handleChange = (username) => {
+    if (username === "virat.kohli") {
+      setShowMessage(!showMessage);
+      setSecondaryWidget(null);
+      navigate("/direct/virat.kohli");
+    }
+  };
 
   return (
     <ul className={cn("flex flex-col w-full gap-3", className)}>
@@ -49,11 +64,22 @@ export default function Accounts({
 
           <div className="flex justify-center h-full">
             {type === "input" ? (
-              <CheckboxInput
-                value={user.id}
-                id={`checkbox-${user.id}`}
-                checked={idx < minCheckedInputs}
-              />
+              <>
+                {specialCase ? (
+                  <CheckboxInput
+                    value={user.id}
+                    id={`checkbox-${user.id}`}
+                    handleChange={() => handleChange(user.username)}
+                    isChecked={user.username === "virat.kohli" && showMessage}
+                  />
+                ) : (
+                  <CheckboxInput
+                    value={user.id}
+                    id={`checkbox-${user.id}`}
+                    isChecked={idx < minCheckedInputs}
+                  />
+                )}
+              </>
             ) : type === "notifications" ? (
               <Button className="xs:px-6">Follow</Button>
             ) : (

@@ -17,8 +17,8 @@ export default function InboxPage() {
         </div>
 
         <Button
-          onClick={() => setSecondaryWidget("newMessage")}
           className="w-28"
+          onClick={() => setSecondaryWidget("newMessage")}
         >
           Send message
         </Button>

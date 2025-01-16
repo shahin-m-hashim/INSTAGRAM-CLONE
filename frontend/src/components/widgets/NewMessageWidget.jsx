@@ -36,7 +36,7 @@ export default function NewMessageWidget() {
             <Separator straight={true} />
 
             <div className="flex-1 w-full p-4 overflow-auto">
-              <Accounts type="input" />
+              <Accounts specialCase={true} type="input" />
             </div>
 
             <div className="w-full p-4">

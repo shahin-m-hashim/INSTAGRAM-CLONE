@@ -1,5 +1,5 @@
 import IIcon from "icons/IIcon";
-import { useState } from "react";
+import useStore from "store/_store";
 import { useParams } from "react-router-dom";
 import ProfilePicture from "components/ProfilePicture";
 import TransitionLink from "components/TransitionLink";
@@ -7,8 +7,13 @@ import MessageField from "components/fields/MessageField";
 import ChatDetailsContent from "components/contents/ChatDetailsContent";
 
 export default function ChatPage() {
-  const { id } = useParams();
-  const [showDetails, setShowDetails] = useState(false);
+  const { username } = useParams();
+
+  const toggleShowMessageDetails = useStore(
+    (state) => state.toggleShowMessageDetails
+  );
+
+  const showDetails = useStore((state) => state.messenger.showMessageDetails);
 
   return (
     <div className="relative flex w-full">
@@ -23,17 +28,14 @@ export default function ChatPage() {
             <span>Username</span>
           </div>
 
-          <div className="hidden md:block">
-            <button
-              onClick={() => setShowDetails((prev) => !prev)}
-              type="button"
-            >
+          <div className="hidden lg:block">
+            <button onClick={toggleShowMessageDetails} type="button">
               <IIcon isActive={showDetails} className="size-6" />
             </button>
           </div>
 
-          <div className="md:hidden">
-            <TransitionLink to={`/direct/${id}/details`}>
+          <div className="lg:hidden">
+            <TransitionLink to={`/direct/${username}/details`}>
               <IIcon isActive={showDetails} className="size-6" />
             </TransitionLink>
           </div>

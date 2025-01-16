@@ -285,9 +285,9 @@ const items = [
     id: 32,
     tag: "Suggested for you",
     isVerified: false,
-    username: "abhishek_mens_parlar_maniram",
-    fullName: "Abhishek Mens Parlar Maniram",
-    profilePic: "images/users/abhishek_mens_parlar_maniram.webp",
+    username: "abhishek_mens_parlar",
+    fullName: "Abhishek Mens Parlar",
+    profilePic: "images/users/abhishek_mens_parlar.webp",
     hasStory: false,
   },
   {

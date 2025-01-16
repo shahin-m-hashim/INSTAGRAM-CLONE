@@ -10,6 +10,7 @@ import createVideosSlice from "store/videosSlice";
 import createImagesSlice from "store/imagesSlice";
 import createNewPostSlice from "store/newPostSlice";
 import createCarousalsSlice from "store/carousalSlice";
+import createMessengerSlice from "store/messengerSlice";
 
 const useStore = create(
   devtools(
@@ -22,6 +23,7 @@ const useStore = create(
       ...createImagesSlice(set, get),
       ...createNewPostSlice(set, get),
       ...createCarousalsSlice(set, get),
+      ...createMessengerSlice(set, get),
     }))
   )
 );

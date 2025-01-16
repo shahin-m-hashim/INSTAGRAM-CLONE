@@ -1,18 +1,14 @@
 import { cn } from "utils/cn";
-import { useState } from "react";
 import SelectedIcon from "icons/SelectedIcon";
 
 export default function CheckboxInput({
-  id,
-  className,
+  id = "",
   value = "",
-  checked = false,
+  className = "",
   isRounded = true,
+  isChecked = false,
+  handleChange = () => {},
 }) {
-  const [isChecked, setIsChecked] = useState(checked);
-
-  const handleChange = () => setIsChecked(!isChecked);
-
   return (
     <label
       htmlFor={id}
